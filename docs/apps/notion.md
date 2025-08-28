@@ -1,11 +1,10 @@
-# Notion
-
-Last Update: 25/08/2025
-Type: downloaded
-Categorie: desktop
-URL: https://www.notion.com
-Location:
-Description: Note taking application
+---
+type: downloaded
+category: desktop
+url: https://www.notion.com
+location:
+description: Note taking application
+---
 
 # Notion
 

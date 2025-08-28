@@ -1,13 +1,11 @@
-# Markdown Theme VSC Extension
-
-Installation date: 14 janvier 2025 9:23 (UTC+1)
-Dernière modification: 14 janvier 2025 11:47
-Type: personal
-Categorie: dev
-URL: https://github.com/ALXS-GitHub/Markdown-Themes-VSC-Extension
-Location: ~\Desktop\Programmes\Perso\Markdown\Markdown-Theme-VSC-Extension
-Description: Extension Vscode pour Markdown Themes
-État: actual
+---
+type: personal
+category: dev
+url: https://github.com/ALXS-GitHub/Markdown-Themes-VSC-Extension
+location: ~\Desktop\Programmes\Perso\Markdown\Markdown-Theme-VSC-Extension
+description: Extension Vscode pour Markdown Themes
+state: actual
+---
 
 # Markdown Theme VSC Extension
 

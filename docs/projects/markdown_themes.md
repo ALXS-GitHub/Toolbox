@@ -1,13 +1,11 @@
-# Markdown Themes
-
-Installation date: 14 janvier 2025 9:23 (UTC+1)
-Dernière modification: 14 janvier 2025 11:46
-Type: personal
-Categorie: dev
-URL: https://github.com/ALXS-GitHub/Markdown-Themes
-Location: ~\Desktop\Programmes\Perso\Markdown\Markdown-Themes
-Description: Themes custom pour les fichiers markdown
-État: actual
+---
+type: personal
+category: dev
+url: https://github.com/ALXS-GitHub/Markdown-Themes
+location: ~\Desktop\Programmes\Perso\Markdown\Markdown-Themes
+description: Themes custom pour les fichiers markdown
+state: actual
+---
 
 # Markdown Themes
 

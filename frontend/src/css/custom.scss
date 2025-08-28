@@ -42,3 +42,13 @@
   // --ifm-footer-color: var(--ifm-color-black);
   // --ifm-footer-link-color: var(--ifm-color-black);
 // }
+
+.relative {
+  position: relative
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

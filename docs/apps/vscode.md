@@ -1,11 +1,10 @@
-# Visual Studio Code
-
-Last Update: 25/08/2025
-Type: downloaded
-Categorie: desktop
-URL: https://code.visualstudio.com/
-Location: 
-Description: Code editing application
+---
+type: downloaded
+category: desktop
+url: https://code.visualstudio.com/
+location: 
+description: Code editing application
+---
 
 # Visual Studio Code
 

@@ -1,13 +1,11 @@
-# Warp
-
-Installation date: 25 janvier 2025 10:47 (UTC+1)
-Dernière modification: 26 janvier 2025 15:01
-Type: downloaded
-Categorie: dev
-URL: https://www.warp.dev/
-Location: ~\AppData\Roaming\warp\Warp
-Description: Terminal
-État: actual
+---
+type: downloaded
+category: dev
+url: https://www.warp.dev/
+location: ~\AppData\Roaming\warp\Warp
+description: Terminal
+state: actual
+---
 
 # Warp
 

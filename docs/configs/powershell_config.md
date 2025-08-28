@@ -1,13 +1,11 @@
-# Powershell Config
-
-Installation date: 13 janvier 2025 13:34 (UTC+1)
-Dernière modification: 26 janvier 2025 15:03
-Type: personal
-Categorie: dev
-URL: https://github.com/ALXS-GitHub/Powershell-Config
-Location: C:\Users\alxsm\.config\powershell
-Description: Tous mes outils pour le terminal pwsh
-État: actual
+---
+type: personal
+category: dev
+url: https://github.com/ALXS-GitHub/Powershell-Config
+location: ~/.config/powershell
+description: Tous mes outils pour le terminal pwsh
+state: actual
+---
 
 # Powershell Config
 
@@ -21,9 +19,9 @@ myhelp
 
 ## Configuration
 
-Premièrement dans la configuration, on a les couleurs du promtp. Elles peuvent être trouvées dans l’application terminal, puis settings puis ouvrir le fichier JSON (en bas à gauche). Ici on peut ajouter des nouveaux thèmes de couleurs pour la partie prompt.
+Premièrement dans la configuration, on a les couleurs du prompt. Elles peuvent être trouvées dans l’application terminal, puis settings puis ouvrir le fichier JSON (en bas à gauche). Ici on peut ajouter des nouveaux thèmes de couleurs pour la partie prompt.
 
-Le reste de la configuration (thème, commandes custom, …) se retrouvent dans `C:\Users\alxsm\.config\powershell` .
+Le reste de la configuration (thème, commandes custom, …) se retrouvent dans `~/.config/powershell` .
 
 ## Thèmes
 

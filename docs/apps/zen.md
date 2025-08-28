@@ -1,13 +1,11 @@
-# Zen
-
-Installation date: 
-Dernière modification: 27/08/2025
-Type: downloaded
-Categorie: desktop
-URL: https://zen-browser.app/
-Location: 
-Description: Terminal
-État: actual
+---
+type: downloaded
+category: desktop
+url: https://zen-browser.app/
+location: 
+description: Terminal
+state: actual
+---
 
 # Zen
 

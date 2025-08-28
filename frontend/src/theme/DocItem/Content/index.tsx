@@ -5,6 +5,7 @@ import {useDoc} from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import type {Props} from '@theme/DocItem/Content';
+import CustomMetadata from '@site/src/components/Metadata';
 
 /**
  Title can be declared inside md content or declared through
@@ -29,12 +30,13 @@ function useSyntheticTitle(): string | null {
 export default function DocItemContent({children}: Props): ReactNode {
   const syntheticTitle = useSyntheticTitle();
   return (
-    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown', 'relative')}>
       {syntheticTitle && (
         <header>
           <Heading as="h1">{syntheticTitle}</Heading>
         </header>
       )}
+      <CustomMetadata />
       <MDXContent>{children}</MDXContent>
     </div>
   );

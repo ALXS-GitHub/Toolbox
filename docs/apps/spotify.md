@@ -1,13 +1,11 @@
-# Spotify
-
-Installation date: 
-Dernière modification: 25/08/2025
-Type: downloaded
-Categorie: desktop
-URL: https://www.spotify.com/
-Location: 
-Description: Music streaming
-État: actual
+--- 
+type: downloaded
+category: desktop
+url: https://www.spotify.com/
+location: 
+description: Music streaming
+state: actual
+---
 
 # Spotify
 

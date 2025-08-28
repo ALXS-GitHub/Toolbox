@@ -84,6 +84,6 @@ The front matter is a YAML block at the beginning of each Markdown file that pro
 ```yaml
 ---
 sidebar_custom_props: # Docusaurus custom props 
-  image: /images/wsl.png # Path to the image to show in the DocList and DocItem as the icon
+  image: /images/wsl.png # Path to the image to show in the DocCard and DocItem as the icon
 ---
 ```
