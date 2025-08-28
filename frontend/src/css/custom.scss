@@ -1,0 +1,44 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #f8c107;
+  --ifm-color-primary-dark: #dfae06;
+  --ifm-color-primary-darker: #d3a406;
+  --ifm-color-primary-darkest: #ae8705;
+  --ifm-color-primary-light: #f9c720;
+  --ifm-color-primary-lighter: #f9ca2c;
+  --ifm-color-primary-lightest: #fad451;
+  --ifm-color-secondary: #4FB3FF;
+  --ifm-color-secondary-dark: #3AA0E6;
+  --ifm-color-secondary-darker: #2787C2;
+  --ifm-color-secondary-light: #7FD1FF;
+  --ifm-color-secondary-lighter: #A6E6FF;
+  --ifm-color-secondary-lightest: #DFF9FF;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.04);
+}
+
+// ...existing code...
+[data-theme='dark'] {
+  --ifm-color-primary: #ffd454;
+  --ifm-color-primary-dark: #ffcb32;
+  --ifm-color-primary-darker: #ffc721;
+  --ifm-color-primary-darkest: #edb200;
+  --ifm-color-primary-light: #ffdd76;
+  --ifm-color-primary-lighter: #ffe187;
+  --ifm-color-primary-lightest: #ffeeba;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
+}
+
+// footer[class*="theme-layout-footer"] {
+  // --ifm-footer-background-color: var(--ifm-color-primary);
+  // --ifm-footer-title-color: var(--ifm-color-black);
+  // --ifm-footer-color: var(--ifm-color-black);
+  // --ifm-footer-link-color: var(--ifm-color-black);
+// }

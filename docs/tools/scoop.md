@@ -4,7 +4,7 @@ Installation date: 14 janvier 2025 9:13 (UTC+1)
 Dernière modification: 14 janvier 2025 11:45
 Type: downloaded
 Categorie: dev
-Location: C:\Users\alxsm\scoop
+Location: ~\scoop
 Description: gestionnaire de paquets pour Windows
 État: actual
 

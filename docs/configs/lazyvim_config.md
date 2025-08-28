@@ -5,10 +5,10 @@ Dernière modification: 14 janvier 2025 11:45
 Type: personalized
 Categorie: dev
 URL: https://github.com/ALXS-GitHub/LazyVim-Config
-Location: C:\Users\alxsm\AppData\Local\nvim
+Location: ~\AppData\Local\nvim
 Description: Ma configuration LazyVim
 État: actual
 
 LazyVim Config
 
-Ma configuration LazyVim
+My LazyVim configuration

@@ -59,6 +59,31 @@ Docusaurus organizes documentation in a hierarchical structure within the `/docs
 
 This section introduces the docusaurus conventions that are followed in this documentation.
 
+##### Front Matter
+
+The front matter is a YAML block at the beginning of each Markdown file that provides metadata about the document. Here are the fields you can include based on Docusaurus implementation:
+
+```yaml
+---
+title: My Document Title # Overwrite the auto-generated title
+description: A brief description of my document. # Overwrite the auto-generated description
+sidebar_position: 1 # Position in the sidebar (lower numbers appear first)
+sidebar_custom_props: # Docusaurus custom props 
+  ...
+---
+```
+
 #### Personal conventions
 
 This section describes the personal conventions that I follow in this documentation and that are sometimes required for custom functionalities.
+
+##### Front Matter
+
+The front matter is a YAML block at the beginning of each Markdown file that provides metadata about the document. Here are the fields you can include based on my personal conventions:
+
+```yaml
+---
+sidebar_custom_props: # Docusaurus custom props 
+  image: /images/wsl.png # Path to the image to show in the DocList and DocItem as the icon
+---
+```

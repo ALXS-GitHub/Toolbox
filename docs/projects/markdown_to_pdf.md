@@ -5,7 +5,7 @@ Dernière modification: 14 janvier 2025 11:47
 Type: personal
 Categorie: dev
 URL: https://github.com/ALXS-GitHub/Markdown-to-Pdf
-Location: C:\Users\alxsm\Desktop\Programmes\Perso\Markdown\Markdown-Theme-VSC-Extension\src\Markdown-to-Pdf
+Location: ~\Desktop\Programmes\Perso\Markdown\Markdown-Theme-VSC-Extension\src\Markdown-to-Pdf
 Description: Conversion md to pdf compatible avec les thèmes
 État: actual
 
