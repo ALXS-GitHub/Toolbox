@@ -102,10 +102,10 @@ const config: Config = {
               label: 'Apps',
               to: '/docs/category/apps',
             },
-            {
-              label: 'Commands',
-              to: '/docs/category/commands',
-            },
+            // {
+            //   label: 'Commands',
+            //   to: '/docs/category/commands',
+            // },
             {
               label: 'Configs',
               to: '/docs/category/configs',
