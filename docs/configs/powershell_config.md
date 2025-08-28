@@ -9,9 +9,13 @@ state: actual
 
 # Powershell Config
 
-Voici tous les outils personnalisés de mon terminal
+Voici tous les outils personnalisés de mon terminal.
 
-## Afficher l’aide
+Vous pouvez accéder au repository GitHub pour plus d'informations ici : [Powershell-Config](https://github.com/ALXS-GitHub/Powershell-Config)
+
+## Scripts
+
+Ma configuration Powershell contient tout un ensemble de scripts très pratiques. Pour afficher la liste des scripts disponibles, vous pouvez utiliser la commande suivante :
 
 ```bash
 myhelp
