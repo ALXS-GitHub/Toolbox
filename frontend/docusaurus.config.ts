@@ -25,6 +25,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'ALXS-GitHub', // Usually your GitHub org/user name.
   projectName: 'Toolbox', // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -99,23 +100,23 @@ const config: Config = {
           items: [
             {
               label: 'Apps',
-              to: '../docs/intro/apps',
+              to: '/docs/category/apps',
             },
             {
               label: 'Commands',
-              to: '../docs/intro/commands',
+              to: '/docs/category/commands',
             },
             {
               label: 'Configs',
-              to: '../docs/intro/configs',
+              to: '/docs/category/configs',
             },
             {
               label: 'Projects',
-              to: '../docs/intro/projects',
+              to: '/docs/category/projects',
             },
             {
               label: 'Tools',
-              to: '../docs/intro/tools',
+              to: '/docs/category/tools',
             },
           ],
         },
