@@ -1,14 +1,15 @@
 import './ColorTag.scss';
-import { TagsMap, TagProps } from '@site/src/constants/tags';
+import { TagProps, TagKeysMap } from '@site/src/constants/tags';
 
 interface ColorTagProps {
   tag: string | null;
+  tagKey?: string;
   customConfig?: TagProps;
 }
 
-const ColorTag: React.FC<ColorTagProps> = ({ tag, customConfig }) => {
+const ColorTag: React.FC<ColorTagProps> = ({ tag, tagKey, customConfig }) => {
   if (!tag) return null;
-  const { color, backgroundColor, borderColor } = customConfig || TagsMap[tag] || TagsMap.default;
+  const { color, backgroundColor, borderColor } = customConfig || TagKeysMap[tagKey] || TagKeysMap.default;
 
   return (
     <div
@@ -19,6 +20,7 @@ const ColorTag: React.FC<ColorTagProps> = ({ tag, customConfig }) => {
         borderColor,
       }}
     >
+      {tagKey && <span className="key">{tagKey}: </span>}
       {tag}
     </div>
   );

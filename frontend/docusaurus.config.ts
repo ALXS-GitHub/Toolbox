@@ -38,37 +38,49 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: ['docusaurus-plugin-sass'],
-
+  
   presets: [
     [
       'classic',
       {
         docs: {
-          path: '../docs',
+          path: '../docs/docs',
           routeBasePath: 'docs',
           sidebarPath: './sidebars.ts',
         },
         // blog: {
         //   showReadingTime: true,
         //   feedOptions: {
-        //     type: ['rss', 'atom'],
-        //     xslt: true,
-        //   },
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: 'warn',
-        //   onInlineAuthors: 'warn',
-        //   onUntruncatedBlogPosts: 'warn',
-        // },
-        theme: {
-          customCss: './src/css/custom.scss',
-        },
-      } satisfies Preset.Options,
+          //     type: ['rss', 'atom'],
+          //     xslt: true,
+          //   },
+          //   // Useful options to enforce blogging best practices
+          //   onInlineTags: 'warn',
+          //   onInlineAuthors: 'warn',
+          //   onUntruncatedBlogPosts: 'warn',
+          // },
+          theme: {
+            customCss: './src/css/custom.scss',
+          },
+        } satisfies Preset.Options,
+      ],
     ],
-  ],
 
-  themeConfig: {
-    // Replace with your project's social card
+    plugins: [
+      'docusaurus-plugin-sass',
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'hardware', // omitted => default instance
+          path: '../docs/hardware',
+          routeBasePath: 'hardware',
+          sidebarPath: './hardwareSidebars.ts',
+        },
+      ],
+    ],
+    
+    themeConfig: {
+      // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Toolbox',
@@ -83,6 +95,7 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {to: '/hardware/intro', label: 'Hardware', position: 'left'},
         // {to: '../docs/tools/scoop', label: 'Tools', position: 'left'},
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -102,22 +115,22 @@ const config: Config = {
               label: 'Apps',
               to: '/docs/category/apps',
             },
-            // {
-            //   label: 'Commands',
-            //   to: '/docs/category/commands',
-            // },
             {
-              label: 'Configs',
-              to: '/docs/category/configs',
+              label: 'Dev',
+              to: '/docs/category/dev',
+            },
+            {
+              label: 'Games',
+              to: '/docs/category/games',
             },
             {
               label: 'Projects',
               to: '/docs/category/projects',
             },
             {
-              label: 'Tools',
-              to: '/docs/category/tools',
-            },
+              label: 'Websites',
+              to: '/docs/category/websites',
+            }
           ],
         },
         {

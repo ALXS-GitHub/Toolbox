@@ -4,26 +4,36 @@ export interface TagProps {
   borderColor: string;
 }
 
-export const TagsMap: Record<string, TagProps> = {
+export const TagKeysMap: Record<string, TagProps> = {
     default: {
         color: '#ffffff',
         backgroundColor: '#333333bb',
         borderColor: '#1a1a1a',
     },
-    dev: {
-        color: '#56ade7ff',
+    origin: {
+        color: '#ffffff',
         backgroundColor: '#007accbb',
         borderColor: '#005a9e',
     },
-    desktop: {
-        color: '#e7d26bff',
-        backgroundColor: '#e5c10abb',
-        borderColor: '#b58f00',
+    use_state: {
+        color: '#ffffff',
+        backgroundColor: '#f27325bb',
+        borderColor: '#c75b1d',
     },
-    design: {
-        color: '#6aeb95ff',
-        backgroundColor: '#07df4fbb',
-        borderColor: '#05b84c',
+    category: {
+        color: '#ffffff',
+        backgroundColor: '#912bf0bb',
+        borderColor: '#6a1b9e',
+    },
+    version: {
+        color: '#ffffff',
+        backgroundColor: '#d72b9bbb',
+        borderColor: '#9b1b5fff',
+    },
+    os: {
+        color: '#ffffff',
+        backgroundColor: '#e33d31bb',
+        borderColor: '#89180bff',
     },
     rating: {
         color: '#000000',

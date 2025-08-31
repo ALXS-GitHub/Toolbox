@@ -1,0 +1,8 @@
+{
+  "label": "Apps",
+  "link": {
+    "type": "generated-index",
+    "description": "List of all the dev applications"
+  },
+  "position": 1
+}

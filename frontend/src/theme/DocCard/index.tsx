@@ -111,11 +111,11 @@ function CardIcon({item}: {item: PropSidebarItemLink}): ReactNode {
   const customProps = (item as any).customProps;
   const hasImage =
     typeof customProps?.image === 'string' && customProps.image.trim() !== '';
-
+  const resolvedImage = useBaseUrl(customProps.image)
   useEffect(() => {
     if (hasImage) {
       const img = new Image();
-      img.src = customProps.image;
+      img.src = resolvedImage;
       img.onload = () => setImageLoaded(true);
       img.onerror = () => setImageLoaded(false);
     } else {
@@ -128,7 +128,7 @@ function CardIcon({item}: {item: PropSidebarItemLink}): ReactNode {
 
   if (imageLoaded === true) {
     return (
-      <Wrapper><img src={customProps.image} alt={item.label ?? ''} /></Wrapper>
+      <Wrapper><img src={resolvedImage} alt={item.label ?? ''} /></Wrapper>
     );
   } else {
     return <Wrapper>{isInternalUrl(item.href) ? '📄️' : '🔗'}</Wrapper>;
