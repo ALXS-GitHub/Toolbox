@@ -6,6 +6,8 @@ location:
 description: Music streaming platform
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/spotify.png
 ---
 
 # Spotify

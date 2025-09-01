@@ -9,6 +9,7 @@ export const COMMON_FRONT_MATTER_KEY_VALUES:
         'work',
         'project',
         'music',
+        'app',
         'game',
         'desktop',
         '3D modeling',

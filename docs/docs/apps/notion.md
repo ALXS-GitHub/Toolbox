@@ -6,6 +6,8 @@ location:
 description: All-in-one workspace for notes, tasks, and project management
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/notion.png
 ---
 
 # Notion

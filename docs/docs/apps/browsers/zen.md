@@ -6,6 +6,8 @@ location:
 description: productivity-oriented web browser forked from Firefox
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/zen.png
 ---
 
 # Zen

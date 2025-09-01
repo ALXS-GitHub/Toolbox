@@ -6,6 +6,8 @@ location:
 description: Calendar and scheduling tool integrated into Notion
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/notion_calendar.png
 ---
 
 # Notion Calendar

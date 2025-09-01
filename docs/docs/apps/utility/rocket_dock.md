@@ -5,7 +5,9 @@ url: https://punklabs.com/rocketdock
 location: C:/Program Files (x86)/RocketDock
 description: Application launcher and dock for Windows desktops
 use_state: active
-rating: 5
+rating: 4
+sidebar_custom_props:
+  image: /images/rocket_dock.png
 ---
 
 # RocketDock

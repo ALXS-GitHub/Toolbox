@@ -6,6 +6,8 @@ location:
 description: Communication platform for text, voice, and video
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/discord.png
 ---
 
 # Discord

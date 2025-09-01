@@ -6,6 +6,8 @@ location:
 description: Application for creating and managing animated and interactive wallpapers
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/wallpaper_engine.png
 ---
 
 # Wallpaper Engine

@@ -7,6 +7,8 @@ description: Professional video editing, color correction, and post-production s
 use_state: sometimes
 rating: 5
 version: 18.5
+sidebar_custom_props: 
+  image: /images/davinci_resolve.png
 ---
 
 # DaVinci Resolve

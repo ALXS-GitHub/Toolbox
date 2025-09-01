@@ -5,7 +5,9 @@ url: https://www.rainmeter.net/
 location: 
 description: Desktop customization tool for widgets and system monitoring
 use_state: active
-rating: 5
+rating: 4
+sidebar_custom_props:
+  image: /images/rainmeter.png
 ---
 
 # Rainmeter

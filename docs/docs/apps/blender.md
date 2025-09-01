@@ -7,6 +7,8 @@ description: Open-source 3D creation suite for modeling, animation, and renderin
 use_state: active
 rating: 5
 version: 4.1
+sidebar_custom_props:
+  image: /images/blender.png
 ---
 
 # Blender

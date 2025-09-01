@@ -6,6 +6,8 @@ location:
 description: A fast, widely-used browser with built-in Google integration.
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/google_chrome.png
 ---
 
 # Google Chrome

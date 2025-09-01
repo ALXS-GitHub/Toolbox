@@ -5,7 +5,8 @@ url: https://www.crucial.fr/support/storage-executive
 location: 
 description: SSD management software for Crucial drives
 use_state: active
-rating: 5
+sidebar_custom_props:
+  image: /images/crucial_storage_executive.png
 ---
 
 # Crucial Storage Executive

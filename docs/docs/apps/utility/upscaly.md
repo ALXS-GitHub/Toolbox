@@ -6,6 +6,8 @@ location:
 description: AI-powered image upscaler for enhancing image resolution
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/upscayl.png
 ---
 
 # Upscayl

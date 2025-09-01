@@ -18,6 +18,8 @@ import type {
 } from '@docusaurus/plugin-content-docs';
 
 import styles from './styles.module.scss';
+import type { PropSidebarCustomProps } from '@site/src/types/customProps';
+import { imageHook } from '@site/src/hooks/imageHook';
 
 function useCategoryItemsPlural() {
   const {selectMessage} = usePluralForm();
@@ -107,21 +109,9 @@ function CardCategory({item}: {item: PropSidebarItemCategory}): ReactNode {
 }
 
 function CardIcon({item}: {item: PropSidebarItemLink}): ReactNode {
-  const [imageLoaded, setImageLoaded] = useState<boolean | null>(null);
-  const customProps = (item as any).customProps;
-  const hasImage =
-    typeof customProps?.image === 'string' && customProps.image.trim() !== '';
-  const resolvedImage = useBaseUrl(customProps.image)
-  useEffect(() => {
-    if (hasImage) {
-      const img = new Image();
-      img.src = resolvedImage;
-      img.onload = () => setImageLoaded(true);
-      img.onerror = () => setImageLoaded(false);
-    } else {
-      setImageLoaded(false);
-    }
-  }, [hasImage, customProps?.image]);
+  // const [imageLoaded, setImageLoaded] = useState<boolean | null>(null);
+  const customProps = item.customProps as PropSidebarCustomProps | undefined;
+  const { imageLoaded, resolvedImage } = imageHook(customProps?.image);
 
   const Wrapper: React.ComponentType<{children: ReactNode}> = ({children}) =>
     <span className={clsx('text--truncate', styles.cardIcon)}>{children}</span>;

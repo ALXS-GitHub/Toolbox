@@ -37,7 +37,7 @@ export const TagKeysMap: Record<string, TagProps> = {
     },
     rating: {
         color: '#000000',
-        backgroundColor: '#ffffffbb',
+        backgroundColor: 'transparent',
         borderColor: '#f1c40f',
     }
 }

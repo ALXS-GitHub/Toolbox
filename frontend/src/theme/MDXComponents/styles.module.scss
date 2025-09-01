@@ -1,0 +1,14 @@
+.imageWrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+    justify-content: flex-end;
+
+    img {
+        margin-right: 10px;
+        height: 60px;
+        width: 60px;
+        object-fit: contain;
+        user-select: none;
+    }
+}

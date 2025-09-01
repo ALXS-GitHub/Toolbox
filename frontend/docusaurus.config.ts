@@ -71,10 +71,19 @@ const config: Config = {
       [
         '@docusaurus/plugin-content-docs',
         {
-          id: 'hardware', // omitted => default instance
+          id: 'hardware',
           path: '../docs/hardware',
           routeBasePath: 'hardware',
           sidebarPath: './hardwareSidebars.ts',
+        },
+      ],
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'games',
+          path: '../docs/games',
+          routeBasePath: 'games',
+          sidebarPath: './gamesSidebars.ts',
         },
       ],
     ],
@@ -96,6 +105,7 @@ const config: Config = {
           label: 'Docs',
         },
         {to: '/hardware/intro', label: 'Hardware', position: 'left'},
+        {to: '/games/intro', label: 'Games', position: 'left'},
         // {to: '../docs/tools/scoop', label: 'Tools', position: 'left'},
         // {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -132,6 +142,14 @@ const config: Config = {
               to: '/docs/category/websites',
             }
           ],
+        },
+        {
+          title: 'Hardware',
+          items: []
+        },
+        {
+          title: 'Games',
+          items: []
         },
         {
           title: 'More',

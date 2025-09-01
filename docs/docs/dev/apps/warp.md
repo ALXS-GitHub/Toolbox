@@ -6,13 +6,14 @@ location: ~/AppData/Roaming/warp/Warp
 description: AI assisted Terminal
 use_state: actual
 os: Windows
+rating: 5
 sidebar_custom_props:
-    image: /images/wsl.png
+    image: /images/warp.png
 ---
 
 # Warp
 
-Warp is a modern terminal application that rethinks the traditional command line experience by combining a graphical UI with terminal functionality. It offers a fast, GPU-accelerated interface, command autocompletion and AI-assisted suggestions, block-based command outputs that are easy to copy and share, and built-in workflows to automate multi-step tasks.
+[Warp](https://www.warp.dev/) is a modern terminal application that rethinks the traditional command line experience by combining a graphical UI with terminal functionality. It offers a fast, GPU-accelerated interface, command autocompletion and AI-assisted suggestions, block-based command outputs that are easy to copy and share, and built-in workflows to automate multi-step tasks.
 
 Customization includes themes and background images, and themes can be stored and managed in the user config directory so you can apply or share custom appearances. Warp also focuses on collaboration and ergonomics, providing searchable command history, a command palette, and features that simplify reproducible workflows and onboarding for teams.
 
@@ -36,7 +37,7 @@ Apart from the accent, foreground, and background colors, the automatic theme cr
 
 ⚠️ When placing a theme in a subfolder with an associated image, don't forget to modify the YAML file to specify the subfolder path of the image (as the path is by default relative to the `/themes` folder, so change the image path to `<subfolder_name>/<image_name>` or you can also use the absolute path).
 
-### Themes Perso
+### Personal themes
 
 My custom Warp themes can be found at the following GitHub repository: [https://github.com/ALXS-GitHub/Warp-Themes](https://github.com/ALXS-GitHub/Warp-Themes). Make sure to clone this repository at `~\AppData\Roaming\warp\Warp\data\themes`, and rename the folder as you want (e.g. `my_themes`).
 

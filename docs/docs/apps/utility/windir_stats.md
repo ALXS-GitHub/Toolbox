@@ -6,6 +6,8 @@ location:
 description: Disk usage statistics viewer and cleanup tool
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/windirstat.png
 ---
 
 # WinDirStat

@@ -6,6 +6,8 @@ location:
 description: Password manager to securely store and manage credentials
 use_state: active
 rating: 5
+sidebar_custom_props:
+  image: /images/bitwarden.png
 ---
 
 # Bitwarden
