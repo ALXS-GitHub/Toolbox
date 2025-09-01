@@ -130,10 +130,6 @@ const config: Config = {
               to: '/docs/category/dev',
             },
             {
-              label: 'Games',
-              to: '/docs/category/games',
-            },
-            {
               label: 'Projects',
               to: '/docs/category/projects',
             },
