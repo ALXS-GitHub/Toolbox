@@ -113,12 +113,12 @@ function CardIcon({item}: {item: PropSidebarItemLink}): ReactNode {
   const customProps = item.customProps as PropSidebarCustomProps | undefined;
   const { imageLoaded, resolvedImage } = imageHook(customProps?.image);
 
-  const Wrapper: React.ComponentType<{children: ReactNode}> = ({children}) =>
-    <span className={clsx('text--truncate', styles.cardIcon)}>{children}</span>;
+  const Wrapper: React.ComponentType<{children: ReactNode, className?: string}> = ({children, className}) =>
+    <span className={clsx('text--truncate', styles.cardIcon, className)}>{children}</span>;
 
   if (imageLoaded === true) {
     return (
-      <Wrapper><img src={resolvedImage} alt={item.label ?? ''} /></Wrapper>
+      <Wrapper className={styles.hasImage}><img src={resolvedImage} alt={item.label ?? ''} /></Wrapper>
     );
   } else {
     return <Wrapper>{isInternalUrl(item.href) ? '📄️' : '🔗'}</Wrapper>;

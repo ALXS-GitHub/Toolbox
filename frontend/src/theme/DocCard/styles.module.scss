@@ -33,4 +33,7 @@
   place-items: center;
   max-width: 26px;
   max-height: 26px;
+  &.hasImage {
+    margin-right: 0.3rem;
+  }
 }

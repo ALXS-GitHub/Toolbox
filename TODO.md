@@ -3,6 +3,7 @@
 ## Important
 
 - [ ] Check how to add a custom JSX in the markdown
+- [ ] Add code blocks coloration.
 - [ ] Complete documentation for all the stuff I have on this computer.
 - [ ] Convert all to english (because default from Notion where written in French). Make sure to keep a copy of the French version in case we later use them with docusaurus multi language functionality.
 

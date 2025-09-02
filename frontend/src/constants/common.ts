@@ -22,6 +22,7 @@ export const COMMON_FRONT_MATTER_KEY_VALUES:
         'personal',
         'installed',
         'modified',
+        'web',
         'other'
     ],
     [DOC_FRONT_MATTER_EXTENSION_KEYS.USE_STATE]: [

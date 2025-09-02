@@ -30,6 +30,8 @@ First make sure to put the content of this repository in the correct location, i
 
 Also make sure that [Oh-My-Posh](https://ohmyposh.dev/) is installed and configured correctly.
 
+I am also using a [Nerd Font](https://www.nerdfonts.com/) which is usually recommended with Oh-My-Posh. I personally use the [`Hack Nerd Font`](https://www.nerdfonts.com/font-downloads).
+
 In order to use these custom scripts and themes, you first need to make sure your `Microsoft.PowerShell_profile.ps1` file is loading them correctly. This script is usually located in `~\Documents\PowerShell`, or you can find it with the `$PROFILE` variable. Make sure this script is pointing to the correct location of your custom scripts. For example, it should contain: 
 
 ```sh
