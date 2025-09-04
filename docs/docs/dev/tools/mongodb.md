@@ -1,5 +1,5 @@
 ---
-origin: downloaded
+origin: installed
 category: dev
 url: https://www.mongodb.com/
 location: 

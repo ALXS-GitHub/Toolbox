@@ -9,6 +9,6 @@ sidebar_custom_props:
   image: /images/wsl.png
 ---
 
-# Wsl Dotfiles
+# Wsl Config
 
 Contains the configuration for the `.bashrc` and `.inputrc` files for my wsl.
