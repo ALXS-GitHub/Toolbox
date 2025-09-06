@@ -3,5 +3,6 @@
   "link": {
     "type": "generated-index",
     "description": "List of all the configs"
-  }
+  },
+  "position": 1
 }
