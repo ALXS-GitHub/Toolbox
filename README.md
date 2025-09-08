@@ -4,6 +4,10 @@ This is my personal toolbox, containing all programs, commands, apps, and many o
 
 All the documentation is made using Markdown files, and is built using the fantastic [Docusaurus](https://docusaurus.io/fr/) tool.
 
+You can find the documentation hosted on GitHub Pages at: https://alxs-github.github.io/Toolbox/.
+
+Warning, this is still a work in progress, and many things are missing or incomplete.
+
 ## Quick Start
 
 This project can be run by executing the following command:

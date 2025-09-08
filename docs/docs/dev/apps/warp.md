@@ -42,3 +42,11 @@ Apart from the accent, foreground, and background colors, the automatic theme cr
 My custom Warp themes can be found at the following GitHub repository: [https://github.com/ALXS-GitHub/Warp-Themes](https://github.com/ALXS-GitHub/Warp-Themes). Make sure to clone this repository at `~\AppData\Roaming\warp\Warp\data\themes`, and rename the folder as you want (e.g. `my_themes`).
 
 I have created a theme called `half_one_dark_modded` which is a modified version of the `half_one_dark` theme that I use by default, so you can refer to this theme to create other color themes.
+
+## Useful Shortcuts
+
+- `Ctrl + Shift + P`: Open the command palette to quickly search and execute commands.
+- `Ctrl + I`: Toggle Agent Mode.
+- `Ctrl + L`: Clear the terminal screen.
+- `Ctrl + Shift + T`: Open a new tab.
+- `Ctrl + (Shift) + Tab`: Switch to the next (previous) tab.

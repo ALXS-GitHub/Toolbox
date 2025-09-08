@@ -50,7 +50,7 @@ sidebar_custom_props:
 ## Limitations
 
 - Not intended for high‑performance or large enterprise networking.
-- No granular ACLs—security is mainly by network password.
+- No granular ACLs, security is mainly by network password.
 - Traffic goes over the public internet; don’t rely on it for sensitive corporate data without additional encryption layers.
 
 That’s all you generally need: create or join, launch the game/app, and select LAN.

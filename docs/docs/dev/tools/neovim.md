@@ -20,7 +20,7 @@ Modal editing lets you navigate and manipulate text with high precision and low 
 - Performance: lean core, responsive even in large files.
 - Extensibility: configure in Lua; rich plugin ecosystem (LSP, completion, formatting, debugging, Git integration, fuzzy finding, status lines, etc.).
 - Consistency & portability: same editor inside terminals, SSH sessions, or integrated shells on Windows + WSL.
-- IDE features without the heavy footprint—LSP gives jump‑to‑definition, diagnostics, code actions; Treesitter gives semantic highlighting and structural selections.
+- IDE features without the heavy footprint, LSP gives jump‑to‑definition, diagnostics, code actions; Treesitter gives semantic highlighting and structural selections.
 
 ## Installation (Windows)
 
@@ -54,7 +54,7 @@ Representative essentials (muscle‑memory starters):
 - Search: `/pattern` forward, `n` next, `N` previous; `%` jump matching bracket.
 - Splits & buffers: `:vsplit`, `:split`, move with `<C-w> h/j/k/l`, list buffers `:ls`, switch `:b <number>`.
 
-These are examples only—full breadth (registers, macros, visual modes, text objects) is in the quickref and `:help` system. Neovim’s built‑in help is exhaustive: try `:help motion.txt` or `:help lua-guide` for deeper dives.
+These are examples only, full breadth (registers, macros, visual modes, text objects) is in the quickref and `:help` system. Neovim’s built‑in help is exhaustive: try `:help motion.txt` or `:help lua-guide` for deeper dives.
 
 ## Summary
 
