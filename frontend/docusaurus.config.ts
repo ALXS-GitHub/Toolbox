@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Toolbox',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Personal documentation of my tools, configs, apps, projects, games, hardware, and more.',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

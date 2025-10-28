@@ -2,15 +2,14 @@
 
 ## Important
 
-- [ ] Check how to add a custom JSX in the markdown
-- [ ] Add code blocks coloration.
-- [ ] Complete documentation for all the stuff I have on this computer.
-- [ ] Convert all to english (because default from Notion where written in French). Make sure to keep a copy of the French version in case we later use them with docusaurus multi language functionality.
+- [ ] Add a search feature
+- [ ] Continue documenting
 
 ## Medium
 
+- [ ] Check how to add a custom JSX in the markdown
 - [ ] Add hardware documentation (my Pc, + accessories)
-- [ ] Check image path and links between files compatibility.
+- [ ] Add a french version?
 
 ## Low
 
@@ -26,3 +25,5 @@
 - [X] Add specific icons/images for each doc
 - [X] Make custom components for states like "category", "state", "type", "rating", and other... So they are nice looking on each page. Find a way to make this easily configurable and extracted from each doc
 - [X] Enhance metadata component.
+- [X] Add code blocks coloration.
+- [X] Check image path and links between files compatibility.
