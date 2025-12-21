@@ -37,13 +37,6 @@ cd frontend
 npm run deploy
 ```
 
-Then, build and deploy the app using the following command:
-
-```bash
-cd frontend
-npm run deploy
-```
-
 If any errors are detected, please make sure to resolve them before trying again.
 
 ## Documentation

@@ -1,5 +1,17 @@
 # TODO
 
+## Docs to add
+
+- [ ] Ai tools both web based and cli (or other) -> ChatGPT, Gemini, Claude, Codex, Claude Code, GitHub Copilot, etc.
+- [ ] Antigravity, Cursor
+- [ ] shadcn
+- [ ] bun
+- [ ] supabase
+- [ ] netlify
+- [ ] spotify manager (even if the repo is private, just indicate it's private, but still document it)
+- [ ] advent of code repo
+- [ ] Portfolio website repo
+
 ## Important
 
 - [ ] Add a search feature
