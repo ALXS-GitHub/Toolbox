@@ -3,11 +3,15 @@ origin: installed
 category: dev
 url: https://github.com/badmotorfinger/z
 description: Directory jumper based on frecency
-use_state: active
+use_state: replaced
 os: Windows
 sidebar_custom_props:
     image: /images/z.png
 ---
+
+:::warning Replaced
+This tool has been replaced by [zoxide](/docs/dev/tools/cmd/zoxide), which is faster, cross-shell, and actively maintained. The content below is kept for reference.
+:::
 
 # z
 
