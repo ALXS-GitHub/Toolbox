@@ -24,6 +24,12 @@ function localizedPath(path: string, to: string): string {
   return rootUrl + (to === defaultLocale ? '' : `${to}/`) + rest;
 }
 
+/** The locale the URL itself points to, whatever build is serving it. */
+function urlLocale(path: string): string {
+  const other = locales.find((l) => l !== defaultLocale && (path === `${rootUrl}${l}` || path.startsWith(`${rootUrl}${l}/`)));
+  return other ?? defaultLocale;
+}
+
 function read(): string | null {
   try {
     return localStorage.getItem(KEY);
@@ -46,7 +52,10 @@ if (ExecutionEnvironment.canUseDOM) {
   const browser = (navigator.languages?.[0] ?? navigator.language ?? '').slice(0, 2).toLowerCase();
   const wanted = saved ?? (locales.includes(browser) ? browser : defaultLocale);
   if (!saved) save(wanted);
-  if (wanted !== currentLocale && locales.includes(wanted)) {
+  // A page served by another locale's build (the server's 404 page, typically) must not redirect:
+  // the URL already carries a locale, and rewriting it would stack prefixes (`/fr/fr/fr/…`).
+  const consistent = urlLocale(pathname) === currentLocale;
+  if (consistent && wanted !== currentLocale && locales.includes(wanted)) {
     window.location.replace(localizedPath(pathname, wanted) + search + hash);
   }
 
