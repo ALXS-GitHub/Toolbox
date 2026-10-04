@@ -1,11 +1,11 @@
 ---
-description: Un terminal moderne avec des blocs de commandes — mon terminal de tous les jours jusqu'à ce que j'écrive le mien.
+description: Un terminal moderne avec des blocs de commandes — en pause depuis que je suis passé au mien.
 url: "https://www.warp.dev/"
-status: archived
-replaced_by: CortX
+status: paused
 kind: app
 platforms: [windows, macos, linux]
 image: warp.png
+sidebar_position: 5
 ---
 
 # Warp
@@ -14,7 +14,7 @@ image: warp.png
 un **bloc** qu'on peut sélectionner, copier ou partager, l'édition fonctionne comme dans un éditeur de texte, une
 palette donne accès à tout, et un assistant d'IA est intégré. Il a longtemps été mon terminal de tous les jours.
 
-## Pourquoi j'ai arrêté
+## Pourquoi je ne l'utilise plus en ce moment
 
 Je l'ai remplacé par le terminal intégré à [CortX](/projects/cortx), ma propre application. Ce que j'aimais dans Warp
 s'y retrouve — les blocs de commandes, des raccourcis à la Warp, les divisions, une notification quand une longue

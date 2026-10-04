@@ -82,7 +82,7 @@ dossier. `cortx my_help` affiche l'aide-mémoire de mes commandes et raccourcis.
 
 ## Le terminal
 
-Mon terminal, c'est **celui de [CortX](/projects/cortx)**, que j'ai écrit pour remplacer [Warp](/archive/dev/warp) :
+Mon terminal, c'est **celui de [CortX](/projects/cortx)**, que j'ai écrit pour remplacer [Warp](/tools/dev/terminal/warp) :
 des onglets en barre latérale, les commandes affichées en blocs, des suggestions tirées de l'historique, une
 notification quand une longue commande se termine, et des sessions qui reviennent comme je les ai laissées, chaque
 onglet dans son dossier. Il utilise la police Hack Nerd Font et un thème sombre assorti à la palette de mon prompt.

@@ -1,11 +1,11 @@
 ---
-description: A modern terminal with command blocks — my everyday terminal until I built my own.
+description: A modern terminal with command blocks — on hold since I switched to my own.
 url: "https://www.warp.dev/"
-status: archived
-replaced_by: CortX
+status: paused
 kind: app
 platforms: [windows, macos, linux]
 image: warp.png
+sidebar_position: 5
 ---
 
 # Warp
@@ -14,7 +14,7 @@ image: warp.png
 **block** you can select, copy or share, editing works like in a text editor, a command palette gives access to
 everything, and an AI assistant is built in. It was my everyday terminal for a long time.
 
-## Why I stopped
+## Why I am not using it right now
 
 I replaced it with the terminal built into [CortX](/projects/cortx), my own app. What I liked in Warp is there —
 command blocks, Warp-like shortcuts, splits, notifications when a long command finishes — with what Warp could not give

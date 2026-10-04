@@ -81,7 +81,7 @@ commands and shortcuts.
 
 ## The terminal
 
-My terminal is **the one in [CortX](/projects/cortx)**, which I wrote to replace [Warp](/archive/dev/warp): tabs in a
+My terminal is **the one in [CortX](/projects/cortx)**, which I wrote to replace [Warp](/tools/dev/terminal/warp): tabs in a
 sidebar, commands shown as blocks, suggestions from history, a notification when a long command finishes, and sessions
 that come back as I left them, each tab in its folder. It uses the Hack Nerd Font and a dark theme matching my prompt's
 palette. [Windows Terminal](/tools/dev/terminal/windows-terminal) stays configured as a fallback (PowerShell 7 by

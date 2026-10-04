@@ -32,7 +32,7 @@ couleurs, barres de progression et interfaces en mode texte se comportent comme 
 Terminal ajoute les onglets, les divisions, les raccourcis à la Warp, les thèmes au format de Warp et la restauration
 des sessions : à la réouverture, chaque onglet retrouve son dossier et la fin de sa sortie précédente, sans rien
 relancer. Avec l'intégration au shell, les onglets suivent le dossier courant et signalent la fin des commandes
-longues. C'est mon terminal de tous les jours : il a remplacé [Warp](/archive/dev/warp).
+longues. C'est mon terminal de tous les jours : il a remplacé [Warp](/tools/dev/terminal/warp).
 
 **Scripts, outils et alias.** CortX garde des scripts globaux paramétrables, que je lance depuis l'application, depuis
 son interface en mode texte ou avec `cortx run`. Il tient aussi un registre des outils et applications de la machine,
