@@ -441,7 +441,7 @@
   },
   {
     "from": "/docs/websites/dev/stitch",
-    "to": "/tools/ai/specialized/stitch"
+    "to": "/archive/ai/stitch"
   },
   {
     "from": "/docs/websites/google",
@@ -522,5 +522,9 @@
   {
     "from": "/archive/system/radmin-vpn",
     "to": "/tools/web/communication/radmin-vpn"
+  },
+  {
+    "from": "/tools/ai/specialized/stitch",
+    "to": "/archive/ai/stitch"
   }
 ]

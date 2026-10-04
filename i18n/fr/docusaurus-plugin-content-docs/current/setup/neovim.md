@@ -23,7 +23,7 @@ nvim/
 │   ├── options.lua       # options de l'éditeur
 │   ├── keymaps.lua       # raccourcis
 │   └── autocmds.lua      # actions automatiques
-└── lua/plugins/          # un fichier par thème : code, couleurs, Copilot, édition, Treesitter, interface
+└── lua/plugins/          # un fichier par thème : code, couleurs, édition, Treesitter, interface
 ```
 
 Les extras de LazyVim ne sont pas choisis dans l'interface (`:LazyExtras`) mais importés directement dans `lazy.lua` :
@@ -33,16 +33,13 @@ ils sont ainsi versionnés avec le reste.
 |---|---|
 | TypeScript, JSON, Tailwind, Rust, Python, Go | le support de mes langages (serveurs de langage, formatage) |
 | ESLint, Prettier | vérification et mise en forme du web |
-| Copilot, Copilot Chat | les suggestions et le chat de [GitHub Copilot](/archive/ai/github-copilot) |
 | yanky, dial, harpoon2, inc-rename | presse-papiers amélioré, incrément intelligent, marque-pages de fichiers, renommage en direct |
 | mini-hipatterns, treesitter-context | couleurs surlignées, contexte de la fonction en haut de l'écran |
 
 ## Ce que j'ai ajusté
 
-- **Complétion et Copilot.** La complétion (blink.cmp) n'insère rien sans moi et affiche la documentation après un court
-  délai ; son texte fantôme est désactivé, car c'est Copilot qui propose les suggestions en ligne. `Ctrl+J` accepte une
-  suggestion, `Ctrl+]` et `Ctrl+[` passent de l'une à l'autre, et la suggestion se cache dès que le menu de complétion
-  s'ouvre, pour ne pas avoir deux propositions superposées.
+- **Complétion.** La complétion (blink.cmp) n'insère rien sans moi, affiche la documentation après un court délai,
+  et montre l'élément sélectionné en texte fantôme.
 - **Couleurs.** Rosé Pine par défaut, avec la transparence et quelques retouches pour les diffs et les titres Markdown.
   D'autres thèmes (Catppuccin, Tokyo Night, Kanagawa, Nightfox) se chargent à la demande depuis le sélecteur de
   LazyVim.

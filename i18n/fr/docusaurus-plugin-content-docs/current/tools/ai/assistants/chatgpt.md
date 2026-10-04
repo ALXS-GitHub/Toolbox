@@ -19,8 +19,8 @@ Les deux assistants se recouvrent largement, et je passe de l'un à l'autre selo
 question, une recherche sur le web, une image à générer, une conversation à la voix. Avoir deux modèles différents
 sous la main est utile en soi : quand l'un bute, l'autre voit souvent le problème autrement.
 
-L'abonnement ChatGPT donne aussi accès à [Codex](/tools/ai/coding/codex), l'agent de code d'OpenAI, que j'utilise en
-ligne de commande à côté de Claude Code.
+L'abonnement ChatGPT donne aussi accès à [Codex](/tools/ai/coding/codex), l'agent d'OpenAI, dont je me sers
+surtout pour générer des images.
 
 ## Ce qu'il a remplacé
 

@@ -1,5 +1,5 @@
 ---
-description: "OpenAI's coding agent, which I use on the command line next to Claude Code."
+description: "OpenAI's agent, which I mostly use to generate images."
 url: "https://openai.com/codex/"
 status: active
 kind: cli
@@ -11,14 +11,14 @@ sidebar_position: 2
 # Codex
 
 Codex is OpenAI's coding agent: like [Claude Code](/tools/ai/coding/claude-code), it works inside a project, reads and
-changes code, runs commands. I mostly use it on the command line (the `codex` CLI), included in my
+changes code, runs commands. I use it on the command line (the `codex` CLI), included in my
 [ChatGPT](/tools/ai/assistants/chatgpt) subscription.
 
 ## How I use it
 
-Codex is my second agent. I use it when a different view helps — reviewing a change made with Claude Code, unblocking a
-problem the other one keeps circling around — and for what it does well on top, such as generating images from a
-detailed brief, for instance thumbnails for my game [Pack a K-Pop Idol](/projects/pack-a-kpop-idol).
+I use it **mostly to create images**: Codex generates and edits visuals from a detailed brief, right in the project
+folder, which is handy to produce illustrations, icons or presentation visuals for my projects. As a second coding
+agent next to Claude Code, I use it very little.
 
 It runs with a medium reasoning level by default and, on Windows, in a sandbox that limits what it can change outside
 the project. Each folder has to be marked as "trusted" before it works there freely. Its sessions show up in

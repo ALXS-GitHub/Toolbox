@@ -22,4 +22,4 @@ from one image to the next. It was first available on its own; it is now part of
 ## Around Gemini
 
 Google offers the same model in other tools: [NotebookLM](/tools/ai/specialized/notebooklm) to work on your own
-documents, and [Google Stitch](/tools/ai/specialized/stitch) to generate interface mock-ups.
+documents, and [Google Stitch](/archive/ai/stitch) to generate interface mock-ups.

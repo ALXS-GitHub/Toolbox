@@ -19,8 +19,8 @@ The two assistants overlap a lot, and I switch from one to the other depending o
 question, a web search, an image to generate, a voice conversation. Having two different models at hand is useful in
 itself: when one gets stuck, the other often sees the problem differently.
 
-The ChatGPT subscription also gives access to [Codex](/tools/ai/coding/codex), OpenAI's coding agent, which I use on the
-command line next to Claude Code.
+The ChatGPT subscription also gives access to [Codex](/tools/ai/coding/codex), OpenAI's agent, which I mostly
+use to generate images.
 
 ## What it replaced
 

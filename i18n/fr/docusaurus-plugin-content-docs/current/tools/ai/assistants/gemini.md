@@ -23,4 +23,4 @@ là que je l'utilise.
 ## Autour de Gemini
 
 Google décline le même modèle dans d'autres outils : [NotebookLM](/tools/ai/specialized/notebooklm) pour travailler
-sur ses propres documents, et [Google Stitch](/tools/ai/specialized/stitch) pour générer des maquettes d'interface.
+sur ses propres documents, et [Google Stitch](/archive/ai/stitch) pour générer des maquettes d'interface.

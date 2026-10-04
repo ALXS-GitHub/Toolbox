@@ -23,7 +23,7 @@ nvim/
 │   ├── options.lua       # editor options
 │   ├── keymaps.lua       # shortcuts
 │   └── autocmds.lua      # automatic actions
-└── lua/plugins/          # one file per topic: coding, colours, Copilot, editing, Treesitter, UI
+└── lua/plugins/          # one file per topic: coding, colours, editing, Treesitter, UI
 ```
 
 LazyVim extras are not picked in the interface (`:LazyExtras`) but imported straight in `lazy.lua`: that way they are
@@ -33,16 +33,13 @@ versioned with the rest.
 |---|---|
 | TypeScript, JSON, Tailwind, Rust, Python, Go | support for my languages (language servers, formatting) |
 | ESLint, Prettier | web linting and formatting |
-| Copilot, Copilot Chat | [GitHub Copilot](/archive/ai/github-copilot) suggestions and chat |
 | yanky, dial, harpoon2, inc-rename | better clipboard, smart increment, file bookmarks, live rename |
 | mini-hipatterns, treesitter-context | highlighted colours, current function context at the top of the screen |
 
 ## What I adjusted
 
-- **Completion and Copilot.** Completion (blink.cmp) inserts nothing without me and shows documentation after a short
-  delay; its ghost text is turned off, since Copilot provides the inline suggestions. `Ctrl+J` accepts a suggestion,
-  `Ctrl+]` and `Ctrl+[` cycle through them, and the suggestion hides as soon as the completion menu opens, so two
-  proposals never overlap.
+- **Completion.** Completion (blink.cmp) inserts nothing without me, shows documentation after a short delay, and
+  previews the selected item as ghost text.
 - **Colours.** Rosé Pine by default, with transparency and a few tweaks for diffs and Markdown headings. Other themes
   (Catppuccin, Tokyo Night, Kanagawa, Nightfox) load on demand from LazyVim's picker.
 - **Editing.** nvim-surround to wrap a selection, Markdown rendered right in the editor, automatic closing of HTML
