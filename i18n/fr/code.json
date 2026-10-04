@@ -614,10 +614,10 @@
     "message": "Deux lignes sous le prompt : dossier, branche, modèle, effort, contexte utilisé, quotas et coût. Vert sous la moitié du contexte, rouge quand il est temps de repartir d'une session propre."
   },
   "home.cast.harness.codex.title": {
-    "message": "Un second agent"
+    "message": "Les images, avec Codex"
   },
   "home.cast.harness.codex.text": {
-    "message": "Codex relit ce que Claude Code a écrit, débloque les problèmes sur lesquels il tourne en rond, et ses sessions apparaissent dans CortX à côté de celles de Claude."
+    "message": "Codex, l'agent d'OpenAI, me sert surtout à créer des images : illustrations, icônes et visuels générés directement dans le projet. Ses sessions apparaissent dans CortX à côté de celles de Claude."
   },
   "home.cast.harness.browser.me": {
     "message": "Je clique"

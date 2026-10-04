@@ -461,12 +461,12 @@ function Harness(): ReactNode {
             <span className={s.duoLink} />
             <span className={s.duoCodex}>{'{}'}</span>
           </div>
-          <h4>{translate({id: 'home.cast.harness.codex.title', message: 'A second agent'})}</h4>
+          <h4>{translate({id: 'home.cast.harness.codex.title', message: 'Images by Codex'})}</h4>
           <p>
             {translate({
               id: 'home.cast.harness.codex.text',
               message:
-                'Codex reviews what Claude Code wrote, unblocks the problems it keeps circling around, and its sessions show up in CortX next to Claude’s.',
+                "Codex, OpenAI's agent, is mostly how I create images: illustrations, icons and visuals generated straight into the project. Its sessions show up in CortX next to Claude's.",
             })}
           </p>
         </div>
