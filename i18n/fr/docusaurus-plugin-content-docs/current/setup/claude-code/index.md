@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-sidebar_label: Harness Claude Code
+sidebar_label: Vue d'ensemble
 description: Tout ce qui entoure Claude Code pour en faire mon assistant de tous les jours, et comment les pièces s'assemblent.
 ---
 

@@ -215,6 +215,12 @@ const LEGEND = {{ blocks: {{ blue: "{t["legend"]["blue"]}", green: "{t["legend"]
 
 BUILDERS = {"harness-overview": harness_overview, "cortx-architecture": cortx_architecture}
 
+sys.path.insert(0, str(HERE))
+import harness  # noqa: E402  (diagrams of the harness section)
+
+T.update(harness.T)
+BUILDERS.update(harness.builders(node))
+
 
 def make(name, lang):
     body, links = BUILDERS[name](T[name][lang])

@@ -302,5 +302,9 @@
   "sidebar.archive.category.Projects": {
     "message": "Projets",
     "description": "The label for category 'Projects' in sidebar 'archive'"
+  },
+  "sidebar.setup.category.Claude Code harness": {
+    "message": "Harness Claude Code",
+    "description": "The label for category 'Claude Code harness' in sidebar 'setup'"
   }
 }

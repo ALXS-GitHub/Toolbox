@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-sidebar_label: Claude Code harness
+sidebar_label: Overview
 description: Everything around Claude Code that turns it into my everyday assistant, and how the pieces fit together.
 ---
 

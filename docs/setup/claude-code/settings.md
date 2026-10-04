@@ -1,0 +1,59 @@
+---
+sidebar_position: 2
+description: Claude Code's settings, the CLAUDE.md instructions, permissions and memory.
+---
+
+# Settings and instructions
+
+Claude Code reads its configuration at two levels: technical **settings** in `settings.json`, and natural-language
+**instructions** in `CLAUDE.md` files. The former decide what the tool does, the latter how the agent works. This
+page goes through mine, then permissions and memory, which complete the picture without being versioned.
+
+## settings.json
+
+The file is short: each key is there for a specific reason, and none holds a secret.
+
+| Setting | Value | Why |
+|---|---|---|
+| `statusLine` | a PowerShell script | the two status lines described in [Status line](/setup/claude-code/statusline) |
+| `modelSettings` | `high` effort for the main model | a high reasoning level by default, without repeating it every session |
+| `language` | `French` | the agent answers in French, whatever the language of the code |
+| `voice` | enabled, "hold" mode | dictate a request while holding a key |
+| `theme` | `dark` | |
+| `autoUpdatesChannel` | `latest` | new versions as soon as they ship |
+| `agentPushNotifEnabled` | `true` | a notification when a background agent is done |
+| `deniedMcpServers` | a list of connectors | the claude.ai connectors that duplicate a CLI |
+| `syncClaudeAiSkills` | `false` | git stays the single source of skills (see [claude.ai](/setup/claude-code/claude-ai)) |
+
+Denying connectors deserves an explanation. Connectors added on claude.ai (mail, calendar, ticket manager,
+database…) are also offered in Claude Code. When a service has a good CLI, the agent uses it better: it reads the
+help, chains commands and gets JSON back. `deniedMcpServers` therefore removes from the terminal the connectors that
+have a command-line equivalent, and keeps the others.
+
+Some keys are forbidden in this file by the [hook](/setup/claude-code/guardrails): `env`, `apiKeyHelper`, `mcpServers`
+and the credential helpers. They are meant to carry secrets, which have no place in a repository.
+
+## Instructions: CLAUDE.md
+
+The global `CLAUDE.md` applies to every session. Mine boils down to a few rules: the context is strictly personal,
+a single e-mail address is to be used everywhere, and answers are given in the terminal rather than as a published
+web page, unless I explicitly ask for one.
+
+Each project can have its own `CLAUDE.md` at the root of the repository. It holds what cannot be guessed by reading
+the code: how to validate a change (the typecheck and build commands), the commit convention, what must never be
+brought back. On some projects the rule is to commit and push straight to `main` once the build passes; on others,
+to always ask.
+
+## Permissions
+
+I run Claude Code without confirming each command: a shell alias opens it in that mode, and a setting hides the
+warning that comes with it. It is a comfort choice, balanced by guardrails that do not depend on vigilance: nothing
+sensitive is in the repository, every commit is checked and signed, and the instructions forbid irreversible actions
+without my agreement. Permissions granted project by project pile up in a `settings.local.json`, never versioned.
+
+## Memory
+
+Claude Code keeps a memory per project: a `MEMORY.md` file is the index, loaded at the start of every session, and
+each memory is a small separate file (a preference, a decision, a mistake not to repeat). The agent adds to it when I
+correct it or when a decision is made. It stays on the machine: it holds too much personal context for a repository,
+even a private one.
