@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Assistants, coding agents and specialized AI tools I use."
+  },
+  "customProps": {
+    "image": "icons/sparkles.svg"
   }
 }

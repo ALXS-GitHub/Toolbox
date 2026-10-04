@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Writing and typesetting documents."
+  },
+  "customProps": {
+    "image": "icons/file-text.svg"
   }
 }

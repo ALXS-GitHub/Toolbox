@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "JavaScript and Python runtimes and package managers."
+  },
+  "customProps": {
+    "image": "icons/package.svg"
   }
 }

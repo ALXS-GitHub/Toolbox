@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Backends, hosting and containers."
+  },
+  "customProps": {
+    "image": "icons/cloud.svg"
   }
 }

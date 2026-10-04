@@ -1,5 +1,8 @@
 {
   "label": "System",
   "position": 4,
-  "collapsed": true
+  "collapsed": true,
+  "customProps": {
+    "image": "icons/monitor-cog.svg"
+  }
 }

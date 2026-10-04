@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Libraries and tools to build web and desktop apps."
+  },
+  "customProps": {
+    "image": "icons/app-window.svg"
   }
 }

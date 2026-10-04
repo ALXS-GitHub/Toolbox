@@ -1,5 +1,8 @@
 {
   "label": "Web & leisure",
   "position": 5,
-  "collapsed": true
+  "collapsed": true,
+  "customProps": {
+    "image": "icons/globe.svg"
+  }
 }

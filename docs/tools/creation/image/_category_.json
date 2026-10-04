@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Image editing and 3D."
+  },
+  "customProps": {
+    "image": "icons/image.svg"
   }
 }

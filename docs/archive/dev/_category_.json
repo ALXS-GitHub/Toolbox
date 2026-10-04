@@ -1,5 +1,8 @@
 {
   "label": "Development",
   "position": 2,
-  "collapsed": true
+  "collapsed": true,
+  "customProps": {
+    "image": "icons/code.svg"
+  }
 }

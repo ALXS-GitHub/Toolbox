@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Programming languages I write."
+  },
+  "customProps": {
+    "image": "icons/braces.svg"
   }
 }

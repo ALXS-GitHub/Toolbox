@@ -1,5 +1,8 @@
 {
   "label": "Projects",
   "position": 7,
-  "collapsed": true
+  "collapsed": true,
+  "customProps": {
+    "image": "icons/rocket.svg"
+  }
 }

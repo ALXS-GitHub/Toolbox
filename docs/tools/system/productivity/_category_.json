@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Apps that organize my work and my machine."
+  },
+  "customProps": {
+    "image": "icons/zap.svg"
   }
 }

@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Code editors."
+  },
+  "customProps": {
+    "image": "icons/file-code.svg"
   }
 }

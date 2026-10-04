@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Web browsers."
+  },
+  "customProps": {
+    "image": "icons/compass.svg"
   }
 }

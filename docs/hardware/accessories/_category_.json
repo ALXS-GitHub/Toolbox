@@ -1,9 +1,12 @@
 {
   "label": "Accessories",
-  "position": 2,
+  "position": 3,
   "collapsed": true,
   "link": {
     "type": "generated-index",
     "description": "Keyboard, mouse and headset."
+  },
+  "customProps": {
+    "image": "icons/keyboard.svg"
   }
 }

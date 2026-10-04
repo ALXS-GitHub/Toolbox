@@ -5,5 +5,8 @@
   "link": {
     "type": "generated-index",
     "description": "Terminal emulators, prompt and package manager."
+  },
+  "customProps": {
+    "image": "icons/square-terminal.svg"
   }
 }
