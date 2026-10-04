@@ -33,7 +33,7 @@
   },
   {
     "from": "/docs/ai/mistral",
-    "to": "/tools/ai/assistants/mistral"
+    "to": "/archive/ai/mistral"
   },
   {
     "from": "/docs/ai/nanobanana",
@@ -161,7 +161,7 @@
   },
   {
     "from": "/docs/apps/utility/upscaly",
-    "to": "/tools/ai/specialized/upscayl"
+    "to": "/tools/creation/image/upscayl"
   },
   {
     "from": "/docs/apps/utility/wallpaper_engine",
@@ -494,5 +494,9 @@
   {
     "from": "/tools/ai/specialized/nano-banana",
     "to": "/tools/ai/assistants/gemini"
+  },
+  {
+    "from": "/tools/ai/specialized/upscayl",
+    "to": "/tools/creation/image/upscayl"
   }
 ]
