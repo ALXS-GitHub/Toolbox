@@ -1,6 +1,6 @@
 ---
-description: A modern markup-based document preparation system
-url: "https://typst.app/home/"
+description: "Documents laid out with a simple language, compiled instantly."
+url: "https://typst.app/"
 status: active
 kind: language
 image: typst.png
@@ -8,30 +8,24 @@ image: typst.png
 
 # Typst
 
-**[Typst](https://typst.app/)** is a modern markup‑based document preparation system written in Rust. It focuses on intuitive, readable source syntax and fast, deterministic rendering, while offering powerful layout primitives and programmatic customization. Typst aims to combine the expressiveness and precision of systems like LaTeX with a more ergonomic authoring experience.
+Typst is a document layout language, designed as a modern successor to LaTeX: Markdown-like syntax for text, a real
+programming language for templates, and compilation so fast that the preview updates as you type.
 
-Typst supports detailed document arrangement: grids, flexible columns, precise box/layout control, custom styles, macros (written in Typst's own language), and template composition. Styling and typography are first‑class: you can control fonts, spacing, color, and micro‑typography with concise declarations. Because Typst is implemented in Rust, it benefits from fast compilation and robust binary releases across platforms.
+## How I use it
 
-## Comparison to LaTeX and Markdown
+I write it in [VS Code](/tools/dev/editors/vscode) with the **tinymist** extension, which bundles the compiler, shows the
+preview next to the code and exports to PDF: nothing else to install. I use it for documents that must look good in
+print — CVs, reports, sheets — where LaTeX used to take hours of tweaking.
 
-Compared to LaTeX, Typst trades extreme legacy compatibility and an enormous package ecosystem for a simpler, more consistent syntax and quicker iteration. Where LaTeX exposes deep macro power and decades of packages, Typst prefers a smaller, more composable standard library and clearer semantics that reduce surprising macro interactions. Compared to Markdown, Typst is a full document system: it offers page layout, numbering, cross‑references, bibliographies, and precise typographic control that Markdown doesn’t aim to provide, Markdown is for lightweight content, Typst is for designed documents.
+```typst
+#set page(margin: 2cm)
+#set text(font: "Inter", lang: "en")
 
-## Installation (Windows)
-
-Installation on Windows is straightforward using Winget:
-```powershell
-winget install --id Typst.Typst
+= Title
+Text in *bold*, maths $a^2 + b^2 = c^2$, and a loop:
+#for x in (1, 2, 3) [- item #x]
 ```
 
-After installation, verify by running:
-```powershell
-typst --version
-```
+## What it replaces
 
-## Typst Universe
-
-Typst Universe is the community hub for packages, templates, and examples created by users; it’s a great place to find themes, reusable components, and starter templates for books, articles, resumes, or posters.
-
-## Summary
-
-That’s a compact summary, Typst is a good choice when you want modern syntax, fast builds, and fine control over document layout without the legacy complexity of classic TeX macros.
+[LaTeX](/archive/creation/latex) and [Quarkdown](/archive/creation/quarkdown), both in the archive.

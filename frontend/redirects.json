@@ -69,7 +69,7 @@
   },
   {
     "from": "/docs/apps/davinci_resolve",
-    "to": "/archive/creation/davinci-resolve"
+    "to": "/tools/creation/video/davinci-resolve"
   },
   {
     "from": "/docs/apps/discord",
@@ -113,7 +113,7 @@
   },
   {
     "from": "/docs/apps/obs_studio",
-    "to": "/archive/creation/obs-studio"
+    "to": "/tools/creation/video/obs-studio"
   },
   {
     "from": "/docs/apps/spotify",
@@ -149,7 +149,7 @@
   },
   {
     "from": "/docs/apps/utility/radmin_vpn",
-    "to": "/archive/system/radmin-vpn"
+    "to": "/tools/web/communication/radmin-vpn"
   },
   {
     "from": "/docs/apps/utility/rainmeter",
@@ -510,5 +510,17 @@
   {
     "from": "/tools/dev/version-control/github-website",
     "to": "/tools/dev/version-control/github"
+  },
+  {
+    "from": "/archive/creation/davinci-resolve",
+    "to": "/tools/creation/video/davinci-resolve"
+  },
+  {
+    "from": "/archive/creation/obs-studio",
+    "to": "/tools/creation/video/obs-studio"
+  },
+  {
+    "from": "/archive/system/radmin-vpn",
+    "to": "/tools/web/communication/radmin-vpn"
   }
 ]

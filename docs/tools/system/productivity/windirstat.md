@@ -1,45 +1,15 @@
 ---
-description: Disk usage statistics viewer and cleanup tool
+description: "See at a glance what fills a disk."
 url: "https://windirstat.net/"
 status: occasional
 kind: app
 platforms: [windows]
 image: windirstat.png
+sidebar_position: 7
 ---
 
 # WinDirStat
 
-**[WinDirStat](https://windirstat.net/)** is a disk usage statistics viewer that helps you visualize and clean up space on your drives. It is free to use and lightweight.
-
-## Core Features
-
-- **Disk usage analysis**  
-  Scan your drives to see which folders and files take up the most space.  
-
-- **Visual treemap display**  
-  Graphically represent files and folders using colored rectangles proportional to their size.  
-
-- **Directory list and file extension list**  
-  Quickly find large files or see distribution by file type.
-
-## Additional Features
-
-- **Cleanup tools**  
-  Delete files or folders directly from the interface to free up space.  
-
-- **Customizable views**  
-  Sort and filter files by size, type, or path to focus on what matters most.  
-
-- **Cross-drive scanning**  
-  Analyze multiple drives at once or select specific folders for a scan.
-
-## Characteristics
-
-- **Free and lightweight**  
-  No cost to use and minimal system resource requirements.  
-
-- **Visual clarity**  
-  Treemap makes it easy to understand disk usage at a glance.  
-
-- **Windows-only**  
-  Designed specifically for Windows operating systems.
+WinDirStat scans a disk and shows it as a map: each file is a rectangle proportional to its size, coloured by type.
+Forgotten big files jump out. I open it now and then, when a disk fills up; for a quick look in the terminal I rather
+use [dust](/tools/dev/cli/small-tools).

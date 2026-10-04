@@ -1,46 +1,17 @@
 ---
-description: Password manager to securely store and manage credentials
+description: "An open-source password manager."
 url: "https://bitwarden.com/"
 status: archived
 replaced_by: 1Password
 kind: app
-platforms: [windows]
+platforms: [windows, macos, linux, android, ios]
 image: bitwarden.png
 ---
 
 # Bitwarden
 
-**[Bitwarden](https://bitwarden.com/)** is a secure password manager that helps you store, generate, and autofill your passwords.
+Bitwarden is an open-source password manager, free for personal use.
 
-## Core Features
+## Why I stopped
 
-- **Password storage and autofill**  
-  Bitwarden allows you to safely store usernames, passwords, and notes. You can autofill login forms in your browser or apps.
-
-- **Password generator**  
-  Create strong and unique passwords for each account directly from Bitwarden.
-
-- **Cross-device sync**  
-  Access your vault on multiple devices, including desktop, mobile, and browser extensions.
-
-## Additional Features
-
-- **Secure sharing**  
-  Share credentials safely with trusted people or teams.  
-
-- **Organization options**  
-  Use folders, tags, and collections to keep your credentials organized.  
-
-- **Two-factor authentication (2FA) support**  
-  Add extra security to your accounts with authenticator apps or hardware keys.
-
-## Security Characteristics
-
-- **End-to-end encryption**  
-  All data is encrypted locally before it is sent to Bitwarden servers.  
-
-- **Open-source**  
-  The source code is publicly available, allowing independent verification of security.  
-
-- **Zero-knowledge architecture**  
-  Bitwarden does not have access to your master password or vault data.
+I moved everything into [1Password](/tools/system/productivity/1password), whose SSH agent also keeps my keys and signs my commits.
