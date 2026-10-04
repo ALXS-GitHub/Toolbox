@@ -526,5 +526,9 @@
   {
     "from": "/tools/ai/specialized/stitch",
     "to": "/archive/ai/stitch"
+  },
+  {
+    "from": "/games/mods/bakkesmod",
+    "to": "/archive/games/bakkesmod"
   }
 ]

@@ -1,0 +1,12 @@
+{
+  "label": "Games",
+  "position": 6,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Game tools I no longer use."
+  },
+  "customProps": {
+    "image": "icons/gamepad-2.svg"
+  }
+}

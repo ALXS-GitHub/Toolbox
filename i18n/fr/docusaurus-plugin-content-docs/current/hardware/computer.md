@@ -21,7 +21,7 @@ tourner plusieurs serveurs de dev et des agents en parallèle — et jouer le so
 | **Carte graphique** | Gigabyte Radeon RX 9070 XT Gaming OC ICE, 16 Go |
 | **Carte mère** | Gigabyte B850 AORUS ELITE WIFI7 ICE |
 | **Mémoire** | 32 Go DDR5-6000 CL30 (2 × 16 Go Kingston Fury Beast, profil EXPO) |
-| **Stockage** | Samsung 990 EVO Plus, 2 To NVMe |
+| **Stockage** | Samsung 990 EVO Plus, 2 To NVMe, et un SSD externe Crucial X10 Pro de 2 To |
 | **Refroidissement** | Thermalright Peerless Assassin 120 SE ARGB |
 | **Boîtier** | Lian Li LANCOOL 217 INF |
 | **Alimentation** | Corsair RM850e, 850 W |

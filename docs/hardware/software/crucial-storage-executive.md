@@ -1,45 +1,15 @@
 ---
-description: SSD management software for Crucial drives
-url: "https://www.crucial.fr/support/storage-executive"
+description: "The health and firmware of my external Crucial SSD."
+url: "https://www.crucial.com/support/storage-executive"
 status: active
 kind: app
 platforms: [windows]
 image: crucial_storage_executive.png
+sidebar_position: 4
 ---
 
 # Crucial Storage Executive
 
-**[Crucial Storage Executive](https://www.crucial.fr/support/storage-executive)** is a management and monitoring tool designed exclusively for Crucial SSDs. It will not work with SSDs from other brands.
-
-## Core Features
-
-- **Drive health monitoring**  
-  Check the status, temperature, and remaining lifespan of your Crucial SSD.  
-
-- **Firmware updates**  
-  Easily update the firmware to keep your SSD performing optimally.  
-
-- **S.M.A.R.T. information**  
-  Access detailed technical information about your drive for monitoring purposes.
-
-## Additional Features
-
-- **Performance optimization**  
-  Includes features such as the Momentum Cache to enhance read/write speeds.  
-
-- **Secure erase**  
-  Wipe your SSD safely and permanently for data security.  
-
-- **Diagnostics**  
-  Run health and performance tests to detect potential issues early.
-
-## Characteristics
-
-- **Crucial-only**  
-  Works exclusively with Crucial SSDs; not compatible with other brands.  
-
-- **Free software**  
-  Available at no cost from Crucial’s website.  
-
-- **User-friendly interface**  
-  Simple interface for monitoring, updating, and maintaining your SSD.
+My external storage is a **2 TB Crucial X10 Pro SSD**, over USB-C, for backups and large files. Crucial Storage Executive
+monitors its health (wear, temperature, data written) and installs its firmware updates. It only works with Crucial
+SSDs: the internal drive, a Samsung, is not covered.

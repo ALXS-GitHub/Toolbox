@@ -314,5 +314,13 @@
   "sidebar.projects.category.ALXS-RL-Mod": {
     "message": "ALXS-RL-Mod",
     "description": "The label for category 'ALXS-RL-Mod' in sidebar 'projects'"
+  },
+  "sidebar.archive.category.Games": {
+    "message": "Jeux",
+    "description": "The label for category Games in sidebar archive"
+  },
+  "sidebar.archive.category.Games.link.generated-index.description": {
+    "message": "Les outils de jeu que je n'utilise plus.",
+    "description": "The generated-index page description for category Games in sidebar archive"
   }
 }

@@ -1,14 +1,14 @@
 ---
-description: Epic Games store and game library manager
+description: "Rocket League's launcher, and a free game every week."
 url: "https://store.epicgames.com/"
 status: active
 kind: app
 platforms: [windows]
 image: epic_games.png
+sidebar_position: 2
 ---
 
 # Epic Games Launcher
 
-The Epic Games Launcher is the storefront and library manager for the Epic Games Store. It handles game purchases, downloads, and updates, but for most people the real draw is the **free weekly game program** -- every Thursday, Epic gives away one or more games at no cost, and once claimed, they stay in your library forever. Over the years this has included titles like GTA V, Civilization VI, and Control, so it is worth checking in regularly even if you rarely buy anything from the store.
-
-For developers, the launcher doubles as the gateway to **Unreal Engine**. You can install and manage Unreal Engine versions, access the Unreal Marketplace for assets and plugins, and browse learning resources -- all from the same application. Enable two-factor authentication in your account settings to keep things secure.
+Epic Games' launcher is mostly the one for [Rocket League](/games/rocket-league), which Epic owns. It also gives away a
+free game every week, which ends up building a nice library.

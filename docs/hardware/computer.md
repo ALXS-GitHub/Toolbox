@@ -20,7 +20,7 @@ several dev servers and agents in parallel — and gaming at night, mostly compe
 | **GPU** | Gigabyte Radeon RX 9070 XT Gaming OC ICE, 16 GB |
 | **Motherboard** | Gigabyte B850 AORUS ELITE WIFI7 ICE |
 | **Memory** | 32 GB DDR5-6000 CL30 (2 × 16 GB Kingston Fury Beast, EXPO profile) |
-| **Storage** | Samsung 990 EVO Plus, 2 TB NVMe |
+| **Storage** | Samsung 990 EVO Plus, 2 TB NVMe, and a 2 TB Crucial X10 Pro external SSD |
 | **Cooling** | Thermalright Peerless Assassin 120 SE ARGB |
 | **Case** | Lian Li LANCOOL 217 INF |
 | **Power supply** | Corsair RM850e, 850 W |
