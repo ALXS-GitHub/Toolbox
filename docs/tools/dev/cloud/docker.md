@@ -5,7 +5,7 @@ status: paused
 kind: app
 platforms: [windows, macos, linux]
 image: docker.png
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Docker
@@ -15,5 +15,5 @@ same on every machine. It is the simplest way to start a database or a service f
 anything.
 
 Docker Desktop is still installed, with the `dc` alias for `docker compose`, but none of my current projects needs it:
-my apps are local (SQLite) or rely on hosted services ([Supabase](/tools/dev/cloud/supabase),
+my apps are local (SQLite) or rely on hosted services ([Supabase](/tools/dev/cloud/supabase), [Vercel](/tools/dev/cloud/vercel),
 [Cloudflare](/tools/dev/cloud/cloudflare)).

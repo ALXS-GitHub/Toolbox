@@ -80,7 +80,7 @@ reading that one repository, and the app asks it instead of GitHub.
 
 I use two variants:
 
-- **On Vercel** (Zorg, PayLedger): a function reads the latest release's `latest.json`, replaces the installers'
+- **On [Vercel](/tools/dev/cloud/vercel)** (Zorg, PayLedger): a function reads the latest release's `latest.json`, replaces the installers'
   addresses with its own, then serves the files by relaying them. The token is an environment variable of the Vercel
   project, and the answer is cached for a few minutes.
 - **On a Cloudflare Worker** (Souvenirs): the relay builds the answer itself from the version the app reports, answers

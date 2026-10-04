@@ -83,7 +83,7 @@ est seul à détenir un jeton, limité à la lecture de ce seul dépôt, et l'ap
 
 J'en utilise deux variantes :
 
-- **Sur Vercel** (Zorg, PayLedger) : une fonction lit le `latest.json` de la dernière release, remplace les adresses
+- **Sur [Vercel](/tools/dev/cloud/vercel)** (Zorg, PayLedger) : une fonction lit le `latest.json` de la dernière release, remplace les adresses
   des installeurs par les siennes, et sert ensuite les fichiers en les relayant. Le jeton est une variable
   d'environnement du projet Vercel, et la réponse est mise en cache quelques minutes.
 - **Sur un Worker Cloudflare** (Souvenirs) : le relais construit lui-même la réponse à partir de la version demandée

@@ -5,7 +5,7 @@ status: paused
 kind: app
 platforms: [windows, macos, linux]
 image: docker.png
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Docker

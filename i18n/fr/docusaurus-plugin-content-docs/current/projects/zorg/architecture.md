@@ -70,6 +70,6 @@ accès disque limité au dossier des notes. Elle livre aussi le CLI : l'installe
 
 Les versions sont construites par GitHub Actions quand je pousse une étiquette : Windows, macOS et Linux, signées, en
 release brouillon que je publie à la main. Comme le dépôt est privé, l'application ne peut pas lire ces releases
-directement. Elle interroge un petit relais hébergé sur Vercel, qui seul détient un jeton en lecture, lui renvoie la
+directement. Elle interroge un petit relais hébergé sur [Vercel](/tools/dev/cloud/vercel), qui seul détient un jeton en lecture, lui renvoie la
 dernière version et sert les fichiers. La signature des installeurs est vérifiée avant toute mise à jour ; le
 mécanisme est détaillé dans [Mises à jour des apps Tauri](/setup/tauri-updates).

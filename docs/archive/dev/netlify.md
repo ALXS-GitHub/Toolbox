@@ -2,6 +2,7 @@
 description: "Host a site from a Git repository."
 url: "https://www.netlify.com/"
 status: archived
+replaced_by: Vercel, Cloudflare, GitHub Pages
 kind: service
 platforms: [web]
 image: netlify.png
@@ -13,4 +14,4 @@ Netlify deploys a site on every push to a repository: build, hosting, a preview 
 
 ## Why I stopped
 
-I no longer use it: this site is on GitHub Pages, and my other services run on [Cloudflare](/tools/dev/cloud/cloudflare) or [Supabase](/tools/dev/cloud/supabase).
+I no longer use it: this site is on GitHub Pages, and my other services run on [Vercel](/tools/dev/cloud/vercel), [Cloudflare](/tools/dev/cloud/cloudflare) or [Supabase](/tools/dev/cloud/supabase).
