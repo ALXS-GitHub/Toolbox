@@ -30,7 +30,7 @@ choisit dans ses réglages.
 
 <Diagram
   name="kpop-idol-workflow"
-  alt="Un ticket part du gestionnaire de tickets vers Claude Code, qui édite le code Luau ; Rojo le synchronise dans Roblox Studio, où le jeu est testé dans un univers de dev avant d'être publié. Un tableau local lit les données du jeu publié par Open Cloud."
+  alt="Un ticket part du gestionnaire de tickets vers Claude Code, qui édite le code Luau ; Rojo le synchronise dans Roblox Studio, où le jeu est testé avant d'être publié. Un tableau local lit les données du jeu publié par Open Cloud."
 />
 
 Au début, l'agent modifiait le jeu directement dans Roblox Studio, à travers un serveur MCP. Ça marchait, mais le code
@@ -49,11 +49,21 @@ Quelques règles font que ça tient à l'échelle, avec près de mille commits :
   code, publier. L'agent applique ainsi les mêmes conventions à chaque fois.
 - **Le serveur fait autorité.** Le client ne décide de rien : le serveur valide chaque action, et une couche unique
   gère toutes les sauvegardes des joueurs.
-- **Deux univers.** Le jeu est testé dans un univers de développement, avec ses propres données, avant d'être publié.
+- **Tester avant de publier.** Le code se teste dans Studio, sur des serveurs locaux ; les essais plus risqués se font
+  dans un jeu « bac à sable » séparé, monté avec les mêmes outils, qui peut lire le jeu de référence sans le modifier.
 
 L'interface est écrite avec React Lua, un portage de [React](/tools/dev/web-desktop/react) en Luau. Le code passe par
 Selene et StyLua (vérification et mise en forme), et un tableau de bord local en React, qui lit les données du jeu
 publié par l'API Open Cloud de Roblox, sert à régler l'équilibrage.
+
+## Ce que l'agent change
+
+Le jeu vit de ses mises à jour : un nouveau groupe, des cartes, un événement, presque chaque semaine. Seul, ce rythme
+serait intenable. Avec Claude Code, une mise à jour se décrit en tickets, et l'agent fait le gros du travail : écrire
+le service et l'interface, brancher les données, respecter les conventions du projet. Les tâches qui reviennent sont
+écrites une fois pour toutes dans des skills : ajouter un groupe, par exemple, enchaîne les fichiers de données, les
+textures à préparer dans Studio et l'emplacement dans l'arène, sans rien oublier. Je garde la conception, les tests et
+la décision de publier, et un skill de relecture me permet de faire repasser l'agent sur le code avant de valider.
 
 ## Où il en est
 

@@ -29,7 +29,7 @@ Two interface styles coexist, and each player picks one in the settings.
 
 <Diagram
   name="kpop-idol-workflow"
-  alt="A ticket goes from the ticket manager to Claude Code, which edits the Luau code; Rojo syncs it into Roblox Studio, where the game is tested in a dev universe before being published. A local dashboard reads the published game's data through Open Cloud."
+  alt="A ticket goes from the ticket manager to Claude Code, which edits the Luau code; Rojo syncs it into Roblox Studio, where the game is tested before being published. A local dashboard reads the published game's data through Open Cloud."
 />
 
 At first, the agent edited the game directly inside Roblox Studio, through an MCP server. It worked, but the code only
@@ -47,11 +47,21 @@ A few rules make it hold at scale, with almost a thousand commits:
   thus applies the same conventions every time.
 - **The server is the authority.** The client decides nothing: the server validates every action, and a single layer
   handles all player saves.
-- **Two universes.** The game is tested in a development universe, with its own data, before being published.
+- **Test before publishing.** Code is tested in Studio, on local servers; riskier experiments happen in a separate
+  "sandbox" game, set up with the same tools, which can read the reference game without changing it.
 
 The interface is written with React Lua, a port of [React](/tools/dev/web-desktop/react) to Luau. The code goes through
 Selene and StyLua (linting and formatting), and a local React dashboard, which reads the published game's data
 through Roblox's Open Cloud API, is used to tune the balance.
+
+## What the agent changes
+
+The game lives on its updates: a new group, cards, an event, almost every week. Alone, that pace would be impossible.
+With Claude Code, an update is described as tickets, and the agent does the bulk of the work: writing the service and
+the interface, wiring the data, following the project's conventions. Recurring tasks are written once and for all as
+skills: adding a group, for instance, chains the data files, the textures to prepare in Studio and the spot in the
+arena, without forgetting anything. I keep the design, the testing and the decision to publish, and a review skill lets me
+have the agent go over the code again before I approve.
 
 ## Where it stands
 

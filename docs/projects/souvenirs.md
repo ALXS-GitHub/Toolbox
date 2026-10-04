@@ -46,6 +46,21 @@ request, and the app manages permissions per group.
 It is used from the browser, including on the phone (it is a PWA), or with the [Tauri](/tools/dev/web-desktop/tauri)
 desktop app, whose main job is to keep a local copy.
 
+## Adding a memory
+
+All the processing of a file happens in the browser, before the upload. The app computes its hash (and, for a photo,
+a hash of its pixels, which recognises the same image saved again) to skip duplicates; a file already present but in
+the trash is simply restored. It reads the date and place from the metadata, converts iPhone photos to JPEG for the
+preview, and, for a video, extracts a poster frame and reorganises the file so it can play while downloading — without
+re-encoding it. The original file goes to R2 as is, next to its optimised version.
+
+## The copy at home
+
+The desktop app regularly downloads everything that changed: one file per database table, as JSON with one line per
+record, the media sorted by version (original, optimised), and a file that links each media to its metadata. These
+are ordinary formats: in fifty years, a text editor and an image viewer will be enough to read everything again,
+without Souvenirs and without Cloudflare. A full export is also available from the admin dashboard.
+
 ## Choices made to last
 
 **Cloudflare rather than Supabase.** A free Supabase project can be paused, or even deleted, when inactive: an

@@ -40,10 +40,25 @@ avec leur statut, leurs fichiers de configuration et un lien vers leur fiche dan
 quand je réinstalle un poste. Enfin, `cortx init <shell>` génère pour PowerShell, bash, zsh et fish le même ensemble
 d'alias, de fonctions et d'intégrations, par exemple celle de [zoxide](/tools/dev/cli/zoxide).
 
-**Pensé aussi pour les agents.** Les agents d'IA passent par défaut par le CLI : il répond en JSON (`--json`) et
-`cortx docs` affiche une référence écrite pour eux. Le serveur MCP expose les mêmes fonctions pour les clients qui
-n'ont pas accès à un shell. CortX sait aussi retrouver les sessions de Claude Code et de Codex en cours sur la machine
-(fonction encore en bêta).
+## Avec un agent
+
+Un agent qui travaille sur un projet a souvent besoin de le lancer : démarrer le serveur de dev, lire ses logs pour
+comprendre une erreur, le redémarrer après une correction. Sans CortX, c'est moi qui lance les terminaux et qui
+recopie les messages d'erreur dans la conversation. Avec CortX, l'agent le fait lui-même, avec la même configuration
+que moi : il liste les services du projet, en démarre un en arrière-plan, lit ses derniers logs, l'arrête.
+
+```bash
+cortx docs                                   # la référence écrite pour les agents
+cortx project list --json                    # les projets connus
+cortx service start <projet> <service>       # démarre en arrière-plan, rend la main tout de suite
+cortx service status <projet> <service>      # PID, durée, dernières lignes de log
+cortx service logs <projet> <service>
+```
+
+Les agents passent par défaut par ce CLI : chaque commande répond en JSON avec `--json`, et `cortx docs` explique tout
+le reste. Le serveur MCP expose les mêmes fonctions pour les clients qui n'ont pas accès à un shell. L'agent peut aussi
+lancer mes scripts globaux, consulter le registre des outils de la machine, ou, avec `cortx agents`, retrouver les
+autres sessions de Claude Code et de Codex en cours et lire leurs derniers messages (fonction encore en bêta).
 
 ## Comment c'est construit
 

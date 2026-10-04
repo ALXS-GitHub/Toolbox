@@ -58,6 +58,19 @@ Les quatre lisent et écrivent les mêmes données, avec les mêmes droits : ce 
 le voit par le CLI. Le fonctionnement est détaillé dans [Architecture](/projects/zorg/architecture) et
 [Agents : CLI et MCP](/projects/zorg/agents).
 
+## Le ticket comme point de rencontre avec les agents
+
+Zorg sert de mémoire partagée entre moi et mes agents. Une idée me vient sur le téléphone : je la dicte à Claude sur
+claude.ai, qui crée le ticket avec le bon projet et la bonne priorité. Le soir, devant l'ordinateur, je dis à
+[Claude Code](/setup/claude-code/tickets) « prends ce ticket » : il lit la description et tous les commentaires, fait
+le travail, commite, passe le ticket au statut suivant et laisse un commentaire qui résume ce qu'il a fait et comment
+le vérifier.
+
+L'intérêt est double. Je n'ai plus à réexpliquer le contexte à chaque session : il est dans le ticket, et il s'enrichit
+à chaque passage. Et j'ai un historique lisible de tout ce qu'un agent a fait sur un projet, ticket par ticket, avec le
+commit correspondant. Sur des projets où plusieurs sessions d'agents travaillent en parallèle, c'est aussi ce qui
+évite qu'elles se marchent dessus : chacune prend un ticket.
+
 ## Où il en est
 
 Zorg en est à la version 0.8 (octobre 2026), avec près de 160 commits depuis juin 2026, et il évolue chaque semaine :

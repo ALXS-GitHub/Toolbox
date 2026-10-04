@@ -35,6 +35,10 @@ A [React](/tools/dev/web-desktop/react) interface in TypeScript, an Express serv
 Spotify's API, and a local [MongoDB](/tools/dev/databases/mongodb) database. Spotify tokens are encrypted at rest and
 refreshed automatically. For enrichment (lyrics, artist pages, news), the app favours sources that need no key.
 
+Karaoke shows the approach well: the app asks Spotify for the playback position every second, and between two
+answers it moves the clock forward itself, so the highlighted line glides smoothly instead of jumping. Synced lyrics
+come from LRCLIB, an open database that needs no key.
+
 Two choices avoid matching mistakes: tracks and artists are identified by their Spotify identifier rather than their
 name (homonyms are common), and the ISRC — the international identifier of a recording — links the single, album or
 regional versions of the same song.

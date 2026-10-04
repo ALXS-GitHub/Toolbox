@@ -38,9 +38,25 @@ status, their configuration files and a link to their page in this documentation
 a new computer. Finally, `cortx init <shell>` generates the same set of aliases, functions and integrations for
 PowerShell, bash, zsh and fish, such as the one for [zoxide](/tools/dev/cli/zoxide).
 
-**Built for agents too.** AI agents go through the CLI by default: it answers in JSON (`--json`) and `cortx docs`
-prints a reference written for them. The MCP server exposes the same features for clients that have no shell access.
-CortX can also find the Claude Code and Codex sessions running on the machine (still in beta).
+## With an agent
+
+An agent working on a project often needs to run it: start the dev server, read its logs to understand an error,
+restart it after a fix. Without CortX, I am the one opening terminals and pasting error messages into the
+conversation. With CortX, the agent does it itself, with the same configuration as mine: it lists the project's
+services, starts one in the background, reads its latest logs, stops it.
+
+```bash
+cortx docs                                   # the reference written for agents
+cortx project list --json                    # known projects
+cortx service start <project> <service>      # starts in the background, returns at once
+cortx service status <project> <service>     # PID, uptime, last log lines
+cortx service logs <project> <service>
+```
+
+Agents use this CLI by default: every command answers in JSON with `--json`, and `cortx docs` explains the rest. The
+MCP server exposes the same features for clients that have no shell access. The agent can also run my global scripts,
+look up the registry of tools on the machine, or, with `cortx agents`, find the other Claude Code and Codex sessions
+running and read their latest messages (still in beta).
 
 ## How it is built
 

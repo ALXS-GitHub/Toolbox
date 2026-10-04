@@ -36,6 +36,10 @@ avec l'API de Spotify, et une base [MongoDB](/tools/dev/databases/mongodb) local
 repos et renouvelés automatiquement. Pour l'enrichissement (paroles, fiches d'artistes, actualités), l'application
 privilégie des sources qui ne demandent pas de clé.
 
+Le karaoké montre bien la façon de faire : l'application interroge Spotify chaque seconde pour connaître la position
+de lecture, et entre deux réponses elle fait avancer le temps elle-même, pour que la ligne surlignée glisse en douceur
+au lieu de sauter. Les paroles synchronisées viennent de LRCLIB, une base ouverte qui ne demande pas de clé.
+
 Deux choix évitent les erreurs de rapprochement : les morceaux et artistes sont identifiés par leur identifiant
 Spotify plutôt que par leur nom (les homonymes sont nombreux), et l'ISRC — l'identifiant international d'un
 enregistrement — relie les versions single, album ou régionales d'un même titre.

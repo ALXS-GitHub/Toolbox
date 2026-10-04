@@ -49,6 +49,23 @@ Access à chaque requête, et l'application gère les droits par groupe.
 On l'utilise depuis le navigateur, y compris sur le téléphone (c'est une PWA), ou avec l'application de bureau
 [Tauri](/tools/dev/web-desktop/tauri), dont le rôle principal est de garder une copie locale.
 
+## Ajouter un souvenir
+
+Tout le traitement d'un fichier se fait dans le navigateur, avant l'envoi. L'application calcule son empreinte (et,
+pour une photo, une empreinte de ses pixels, qui reconnaît la même image réenregistrée) pour écarter les doublons ; un
+fichier déjà présent mais mis à la corbeille est simplement restauré. Elle lit la date et le lieu dans les métadonnées,
+convertit les photos d'iPhone en JPEG pour l'aperçu, et, pour une vidéo, extrait une image d'aperçu et réorganise le
+fichier pour qu'il puisse se lire pendant le téléchargement — sans le réencoder. Le fichier d'origine part tel quel
+dans R2, à côté de sa version optimisée.
+
+## La copie à la maison
+
+L'application de bureau télécharge régulièrement tout ce qui a changé : un fichier par table de la base, en JSON une
+ligne par enregistrement, les médias rangés par version (original, optimisé), et un fichier qui relie chaque média à
+ses métadonnées. Ce sont des formats ordinaires : dans cinquante ans, il suffira d'un éditeur de texte et d'un
+visualiseur d'images pour tout relire, sans Souvenirs et sans Cloudflare. Un export complet est aussi disponible depuis
+le tableau d'administration.
+
 ## Les choix, pour durer
 
 **Cloudflare plutôt que Supabase.** Un projet Supabase gratuit peut être mis en pause, voire supprimé, s'il reste
