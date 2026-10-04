@@ -1,16 +1,33 @@
 ---
-description: Windows Terminal
-url: "https://www.warp.dev/"
+description: "Microsoft's terminal, which I keep configured as a fallback."
+url: "https://github.com/microsoft/terminal"
 status: occasional
 kind: app
 platforms: [windows]
 image: windows_terminal.png
+sidebar_position: 2
 ---
 
 # Windows Terminal
 
-[Windows Terminal](https://aka.ms/terminal) is a modern, feature-rich terminal application for Windows that provides a powerful command-line interface. It supports multiple tabs, customizable themes, and various shells such as Command Prompt, PowerShell, and Windows Subsystem for Linux (WSL). Windows Terminal offers a sleek user interface with features like split panes, Unicode and UTF-8 character support, GPU-accelerated text rendering, and extensive customization options through JSON configuration files. It is designed to enhance productivity for developers and power users by providing a unified terminal experience on Windows.
+Windows Terminal is Microsoft's modern terminal: tabs, panes, per-shell profiles, fast rendering and themes. It was my
+main terminal for a long time. Today [CortX's terminal](/projects/cortx) holds that role, and Windows Terminal stays
+installed and configured **as a fallback**: when CortX is not at hand, or to quickly open an admin shell.
 
-## Settings
+## My configuration
 
-The main configuration can be modified directly from the UI by opening the Settings tab (Ctrl + ,). But the json configuration file can also be edited directly at the following location: `C:\Users\<username>\AppData\Local\Packages\Microsoft.WindowsTerminal_<key>\LocalState\settings.json`
+- **Default profile**: PowerShell 7, starting in the home folder.
+- **Font**: Hack Nerd Font, the same everywhere, for the prompt's and [eza](/tools/dev/cli/eza)'s icons.
+- **Look**: a slightly tweaked "One Half Dark" colour scheme, the acrylic effect and a half-transparent background
+  image.
+
+Everything is set in the interface (`Ctrl+,`), which writes a `settings.json` file you can also edit by hand or back up.
+
+## Useful shortcuts
+
+| Shortcut | Action |
+|---|---|
+| `Ctrl+Shift+T` | new tab |
+| `Alt+Shift+D` | duplicate the pane by splitting it |
+| `Alt+arrows` | move between panes |
+| `Ctrl+Shift+P` | command palette |

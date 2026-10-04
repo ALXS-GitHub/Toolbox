@@ -1,5 +1,5 @@
 ---
-description: General-purpose command-line fuzzy finder
+description: "Turn any list into an interactive picker, with fuzzy search."
 url: "https://github.com/junegunn/fzf"
 status: active
 kind: cli
@@ -9,47 +9,30 @@ image: fzf.png
 
 # fzf
 
-**[fzf](https://github.com/junegunn/fzf)** is an interactive fuzzy finder for the command line. The idea is simple: pipe any list into it, and you get an instant search interface with fuzzy matching. Files, command history, git branches, processes, environment variables — anything that can be printed line-by-line becomes interactively searchable.
+fzf takes a list on its input — files, branches, commits, anything — and turns it into an interactive picker with
+fuzzy search: type a few letters, the list narrows, Enter returns the choice. It does nothing else, and that is what
+makes it so useful: it is a building block you plug in everywhere.
 
-This makes fzf a powerful "glue" tool. It doesn't do much by itself, but it turns any output into a selectable, filterable list. That composability is what makes it indispensable.
+## Where I use it
 
-## Installation
+Mostly through other tools:
+
+- **`zi`** from [zoxide](/tools/dev/cli/zoxide) to pick among similar folders;
+- **`omp-theme` and `omp-color`**, my commands to switch the prompt's theme
+  ([Oh My Posh](/tools/dev/terminal/oh-my-posh));
+- in my scripts, whenever they need to ask "which one?".
+
+And directly, for one-off choices:
 
 ```powershell
-scoop install fzf
+git branch | fzf                        # pick a branch
+fd -e md | fzf --preview "bat {}"       # pick a file, with a preview
+code (fzf)                              # open the chosen file in VS Code
 ```
 
-## Basics
+In the search, `'word` requires an exact match, `^start` and `end$` anchor, and `!word` excludes.
 
-Run `fzf` alone and it lists files in the current directory. Start typing to filter. Press Enter to select, Esc to cancel. Inside fzf, `Ctrl+J`/`Ctrl+K` move up and down, and `Tab` toggles multi-select (with `-m`).
+## What I no longer use
 
-```powershell
-fzf                              # Browse files
-fd | fzf                          # Use fd as a faster file source
-code $(fzf)                       # Open fuzzy-selected file in VS Code
-```
-
-## The power of piping
-
-fzf works with any list:
-```powershell
-git branch | fzf                  # Pick a branch
-git log --oneline | fzf           # Pick a commit
-docker ps | fzf                   # Pick a container
-```
-
-The `--preview` flag shows a live preview of the highlighted item, which is extremely useful for browsing files or commits:
-```powershell
-fzf --preview "cat {}"
-git log --oneline | fzf --preview "git show {1}"
-```
-
-## Search syntax
-
-fzf supports several match operators: `'term` for exact match, `^prefix` for prefix, `suffix$` for suffix, and `!term` to exclude. These can be combined for precise filtering.
-
-## PowerShell integration
-
-With the [PSFzf](https://github.com/kelleyma49/PSFzf) module, fzf plugs into PowerShell: `Ctrl+R` fuzzy-searches command history, `Ctrl+T` finds files, and `Alt+C` jumps to directories. This alone makes it worth installing — command history search becomes instant and effortless.
-
-fzf is a single binary with no dependencies. It handles millions of items with no perceptible delay and pairs well with [fd](/tools/dev/cli/fd) and [ripgrep](/tools/dev/cli/ripgrep) as input sources.
+The PSFzf module added shortcuts such as `Ctrl+R` to PowerShell to search history with fzf. I no longer load it:
+PSReadLine's suggestions and [CortX](/projects/cortx)'s terminal cover that need.

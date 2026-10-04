@@ -1,24 +1,35 @@
 ---
-description: A prompt theme engine for any shell
+description: "The engine behind my prompt: a home-made theme and swappable palettes."
 url: "https://ohmyposh.dev/"
 status: active
 kind: cli
 platforms: [windows, macos, linux]
 image: oh_my_posh.png
+sidebar_position: 3
 ---
 
 # Oh My Posh
 
-Oh My Posh is a fast, theme‑able prompt engine that enriches your shell (PowerShell, Bash, Zsh, Warp, etc.) with contextual segments like Git status, runtime versions, execution time, and more, rendered in a visually appealing, Unicode/NERD font aware layout. It lets you compose or tweak JSON/YAML based themes so your prompt surfaces exactly the information you care about while staying minimal when idle.
+Oh My Posh draws the shell prompt from a theme: a series of segments (folder, git branch, language version, time, exit
+code…) that only show up when they have something to say. It works with every shell; I use it with
+[PowerShell](/tools/dev/terminal/powershell).
 
-I use it primarily inside PowerShell. You can find more details about my PowerShell Config here: [PowerShell Config](/setup/windows).
+## My theme
 
-## Installation
+I use a home-made theme, `alxs`, on two lines: on the left the shell, admin rights, the folder and the git status; on
+the right the Node version and the time; below, the last command's exit code. The theme holds no hard-coded colours:
+each segment refers to a colour name, and a **palette** gives them their values. I have about twenty (Dracula, Nord,
+Rosé Pine, Tokyo Night…), which changes the whole mood without touching the layout.
 
-Windows installation instructions are straightforward and documented at the official site: https://ohmyposh.dev/docs/installation/windows (multiple options: winget, scoop, manual). Pick the package manager you already use; after install the `oh-my-posh` executable becomes available in your PATH.
+## Switching theme or colours
 
-## Configuration
+[CortX](/projects/cortx) loads Oh My Posh when the shell starts, with the remembered theme and palette. Two commands
+switch them:
 
-Configuration (themes, segments, environment variables, transient prompt, etc.) is already thoroughly covered in the official docs: https://ohmyposh.dev/. Rather than duplicating that material here, consult their guides to select or build a theme, then reference it from your PowerShell profile (e.g. calling `oh-my-posh init pwsh --config <path>` during shell startup). That’s essentially all you need: install, place a theme file (or pick a built‑in one), initialize in your profile, and enjoy an informative prompt.
+```powershell
+omp-theme            # pick a theme (mine or a built-in one) from a list filtered with fzf
+omp-color            # only change the current theme's palette
+```
 
-Also, using a [Nerd Font](https://www.nerdfonts.com/) is recommended for the best visual experience, as it provides the necessary glyphs for the prompt segments. I personally use the [`Hack Nerd Font`](https://www.nerdfonts.com/font-downloads).
+A **Nerd Font** is required for the segments' icons: I use Hack Nerd Font. Setup details are in
+[The terminal on Windows](/setup/windows).

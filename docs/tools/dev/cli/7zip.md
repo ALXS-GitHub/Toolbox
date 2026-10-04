@@ -1,46 +1,28 @@
 ---
-description: Multi-format file archiver with high compression ratios
+description: "Compress and extract every archive format, from the right-click menu or the command line."
 url: "https://www.7-zip.org/"
 status: active
-kind: cli
+kind: app
 platforms: [windows]
 image: 7zip.png
 ---
 
 # 7-Zip
 
-**[7-Zip](https://www.7-zip.org/)** is a free, open-source file archiver. Its native 7z format uses LZMA2 compression and typically achieves 30–70% better compression than ZIP on equivalent data. Beyond 7z, it can pack and unpack ZIP, TAR, GZIP, XZ, BZIP2, WIM, and Zstandard, and extract from 20+ read-only formats including RAR, ISO, DMG, CAB, MSI, and NTFS images.
+7-Zip opens just about every archive format (zip, 7z, tar, gz, rar, iso…) and creates 7z archives much more compact
+than zip. On Windows it adds itself to the right-click menu, and its `7z` command is used in scripts.
 
-On Windows it integrates into the right-click context menu for quick GUI operations, but the real power lives in the `7z` CLI.
+## How I use it
 
-## Installation
+Most of the time, it is a right-click to extract. On the command line:
 
 ```powershell
-scoop install 7zip
+7z x archive.7z                  # extract, keeping the folder structure
+7z a archive.7z folder/          # create an archive
+7z a -mx=9 archive.7z folder/    # maximum compression
+7z l archive.zip                 # list contents without extracting
+7z a -p -mhe=on secret.7z folder/    # encrypt, including the file list
 ```
 
-## CLI usage
-
-Create and extract:
-```powershell
-7z a archive.7z folder/         # Create 7z archive from a folder
-7z a -mx=9 archive.7z folder/   # Maximum compression
-7z a archive.zip folder/        # Create ZIP instead
-7z x archive.7z                 # Extract preserving directory structure
-7z e archive.7z                 # Extract flat (all files into current dir)
-```
-
-Inspect and verify:
-```powershell
-7z l archive.7z                 # List contents
-7z t archive.7z                 # Test integrity
-7z x archive.7z "*.txt"         # Extract only .txt files
-```
-
-Encryption:
-```powershell
-7z a -p archive.7z folder/      # Password-protected archive (prompts for password)
-7z a -p -mhe=on archive.7z folder/  # Also encrypts the file listing
-```
-
-The main flags to remember: `a` (add), `x` (extract with paths), `e` (extract flat), `l` (list), `t` (test), `-mx=N` (compression 0–9), `-p` (password). Free and open-source under LGPL.
+To zip a project folder without its `node_modules` and other useless files, I rather use a [CortX](/projects/cortx)
+global script, `zip_it`, which handles exclusions.
