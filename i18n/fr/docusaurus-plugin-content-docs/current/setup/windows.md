@@ -80,12 +80,14 @@ exclusions — sont déclarés dans CortX comme scripts globaux. Écrits en Pyth
 [uv](/tools/dev/runtimes/uv), sans environnement à préparer, et se lancent avec `cortx <script>` depuis n'importe quel
 dossier. `cortx my_help` affiche l'aide-mémoire de mes commandes et raccourcis.
 
-## Les terminaux
+## Le terminal
 
-Au quotidien, j'utilise le **terminal intégré à CortX** : des onglets en barre latérale, les commandes affichées en
-blocs, la restauration des sessions, la police Hack Nerd Font. [Windows Terminal](/tools/dev/terminal/windows-terminal)
-reste configuré en secours (PowerShell 7 par défaut, même police, un thème sombre légèrement retouché), et
-[Warp](/tools/dev/terminal/warp) me sert de temps en temps.
+Mon terminal, c'est **celui de [CortX](/projects/cortx)**, que j'ai écrit pour remplacer [Warp](/archive/dev/warp) :
+des onglets en barre latérale, les commandes affichées en blocs, des suggestions tirées de l'historique, une
+notification quand une longue commande se termine, et des sessions qui reviennent comme je les ai laissées, chaque
+onglet dans son dossier. Il utilise la police Hack Nerd Font et un thème sombre assorti à la palette de mon prompt.
+[Windows Terminal](/tools/dev/terminal/windows-terminal) reste configuré en secours (PowerShell 7 par défaut, même
+police).
 
 ## Sur une nouvelle machine
 

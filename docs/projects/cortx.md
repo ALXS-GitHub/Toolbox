@@ -30,7 +30,7 @@ a tab. Stopping a service sends `Ctrl+C` first, so that dev servers shut down cl
 progress bars and text interfaces behave as in a regular terminal. The Terminal window adds tabs, splits, Warp-like
 shortcuts, themes in Warp's format and session restore: when it reopens, each tab gets back its folder and the end of
 its previous output, without re-running anything. With the shell integration, tabs follow the current directory and
-flag when long commands finish.
+flag when long commands finish. It is my everyday terminal: it replaced [Warp](/archive/dev/warp).
 
 **Scripts, tools and aliases.** CortX keeps parameterised global scripts, which I run from the app, from its text
 interface or with `cortx run`. It also keeps a registry of the tools and applications on the machine, with their

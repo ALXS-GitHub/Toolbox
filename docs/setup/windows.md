@@ -79,11 +79,13 @@ declared in CortX as global scripts. Written in Python, they run with [uv](/tool
 environment to prepare, and start with `cortx <script>` from any folder. `cortx my_help` prints the cheat sheet of my
 commands and shortcuts.
 
-## Terminals
+## The terminal
 
-Day to day I use the **terminal built into CortX**: tabs in a sidebar, commands shown as blocks, session restore, the
-Hack Nerd Font. [Windows Terminal](/tools/dev/terminal/windows-terminal) stays configured as a fallback (PowerShell 7
-by default, same font, a slightly tweaked dark theme), and [Warp](/tools/dev/terminal/warp) is for now and then.
+My terminal is **the one in [CortX](/projects/cortx)**, which I wrote to replace [Warp](/archive/dev/warp): tabs in a
+sidebar, commands shown as blocks, suggestions from history, a notification when a long command finishes, and sessions
+that come back as I left them, each tab in its folder. It uses the Hack Nerd Font and a dark theme matching my prompt's
+palette. [Windows Terminal](/tools/dev/terminal/windows-terminal) stays configured as a fallback (PowerShell 7 by
+default, same font).
 
 ## On a new machine
 

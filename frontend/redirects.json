@@ -205,7 +205,7 @@
   },
   {
     "from": "/docs/dev/apps/warp",
-    "to": "/tools/dev/terminal/warp"
+    "to": "/archive/dev/warp"
   },
   {
     "from": "/docs/dev/apps/windows_terminal",
@@ -486,5 +486,9 @@
   {
     "from": "/hardware/intro",
     "to": "/hardware"
+  },
+  {
+    "from": "/tools/dev/terminal/warp",
+    "to": "/archive/dev/warp"
   }
 ]
