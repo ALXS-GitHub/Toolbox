@@ -17,7 +17,7 @@
   },
   {
     "from": "/docs/ai/coding/github_copilot",
-    "to": "/tools/ai/coding/github-copilot"
+    "to": "/archive/ai/github-copilot"
   },
   {
     "from": "/docs/ai/deepseek",
@@ -33,11 +33,11 @@
   },
   {
     "from": "/docs/ai/mistral",
-    "to": "/archive/ai/mistral"
+    "to": "/tools/ai/assistants/mistral"
   },
   {
     "from": "/docs/ai/nanobanana",
-    "to": "/tools/ai/specialized/nano-banana"
+    "to": "/tools/ai/assistants/gemini"
   },
   {
     "from": "/docs/ai/notebooklm",
@@ -486,5 +486,13 @@
   {
     "from": "/hardware/intro",
     "to": "/hardware"
+  },
+  {
+    "from": "/tools/ai/coding/github-copilot",
+    "to": "/archive/ai/github-copilot"
+  },
+  {
+    "from": "/tools/ai/specialized/nano-banana",
+    "to": "/tools/ai/assistants/gemini"
   }
 ]

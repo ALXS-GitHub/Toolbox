@@ -33,7 +33,7 @@ ils sont ainsi versionnés avec le reste.
 |---|---|
 | TypeScript, JSON, Tailwind, Rust, Python, Go | le support de mes langages (serveurs de langage, formatage) |
 | ESLint, Prettier | vérification et mise en forme du web |
-| Copilot, Copilot Chat | les suggestions et le chat de [GitHub Copilot](/tools/ai/coding/github-copilot) |
+| Copilot, Copilot Chat | les suggestions et le chat de [GitHub Copilot](/archive/ai/github-copilot) |
 | yanky, dial, harpoon2, inc-rename | presse-papiers amélioré, incrément intelligent, marque-pages de fichiers, renommage en direct |
 | mini-hipatterns, treesitter-context | couleurs surlignées, contexte de la fonction en haut de l'écran |
 

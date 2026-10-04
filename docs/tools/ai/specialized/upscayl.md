@@ -1,49 +1,17 @@
 ---
-description: AI-powered image upscaler for enhancing image resolution
+description: "Enlarge an image without blurring it, locally, with AI models."
 url: "https://upscayl.org/"
 status: active
 kind: app
-platforms: [windows]
+platforms: [windows, macos, linux]
 image: upscayl.png
 ---
 
 # Upscayl
 
-**[Upscayl](https://upscayl.org/)** is an AI-powered image upscaler that improves the resolution of images while preserving quality. It is free and open-source.
+Upscayl enlarges an image (×2, ×4…) by rebuilding details with an AI model, instead of just stretching the pixels. It
+runs entirely on the machine, uses the graphics card, and offers several models depending on the kind of image: photo,
+illustration, heavily compressed picture.
 
-## Core Features
-
-- **Image upscaling**  
-  Increase the resolution of images with minimal loss of detail using AI models.  
-
-- **Cross-platform support**  
-  Available on Windows, macOS, and Linux.  
-
-- **Batch processing**  
-  Upscale multiple images at once for efficiency.
-
-## Additional Features
-
-- **Customization options**  
-  Adjust scaling factors, noise reduction, and enhancement settings for better results.  
-
-- **Preview before processing**  
-  Check a preview of the upscaled image before saving the final output.
-
-## Custom Models
-
-- **Support for custom models**  
-  Users can download and use additional AI models to enhance results.  
-- **Custom models repository**  
-  A repository with user-contributed models is available at [Upscayl Custom Models](https://github.com/upscayl/custom-models).
-
-## Characteristics
-
-- **Open-source and free**  
-  No cost to use, and the source code is available for community contributions.  
-
-- **AI-based enhancement**  
-  Uses advanced AI algorithms to improve image quality effectively.  
-
-- **User-friendly interface**  
-  Simple interface suitable for both beginners and experienced users.
+I use it to rescue an image that is too small — a logo, a screenshot, an illustration — before using it in a project
+or a page. It is free and open source, and nothing is sent online.

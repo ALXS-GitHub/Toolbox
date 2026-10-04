@@ -1,7 +1,7 @@
 ---
-description: AI-powered background removal tool
+description: "Cut out an image in one click, in the browser."
 url: "https://www.remove.bg/"
-status: active
+status: occasional
 kind: web
 platforms: [web]
 image: removebg.png
@@ -9,6 +9,8 @@ image: removebg.png
 
 # remove.bg
 
-**[remove.bg](https://www.remove.bg/)** is an AI-powered tool that removes backgrounds from images automatically. Upload a photo (or paste a URL), and within seconds you get a clean cutout with a transparent background. The AI handles complex edges surprisingly well -- hair, fur, semi-transparent objects, and intricate outlines that would take significant time to mask manually in an image editor. It is useful for product photos, profile pictures, design assets, presentations, and anywhere you need a subject isolated from its background.
+remove.bg removes an image's background automatically: drop a photo, and a few seconds later you get the subject cut
+out on a transparent background. The free result is low resolution, enough for a thumbnail or a mock-up.
 
-The free tier provides preview-quality results up to 0.25 megapixels, which is fine for web thumbnails or quick mockups. Full-resolution downloads require credits through a paid plan or a pay-per-image model. For bulk processing, remove.bg offers a desktop app that can process hundreds of images at once, and an API for integrating background removal into automated workflows (e.g., processing product catalog images programmatically). The API supports direct uploads and URL-based inputs, returning the result as a PNG with transparency.
+For a full-resolution or batch cut-out, I rather use my `rm_bg` script, a [CortX](/projects/cortx) global script that
+does the same locally with the open-source rembg model.

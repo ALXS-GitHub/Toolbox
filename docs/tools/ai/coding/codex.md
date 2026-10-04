@@ -1,94 +1,32 @@
 ---
-description: "OpenAI's agentic coding platform"
-url: "https://openai.com/codex"
+description: "OpenAI's coding agent, which I use on the command line next to Claude Code."
+url: "https://openai.com/codex/"
 status: active
 kind: cli
 platforms: [windows, macos, linux, web]
 image: openai.png
+sidebar_position: 2
 ---
 
 # Codex
 
-**[Codex](https://openai.com/codex)** is OpenAI's agentic coding platform that runs tasks in isolated cloud sandboxes. Originally the model powering [GitHub Copilot](/tools/ai/coding/github-copilot), Codex has evolved into a full development environment where AI agents write features, fix bugs, and propose pull requests autonomously.
+Codex is OpenAI's coding agent: like [Claude Code](/tools/ai/coding/claude-code), it works inside a project, reads and
+changes code, runs commands. I mostly use it on the command line (the `codex` CLI), included in my
+[ChatGPT](/tools/ai/assistants/chatgpt) subscription.
 
-## How Codex works
+## How I use it
 
-### Cloud sandbox environment
-Each task runs in its own isolated container:
-- Pre-configured development tools
-- Installed dependencies from your setup script
-- Git access to your repository
-- **Internet disabled during execution** for security
-- Your code stays within the sandbox
+Codex is my second agent. I use it when a different view helps — reviewing a change made with Claude Code, unblocking a
+problem the other one keeps circling around — and for what it does well on top, such as generating images from a
+detailed brief, for instance thumbnails for my game [Pack a K-Pop Idol](/projects/pack-a-kpop-idol).
 
-### Task workflow
-1. **Connect repository**: Link your GitHub repo
-2. **Describe task**: "Implement user profile editing with validation"
-3. **Sandbox provisioned**: Isolated environment with your code
-4. **Autonomous execution**: Reads code, implements changes, runs tests
-5. **Results delivered**: Opens PR or reports changes
-6. **Iterate**: Respond to feedback, refine implementation
+It runs with a medium reasoning level by default and, on Windows, in a sandbox that limits what it can change outside
+the project. Each folder has to be marked as "trusted" before it works there freely. Its sessions show up in
+[CortX](/projects/cortx), next to Claude Code's.
 
-### Seamless environment switching
-Move work between local environment and Codex cloud without losing state.
+## Installing it
 
-## Capabilities
-
-### Feature implementation
-"Add OAuth2 authentication using the existing user model"
-- Explores codebase structure
-- Implements auth flow
-- Adds routes, updates models, creates tests
-
-### Bug investigation
-"Debug why the payment webhook fails for international currencies"
-- Traces code path
-- Identifies root cause
-- Proposes and tests fixes
-
-### Large-scale refactoring
-"Migrate from REST to GraphQL for user endpoints"
-- Multi-file changes across codebase
-- Maintains consistency
-- Updates all affected imports
-
-### Dependency updates
-"Update React from v17 to v18 and fix breaking changes"
-- Updates packages
-- Identifies deprecations
-- Updates component patterns
-
-## Key features
-
-### Context compaction
-Works coherently across millions of tokens in a single task—handles entire codebases, not just files.
-
-### Enhanced vision
-Interprets screenshots, technical diagrams, and design mocks. Can translate designs into functional prototypes.
-
-### Unified platform
-CLI, IDE extension, cloud, and GitHub code review operate as one experience.
-
-## Access
-
-Available through ChatGPT Plus, Pro, Business, Edu, and Enterprise plans. CLI and IDE extension default to GPT-5.2-Codex when signed in.
-
-## Comparison with alternatives
-
-| Aspect | Codex | Claude Code | Copilot |
-|--------|-------|-------------|---------|
-| Environment | Cloud sandbox | Local + VS Code | IDE extension |
-| Context | Millions of tokens | 200K tokens | File-focused |
-| Execution | Isolated container | Local terminal | None |
-| Security | Internet disabled | Sandbox (Linux/Mac) | N/A |
-| Best for | Large async tasks | Interactive dev | Real-time coding |
-
-## Considerations
-
-- **Cloud execution**: Your code runs in OpenAI's infrastructure
-- **Task-oriented**: Designed for substantial work, not real-time interaction
-- **Review required**: Always review generated PRs before merging
-
-## Summary
-
-Codex is a cloud-based agentic coding platform for substantial development work. It runs tasks in isolated sandboxes with access to your full codebase, proposes changes via pull requests, and excels at large refactors and feature implementations where security and context at scale matter.
+```powershell
+scoop install codex      # or: npm install -g @openai/codex
+codex                    # in a project, then sign in with your ChatGPT account
+```

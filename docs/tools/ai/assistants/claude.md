@@ -1,82 +1,29 @@
 ---
-description: "Anthropic's thoughtful AI assistant"
+description: "Anthropic's assistant, plugged into my tools and skills, on the web, the desktop and the phone."
 url: "https://claude.ai/"
 status: active
 kind: web
-platforms: [web, windows]
+platforms: [web, windows, macos, android, ios]
 image: claude.png
+sidebar_position: 2
 ---
 
 # Claude
 
-**[Claude](https://claude.ai/)** is Anthropic's AI assistant, designed with a focus on being helpful, harmless, and honest. Known for nuanced writing, strong reasoning, and a distinctive conversational style, Claude has become a favorite among writers, researchers, and developers who value thoughtful, well-structured responses.
+Claude is Anthropic's assistant, and the one I have built the most around. I use it on claude.ai, in the desktop app
+and on my phone, and its coding counterpart, [Claude Code](/tools/ai/coding/claude-code), is at the heart of my
+[harness](/setup/claude-code).
 
-## What sets Claude apart
+## How I use it
 
-- **Nuanced communication**: Avoids the generic, over-eager tone common in AI assistants
-- **Extended thinking**: Reasons through complex problems step-by-step before responding
-- **Long context**: Up to 200K tokens, enabling analysis of entire books or large codebases
-- **Honest uncertainty**: More likely to express doubt rather than confidently hallucinate
+What makes claude.ai genuinely useful for me is what is plugged into it:
 
-## Key features
+- **Connectors** to my services (mail, calendar, documents, notes, music): Claude can look up an e-mail, check my
+  calendar or find a document without me copying anything.
+- **My ticket manager**, [Zorg](/projects/zorg/agents), through its MCP server: from the phone, I dictate an idea and
+  Claude creates the ticket in the right place, for Claude Code to pick up later.
+- **My production skills**, imported from my repository: a report, a diagram or a small doc requested on claude.ai
+  comes out in the same style as in the terminal (see [Skills on claude.ai](/setup/claude-code/claude-ai)).
 
-### Projects
-Organize conversations around specific contexts. Add documents, set custom instructions, and maintain persistent knowledge across chats:
-- Research projects with source materials
-- Coding projects with documentation and style guides
-- Writing projects with reference documents and tone guidelines
-
-### Artifacts
-Claude creates and renders interactive content directly in the conversation:
-- React components with live preview
-- SVG graphics and diagrams
-- HTML/CSS layouts
-- Markdown documents
-- Code with syntax highlighting
-
-### Extended thinking
-For complex problems, Claude engages in deeper reasoning, showing its thought process before delivering a final answer. Valuable for multi-step logic, code architecture decisions, and nuanced analysis.
-
-### Computer use
-Claude can interact with desktop applications, browsers, and GUIs programmatically, enabling automation of complex workflows requiring visual interaction.
-
-## Available models
-
-| Model | Best for |
-|-------|----------|
-| **Opus 4.5** | Complex analysis, agentic coding, research |
-| **Sonnet 4.5** | Daily tasks, coding, writing (balanced) |
-| **Haiku 4.5** | Quick queries, high-volume tasks |
-
-Opus 4.5 includes an "effort" parameter (low/medium/high) to control thinking depth.
-
-## Practical applications
-
-### Writing & editing
-- Edits without flattening prose into generic AI-speak
-- Matches specific tones (formal, casual, technical, creative)
-- Provides substantive feedback rather than superficial praise
-
-### Coding assistance
-- Understands large codebases with 200K context
-- Writes clean, idiomatic code across many languages
-- Explains architectural decisions and tradeoffs
-- Reviews code with actionable suggestions
-
-### Research & analysis
-- Summarizes long documents while preserving nuance
-- Compares sources and identifies contradictions
-- Structures complex information into clear frameworks
-
-## Claude Code
-
-For developers, Anthropic offers [Claude Code](/tools/ai/coding/claude-code), a CLI tool that brings Claude directly into your terminal and IDE. It navigates codebases, makes multi-file edits, runs commands, and iterates on implementations autonomously.
-
-## Comparison notes
-
-- **vs ChatGPT**: Claude produces more natural prose and is less prone to sycophancy; ChatGPT has broader Custom GPT ecosystem
-- **vs Gemini**: Claude lacks native Google integration but provides more nuanced analysis; Gemini has larger context
-
-## Summary
-
-Claude prioritizes quality of thought over speed of response. Its strengths in writing, extended reasoning, and honest communication make it valuable for substantive work. Projects and Artifacts extend Claude into a platform for ongoing, context-rich collaboration.
+For the rest, it is the usual use of an assistant: thinking a problem through, writing, proofreading, analysing a
+document, with projects to keep a topic's context from one conversation to the next.

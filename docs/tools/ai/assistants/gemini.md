@@ -1,72 +1,25 @@
 ---
-description: "Google's multimodal AI assistant"
+description: "Google's assistant, and Nano Banana, its image model, now built in."
 url: "https://gemini.google.com/"
 status: active
 kind: web
-platforms: [web]
+platforms: [web, android, ios]
 image: gemini.png
+sidebar_position: 3
 ---
 
 # Gemini
 
-**[Gemini](https://gemini.google.com/)** is Google's multimodal AI platform, designed from the ground up to understand and generate text, images, audio, video, and code. Its tight integration with Google's ecosystem (Search, Workspace, Android) makes it particularly powerful for users already embedded in Google services.
+Gemini is Google's assistant. Its strength is how well it fits into Google's ecosystem (search, YouTube, documents),
+and it is what I use to generate and edit images.
 
-## Core capabilities
+## Nano Banana
 
-### Native multimodality
-Gemini processes images, documents, video, and audio natively. Upload a photo and ask questions; paste a YouTube link for a summary; analyze charts, diagrams, or handwritten notes directly.
+Nano Banana is the name of Gemini's image model. It creates an image from a description, but it is above all good at
+**editing** an existing image in plain language: changing a background, adding an object, keeping the same character
+from one image to the next. It was first available on its own; it is now part of Gemini, and that is where I use it.
 
-### Massive context windows
-1-2 million token context enables analysis of entire books, codebases, or hour-long videos in a single prompt.
+## Around Gemini
 
-### Google ecosystem integration
-- **Gmail/Docs/Sheets**: Summarize email threads, draft responses, generate formulas, create documents
-- **Google Search**: Grounded responses with real-time web data and source citations
-- **Google Photos**: Search and query your photo library with natural language
-- **Android**: Deep integration in Pixel devices for on-device assistance
-- **NotebookLM**: Add notebooks as sources for grounded responses
-
-### Deep Research
-An agentic mode where Gemini autonomously browses multiple sources, synthesizes findings, and produces comprehensive reports with citations.
-
-### Gems (custom assistants)
-Create personalized AI assistants with specific instructions and personas—writing coaches, coding mentors, study buddies tailored to your needs.
-
-## Available models
-
-| Model | Best for |
-|-------|----------|
-| **Gemini 3 Flash** | Fast responses, everyday tasks, coding (now default) |
-| **Gemini 2.5 Pro** | Long documents, complex analysis (2M context) |
-| **Gemini 2.5 Flash Thinking** | Advanced reasoning with 1M context |
-
-## Practical applications
-
-- **Research**: Upload a 500-page PDF and ask specific questions with cited answers
-- **Video analysis**: Paste a YouTube URL, get timestamps, summaries, or find specific moments
-- **Coding help**: Extended context helps with large codebases and project structure
-- **Email triage**: Summarize threads, draft replies, extract action items in Gmail
-- **Data analysis**: Natural language queries on Google Sheets data
-
-## Unique strengths
-
-- **Massive context**: Process entire codebases or multi-hour recordings
-- **Grounded in Search**: Real-time information with citations
-- **Workspace native**: Best-in-class integration for Google Docs, Sheets, Gmail
-- **Speed**: Gemini 3 Flash delivers frontier intelligence 3x faster than 2.5 Pro
-
-## Limitations
-
-- Creative writing style can feel more corporate than alternatives
-- Some features roll out US-first or English-first
-- Heavy Google account integration may not suit privacy-focused users
-
-## See also
-
-- [Nanobanana](/tools/ai/specialized/nano-banana) - Gemini's creative image persona
-- [ChatGPT](/tools/ai/assistants/chatgpt) - OpenAI's alternative
-- [Claude](/tools/ai/assistants/claude) - Anthropic's alternative
-
-## Summary
-
-Gemini excels with massive context windows, native multimodal understanding, and seamless Google Workspace integration. If you're in the Google ecosystem, Gemini is the most natural AI assistant choice.
+Google offers the same model in other tools: [NotebookLM](/tools/ai/specialized/notebooklm) to work on your own
+documents, and [Google Stitch](/tools/ai/specialized/stitch) to generate interface mock-ups.

@@ -33,7 +33,7 @@ versioned with the rest.
 |---|---|
 | TypeScript, JSON, Tailwind, Rust, Python, Go | support for my languages (language servers, formatting) |
 | ESLint, Prettier | web linting and formatting |
-| Copilot, Copilot Chat | [GitHub Copilot](/tools/ai/coding/github-copilot) suggestions and chat |
+| Copilot, Copilot Chat | [GitHub Copilot](/archive/ai/github-copilot) suggestions and chat |
 | yanky, dial, harpoon2, inc-rename | better clipboard, smart increment, file bookmarks, live rename |
 | mini-hipatterns, treesitter-context | highlighted colours, current function context at the top of the screen |
 
