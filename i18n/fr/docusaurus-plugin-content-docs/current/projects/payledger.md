@@ -112,7 +112,7 @@ automatique avant de commencer.
 ## Confidentialité
 
 L'application elle-même n'envoie rien : pas de télémétrie, pas de compte, et son seul accès réseau est la
-vérification de ses propres mises à jour. Les données ne sont pas chiffrées par PayLedger : c'est le chiffrement du
+vérification de ses propres mises à jour, par un [relais](/setup/tauri-updates) puisque le dépôt est privé. Les données ne sont pas chiffrées par PayLedger : c'est le chiffrement du
 disque du système qui les protège si la machine est volée.
 
 Il y a une exception, et elle est voulue : **ce que je montre à l'agent passe par sa conversation**. Quand Claude lit

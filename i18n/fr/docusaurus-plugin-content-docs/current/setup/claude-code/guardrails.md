@@ -51,6 +51,7 @@ Chaque commit est signé avec une clé SSH qui vit dans mon gestionnaire de mots
 l'utilise à travers l'agent SSH du gestionnaire (`gpg.format = ssh`, `commit.gpgsign = true`), qui demande mon
 autorisation avant d'utiliser la clé ; le push passe par le même agent. Sans le gestionnaire déverrouillé, aucun
 commit ne peut être signé ni poussé, et [GitHub](/tools/dev/version-control/github) affiche chaque commit comme vérifié.
+Le branchement exact est décrit dans [Git et GitHub](/setup/git).
 
 ## Pourquoi trois barrières
 

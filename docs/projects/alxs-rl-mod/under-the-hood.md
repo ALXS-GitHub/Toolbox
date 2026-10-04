@@ -56,5 +56,5 @@ match tracker uses the stats API the game itself exposes locally. Nothing is sen
 ## Releasing
 
 A version tag triggers GitHub Actions: the Windows installer and a signed update go into a draft release. Once the
-release is published, installed apps update themselves. The website is built by a small home-made generator that
+release is published, installed apps update themselves (see [Tauri app updates](/setup/tauri-updates)). The website is built by a small home-made generator that
 produces the English and French versions, published on GitHub Pages.

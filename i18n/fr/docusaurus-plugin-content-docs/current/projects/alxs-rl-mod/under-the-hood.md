@@ -58,5 +58,6 @@ lui-même en local. Rien n'est envoyé nulle part.
 ## Publication
 
 Une étiquette de version déclenche GitHub Actions : l'installeur Windows et une mise à jour signée partent dans une
-release brouillon. Une fois la release publiée, les applications installées se mettent à jour d'elles-mêmes. Le site
+release brouillon. Une fois la release publiée, les applications installées se mettent à jour d'elles-mêmes (voir
+[Mises à jour des apps Tauri](/setup/tauri-updates)). Le site
 est un générateur maison qui produit les versions anglaise et française, publié sur GitHub Pages.

@@ -105,7 +105,8 @@ a dry run to see what would change without writing anything, and it takes an aut
 
 ## Privacy
 
-The app itself sends nothing: no telemetry, no account, and its only network access is checking for its own updates.
+The app itself sends nothing: no telemetry, no account, and its only network access is checking for its own updates, through a
+[relay](/setup/tauri-updates) since the repository is private.
 The data is not encrypted by PayLedger: the operating system's disk encryption protects it if the machine is stolen.
 
 There is one exception, and it is intended: **whatever I show the agent goes through its conversation**. When Claude

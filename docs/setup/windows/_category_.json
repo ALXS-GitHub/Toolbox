@@ -1,9 +1,0 @@
-{
-  "label": "Windows environment",
-  "position": 2,
-  "collapsed": true,
-  "link": {
-    "type": "generated-index",
-    "description": "How my Windows dev environment is set up."
-  }
-}

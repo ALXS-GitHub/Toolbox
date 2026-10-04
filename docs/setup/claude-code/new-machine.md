@@ -17,7 +17,7 @@ Before fetching the configuration, the tools it depends on must be there. I inst
 | Tool | Why |
 |---|---|
 | [Claude Code](/tools/ai/coding/claude-code) | the agent itself, with its native installer |
-| [PowerShell 7](/setup/windows/powershell) | the status line and maintenance scripts are written for it |
+| [PowerShell 7](/setup/windows) | the status line and maintenance scripts are written for it |
 | [Git](/tools/dev/version-control/git) | the configuration repository |
 | A password manager with an SSH agent | commit signing and pushing |
 | [Python 3](/tools/dev/languages/python) | the skills' scripts (rendering, checks) |

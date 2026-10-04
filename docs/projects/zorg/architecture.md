@@ -68,4 +68,5 @@ updated with the app.
 Releases are built by GitHub Actions when I push a tag: Windows, macOS and Linux, signed, as a draft release that I
 publish by hand. Since the repository is private, the app cannot read those releases directly. It asks a small relay
 hosted on Vercel, which alone holds a read-only token, returns the latest version and serves the files. The
-installers' signature is checked before any update.
+installers' signature is checked before any update; the mechanism is detailed in
+[Tauri app updates](/setup/tauri-updates).

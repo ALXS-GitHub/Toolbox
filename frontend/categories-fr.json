@@ -111,10 +111,6 @@
     "label": "Communication",
     "description": "Messagerie et vocal."
   },
-  "setup/windows": {
-    "label": "Environnement Windows",
-    "description": "Comment mon environnement de dev Windows est monté."
-  },
   "hardware/accessories": {
     "label": "Accessoires",
     "description": "Clavier, souris et casque."

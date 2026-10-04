@@ -219,11 +219,14 @@ sys.path.insert(0, str(HERE))
 import harness  # noqa: E402  (diagrams of the harness section)
 
 import projects  # noqa: E402  (diagrams of the projects section)
+import setup  # noqa: E402  (diagrams of the setup guides)
 
 T.update(harness.T)
 T.update(projects.T)
+T.update(setup.T)
 BUILDERS.update(harness.builders(node))
 BUILDERS.update(projects.builders(node, harness.page))
+BUILDERS.update(setup.builders(node, harness.page))
 
 
 def make(name, lang):

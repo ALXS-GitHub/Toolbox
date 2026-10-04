@@ -27,7 +27,7 @@ turns orange, it is time to finish the current task or start again from a clean 
 
 Claude Code runs the command declared in `statusLine` and sends it the session state as JSON on standard input:
 folder, model, effort, cost, context window, quotas, pull request, cache. The script only has to read that JSON and
-print two coloured lines. It is written in [PowerShell 7](/setup/windows/powershell); in the real setting, `pwsh` and the script are given by their
+print two coloured lines. It is written in [PowerShell 7](/setup/windows); in the real setting, `pwsh` and the script are given by their
 full path so as not to depend on the current shell (paths are shortened here):
 
 ```json

@@ -36,7 +36,7 @@ choisit dans ses réglages.
 Au début, l'agent modifiait le jeu directement dans Roblox Studio, à travers un serveur MCP. Ça marchait, mais le code
 n'existait que dans le fichier du jeu : pas d'historique lisible, pas d'outils de qualité. Le projet est donc passé à
 un fonctionnement **fichiers d'abord** : tout le code vit en fichiers Luau dans un dépôt git, et **Rojo** les
-synchronise vers Studio. Le serveur MCP de Studio ne sert plus qu'à ce qui n'est pas du code : la 3D et les assets.
+synchronise vers Studio (la chaîne complète est dans [Développer sur Roblox](/setup/roblox)). Le serveur MCP de Studio ne sert plus qu'à ce qui n'est pas du code : la 3D et les assets.
 
 Quelques règles font que ça tient à l'échelle, avec près de mille commits :
 

@@ -18,7 +18,7 @@ réinstaller.
 | Outil | Pourquoi |
 |---|---|
 | [Claude Code](/tools/ai/coding/claude-code) | l'agent lui-même, avec son installateur natif |
-| [PowerShell 7](/setup/windows/powershell) | la statusline et les scripts d'entretien sont écrits pour lui |
+| [PowerShell 7](/setup/windows) | la statusline et les scripts d'entretien sont écrits pour lui |
 | [Git](/tools/dev/version-control/git) | le dépôt de configuration |
 | Un gestionnaire de mots de passe avec agent SSH | la signature des commits et le push |
 | [Python 3](/tools/dev/languages/python) | les scripts des skills (rendu, contrôles) |

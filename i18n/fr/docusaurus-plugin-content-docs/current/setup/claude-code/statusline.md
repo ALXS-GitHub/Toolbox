@@ -29,7 +29,7 @@ contexte qui passe au orange, c'est le signal de terminer la tâche en cours ou 
 
 Claude Code appelle la commande déclarée dans `statusLine` et lui envoie l'état de la session en JSON sur l'entrée
 standard : dossier, modèle, effort, coût, fenêtre de contexte, quotas, pull request, cache. Le script n'a qu'à lire ce
-JSON et écrire deux lignes colorées. Il est écrit en [PowerShell 7](/setup/windows/powershell) ; dans le vrai réglage, `pwsh` et le script sont
+JSON et écrire deux lignes colorées. Il est écrit en [PowerShell 7](/setup/windows) ; dans le vrai réglage, `pwsh` et le script sont
 donnés par leur chemin complet, pour ne pas dépendre du shell courant (les chemins sont raccourcis ici) :
 
 ```json

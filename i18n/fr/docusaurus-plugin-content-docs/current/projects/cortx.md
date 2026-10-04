@@ -77,7 +77,8 @@ mêmes projets, les mêmes scripts et les mêmes alias. Les données sont de sim
 pousse dans un dépôt git privé, ce qui permet de tout retrouver sur une nouvelle machine.
 
 Les versions sont construites par GitHub Actions quand je pousse une étiquette : la release est créée en brouillon
-avec les installateurs des trois systèmes, et je la publie à la main.
+avec les installateurs des trois systèmes, et je la publie à la main (voir
+[Mises à jour des apps Tauri](/setup/tauri-updates)).
 
 ## Où il en est
 

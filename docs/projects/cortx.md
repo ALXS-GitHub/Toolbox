@@ -74,7 +74,8 @@ and aliases. The data is plain JSON files; `cortx backup` pushes them to a priva
 everything back on a new machine.
 
 Releases are built by GitHub Actions when I push a tag: the release is created as a draft with the installers for the
-three systems, and I publish it by hand.
+three systems, and I publish it by hand (see
+[Tauri app updates](/setup/tauri-updates)).
 
 ## Where it stands
 

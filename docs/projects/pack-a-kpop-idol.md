@@ -34,7 +34,8 @@ Two interface styles coexist, and each player picks one in the settings.
 
 At first, the agent edited the game directly inside Roblox Studio, through an MCP server. It worked, but the code only
 existed inside the game file: no readable history, no quality tools. The project therefore moved to a **files-first**
-workflow: all the code lives as Luau files in a git repository, and **Rojo** syncs them into Studio. The Studio MCP
+workflow: all the code lives as Luau files in a git repository, and **Rojo** syncs them into Studio (the full toolchain is in
+[Developing on Roblox](/setup/roblox)). The Studio MCP
 server is now only used for what is not code: 3D and assets.
 
 A few rules make it hold at scale, with almost a thousand commits:

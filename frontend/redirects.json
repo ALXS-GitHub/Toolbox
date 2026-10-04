@@ -285,7 +285,7 @@
   },
   {
     "from": "/docs/dev/configs/powershell_config",
-    "to": "/setup/windows/powershell"
+    "to": "/setup/windows"
   },
   {
     "from": "/docs/dev/configs/wsl_config",

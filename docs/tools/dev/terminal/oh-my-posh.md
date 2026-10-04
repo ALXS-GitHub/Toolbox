@@ -11,7 +11,7 @@ image: oh_my_posh.png
 
 Oh My Posh is a fast, theme‑able prompt engine that enriches your shell (PowerShell, Bash, Zsh, Warp, etc.) with contextual segments like Git status, runtime versions, execution time, and more, rendered in a visually appealing, Unicode/NERD font aware layout. It lets you compose or tweak JSON/YAML based themes so your prompt surfaces exactly the information you care about while staying minimal when idle.
 
-I use it primarily inside PowerShell. You can find more details about my PowerShell Config here: [PowerShell Config](/setup/windows/powershell).
+I use it primarily inside PowerShell. You can find more details about my PowerShell Config here: [PowerShell Config](/setup/windows).
 
 ## Installation
 
