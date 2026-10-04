@@ -1,0 +1,9 @@
+{
+  "label": "Communication",
+  "position": 5,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Chat and voice."
+  }
+}

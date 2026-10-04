@@ -1,0 +1,50 @@
+{
+  "link.title.Toolbox": {
+    "message": "Toolbox",
+    "description": "The title of the footer links column with title=Toolbox in the footer"
+  },
+  "link.title.More": {
+    "message": "Plus",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.title.Links": {
+    "message": "Liens",
+    "description": "The title of the footer links column with title=Links in the footer"
+  },
+  "link.item.label.Setup": {
+    "message": "Setup",
+    "description": "The label of footer link with label=Setup linking to /setup"
+  },
+  "link.item.label.Tools": {
+    "message": "Outils",
+    "description": "The label of footer link with label=Tools linking to /tools"
+  },
+  "link.item.label.Projects": {
+    "message": "Projets",
+    "description": "The label of footer link with label=Projects linking to /projects"
+  },
+  "link.item.label.Hardware": {
+    "message": "Matériel",
+    "description": "The label of footer link with label=Hardware linking to /hardware"
+  },
+  "link.item.label.Games": {
+    "message": "Jeux",
+    "description": "The label of footer link with label=Games linking to /games"
+  },
+  "link.item.label.Archive": {
+    "message": "Archive",
+    "description": "The label of footer link with label=Archive linking to /archive"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/ALXS-GitHub"
+  },
+  "link.item.label.Source of this site": {
+    "message": "Code source du site",
+    "description": "The label of footer link with label=Source of this site linking to https://github.com/ALXS-GitHub/Toolbox"
+  },
+  "copyright": {
+    "message": "© 2026 ALXS · Fait avec Docusaurus",
+    "description": "The footer copyright"
+  }
+}

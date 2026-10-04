@@ -1,0 +1,9 @@
+{
+  "label": "Assistants",
+  "position": 1,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "General-purpose AI chat assistants."
+  }
+}

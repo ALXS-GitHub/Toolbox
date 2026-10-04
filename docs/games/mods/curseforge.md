@@ -1,12 +1,10 @@
 ---
-origin: installed
-category: gaming
-url: https://www.curseforge.com/
 description: Mod manager for Minecraft and other games
-use_state: active
-os: Windows
-sidebar_custom_props:
-    image: /images/curseforge.png
+url: "https://www.curseforge.com/"
+status: occasional
+kind: app
+platforms: [windows]
+image: curseforge.png
 ---
 
 # CurseForge

@@ -1,0 +1,9 @@
+{
+  "label": "Runtimes & package managers",
+  "position": 6,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "JavaScript and Python runtimes and package managers."
+  }
+}

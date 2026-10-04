@@ -1,8 +1,9 @@
 ---
-url: https://akkogear.eu/fr/products/mod-007-v3-he-year-of-dragon-hall-effect-keyboard
-description: 75% hall effect magnetic switch keyboard with 8K polling
-sidebar_custom_props:
-    image: /images/akko_mod007.png
+description: "75% hall effect magnetic switch keyboard with 8K polling"
+url: "https://akkogear.eu/fr/products/mod-007-v3-he-year-of-dragon-hall-effect-keyboard"
+status: active
+kind: hardware
+image: akko_mod007.png
 ---
 
 # Akko MOD007 V3 HE — Year of Dragon

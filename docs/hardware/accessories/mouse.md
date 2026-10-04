@@ -1,8 +1,9 @@
 ---
-url: https://www.pulsar.gg/products/xlite-v4-gaming-mouse
 description: Ultra-lightweight ergonomic wireless gaming mouse
-sidebar_custom_props:
-    image: /images/pulsar_xlite.png
+url: "https://www.pulsar.gg/products/xlite-v4-gaming-mouse"
+status: active
+kind: hardware
+image: pulsar_xlite.png
 ---
 
 # Pulsar Xlite V4

@@ -1,0 +1,306 @@
+{
+  "version.label": {
+    "message": "Actuelle",
+    "description": "The label for version current"
+  },
+  "sidebar.setup.category.Windows environment": {
+    "message": "Environnement Windows",
+    "description": "The label for category 'Windows environment' in sidebar 'setup'"
+  },
+  "sidebar.setup.category.Windows environment.link.generated-index.description": {
+    "message": "Comment mon environnement de dev Windows est monté.",
+    "description": "The generated-index page description for category 'Windows environment' in sidebar 'setup'"
+  },
+  "sidebar.tools.category.AI": {
+    "message": "IA",
+    "description": "The label for category 'AI' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.AI.link.generated-index.description": {
+    "message": "Les assistants, agents de code et outils d'IA spécialisés que j'utilise.",
+    "description": "The generated-index page description for category 'AI' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Assistants": {
+    "message": "Assistants",
+    "description": "The label for category 'Assistants' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Assistants.link.generated-index.description": {
+    "message": "Les assistants conversationnels généralistes.",
+    "description": "The generated-index page description for category 'Assistants' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Coding": {
+    "message": "Code",
+    "description": "The label for category 'Coding' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Coding.link.generated-index.description": {
+    "message": "Les agents et assistants d'IA pour écrire du code.",
+    "description": "The generated-index page description for category 'Coding' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Specialized": {
+    "message": "Spécialisés",
+    "description": "The label for category 'Specialized' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Specialized.link.generated-index.description": {
+    "message": "Les outils d'IA pour l'image, la musique, la recherche et le design.",
+    "description": "The generated-index page description for category 'Specialized' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Development": {
+    "message": "Développement",
+    "description": "The label for category 'Development' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Development.link.generated-index.description": {
+    "message": "Tout ce qui me sert à écrire, lancer et livrer du code.",
+    "description": "The generated-index page description for category 'Development' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Editors": {
+    "message": "Éditeurs",
+    "description": "The label for category 'Editors' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Editors.link.generated-index.description": {
+    "message": "Les éditeurs de code.",
+    "description": "The generated-index page description for category 'Editors' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Terminal & shell": {
+    "message": "Terminal et shell",
+    "description": "The label for category 'Terminal & shell' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Terminal & shell.link.generated-index.description": {
+    "message": "Terminaux, prompt et gestionnaire de paquets.",
+    "description": "The generated-index page description for category 'Terminal & shell' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Command-line tools": {
+    "message": "Outils en ligne de commande",
+    "description": "The label for category 'Command-line tools' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Command-line tools.link.generated-index.description": {
+    "message": "Les petits outils qui rendent le terminal plus rapide.",
+    "description": "The generated-index page description for category 'Command-line tools' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Git & GitHub": {
+    "message": "Git et GitHub",
+    "description": "The label for category 'Git & GitHub' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Git & GitHub.link.generated-index.description": {
+    "message": "Gestion de versions et hébergement du code.",
+    "description": "The generated-index page description for category 'Git & GitHub' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Languages": {
+    "message": "Langages",
+    "description": "The label for category 'Languages' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Languages.link.generated-index.description": {
+    "message": "Les langages que j'écris.",
+    "description": "The generated-index page description for category 'Languages' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Runtimes & package managers": {
+    "message": "Runtimes et gestionnaires de paquets",
+    "description": "The label for category 'Runtimes & package managers' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Runtimes & package managers.link.generated-index.description": {
+    "message": "Runtimes et gestionnaires de paquets JavaScript et Python.",
+    "description": "The generated-index page description for category 'Runtimes & package managers' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Web & desktop": {
+    "message": "Web et desktop",
+    "description": "The label for category 'Web & desktop' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Web & desktop.link.generated-index.description": {
+    "message": "Bibliothèques et outils pour les apps web et desktop.",
+    "description": "The generated-index page description for category 'Web & desktop' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Databases": {
+    "message": "Bases de données",
+    "description": "The label for category 'Databases' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Databases.link.generated-index.description": {
+    "message": "Bases de données et leurs clients.",
+    "description": "The generated-index page description for category 'Databases' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Cloud & containers": {
+    "message": "Cloud et conteneurs",
+    "description": "The label for category 'Cloud & containers' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Cloud & containers.link.generated-index.description": {
+    "message": "Backends, hébergement et conteneurs.",
+    "description": "The generated-index page description for category 'Cloud & containers' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Creation": {
+    "message": "Création",
+    "description": "The label for category 'Creation' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Creation.link.generated-index.description": {
+    "message": "Image, son, vidéo et documents.",
+    "description": "The generated-index page description for category 'Creation' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Image & 3D": {
+    "message": "Image et 3D",
+    "description": "The label for category 'Image & 3D' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Image & 3D.link.generated-index.description": {
+    "message": "Retouche d'image et 3D.",
+    "description": "The generated-index page description for category 'Image & 3D' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Audio": {
+    "message": "Audio",
+    "description": "The label for category 'Audio' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Audio.link.generated-index.description": {
+    "message": "Montage audio.",
+    "description": "The generated-index page description for category 'Audio' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Video": {
+    "message": "Vidéo",
+    "description": "The label for category 'Video' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Video.link.generated-index.description": {
+    "message": "Traitement vidéo.",
+    "description": "The generated-index page description for category 'Video' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Documents": {
+    "message": "Documents",
+    "description": "The label for category 'Documents' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Documents.link.generated-index.description": {
+    "message": "Rédaction et mise en page de documents.",
+    "description": "The generated-index page description for category 'Documents' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.System": {
+    "message": "Système",
+    "description": "The label for category 'System' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.System.link.generated-index.description": {
+    "message": "Productivité et personnalisation de Windows.",
+    "description": "The generated-index page description for category 'System' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Productivity": {
+    "message": "Productivité",
+    "description": "The label for category 'Productivity' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Productivity.link.generated-index.description": {
+    "message": "Les apps qui organisent mon travail et ma machine.",
+    "description": "The generated-index page description for category 'Productivity' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Customization": {
+    "message": "Personnalisation",
+    "description": "The label for category 'Customization' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Customization.link.generated-index.description": {
+    "message": "Personnalisation du bureau.",
+    "description": "The generated-index page description for category 'Customization' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Web & leisure": {
+    "message": "Web et loisirs",
+    "description": "The label for category 'Web & leisure' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Web & leisure.link.generated-index.description": {
+    "message": "Navigateurs, streaming, musique et communication.",
+    "description": "The generated-index page description for category 'Web & leisure' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Browsers": {
+    "message": "Navigateurs",
+    "description": "The label for category 'Browsers' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Browsers.link.generated-index.description": {
+    "message": "Navigateurs web.",
+    "description": "The generated-index page description for category 'Browsers' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Websites": {
+    "message": "Sites",
+    "description": "The label for category 'Websites' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Websites.link.generated-index.description": {
+    "message": "Les sites que j'utilise tous les jours.",
+    "description": "The generated-index page description for category 'Websites' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Streaming": {
+    "message": "Streaming",
+    "description": "The label for category 'Streaming' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Streaming.link.generated-index.description": {
+    "message": "Services de streaming vidéo.",
+    "description": "The generated-index page description for category 'Streaming' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Music": {
+    "message": "Musique",
+    "description": "The label for category 'Music' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Music.link.generated-index.description": {
+    "message": "Musique.",
+    "description": "The generated-index page description for category 'Music' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Communication": {
+    "message": "Communication",
+    "description": "The label for category 'Communication' in sidebar 'tools'"
+  },
+  "sidebar.tools.category.Communication.link.generated-index.description": {
+    "message": "Messagerie et vocal.",
+    "description": "The generated-index page description for category 'Communication' in sidebar 'tools'"
+  },
+  "sidebar.hardware.category.Accessories": {
+    "message": "Accessoires",
+    "description": "The label for category 'Accessories' in sidebar 'hardware'"
+  },
+  "sidebar.hardware.category.Accessories.link.generated-index.description": {
+    "message": "Clavier, souris et casque.",
+    "description": "The generated-index page description for category 'Accessories' in sidebar 'hardware'"
+  },
+  "sidebar.hardware.category.Companion software": {
+    "message": "Logiciels compagnons",
+    "description": "The label for category 'Companion software' in sidebar 'hardware'"
+  },
+  "sidebar.hardware.category.Companion software.link.generated-index.description": {
+    "message": "Les logiciels qui accompagnent le matériel.",
+    "description": "The generated-index page description for category 'Companion software' in sidebar 'hardware'"
+  },
+  "sidebar.games.category.Launchers": {
+    "message": "Lanceurs",
+    "description": "The label for category 'Launchers' in sidebar 'games'"
+  },
+  "sidebar.games.category.Launchers.link.generated-index.description": {
+    "message": "Boutiques et lanceurs de jeux.",
+    "description": "The generated-index page description for category 'Launchers' in sidebar 'games'"
+  },
+  "sidebar.games.category.Mods & tools": {
+    "message": "Mods et outils",
+    "description": "The label for category 'Mods & tools' in sidebar 'games'"
+  },
+  "sidebar.games.category.Mods & tools.link.generated-index.description": {
+    "message": "Mods et outils de modding.",
+    "description": "The generated-index page description for category 'Mods & tools' in sidebar 'games'"
+  },
+  "sidebar.games.category.Emulators": {
+    "message": "Émulateurs",
+    "description": "The label for category 'Emulators' in sidebar 'games'"
+  },
+  "sidebar.games.category.Emulators.link.generated-index.description": {
+    "message": "Émulateurs.",
+    "description": "The generated-index page description for category 'Emulators' in sidebar 'games'"
+  },
+  "sidebar.archive.category.AI": {
+    "message": "IA",
+    "description": "The label for category 'AI' in sidebar 'archive'"
+  },
+  "sidebar.archive.category.Development": {
+    "message": "Développement",
+    "description": "The label for category 'Development' in sidebar 'archive'"
+  },
+  "sidebar.archive.category.Creation": {
+    "message": "Création",
+    "description": "The label for category 'Creation' in sidebar 'archive'"
+  },
+  "sidebar.archive.category.System": {
+    "message": "Système",
+    "description": "The label for category 'System' in sidebar 'archive'"
+  },
+  "sidebar.archive.category.Web & leisure": {
+    "message": "Web et loisirs",
+    "description": "The label for category 'Web & leisure' in sidebar 'archive'"
+  },
+  "sidebar.archive.category.Hardware": {
+    "message": "Matériel",
+    "description": "The label for category 'Hardware' in sidebar 'archive'"
+  },
+  "sidebar.archive.category.Projects": {
+    "message": "Projets",
+    "description": "The label for category 'Projects' in sidebar 'archive'"
+  }
+}

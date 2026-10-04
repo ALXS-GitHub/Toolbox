@@ -1,0 +1,9 @@
+{
+  "label": "Web & leisure",
+  "position": 5,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Browsers, streaming, music and communication."
+  }
+}

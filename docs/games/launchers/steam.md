@@ -1,12 +1,10 @@
 ---
-origin: installed
-category: gaming
-url: https://store.steampowered.com/
 description: Gaming platform and digital storefront
-use_state: active
-os: Windows
-sidebar_custom_props:
-    image: /images/steam.png
+url: "https://store.steampowered.com/"
+status: active
+kind: app
+platforms: [windows]
+image: steam.png
 ---
 
 # Steam

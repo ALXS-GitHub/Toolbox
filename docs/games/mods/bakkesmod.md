@@ -1,12 +1,10 @@
 ---
-origin: installed
-category: gaming
-url: https://bakkesmod.com/
 description: Rocket League mod tool for training and customization
-use_state: active
-os: Windows
-sidebar_custom_props:
-    image: /images/bakkesmod.png
+url: "https://bakkesmod.com/"
+status: active
+kind: app
+platforms: [windows]
+image: bakkesmod.png
 ---
 
 # BakkesMod

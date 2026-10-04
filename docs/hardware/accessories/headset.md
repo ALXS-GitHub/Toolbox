@@ -1,8 +1,9 @@
 ---
-url: https://rog.asus.com/headsets-audio/headsets/wireless-headsets/rog-delta-ii/
 description: Tri-mode wireless gaming headset with 110h battery
-sidebar_custom_props:
-    image: /images/rog_delta_ii.png
+url: "https://rog.asus.com/headsets-audio/headsets/wireless-headsets/rog-delta-ii/"
+status: active
+kind: hardware
+image: rog_delta_ii.png
 ---
 
 # ASUS ROG Delta II

@@ -1,0 +1,490 @@
+[
+  {
+    "from": "/docs/ai/chatgpt",
+    "to": "/tools/ai/assistants/chatgpt"
+  },
+  {
+    "from": "/docs/ai/claude",
+    "to": "/tools/ai/assistants/claude"
+  },
+  {
+    "from": "/docs/ai/coding/claude_code",
+    "to": "/tools/ai/coding/claude-code"
+  },
+  {
+    "from": "/docs/ai/coding/codex",
+    "to": "/tools/ai/coding/codex"
+  },
+  {
+    "from": "/docs/ai/coding/github_copilot",
+    "to": "/tools/ai/coding/github-copilot"
+  },
+  {
+    "from": "/docs/ai/deepseek",
+    "to": "/archive/ai/deepseek"
+  },
+  {
+    "from": "/docs/ai/gemini",
+    "to": "/tools/ai/assistants/gemini"
+  },
+  {
+    "from": "/docs/ai/grok",
+    "to": "/archive/ai/grok"
+  },
+  {
+    "from": "/docs/ai/mistral",
+    "to": "/archive/ai/mistral"
+  },
+  {
+    "from": "/docs/ai/nanobanana",
+    "to": "/tools/ai/specialized/nano-banana"
+  },
+  {
+    "from": "/docs/ai/notebooklm",
+    "to": "/tools/ai/specialized/notebooklm"
+  },
+  {
+    "from": "/docs/ai/perplexity",
+    "to": "/archive/ai/perplexity"
+  },
+  {
+    "from": "/docs/ai/suno",
+    "to": "/tools/ai/specialized/suno"
+  },
+  {
+    "from": "/docs/apps/blender",
+    "to": "/tools/creation/image/blender"
+  },
+  {
+    "from": "/docs/apps/browsers/chrome",
+    "to": "/tools/web/browsers/chrome"
+  },
+  {
+    "from": "/docs/apps/browsers/comet",
+    "to": "/archive/web/comet"
+  },
+  {
+    "from": "/docs/apps/browsers/zen",
+    "to": "/tools/web/browsers/zen"
+  },
+  {
+    "from": "/docs/apps/davinci_resolve",
+    "to": "/archive/creation/davinci-resolve"
+  },
+  {
+    "from": "/docs/apps/discord",
+    "to": "/tools/web/communication/discord"
+  },
+  {
+    "from": "/docs/apps/dopamine",
+    "to": "/archive/web/dopamine"
+  },
+  {
+    "from": "/docs/apps/entertainment/canal_plus",
+    "to": "/tools/web/streaming/canal-plus"
+  },
+  {
+    "from": "/docs/apps/entertainment/disney_plus",
+    "to": "/tools/web/streaming/disney-plus"
+  },
+  {
+    "from": "/docs/apps/entertainment/netflix",
+    "to": "/tools/web/streaming/netflix"
+  },
+  {
+    "from": "/docs/apps/entertainment/prime_video",
+    "to": "/tools/web/streaming/prime-video"
+  },
+  {
+    "from": "/docs/apps/gimp",
+    "to": "/tools/creation/image/gimp"
+  },
+  {
+    "from": "/docs/apps/notion",
+    "to": "/tools/system/productivity/notion"
+  },
+  {
+    "from": "/docs/apps/notion_calendar",
+    "to": "/tools/system/productivity/notion-calendar"
+  },
+  {
+    "from": "/docs/apps/nvidia_app",
+    "to": "/archive/hardware/nvidia-app"
+  },
+  {
+    "from": "/docs/apps/obs_studio",
+    "to": "/archive/creation/obs-studio"
+  },
+  {
+    "from": "/docs/apps/spotify",
+    "to": "/tools/web/music/spotify"
+  },
+  {
+    "from": "/docs/apps/utility/armoury_crate",
+    "to": "/archive/hardware/armoury-crate"
+  },
+  {
+    "from": "/docs/apps/utility/audacity",
+    "to": "/tools/creation/audio/audacity"
+  },
+  {
+    "from": "/docs/apps/utility/autohotkey",
+    "to": "/archive/system/autohotkey"
+  },
+  {
+    "from": "/docs/apps/utility/bitwarden",
+    "to": "/archive/system/bitwarden"
+  },
+  {
+    "from": "/docs/apps/utility/crucial_storage_executive",
+    "to": "/hardware/software/crucial-storage-executive"
+  },
+  {
+    "from": "/docs/apps/utility/lively_wallpaper",
+    "to": "/archive/system/lively-wallpaper"
+  },
+  {
+    "from": "/docs/apps/utility/powertoys",
+    "to": "/tools/system/productivity/powertoys"
+  },
+  {
+    "from": "/docs/apps/utility/radmin_vpn",
+    "to": "/archive/system/radmin-vpn"
+  },
+  {
+    "from": "/docs/apps/utility/rainmeter",
+    "to": "/tools/system/customization/rainmeter"
+  },
+  {
+    "from": "/docs/apps/utility/rocket_dock",
+    "to": "/archive/system/rocketdock"
+  },
+  {
+    "from": "/docs/apps/utility/upscaly",
+    "to": "/tools/ai/specialized/upscayl"
+  },
+  {
+    "from": "/docs/apps/utility/wallpaper_engine",
+    "to": "/tools/system/customization/wallpaper-engine"
+  },
+  {
+    "from": "/docs/apps/utility/windir_stats",
+    "to": "/tools/system/productivity/windirstat"
+  },
+  {
+    "from": "/docs/dev/apps/antigravity",
+    "to": "/archive/ai/antigravity"
+  },
+  {
+    "from": "/docs/dev/apps/cursor",
+    "to": "/archive/ai/cursor"
+  },
+  {
+    "from": "/docs/dev/apps/db_browser_sqlite",
+    "to": "/archive/dev/db-browser-sqlite"
+  },
+  {
+    "from": "/docs/dev/apps/github_desktop",
+    "to": "/archive/dev/github-desktop"
+  },
+  {
+    "from": "/docs/dev/apps/mongodb_compass",
+    "to": "/tools/dev/databases/mongodb-compass"
+  },
+  {
+    "from": "/docs/dev/apps/redis_insight",
+    "to": "/archive/dev/redis-insight"
+  },
+  {
+    "from": "/docs/dev/apps/virtualbox",
+    "to": "/archive/dev/virtualbox"
+  },
+  {
+    "from": "/docs/dev/apps/vscode",
+    "to": "/tools/dev/editors/vscode"
+  },
+  {
+    "from": "/docs/dev/apps/warp",
+    "to": "/tools/dev/terminal/warp"
+  },
+  {
+    "from": "/docs/dev/apps/windows_terminal",
+    "to": "/tools/dev/terminal/windows-terminal"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/bun",
+    "to": "/tools/dev/runtimes/bun"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/deno",
+    "to": "/tools/dev/runtimes/deno"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/node",
+    "to": "/tools/dev/runtimes/node"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/react",
+    "to": "/tools/dev/web-desktop/react"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/shadcn",
+    "to": "/tools/dev/web-desktop/shadcn"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/tauri",
+    "to": "/tools/dev/web-desktop/tauri"
+  },
+  {
+    "from": "/docs/dev/code/frameworks/vite",
+    "to": "/tools/dev/web-desktop/vite"
+  },
+  {
+    "from": "/docs/dev/code/languages/c",
+    "to": "/tools/dev/languages/c"
+  },
+  {
+    "from": "/docs/dev/code/languages/cpp",
+    "to": "/tools/dev/languages/cpp"
+  },
+  {
+    "from": "/docs/dev/code/languages/documents/latex",
+    "to": "/archive/creation/latex"
+  },
+  {
+    "from": "/docs/dev/code/languages/documents/quarkdown",
+    "to": "/archive/creation/quarkdown"
+  },
+  {
+    "from": "/docs/dev/code/languages/documents/typst",
+    "to": "/tools/creation/documents/typst"
+  },
+  {
+    "from": "/docs/dev/code/languages/go",
+    "to": "/tools/dev/languages/go"
+  },
+  {
+    "from": "/docs/dev/code/languages/javascript",
+    "to": "/tools/dev/languages/javascript"
+  },
+  {
+    "from": "/docs/dev/code/languages/python",
+    "to": "/tools/dev/languages/python"
+  },
+  {
+    "from": "/docs/dev/code/languages/rust",
+    "to": "/tools/dev/languages/rust"
+  },
+  {
+    "from": "/docs/dev/code/languages/typescript",
+    "to": "/tools/dev/languages/typescript"
+  },
+  {
+    "from": "/docs/dev/configs/lazyvim_config",
+    "to": "/setup/neovim"
+  },
+  {
+    "from": "/docs/dev/configs/powershell_config",
+    "to": "/setup/windows/powershell"
+  },
+  {
+    "from": "/docs/dev/configs/wsl_config",
+    "to": "/archive/dev/wsl-config"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/7zip",
+    "to": "/tools/dev/cli/7zip"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/eza",
+    "to": "/tools/dev/cli/eza"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/fd",
+    "to": "/tools/dev/cli/fd"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/ffmpeg",
+    "to": "/tools/creation/video/ffmpeg"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/fzf",
+    "to": "/tools/dev/cli/fzf"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/git",
+    "to": "/tools/dev/version-control/git"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/gnupg",
+    "to": "/archive/dev/gnupg"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/imagemagick",
+    "to": "/archive/creation/imagemagick"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/jq",
+    "to": "/tools/dev/cli/jq"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/lazygit",
+    "to": "/tools/dev/cli/lazygit"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/ripgrep",
+    "to": "/tools/dev/cli/ripgrep"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/scoop",
+    "to": "/tools/dev/terminal/scoop"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/uv",
+    "to": "/tools/dev/runtimes/uv"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/yazi",
+    "to": "/tools/dev/cli/yazi"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/z",
+    "to": "/archive/dev/z"
+  },
+  {
+    "from": "/docs/dev/tools/cmd/zoxide",
+    "to": "/tools/dev/cli/zoxide"
+  },
+  {
+    "from": "/docs/dev/tools/docker",
+    "to": "/tools/dev/cloud/docker"
+  },
+  {
+    "from": "/docs/dev/tools/github",
+    "to": "/tools/dev/version-control/github"
+  },
+  {
+    "from": "/docs/dev/tools/mongodb",
+    "to": "/tools/dev/databases/mongodb"
+  },
+  {
+    "from": "/docs/dev/tools/neo4j",
+    "to": "/archive/dev/neo4j"
+  },
+  {
+    "from": "/docs/dev/tools/neovim",
+    "to": "/tools/dev/editors/neovim"
+  },
+  {
+    "from": "/docs/dev/tools/netlify",
+    "to": "/archive/dev/netlify"
+  },
+  {
+    "from": "/docs/dev/tools/oh_my_posh",
+    "to": "/tools/dev/terminal/oh-my-posh"
+  },
+  {
+    "from": "/docs/dev/tools/supabase",
+    "to": "/tools/dev/cloud/supabase"
+  },
+  {
+    "from": "/docs/dev/tools/utility/advanced_installer",
+    "to": "/archive/dev/advanced-installer"
+  },
+  {
+    "from": "/docs/dev/tools/wsl",
+    "to": "/archive/dev/wsl"
+  },
+  {
+    "from": "/docs/intro",
+    "to": "/tools"
+  },
+  {
+    "from": "/docs/projects/chrome_homepage",
+    "to": "/projects/chrome-homepage"
+  },
+  {
+    "from": "/docs/projects/k_games",
+    "to": "/projects/k-games"
+  },
+  {
+    "from": "/docs/projects/markdown_themes/markdown_theme_vsc_extension",
+    "to": "/archive/projects/markdown-theme-vsc-extension"
+  },
+  {
+    "from": "/docs/projects/markdown_themes/markdown_themes",
+    "to": "/archive/projects/markdown-themes"
+  },
+  {
+    "from": "/docs/projects/markdown_themes/markdown_to_pdf",
+    "to": "/archive/projects/markdown-to-pdf"
+  },
+  {
+    "from": "/docs/projects/rl_designer",
+    "to": "/projects/rl-designer"
+  },
+  {
+    "from": "/docs/websites/dev/devicon",
+    "to": "/tools/dev/web-desktop/devicon"
+  },
+  {
+    "from": "/docs/websites/dev/excalidraw",
+    "to": "/tools/dev/web-desktop/excalidraw"
+  },
+  {
+    "from": "/docs/websites/dev/github",
+    "to": "/tools/dev/version-control/github-website"
+  },
+  {
+    "from": "/docs/websites/dev/removebg",
+    "to": "/tools/ai/specialized/remove-bg"
+  },
+  {
+    "from": "/docs/websites/dev/stitch",
+    "to": "/tools/ai/specialized/stitch"
+  },
+  {
+    "from": "/docs/websites/google",
+    "to": "/tools/web/sites/google"
+  },
+  {
+    "from": "/docs/websites/learning/duolingo",
+    "to": "/archive/web/duolingo"
+  },
+  {
+    "from": "/docs/websites/youtube",
+    "to": "/tools/web/sites/youtube"
+  },
+  {
+    "from": "/games/bluestacks",
+    "to": "/games/emulators/bluestacks"
+  },
+  {
+    "from": "/games/genshin_impact",
+    "to": "/games/genshin-impact"
+  },
+  {
+    "from": "/games/intro",
+    "to": "/games"
+  },
+  {
+    "from": "/games/launchers/epic_games",
+    "to": "/games/launchers/epic-games"
+  },
+  {
+    "from": "/games/no_man's_sky",
+    "to": "/games/no-mans-sky"
+  },
+  {
+    "from": "/games/rocket_league",
+    "to": "/games/rocket-league"
+  },
+  {
+    "from": "/hardware/computers/laptop",
+    "to": "/archive/hardware/asus-tuf-f17"
+  },
+  {
+    "from": "/hardware/intro",
+    "to": "/hardware"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "label": "Streaming",
+  "position": 3,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Video streaming services."
+  }
+}

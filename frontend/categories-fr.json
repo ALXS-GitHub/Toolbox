@@ -1,0 +1,166 @@
+{
+  "tools/ai": {
+    "label": "IA",
+    "description": "Les assistants, agents de code et outils d'IA spécialisés que j'utilise."
+  },
+  "tools/ai/assistants": {
+    "label": "Assistants",
+    "description": "Les assistants conversationnels généralistes."
+  },
+  "tools/ai/coding": {
+    "label": "Code",
+    "description": "Les agents et assistants d'IA pour écrire du code."
+  },
+  "tools/ai/specialized": {
+    "label": "Spécialisés",
+    "description": "Les outils d'IA pour l'image, la musique, la recherche et le design."
+  },
+  "tools/dev": {
+    "label": "Développement",
+    "description": "Tout ce qui me sert à écrire, lancer et livrer du code."
+  },
+  "tools/dev/editors": {
+    "label": "Éditeurs",
+    "description": "Les éditeurs de code."
+  },
+  "tools/dev/terminal": {
+    "label": "Terminal et shell",
+    "description": "Terminaux, prompt et gestionnaire de paquets."
+  },
+  "tools/dev/cli": {
+    "label": "Outils en ligne de commande",
+    "description": "Les petits outils qui rendent le terminal plus rapide."
+  },
+  "tools/dev/version-control": {
+    "label": "Git et GitHub",
+    "description": "Gestion de versions et hébergement du code."
+  },
+  "tools/dev/languages": {
+    "label": "Langages",
+    "description": "Les langages que j'écris."
+  },
+  "tools/dev/runtimes": {
+    "label": "Runtimes et gestionnaires de paquets",
+    "description": "Runtimes et gestionnaires de paquets JavaScript et Python."
+  },
+  "tools/dev/web-desktop": {
+    "label": "Web et desktop",
+    "description": "Bibliothèques et outils pour les apps web et desktop."
+  },
+  "tools/dev/databases": {
+    "label": "Bases de données",
+    "description": "Bases de données et leurs clients."
+  },
+  "tools/dev/cloud": {
+    "label": "Cloud et conteneurs",
+    "description": "Backends, hébergement et conteneurs."
+  },
+  "tools/creation": {
+    "label": "Création",
+    "description": "Image, son, vidéo et documents."
+  },
+  "tools/creation/image": {
+    "label": "Image et 3D",
+    "description": "Retouche d'image et 3D."
+  },
+  "tools/creation/audio": {
+    "label": "Audio",
+    "description": "Montage audio."
+  },
+  "tools/creation/video": {
+    "label": "Vidéo",
+    "description": "Traitement vidéo."
+  },
+  "tools/creation/documents": {
+    "label": "Documents",
+    "description": "Rédaction et mise en page de documents."
+  },
+  "tools/system": {
+    "label": "Système",
+    "description": "Productivité et personnalisation de Windows."
+  },
+  "tools/system/productivity": {
+    "label": "Productivité",
+    "description": "Les apps qui organisent mon travail et ma machine."
+  },
+  "tools/system/customization": {
+    "label": "Personnalisation",
+    "description": "Personnalisation du bureau."
+  },
+  "tools/web": {
+    "label": "Web et loisirs",
+    "description": "Navigateurs, streaming, musique et communication."
+  },
+  "tools/web/browsers": {
+    "label": "Navigateurs",
+    "description": "Navigateurs web."
+  },
+  "tools/web/sites": {
+    "label": "Sites",
+    "description": "Les sites que j'utilise tous les jours."
+  },
+  "tools/web/streaming": {
+    "label": "Streaming",
+    "description": "Services de streaming vidéo."
+  },
+  "tools/web/music": {
+    "label": "Musique",
+    "description": "Musique."
+  },
+  "tools/web/communication": {
+    "label": "Communication",
+    "description": "Messagerie et vocal."
+  },
+  "setup/windows": {
+    "label": "Environnement Windows",
+    "description": "Comment mon environnement de dev Windows est monté."
+  },
+  "hardware/accessories": {
+    "label": "Accessoires",
+    "description": "Clavier, souris et casque."
+  },
+  "hardware/software": {
+    "label": "Logiciels compagnons",
+    "description": "Les logiciels qui accompagnent le matériel."
+  },
+  "games/launchers": {
+    "label": "Lanceurs",
+    "description": "Boutiques et lanceurs de jeux."
+  },
+  "games/mods": {
+    "label": "Mods et outils",
+    "description": "Mods et outils de modding."
+  },
+  "games/emulators": {
+    "label": "Émulateurs",
+    "description": "Émulateurs."
+  },
+  "archive/ai": {
+    "label": "IA",
+    "description": ""
+  },
+  "archive/dev": {
+    "label": "Développement",
+    "description": ""
+  },
+  "archive/creation": {
+    "label": "Création",
+    "description": ""
+  },
+  "archive/system": {
+    "label": "Système",
+    "description": ""
+  },
+  "archive/web": {
+    "label": "Web et loisirs",
+    "description": ""
+  },
+  "archive/hardware": {
+    "label": "Matériel",
+    "description": ""
+  },
+  "archive/projects": {
+    "label": "Projets",
+    "description": ""
+  }
+}

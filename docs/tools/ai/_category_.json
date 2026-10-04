@@ -1,0 +1,9 @@
+{
+  "label": "AI",
+  "position": 1,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Assistants, coding agents and specialized AI tools I use."
+  }
+}

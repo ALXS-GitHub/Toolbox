@@ -1,0 +1,9 @@
+{
+  "label": "Documents",
+  "position": 4,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Writing and typesetting documents."
+  }
+}

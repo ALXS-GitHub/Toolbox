@@ -1,12 +1,10 @@
 ---
-origin: installed
-category: gaming
-url: https://battle.net/
 description: Blizzard Entertainment game launcher and store
-use_state: active
-os: Windows
-sidebar_custom_props:
-    image: /images/battlenet.png
+url: "https://battle.net/"
+status: occasional
+kind: app
+platforms: [windows]
+image: battlenet.png
 ---
 
 # Battle.net

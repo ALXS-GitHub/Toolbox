@@ -1,8 +1,9 @@
 {
-  "label": "Mods",
+  "label": "Mods & tools",
+  "position": 3,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "List of all the game mods"
-  },
-  "position": 1
+    "description": "Mods and modding tools."
+  }
 }

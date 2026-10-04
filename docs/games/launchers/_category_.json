@@ -1,8 +1,9 @@
 {
   "label": "Launchers",
+  "position": 2,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
-    "description": "List of all the game launchers"
-  },
-  "position": 1
+    "description": "Game stores and launchers."
+  }
 }

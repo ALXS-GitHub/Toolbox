@@ -1,117 +1,121 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import redirects from './redirects.json';
+import {sidebarItemsGenerator} from './sidebarItems';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: 'Toolbox',
-  tagline: 'Personal documentation of my tools, configs, apps, projects, games, hardware, and more.',
-  favicon: 'img/favicon.ico',
+  tagline: 'My setup, my tools and my projects — how I use them, and why.',
+  favicon: 'img/favicon.png',
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: 'https://alxs-github.github.io',
   baseUrl: '/Toolbox/',
   staticDirectories: ['../assets', 'static'],
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'ALXS-GitHub', // Usually your GitHub org/user name.
-  projectName: 'Toolbox', // Usually your repo name.
+  organizationName: 'ALXS-GitHub',
+  projectName: 'Toolbox',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+  onBrokenAnchors: 'warn',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
   },
 
-  
+  // English is the default locale (unprefixed URLs); French lives under /fr/.
+  // A client module sends first-time visitors to the version that matches their browser language.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr'],
+    path: '../i18n',
+    localeConfigs: {
+      en: {label: 'English', htmlLang: 'en'},
+      fr: {label: 'Français', htmlLang: 'fr'},
+    },
+  },
+
+  clientModules: ['./src/clientModules/localeRedirect.ts'],
+
   presets: [
     [
       'classic',
       {
         docs: {
-          path: '../docs/docs',
-          routeBasePath: 'docs',
+          path: '../docs',
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
+          sidebarItemsGenerator,
+          showLastUpdateTime: true,
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: {
-          //     type: ['rss', 'atom'],
-          //     xslt: true,
-          //   },
-          //   // Useful options to enforce blogging best practices
-          //   onInlineTags: 'warn',
-          //   onInlineAuthors: 'warn',
-          //   onUntruncatedBlogPosts: 'warn',
-          // },
-          theme: {
-            customCss: './src/css/custom.scss',
-          },
-        } satisfies Preset.Options,
-      ],
+        blog: false,
+        theme: {
+          customCss: './src/css/custom.scss',
+        },
+      } satisfies Preset.Options,
     ],
+  ],
 
-    plugins: [
-      'docusaurus-plugin-sass',
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'hardware',
-          path: '../docs/hardware',
-          routeBasePath: 'hardware',
-          sidebarPath: './hardwareSidebars.ts',
-        },
-      ],
-      [
-        '@docusaurus/plugin-content-docs',
-        {
-          id: 'games',
-          path: '../docs/games',
-          routeBasePath: 'games',
-          sidebarPath: './gamesSidebars.ts',
-        },
-      ],
+  plugins: [
+    'docusaurus-plugin-sass',
+    ['@docusaurus/plugin-client-redirects', {redirects}],
+  ],
+
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en', 'fr'],
+        docsRouteBasePath: '/',
+        docsDir: '../docs',
+        indexBlog: false,
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+      },
     ],
-    
-    themeConfig: {
-      // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+  ],
+
+  themeConfig: {
+    image: 'img/social-card.png',
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
     navbar: {
       title: 'Toolbox',
+      hideOnScroll: true,
       logo: {
-        alt: 'Toolbox Logo',
+        alt: 'Toolbox',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'toolboxSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {to: '/hardware/intro', label: 'Hardware', position: 'left'},
-        {to: '/games/intro', label: 'Games', position: 'left'},
-        // {to: '../docs/tools/scoop', label: 'Tools', position: 'left'},
-        // {to: '/blog', label: 'Blog', position: 'left'},
+        {type: 'docSidebar', sidebarId: 'setup', position: 'left', label: 'Setup'},
+        {type: 'docSidebar', sidebarId: 'tools', position: 'left', label: 'Tools'},
+        {type: 'docSidebar', sidebarId: 'projects', position: 'left', label: 'Projects'},
+        {type: 'docSidebar', sidebarId: 'hardware', position: 'left', label: 'Hardware'},
+        {type: 'docSidebar', sidebarId: 'games', position: 'left', label: 'Games'},
+        {type: 'docSidebar', sidebarId: 'archive', position: 'left', label: 'Archive'},
+        {type: 'search', position: 'right'},
+        {type: 'localeDropdown', position: 'right'},
         {
           href: 'https://github.com/ALXS-GitHub/Toolbox',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub',
         },
       ],
     },
@@ -119,53 +123,35 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Toolbox',
           items: [
-            {
-              label: 'Apps',
-              to: '/docs/category/apps',
-            },
-            {
-              label: 'Dev',
-              to: '/docs/category/dev',
-            },
-            {
-              label: 'Projects',
-              to: '/docs/category/projects',
-            },
-            {
-              label: 'Websites',
-              to: '/docs/category/websites',
-            }
+            {label: 'Setup', to: '/setup'},
+            {label: 'Tools', to: '/tools'},
+            {label: 'Projects', to: '/projects'},
           ],
-        },
-        {
-          title: 'Hardware',
-          items: []
-        },
-        {
-          title: 'Games',
-          items: []
         },
         {
           title: 'More',
           items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+            {label: 'Hardware', to: '/hardware'},
+            {label: 'Games', to: '/games'},
+            {label: 'Archive', to: '/archive'},
+          ],
+        },
+        {
+          title: 'Links',
+          items: [
+            {label: 'GitHub', href: 'https://github.com/ALXS-GitHub'},
+            {label: 'Source of this site', href: 'https://github.com/ALXS-GitHub/Toolbox'},
           ],
         },
       ],
-      copyright: `Copyright © 2025 ALXS' Toolbox, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} ALXS · Built with Docusaurus`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: [
-        'bash',
-        'powershell',
-      ]
+      additionalLanguages: ['bash', 'powershell', 'json', 'toml', 'lua', 'rust', 'python', 'go'],
     },
   } satisfies Preset.ThemeConfig,
 };

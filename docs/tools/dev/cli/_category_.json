@@ -1,0 +1,9 @@
+{
+  "label": "Command-line tools",
+  "position": 3,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Small CLI tools that make the terminal faster."
+  }
+}

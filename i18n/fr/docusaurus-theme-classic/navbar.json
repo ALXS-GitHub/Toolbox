@@ -1,0 +1,34 @@
+{
+  "title": {
+    "message": "Toolbox",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Toolbox",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Setup": {
+    "message": "Setup",
+    "description": "Navbar item with label Setup"
+  },
+  "item.label.Tools": {
+    "message": "Outils",
+    "description": "Navbar item with label Tools"
+  },
+  "item.label.Projects": {
+    "message": "Projets",
+    "description": "Navbar item with label Projects"
+  },
+  "item.label.Hardware": {
+    "message": "Matériel",
+    "description": "Navbar item with label Hardware"
+  },
+  "item.label.Games": {
+    "message": "Jeux",
+    "description": "Navbar item with label Games"
+  },
+  "item.label.Archive": {
+    "message": "Archive",
+    "description": "Navbar item with label Archive"
+  }
+}

@@ -1,25 +1,16 @@
-import React, {type ReactNode, useState, useEffect} from 'react';
+import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import {
-  useDocById,
-  findFirstSidebarItemLink,
-} from '@docusaurus/plugin-content-docs/client';
+import {useDocById, findFirstSidebarItemLink} from '@docusaurus/plugin-content-docs/client';
 import {usePluralForm} from '@docusaurus/theme-common';
-import isInternalUrl from '@docusaurus/isInternalUrl';
 import {translate} from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-
+import isInternalUrl from '@docusaurus/isInternalUrl';
 import type {Props} from '@theme/DocCard';
-import Heading from '@theme/Heading';
-import type {
-  PropSidebarItemCategory,
-  PropSidebarItemLink,
-} from '@docusaurus/plugin-content-docs';
-
+import type {PropSidebarItemCategory, PropSidebarItemLink} from '@docusaurus/plugin-content-docs';
+import {FiFileText, FiFolder, FiLink} from 'react-icons/fi';
+import {imagePath, statusLabel, type Status} from '@site/src/lib/meta';
 import styles from './styles.module.scss';
-import type { PropSidebarCustomProps } from '@site/src/types/customProps';
-import { imageHook } from '@site/src/hooks/imageHook';
 
 function useCategoryItemsPlural() {
   const {selectMessage} = usePluralForm();
@@ -30,104 +21,73 @@ function useCategoryItemsPlural() {
         {
           message: '1 item|{count} items',
           id: 'theme.docs.DocCard.categoryDescription.plurals',
-          description:
-            'The default description for a category card in the generated index about how many items this category includes',
+          description: 'The default description for a category card in the generated index',
         },
         {count},
       ),
     );
 }
 
-function CardContainer({
-  className,
-  href,
-  children,
-}: {
-  className?: string;
-  href: string;
-  children: ReactNode;
-}): ReactNode {
-  return (
-    <Link
-      href={href}
-      className={clsx('card padding--lg', styles.cardContainer, className)}>
-      {children}
-    </Link>
-  );
-}
-
 function CardLayout({
-  className,
   href,
   icon,
   title,
   description,
+  status,
+  className,
 }: {
-  className?: string;
   href: string;
   icon: ReactNode;
   title: string;
   description?: string;
+  status?: Status;
+  className?: string;
 }): ReactNode {
   return (
-    <CardContainer href={href} className={className}>
-      <Heading
-        as="h2"
-        className={clsx('text--truncate', styles.cardTitle)}
-        title={title}>
-        {icon} {title}
-      </Heading>
-      {description && (
-        <p
-          className={clsx('text--truncate', styles.cardDescription)}
-          title={description}>
-          {description}
-        </p>
-      )}
-    </CardContainer>
+    <Link href={href} className={clsx(styles.card, className, status === 'archived' && styles.archived)}>
+      <span className={styles.icon}>{icon}</span>
+      <span className={styles.body}>
+        <span className={styles.titleRow}>
+          <span className={styles.title}>{title}</span>
+          {status && status !== 'active' && (
+            <span className={clsx(styles.status, styles[`status-${status}`])}>{statusLabel(status)}</span>
+          )}
+        </span>
+        {description && <span className={styles.description}>{description}</span>}
+      </span>
+    </Link>
   );
+}
+
+function Logo({image}: {image: string}): ReactNode {
+  return <img src={useBaseUrl(imagePath(image))} alt="" loading="lazy" />;
 }
 
 function CardCategory({item}: {item: PropSidebarItemCategory}): ReactNode {
   const href = findFirstSidebarItemLink(item);
-  const categoryItemsPlural = useCategoryItemsPlural();
-
-  // Unexpected: categories that don't have a link have been filtered upfront
-  if (!href) {
-    return null;
-  }
-
+  const plural = useCategoryItemsPlural();
+  if (!href) return null;
   return (
     <CardLayout
       className={item.className}
       href={href}
-      icon="🗃️"
+      icon={<FiFolder aria-hidden />}
       title={item.label}
-      description={item.description ?? categoryItemsPlural(item.items.length)}
+      description={item.description ?? plural(item.items.length)}
     />
   );
 }
 
-function CardIcon({item}: {item: PropSidebarItemLink}): ReactNode {
-  // const [imageLoaded, setImageLoaded] = useState<boolean | null>(null);
-  const customProps = item.customProps as PropSidebarCustomProps | undefined;
-  const { imageLoaded, resolvedImage } = imageHook(customProps?.image);
-
-  const Wrapper: React.ComponentType<{children: ReactNode, className?: string}> = ({children, className}) =>
-    <span className={clsx('text--truncate', styles.cardIcon, className)}>{children}</span>;
-
-  if (imageLoaded === true) {
-    return (
-      <Wrapper className={styles.hasImage}><img src={resolvedImage} alt={item.label ?? ''} /></Wrapper>
-    );
-  } else {
-    return <Wrapper>{isInternalUrl(item.href) ? '📄️' : '🔗'}</Wrapper>;
-  }
-}
-
 function CardLink({item}: {item: PropSidebarItemLink}): ReactNode {
-  const icon = <CardIcon item={item} />;
   const doc = useDocById(item.docId ?? undefined);
+  const props = (item.customProps ?? {}) as {image?: string; status?: Status};
+  const icon = props.image ? (
+    <Logo image={props.image} />
+  ) : isInternalUrl(item.href) ? (
+    <FiFileText aria-hidden />
+  ) : (
+    <FiLink aria-hidden />
+  );
   return (
     <CardLayout
       className={item.className}
@@ -135,6 +95,7 @@ function CardLink({item}: {item: PropSidebarItemLink}): ReactNode {
       icon={icon}
       title={item.label}
       description={item.description ?? doc?.description}
+      status={props.status}
     />
   );
 }

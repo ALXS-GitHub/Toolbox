@@ -1,0 +1,9 @@
+{
+  "label": "Languages",
+  "position": 5,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Programming languages I write."
+  }
+}

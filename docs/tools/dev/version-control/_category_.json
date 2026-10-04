@@ -1,0 +1,9 @@
+{
+  "label": "Git & GitHub",
+  "position": 4,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Version control and code hosting."
+  }
+}

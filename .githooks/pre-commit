@@ -1,0 +1,10 @@
+#!/bin/sh
+# Content check on the staged pages (front matter + leaks). The site is public.
+# Enable once per clone: git config core.hooksPath .githooks
+files=$(git diff --cached --name-only --diff-filter=ACMR -- '*.md' '*.mdx')
+[ -z "$files" ] && exit 0
+# shellcheck disable=SC2086
+node scripts/check-content.mjs $files || {
+  echo "Commit blocked: fix the pages above (see scripts/check-content.mjs)." >&2
+  exit 1
+}

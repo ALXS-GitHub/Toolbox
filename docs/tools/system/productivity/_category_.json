@@ -1,0 +1,9 @@
+{
+  "label": "Productivity",
+  "position": 1,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Apps that organize my work and my machine."
+  }
+}
