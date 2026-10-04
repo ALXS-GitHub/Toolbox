@@ -1,46 +1,16 @@
 ---
-description: Icon set for programming languages and development tools
+description: "Logos of development languages and tools, ready to embed."
 url: "https://devicon.dev/"
-status: active
+status: paused
 kind: web
 platforms: [web]
 image: devicon.png
+sidebar_position: 7
 ---
 
 # Devicon
 
-**[Devicon](https://devicon.dev/)** is an open-source icon set providing 600+ icons for programming languages, frameworks, tools, and services. If you need a logo for React, Docker, Rust, AWS, or practically any other technology, Devicon likely has it in multiple styles.
+Devicon gathers the logos of hundreds of languages, frameworks and development tools, as SVG or an icon font, ready to
+embed in a site or a README.
 
-## Usage
-
-The fastest way to use Devicon is through the CDN. Add the stylesheet to your HTML `<head>`:
-
-```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-```
-
-Then use icons with `<i>` tags, specifying the technology name and style variant:
-
-```html
-<i class="devicon-react-original"></i>
-<i class="devicon-typescript-plain"></i>
-<i class="devicon-docker-plain colored"></i>
-<i class="devicon-python-plain-wordmark colored"></i>
-```
-
-Adding the `colored` class applies the official brand colors to the icon.
-
-## Style variants
-
-Most icons come in several variants:
-
-- **original** -- the full official logo as designed
-- **plain** -- a simplified, single-color version
-- **line** -- outline-only version
-- **wordmark** -- includes the technology name below or beside the icon (e.g., `plain-wordmark`, `original-wordmark`)
-
-Not every icon has all variants. The [Devicon website](https://devicon.dev/) lets you browse all available icons and see which styles exist for each one.
-
-## Alternative usage
-
-Beyond the CDN, you can also install Devicon via npm (`npm install devicon`) or download individual SVG files directly from the [GitHub repository](https://github.com/devicons/devicon/tree/master/icons). The SVG approach is useful when you need to customize icons or embed them in design tools, presentations, or documentation.
+I used it a lot for my [portfolio](/projects/portfolio) and project pages, but I have no use for it at the moment.

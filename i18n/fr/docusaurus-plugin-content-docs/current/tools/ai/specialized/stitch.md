@@ -1,5 +1,5 @@
 ---
-description: "Générer des maquettes d'interface à partir d'une description ou d'un croquis — en pause."
+description: "Générer des maquettes d'interface à partir d'une description ou d'un croquis."
 url: "https://stitch.withgoogle.com/"
 status: paused
 kind: web

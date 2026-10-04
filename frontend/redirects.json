@@ -289,7 +289,7 @@
   },
   {
     "from": "/docs/dev/configs/wsl_config",
-    "to": "/archive/dev/wsl-config"
+    "to": "/tools/dev/terminal/wsl"
   },
   {
     "from": "/docs/dev/tools/cmd/7zip",
@@ -393,7 +393,7 @@
   },
   {
     "from": "/docs/dev/tools/wsl",
-    "to": "/archive/dev/wsl"
+    "to": "/tools/dev/terminal/wsl"
   },
   {
     "from": "/docs/intro",
@@ -433,7 +433,7 @@
   },
   {
     "from": "/docs/websites/dev/github",
-    "to": "/tools/dev/version-control/github-website"
+    "to": "/tools/dev/version-control/github"
   },
   {
     "from": "/docs/websites/dev/removebg",
@@ -498,5 +498,17 @@
   {
     "from": "/tools/ai/specialized/upscayl",
     "to": "/tools/creation/image/upscayl"
+  },
+  {
+    "from": "/archive/dev/wsl",
+    "to": "/tools/dev/terminal/wsl"
+  },
+  {
+    "from": "/archive/dev/wsl-config",
+    "to": "/tools/dev/terminal/wsl"
+  },
+  {
+    "from": "/tools/dev/version-control/github-website",
+    "to": "/tools/dev/version-control/github"
   }
 ]

@@ -1,5 +1,5 @@
 ---
-description: "Generate interface mock-ups from a description or a sketch — on hold."
+description: "Generate interface mock-ups from a description or a sketch."
 url: "https://stitch.withgoogle.com/"
 status: paused
 kind: web
