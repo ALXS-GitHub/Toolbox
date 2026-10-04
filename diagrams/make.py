@@ -87,9 +87,9 @@ T = {
             "shells": "Shells", "shells_node": ("PowerShell · bash", "zsh · fish"),
             "backup": "Sauvegarde", "backup_node": ("Dépôt git privé", "cortx backup"),
             "note": "Les quatre interfaces partagent les mêmes données",
-            "l_gen": "génère", "l_push": "push",
+            "l_gen": "génère", "l_push": "push", "l_default": "par défaut", "l_else": "sans CLI",
             "legend": {"blue": "Cœur partagé", "green": "Données", "gray": "Composant"},
-            "line": "Appel", "dash": "Génération · sauvegarde",
+            "line": "Appel", "dash": "Repli · génération · sauvegarde",
         },
         "en": {
             "title": "CortX architecture",
@@ -104,9 +104,9 @@ T = {
             "shells": "Shells", "shells_node": ("PowerShell · bash", "zsh · fish"),
             "backup": "Backup", "backup_node": ("Private git repo", "cortx backup"),
             "note": "All four interfaces share the same data",
-            "l_gen": "generates", "l_push": "push",
+            "l_gen": "generates", "l_push": "push", "l_default": "by default", "l_else": "no CLI",
             "legend": {"blue": "Shared core", "green": "Data", "gray": "Component"},
-            "line": "Call", "dash": "Generation · backup",
+            "line": "Call", "dash": "Fallback · generation · backup",
         },
     },
 }
@@ -178,7 +178,7 @@ def cortx_architecture(t):
     <div class="node person" id="me" style="grid-column:1;grid-row:1">
       <div class="ico">{lucide("user")}</div><div><b>{t["me"][0]}</b><small>{t["me"][1]}</small></div>
     </div>
-    <div class="node person" id="agents" style="grid-column:4;grid-row:1">
+    <div class="node person" id="agents" style="grid-column:3;grid-row:1">
       <div class="ico">{lucide("bot")}</div><div><b>{t["agents"][0]}</b><small>{t["agents"][1]}</small></div>
     </div>
 {node("gui", "tall", 1, 4, lucide("app-window"), t["gui"])}{node("tui", "tall", 2, 4, lucide("square-terminal"), t["tui"])}{node("cli", "tall", 3, 4, lucide("terminal"), t["cli"])}{node("mcp", "tall", 4, 4, lucide("plug"), t["mcp"])}{node("proc", "tall", 1, 6, lucide("activity"), t["proc"])}{node("core", "k-blue fill tall", "2/4", 6, '<img data-logo="si:rust">', t["core"])}{node("init", "tall", 4, 6, lucide("wand-sparkles"), t["init"])}{node("data", "k-green fill tall", 2, 8, lucide("database"), t["data"])}    <div class="note plain" style="grid-column:3/5;grid-row:9;align-self:end">{t["note"]}</div>
@@ -197,7 +197,8 @@ def cortx_architecture(t):
 '''
     links = f'''const LINKS = [
   ["me", "gui"],
-  ["agents", "mcp"],
+  ["agents", "cli", {{ label: "{t["l_default"]}", labelAt: .35 }}],
+  ["agents", "mcp", {{ from: "r", to: "t", dash: true, label: "{t["l_else"]}" }}],
   ["gui", "core", {{ at: .5 }}],
   ["tui", "core", {{ at: .5 }}],
   ["cli", "core", {{ at: .5 }}],

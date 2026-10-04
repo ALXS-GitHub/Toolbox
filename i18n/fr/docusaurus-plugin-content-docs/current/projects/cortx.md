@@ -40,9 +40,10 @@ avec leur statut, leurs fichiers de configuration et un lien vers leur fiche dan
 quand je réinstalle un poste. Enfin, `cortx init <shell>` génère pour PowerShell, bash, zsh et fish le même ensemble
 d'alias, de fonctions et d'intégrations, par exemple celle de [zoxide](/tools/dev/cli/zoxide).
 
-**Pensé aussi pour les agents.** Le CLI répond en JSON (`--json`) et `cortx docs` affiche une référence écrite pour
-les agents d'IA. Un serveur MCP expose les mêmes fonctions, et CortX sait retrouver les sessions de Claude Code et de
-Codex en cours sur la machine (fonction encore en bêta).
+**Pensé aussi pour les agents.** Les agents d'IA passent par défaut par le CLI : il répond en JSON (`--json`) et
+`cortx docs` affiche une référence écrite pour eux. Le serveur MCP expose les mêmes fonctions pour les clients qui
+n'ont pas accès à un shell. CortX sait aussi retrouver les sessions de Claude Code et de Codex en cours sur la machine
+(fonction encore en bêta).
 
 ## Comment c'est construit
 

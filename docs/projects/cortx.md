@@ -38,9 +38,9 @@ status, their configuration files and a link to their page in this documentation
 a new computer. Finally, `cortx init <shell>` generates the same set of aliases, functions and integrations for
 PowerShell, bash, zsh and fish, such as the one for [zoxide](/tools/dev/cli/zoxide).
 
-**Built for agents too.** The CLI answers in JSON (`--json`) and `cortx docs` prints a reference written for AI
-agents. An MCP server exposes the same features, and CortX can find the Claude Code and Codex sessions running on the
-machine (still in beta).
+**Built for agents too.** AI agents go through the CLI by default: it answers in JSON (`--json`) and `cortx docs`
+prints a reference written for them. The MCP server exposes the same features for clients that have no shell access.
+CortX can also find the Claude Code and Codex sessions running on the machine (still in beta).
 
 ## How it is built
 
