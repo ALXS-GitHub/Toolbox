@@ -22,7 +22,7 @@ la machine.
 | `doc-site` | je demande une petite documentation de plusieurs pages | une doc avec barre latérale, recherche et mode sombre, en un ou plusieurs fichiers HTML |
 | `pages` | je le demande explicitement, et seulement dans ce cas | une page visuelle et interactive pour expliquer ou comparer quelque chose |
 | tickets | je nomme mon gestionnaire de tickets ou un ticket | le cycle complet du ticket : lecture, code, commit, statut, commentaire (voir [Tickets et mods](/setup/claude-code/tickets)) |
-| navigateur | il faut naviguer sur un site pour moi | des actions dans Chrome, pilotées par un CLI (voir [Le navigateur](/setup/claude-code/browser)) |
+| navigateur | il faut naviguer sur un site pour moi | des actions dans [Chrome](/tools/web/browsers/chrome), pilotées par un CLI (voir [Le navigateur](/setup/claude-code/browser)) |
 
 Les quatre premiers partagent le même design et la même chaîne de rendu, décrite dans
 [La chaîne documentaire](/setup/claude-code/design). Les deux derniers dépendent de CLI installés sur la machine : ils

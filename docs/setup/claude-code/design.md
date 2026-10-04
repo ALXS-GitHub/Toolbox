@@ -12,7 +12,7 @@ along the way.
 
 <Diagram
   name="harness-design"
-  alt="The common design's variables, themes and components go through build.py, which copies them into the four skills; each skill's script injects the design and headless Chrome produces the HTML, PDF and PNG."
+  alt="The common design's variables, themes and components go through build.py, which copies them into the four skills; each skill's script injects the design and a headless browser produces the HTML, PDF and PNG."
 />
 
 ## One source, several copies
@@ -32,7 +32,7 @@ and the only way to change them is to edit the source and run `build.py` again.
 | `themes/*.json` | a theme only holds what it changes compared with the contract |
 | `components.css` | the common components (callouts, tables, steps, cards…), written with variables only |
 | `components.md` | the catalogue of those components with their exact HTML: this is what the agent reads |
-| font and tools | Inter, embedded in every file, and a few shared Python functions (injection, Chrome rendering, captures) |
+| font and tools | Inter, embedded in every file, and a few shared Python functions (injection, browser rendering, captures) |
 
 Since components only use variables, a theme or dark mode changes everything at once. Any block can even switch theme
 locally with a `data-theme` attribute.
@@ -51,7 +51,7 @@ With `--check`, it changes nothing and only reports outdated copies.
 
 Each skill has its rendering script. It injects the design into the output file (which becomes standalone and opens
 offline), adds what is specific to the skill (numbering and table of contents for a document, search and navigation
-for a doc), then opens the result in a headless Chrome to check and export it. The checks cover form and substance:
+for a doc), then opens the result in a headless browser (Chrome, Edge or another Chromium) to check and export it. The checks cover form and substance:
 nothing overflows, no diagram link runs diagonally, and a document must contain real prose (a document section that
 only stacks tables is rejected). As long as something remains to fix, the script says so and the agent tries again.
 

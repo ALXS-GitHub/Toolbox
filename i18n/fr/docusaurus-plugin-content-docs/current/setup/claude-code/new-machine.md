@@ -17,12 +17,13 @@ réinstaller.
 
 | Outil | Pourquoi |
 |---|---|
-| Claude Code | l'agent lui-même, avec son installateur natif |
-| PowerShell 7 | la statusline et les scripts d'entretien sont écrits pour lui |
-| Git | le dépôt de configuration |
+| [Claude Code](/tools/ai/coding/claude-code) | l'agent lui-même, avec son installateur natif |
+| [PowerShell 7](/setup/windows/powershell) | la statusline et les scripts d'entretien sont écrits pour lui |
+| [Git](/tools/dev/version-control/git) | le dépôt de configuration |
 | Un gestionnaire de mots de passe avec agent SSH | la signature des commits et le push |
-| Python 3 | les scripts des skills (rendu, contrôles) |
-| Chrome ou Edge | le rendu des PDF et des PNG, et la navigation pilotée |
+| [Python 3](/tools/dev/languages/python) | les scripts des skills (rendu, contrôles) |
+| Un navigateur Chromium | le rendu des PDF et des PNG, en arrière-plan : Edge, présent d'office sous Windows, suffit |
+| [Chrome](/tools/web/browsers/chrome) | la navigation pilotée par l'agent (extension Claude, port de debug) |
 | Les CLI pilotés par les skills | le gestionnaire de tickets, `gh`, l'outil de navigation |
 
 ## Brancher le dépôt
@@ -53,7 +54,7 @@ d'utilisateur ou le gestionnaire de paquets change. Le reste est portable.
 Il reste les connexions, qui ne se versionnent pas :
 
 1. se connecter à son compte dans Claude Code ;
-2. installer l'extension Claude dans Chrome pour la [navigation](/setup/claude-code/browser) ;
+2. installer l'extension Claude dans [Chrome](/tools/web/browsers/chrome) pour la [navigation](/setup/claude-code/browser) ;
 3. se connecter dans chaque CLI piloté par un skill (le gestionnaire de tickets ouvre le navigateur pour ça) ;
 4. remettre les secrets éventuels dans les variables d'environnement de l'utilisateur, jamais dans un fichier du
    dépôt.

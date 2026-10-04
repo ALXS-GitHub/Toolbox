@@ -40,7 +40,7 @@ T = {
             "documents": ("documents", "rapports · notes"), "pages": ("pages", "pages visuelles"),
             "docsite": ("doc-site", "petites docs"), "diagrams": ("diagrams", "schémas"),
             "render": ("Script du skill", "injecte le design", "contrôle le résultat"),
-            "chrome": ("Chrome headless", "rendu · capture", "impression"),
+            "chrome": ("Navigateur", "sans interface", "Chrome · Edge"),
             "html": ("HTML", "autonome · hors ligne"), "pdf": ("PDF", "A4 paginé"), "png": ("PNG", "relecture · figures"),
             "l_copy": "copie", "l_render": "rendu",
             "legend": {"green": "Source du design", "blue": "Script", "gray": "Composant"},
@@ -54,7 +54,7 @@ T = {
             "documents": ("documents", "reports · notes"), "pages": ("pages", "visual pages"),
             "docsite": ("doc-site", "small docs"), "diagrams": ("diagrams", "diagrams"),
             "render": ("Skill script", "injects the design", "checks the result"),
-            "chrome": ("Headless Chrome", "render · capture", "print"),
+            "chrome": ("Browser", "headless", "Chrome · Edge"),
             "html": ("HTML", "standalone · offline"), "pdf": ("PDF", "paginated A4"), "png": ("PNG", "review · figures"),
             "l_copy": "copy", "l_render": "render",
             "legend": {"green": "Design source", "blue": "Script", "gray": "Component"},
@@ -156,7 +156,7 @@ def builders(node):
     <div class="group-label" style="grid-column:1;grid-row:1">{t["src"]}</div>
     <div class="group-label" style="grid-column:5;grid-row:1">{t["skills"]}</div>
     <div class="group-label" style="grid-column:11;grid-row:1">{t["out"]}</div>
-{node("vars", "k-green fill tall", 1, "2/4", L("palette"), t["vars"])}{node("comp", "k-green fill tall", 1, "4/6", L("component"), t["comp"])}{node("build", "k-blue fill tall", 3, "2/6", L("hammer"), t["build"])}{node("documents", "tall", 5, 2, L("file-text"), t["documents"])}{node("pages", "tall", 5, 3, L("layout-template"), t["pages"])}{node("docsite", "tall", 5, 4, L("book-open"), t["docsite"])}{node("diagrams", "tall", 5, 5, L("workflow"), t["diagrams"])}{node("render", "k-blue fill tall", 7, "2/6", L("wand-sparkles"), t["render"])}{node("chrome", "tall", 9, "2/6", LOGO("googlechrome"), t["chrome"])}{node("html", "tall", 11, "2/4", L("code-xml"), t["html"])}{node("pdf", "tall", 11, 4, L("file-type"), t["pdf"])}{node("png", "tall", 11, 5, L("image"), t["png"])}'''
+{node("vars", "k-green fill tall", 1, "2/4", L("palette"), t["vars"])}{node("comp", "k-green fill tall", 1, "4/6", L("component"), t["comp"])}{node("build", "k-blue fill tall", 3, "2/6", L("hammer"), t["build"])}{node("documents", "tall", 5, 2, L("file-text"), t["documents"])}{node("pages", "tall", 5, 3, L("layout-template"), t["pages"])}{node("docsite", "tall", 5, 4, L("book-open"), t["docsite"])}{node("diagrams", "tall", 5, 5, L("workflow"), t["diagrams"])}{node("render", "k-blue fill tall", 7, "2/6", L("wand-sparkles"), t["render"])}{node("chrome", "tall", 9, "2/6", L("app-window"), t["chrome"])}{node("html", "tall", 11, "2/4", L("code-xml"), t["html"])}{node("pdf", "tall", 11, 4, L("file-type"), t["pdf"])}{node("png", "tall", 11, 5, L("image"), t["png"])}'''
         links = ['["vars", "build"]', '["comp", "build"]',
                  f'["build", "sk", {{ label: "{t["l_copy"]}" }}]', '["sk", "render"]',
                  f'["render", "chrome", {{ label: "{t["l_render"]}" }}]', '["chrome", "out"]']

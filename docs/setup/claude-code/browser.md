@@ -11,8 +11,9 @@ at the same moments.
 
 ## The Claude extension for Chrome
 
-It is the first choice. The official extension connects Claude Code to the Chrome I already use, with my open
-sessions: the agent opens a tab, reads the page, clicks, fills in fields, takes screenshots. It is installed once from
+It is the first choice. My everyday browser is [Zen](/tools/web/browsers/zen), but I keep
+[Chrome](/tools/web/browsers/chrome) for the agent: the official extension connects Claude Code to it, with the
+sessions open in that Chrome: the agent opens a tab, reads the page, clicks, fills in fields, takes screenshots. It is installed once from
 the Chrome Web Store, and Claude Code finds it on its own as long as Chrome is open.
 
 ## A CLI through the debug port

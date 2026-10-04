@@ -48,7 +48,7 @@ fois le build passé ; sur d'autres, de toujours demander.
 
 ## Les permissions
 
-Je lance Claude Code sans confirmation à chaque commande : c'est un alias de mon shell qui l'ouvre dans ce mode, et un
+Je lance Claude Code sans confirmation à chaque commande : c'est un alias de mon shell, généré par [CortX](/projects/cortx), qui l'ouvre dans ce mode, et un
 réglage masque l'avertissement qui va avec. C'est un choix de confort, compensé par des garde-fous qui ne dépendent
 pas de la vigilance : rien de sensible n'est dans le dépôt, chaque commit est contrôlé et signé, et les consignes
 interdisent les actions irréversibles sans accord. Les permissions accordées projet par projet s'accumulent dans un

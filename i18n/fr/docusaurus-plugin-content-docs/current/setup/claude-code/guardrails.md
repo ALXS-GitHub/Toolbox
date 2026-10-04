@@ -50,7 +50,7 @@ Le hook est versionné avec le reste, et c'est le script d'installation qui l'ac
 Chaque commit est signé avec une clé SSH qui vit dans mon gestionnaire de mots de passe, jamais sur le disque. Git
 l'utilise à travers l'agent SSH du gestionnaire (`gpg.format = ssh`, `commit.gpgsign = true`), qui demande mon
 autorisation avant d'utiliser la clé ; le push passe par le même agent. Sans le gestionnaire déverrouillé, aucun
-commit ne peut être signé ni poussé, et GitHub affiche chaque commit comme vérifié.
+commit ne peut être signé ni poussé, et [GitHub](/tools/dev/version-control/github) affiche chaque commit comme vérifié.
 
 ## Pourquoi trois barrières
 

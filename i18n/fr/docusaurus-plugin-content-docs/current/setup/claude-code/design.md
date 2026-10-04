@@ -12,7 +12,7 @@ comment, et ce que vérifient les scripts au passage.
 
 <Diagram
   name="harness-design"
-  alt="Les variables, thèmes et composants du design commun passent par build.py, qui les copie dans les quatre skills ; le script de chaque skill injecte le design et Chrome headless produit le HTML, le PDF et le PNG."
+  alt="Les variables, thèmes et composants du design commun passent par build.py, qui les copie dans les quatre skills ; le script de chaque skill injecte le design et un navigateur sans interface produit le HTML, le PDF et le PNG."
 />
 
 ## Une source, des copies
@@ -32,7 +32,7 @@ modifier », et la seule façon de les changer est de modifier la source puis de
 | `themes/*.json` | un thème ne contient que ce qu'il change par rapport au contrat |
 | `components.css` | les composants communs (encadrés, tableaux, étapes, cartes…), écrits uniquement avec des variables |
 | `components.md` | le catalogue de ces composants, avec leur HTML exact : c'est ce que lit l'agent |
-| police et outils | Inter, embarquée dans chaque fichier, et quelques fonctions Python partagées (injection, rendu Chrome, captures) |
+| police et outils | Inter, embarquée dans chaque fichier, et quelques fonctions Python partagées (injection, rendu dans le navigateur, captures) |
 
 Comme les composants n'utilisent que des variables, un thème ou le mode sombre change tout d'un coup. N'importe quel
 bloc peut même changer de thème localement, avec un attribut `data-theme`.
@@ -52,7 +52,8 @@ Avec `--check`, il ne touche à rien et signale seulement les copies périmées.
 
 Chaque skill a son script de rendu. Il injecte le design dans le fichier produit (qui devient autonome et s'ouvre hors
 ligne), ajoute ce qui est propre au skill (numérotation et sommaire pour un document, recherche et navigation pour une
-doc), puis ouvre le résultat dans un Chrome sans interface pour le vérifier et l'exporter. Les contrôles portent sur
+doc), puis ouvre le résultat dans un navigateur sans interface (Chrome, Edge ou un autre Chromium) pour le vérifier et
+l'exporter. Les contrôles portent sur
 la forme et sur le fond : rien ne déborde, aucun lien de schéma ne passe en diagonale, et un document doit contenir
 du vrai texte rédigé (une section de document qui n'aligne que des tableaux est refusée). Tant qu'un point reste à
 corriger, le script le dit et l'agent recommence.

@@ -11,8 +11,9 @@ garde les deux parce qu'elles ne servent pas au même moment.
 
 ## L'extension Claude pour Chrome
 
-C'est le premier choix. L'extension officielle relie Claude Code au Chrome que j'utilise déjà, avec mes sessions
-ouvertes : l'agent ouvre un onglet, lit la page, clique, remplit des champs, fait des captures. Elle s'installe une
+C'est le premier choix. Mon navigateur de tous les jours est [Zen](/tools/web/browsers/zen), mais je garde
+[Chrome](/tools/web/browsers/chrome) pour l'agent : l'extension officielle y relie Claude Code, avec les sessions
+ouvertes dans ce Chrome : l'agent ouvre un onglet, lit la page, clique, remplit des champs, fait des captures. Elle s'installe une
 fois depuis le Chrome Web Store, et Claude Code la trouve tout seul tant que Chrome est ouvert.
 
 ## Un CLI par le port de debug

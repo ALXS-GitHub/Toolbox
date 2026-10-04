@@ -48,7 +48,7 @@ a new machine, it is therefore in place before the first commit.
 Every commit is signed with an SSH key that lives in my password manager, never on disk. Git uses it through the
 password manager's SSH agent (`gpg.format = ssh`, `commit.gpgsign = true`), which asks for my approval before using
 the key; pushing goes through the same agent. Without the password manager unlocked, no commit can be signed or
-pushed, and GitHub shows every commit as verified.
+pushed, and [GitHub](/tools/dev/version-control/github) shows every commit as verified.
 
 ## Why three barriers
 

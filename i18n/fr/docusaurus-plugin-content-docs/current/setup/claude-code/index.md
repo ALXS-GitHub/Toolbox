@@ -6,7 +6,7 @@ description: Tout ce qui entoure Claude Code pour en faire mon assistant de tous
 
 # Le harness Claude Code
 
-Claude Code, tel qu'il sort de la boîte, est un agent qui lit du code et lance des commandes. Ce que j'appelle mon
+[Claude Code](/tools/ai/coding/claude-code), tel qu'il sort de la boîte, est un agent qui lit du code et lance des commandes. Ce que j'appelle mon
 *harness*, c'est tout ce que j'ai construit autour : des réglages, des consignes, des skills qui produisent des
 documents et des schémas soignés, quelques mods pour l'interface, des garde-fous, et une façon de tout versionner.
 L'ensemble tient dans un seul dossier suivi par git, que je remonte sur une nouvelle machine en quelques minutes.
@@ -22,7 +22,7 @@ fichiers de configuration.
 
 <Diagram
   name="harness-overview"
-  alt="Claude Code charge les réglages et les consignes, appelle les skills et les mods, pilote Chrome et des CLI ; la configuration est poussée sur un dépôt git privé, les skills sont importés sur claude.ai."
+  alt="Claude Code charge les réglages et les consignes, appelle les skills et les mods, pilote un navigateur et des CLI ; la configuration est poussée sur un dépôt git privé, les skills sont importés sur claude.ai."
 />
 
 Au centre, il y a Claude Code lui-même. Au démarrage d'une session, il charge deux choses : les **réglages**
@@ -35,11 +35,11 @@ Pendant la session, Claude Code s'appuie sur les **skills** : des dossiers d'ins
 quand une demande correspond à leur description. Les miens produisent des documents rédigés, des schémas, de petites
 documentations et des pages visuelles, et pilotent deux outils en ligne de commande, mon gestionnaire de tickets et
 un navigateur. Les skills de production partagent un **design commun** (couleurs, thèmes clair et sombre,
-composants) et passent par Python et un Chrome sans interface pour produire du HTML, du PDF et des PNG. À côté, des
+composants) et passent par [Python](/tools/dev/languages/python) et un navigateur sans interface pour produire du HTML, du PDF et des PNG. À côté, des
 **mods** ajoutent de l'interface au terminal : un bandeau qui rappelle le ticket en cours, un tableau de bord des
 tickets d'un projet.
 
-Toute la configuration vit dans un dépôt git privé. Chaque commit passe par un hook anti-fuite et il est signé. Les
+Toute la configuration vit dans un dépôt [git](/tools/dev/version-control/git) privé. Chaque commit passe par un hook anti-fuite et il est signé. Les
 skills utiles hors du terminal sont exportés en zip et importés à la main sur claude.ai : git reste la seule source.
 
 ## Les principes
@@ -84,6 +84,6 @@ Les secrets n'ont jamais leur place dans le dépôt, même privé : le hook refu
 Quand je demande « fais-moi un rapport sur tel sujet, en PDF », la description du skill `documents` correspond.
 Claude Code le charge, lit le modèle de rapport et un exemple, rassemble les faits, puis rédige le document en HTML.
 Le script du skill injecte le design commun, numérote les sections, construit le sommaire, vérifie qu'il y a bien du
-texte rédigé et pas seulement des tableaux, puis appelle Chrome pour produire le PDF. S'il faut un schéma, le skill
+texte rédigé et pas seulement des tableaux, puis appelle le navigateur sans interface pour produire le PDF. S'il faut un schéma, le skill
 `diagrams` le dessine et le document l'intègre comme figure. Je reçois un fichier qui s'ouvre hors ligne, avec la
 même mise en page que les précédents.

@@ -6,7 +6,7 @@ description: Everything around Claude Code that turns it into my everyday assist
 
 # The Claude Code harness
 
-Out of the box, Claude Code is an agent that reads code and runs commands. What I call my *harness* is everything I
+Out of the box, [Claude Code](/tools/ai/coding/claude-code) is an agent that reads code and runs commands. What I call my *harness* is everything I
 built around it: settings, instructions, skills that produce polished documents and diagrams, a few mods for the
 interface, guardrails, and a way to keep all of it under version control. The whole thing fits in one folder tracked
 by git, which I can set up again on a new machine in a few minutes.
@@ -20,7 +20,7 @@ The diagram below shows what Claude Code loads, what it drives on the machine, a
 
 <Diagram
   name="harness-overview"
-  alt="Claude Code loads the settings and instructions, calls the skills and mods, drives Chrome and command-line tools; the configuration is pushed to a private git repository and skills are imported into claude.ai."
+  alt="Claude Code loads the settings and instructions, calls the skills and mods, drives a browser and command-line tools; the configuration is pushed to a private git repository and skills are imported into claude.ai."
 />
 
 Claude Code sits in the middle. When a session starts, it loads two things: the **settings** (`settings.json`:
@@ -32,11 +32,11 @@ context used, the quotas and the cost.
 During the session, Claude Code relies on **skills**: folders of instructions and scripts that it loads when a request
 matches their description. Mine produce written documents, diagrams, small documentation sites and visual pages, and
 drive two command-line tools, my ticket manager and a browser. The production skills share a **common design**
-(colours, light and dark themes, components) and use Python and a headless Chrome to produce HTML, PDF and PNG files.
+(colours, light and dark themes, components) and use [Python](/tools/dev/languages/python) and a headless browser to produce HTML, PDF and PNG files.
 Next to them, **mods** add interface to the terminal: a banner with the ticket in progress, and a dashboard of a
 project's tickets.
 
-All the configuration lives in a private git repository. Every commit goes through a leak-detection hook and is
+All the configuration lives in a private [git](/tools/dev/version-control/git) repository. Every commit goes through a leak-detection hook and is
 signed. Skills that are useful outside the terminal are exported as zip files and imported into claude.ai by hand:
 git stays the single source.
 
@@ -82,5 +82,5 @@ to hold them.
 When I ask "write me a report on this topic, as a PDF", the description of the `documents` skill matches. Claude Code
 loads it, reads the report template and an example, gathers the facts, then writes the document in HTML. The skill's
 script injects the common design, numbers the sections, builds the table of contents, checks that there is real prose
-and not only tables, then calls Chrome to produce the PDF. If a diagram is needed, the `diagrams` skill draws it and the
+and not only tables, then calls the headless browser to produce the PDF. If a diagram is needed, the `diagrams` skill draws it and the
 document includes it as a figure. I get a file that opens offline, with the same layout as the previous ones.

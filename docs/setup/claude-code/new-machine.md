@@ -16,12 +16,13 @@ Before fetching the configuration, the tools it depends on must be there. I inst
 
 | Tool | Why |
 |---|---|
-| Claude Code | the agent itself, with its native installer |
-| PowerShell 7 | the status line and maintenance scripts are written for it |
-| Git | the configuration repository |
+| [Claude Code](/tools/ai/coding/claude-code) | the agent itself, with its native installer |
+| [PowerShell 7](/setup/windows/powershell) | the status line and maintenance scripts are written for it |
+| [Git](/tools/dev/version-control/git) | the configuration repository |
 | A password manager with an SSH agent | commit signing and pushing |
-| Python 3 | the skills' scripts (rendering, checks) |
-| Chrome or Edge | rendering PDFs and PNGs, and driven browsing |
+| [Python 3](/tools/dev/languages/python) | the skills' scripts (rendering, checks) |
+| A Chromium-based browser | rendering PDFs and PNGs in the background: Edge, built into Windows, is enough |
+| [Chrome](/tools/web/browsers/chrome) | browsing driven by the agent (Claude extension, debug port) |
 | The CLIs driven by skills | the ticket manager, `gh`, the browsing tool |
 
 ## Plugging in the repository
@@ -51,7 +52,7 @@ package manager changes. Everything else is portable.
 What remains are the connections, which cannot be versioned:
 
 1. sign in to your account in Claude Code;
-2. install the Claude extension in Chrome for [browsing](/setup/claude-code/browser);
+2. install the Claude extension in [Chrome](/tools/web/browsers/chrome) for [browsing](/setup/claude-code/browser);
 3. sign in to each CLI driven by a skill (the ticket manager opens the browser for that);
 4. put any secrets back in the user's environment variables, never in a file of the repository.
 
