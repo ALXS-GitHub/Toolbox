@@ -29,7 +29,7 @@ Common Windows options:
 - Chocolatey: `choco install neovim`.
 - Manual: download the latest release zip, extract, and add the `bin` directory to PATH.
 
-I personally install via [Scoop](../terminal/scoop.md) for easy upgrades (`scoop update neovim`). After installation verify:
+I personally install via [Scoop](/tools/dev/terminal/scoop) for easy upgrades (`scoop update neovim`). After installation verify:
 ```powershell
 nvim --version
 ```
@@ -38,7 +38,7 @@ User configuration lives at `%LOCALAPPDATA%/nvim` (i.e. `~/AppData/Local/nvim`).
 
 ## Configuration (my setup)
 
-I use a LazyVim based configuration (plugin manager + curated defaults + lazy‑loading) documented here: [Lazyvim Config](../../../setup/neovim.md). Refer there instead of duplicating details.
+I use a LazyVim based configuration (plugin manager + curated defaults + lazy‑loading) documented here: [Lazyvim Config](/setup/neovim). Refer there instead of duplicating details.
 
 ## Basic usage
 

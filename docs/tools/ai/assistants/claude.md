@@ -70,7 +70,7 @@ Opus 4.5 includes an "effort" parameter (low/medium/high) to control thinking de
 
 ## Claude Code
 
-For developers, Anthropic offers [Claude Code](../coding/claude-code.md), a CLI tool that brings Claude directly into your terminal and IDE. It navigates codebases, makes multi-file edits, runs commands, and iterates on implementations autonomously.
+For developers, Anthropic offers [Claude Code](/tools/ai/coding/claude-code), a CLI tool that brings Claude directly into your terminal and IDE. It navigates codebases, makes multi-file edits, runs commands, and iterates on implementations autonomously.
 
 ## Comparison notes
 

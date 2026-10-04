@@ -62,7 +62,7 @@ Out of the box, some defaults are bad for competitive play. Change these immedia
 
 ### Training Tools
 
-- **[BakkesMod](./mods/bakkesmod.md)** -- The essential PC plugin. Adds custom training features, ball trajectory prediction, an in-game rank tracker, and the ability to use any cosmetic item. A must-have.
+- **[BakkesMod](/games/mods/bakkesmod)** -- The essential PC plugin. Adds custom training features, ball trajectory prediction, an in-game rank tracker, and the ability to use any cosmetic item. A must-have.
 - **Custom Training Packs** -- Community-created drills for specific skills (aerials, redirects, wall shots). Browse popular ones in-game or find codes online.
 - **Freeplay** -- Underrated. Just driving around hitting the ball in freeplay builds mechanics faster than most people realize. Focus on hitting the ball hard, recovering quickly, and maintaining speed.
 

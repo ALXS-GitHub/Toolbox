@@ -15,7 +15,7 @@ For now this project is private and only accessible to my friends.
 
 ## Installation
 
-First make sure to contact me, and I will provide a desktop installer for the application. (Quick note, the installer is built with [Tauri](../tools/dev/web-desktop/tauri.md)). Once you have the installer, simply run it and follow the on-screen instructions to complete the installation.
+First make sure to contact me, and I will provide a desktop installer for the application. (Quick note, the installer is built with [Tauri](/tools/dev/web-desktop/tauri)). Once you have the installer, simply run it and follow the on-screen instructions to complete the installation.
 
 ## Usage
 
@@ -23,7 +23,7 @@ In order to use the application, I have to be connected (as I am the only person
 
 It is very important that the backend server is running because there is no offline mode available.
 
-Then in order for other users to connect, we need a way to make our computers communicate. This can be done using [Radmin VPN](../archive/system/radmin-vpn.md). Also the host need to make sure that the firewall is configured to allow connections on the necessary ports (the ports used by the backend and websocket).
+Then in order for other users to connect, we need a way to make our computers communicate. This can be done using [Radmin VPN](/archive/system/radmin-vpn). Also the host need to make sure that the firewall is configured to allow connections on the necessary ports (the ports used by the backend and websocket).
 
 Users should be able to connect by specifying the host's IP address of the host and the port number inside the application settings.
 

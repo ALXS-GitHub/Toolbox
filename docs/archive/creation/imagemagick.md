@@ -93,4 +93,4 @@ Because `mogrify` modifies files in place, it is destructive by default. If you'
 magick mogrify -resize 800x600 -path output/ *.png
 ```
 
-ImageMagick combines well with [fd](../../tools/dev/cli/fd.md) for targeted batch operations. Instead of relying on shell globs, you can find exactly the files you want and pipe them through: `fd -e jpg -x magick {} {.}.png`.
+ImageMagick combines well with [fd](/tools/dev/cli/fd) for targeted batch operations. Instead of relying on shell globs, you can find exactly the files you want and pipe them through: `fd -e jpg -x magick {} {.}.png`.

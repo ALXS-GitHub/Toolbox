@@ -54,7 +54,7 @@ Linux root for a distribution lives in a virtual ext4 VHD. From Windows you can 
 
 ## My Configuration & dotfiles
 
-My specific WSL configuration (including `.wslconfig`, dotfiles bootstrap, package selections, and shell customizations) is documented in the [WSL Config Documentation](./wsl-config.md). That section covers how I synchronize dotfiles, manage default shell, resource limits (memory/CPU), and other environment tweaks. Refer there for details beyond the general concepts here.
+My specific WSL configuration (including `.wslconfig`, dotfiles bootstrap, package selections, and shell customizations) is documented in the [WSL Config Documentation](/archive/dev/wsl-config). That section covers how I synchronize dotfiles, manage default shell, resource limits (memory/CPU), and other environment tweaks. Refer there for details beyond the general concepts here.
 
 ## Basic management commands
 

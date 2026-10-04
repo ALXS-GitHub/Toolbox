@@ -8,7 +8,7 @@ image: typescript.png
 
 # TypeScript
 
-**[TypeScript](https://www.typescriptlang.org/)** is a strongly-typed superset of [JavaScript](./javascript.md) developed by Microsoft. It adds optional static types, interfaces, and modern features that compile down to plain JavaScript. TypeScript catches errors at compile time, improves IDE support, and makes large codebases more maintainable.
+**[TypeScript](https://www.typescriptlang.org/)** is a strongly-typed superset of [JavaScript](/tools/dev/languages/javascript) developed by Microsoft. It adds optional static types, interfaces, and modern features that compile down to plain JavaScript. TypeScript catches errors at compile time, improves IDE support, and makes large codebases more maintainable.
 
 ## Why TypeScript
 
@@ -20,7 +20,7 @@ image: typescript.png
 
 ## Installation
 
-TypeScript requires [Node.js](../runtimes/node.md).
+TypeScript requires [Node.js](/tools/dev/runtimes/node).
 
 ```powershell
 npm install -g typescript

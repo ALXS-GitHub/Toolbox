@@ -38,7 +38,7 @@ image: radmin_vpn.png
 ### Personal Use Cases
 
 - Playing Rocket League Workshop maps in multiplayer.
-- Connecting to [K-Games](../../projects/k-games.md) servers for my friends.
+- Connecting to [K-Games](/projects/k-games) servers for my friends.
 
 ## Tips & Notes
 

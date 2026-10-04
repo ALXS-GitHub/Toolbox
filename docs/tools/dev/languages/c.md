@@ -216,9 +216,9 @@ int main(int argc, char *argv[]) {
 - Learning how computers actually work
 
 **Consider alternatives when:**
-- Memory safety is critical (consider [Rust](./rust.md))
+- Memory safety is critical (consider [Rust](/tools/dev/languages/rust))
 - Rapid development matters more than performance
-- You need built-in data structures (consider [C++](./cpp.md))
+- You need built-in data structures (consider [C++](/tools/dev/languages/cpp))
 
 ## Summary
 

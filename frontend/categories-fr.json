@@ -162,5 +162,9 @@
   "archive/projects": {
     "label": "Projets",
     "description": ""
+  },
+  "setup/claude-code": {
+    "label": "Harness Claude Code",
+    "description": ""
   }
 }

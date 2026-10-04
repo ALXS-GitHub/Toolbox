@@ -9,7 +9,7 @@ image: claude.png
 
 # Claude Code
 
-**[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** is Anthropic's agentic coding tool that brings [Claude](../assistants/claude.md) directly into your terminal and development workflow. Unlike chat-based coding help, Claude Code operates as an autonomous agent: it explores codebases, makes multi-file edits, runs commands, executes tests, and iterates until tasks are complete.
+**[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** is Anthropic's agentic coding tool that brings [Claude](/tools/ai/assistants/claude) directly into your terminal and development workflow. Unlike chat-based coding help, Claude Code operates as an autonomous agent: it explores codebases, makes multi-file edits, runs commands, executes tests, and iterates until tasks are complete.
 
 ## How it differs from chat
 

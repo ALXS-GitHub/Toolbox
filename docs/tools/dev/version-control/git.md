@@ -9,7 +9,7 @@ image: git.png
 
 # Git
 
-**[Git](https://git-scm.com/)** is a distributed version control system created by Linus Torvalds. It lets you track changes to source code, collaborate safely, experiment in isolated branches, and maintain a full local history without relying on a central server. While **[Github](./github.md)** hosts repositories and adds collaboration features (issues, pull requests, CI), Git itself is a local tool you run on your machine. Understanding Git fundamentals makes every higher‑level platform (GitHub, GitLab, etc.) predictable.
+**[Git](https://git-scm.com/)** is a distributed version control system created by Linus Torvalds. It lets you track changes to source code, collaborate safely, experiment in isolated branches, and maintain a full local history without relying on a central server. While **[Github](/tools/dev/version-control/github)** hosts repositories and adds collaboration features (issues, pull requests, CI), Git itself is a local tool you run on your machine. Understanding Git fundamentals makes every higher‑level platform (GitHub, GitLab, etc.) predictable.
 
 ## What Git Does
 
@@ -48,7 +48,7 @@ View your configuration:
 git config --list --show-origin
 ```
 
-You can also add an SSH key for authenticating with **[Github](./github.md)**; see that page for detailed steps.
+You can also add an SSH key for authenticating with **[Github](/tools/dev/version-control/github)**; see that page for detailed steps.
 
 ## Core Concepts Quickly
 
@@ -162,6 +162,6 @@ Status > Add > Commit > Push; Pull before pushing; Branch for features; Merge or
 
 ## Relationship to Github
 
-You interact with GitHub primarily through Git commands: clone, fetch, pull, push, and manage branches. Higher-level collaboration (pull requests, issues, code review) happens in the web UI or via its API/CLI, but the underlying unit of change is a Git commit/branch. See **[Github](./github.md)** for host‑specific topics like SSH key setup and pull request flow.
+You interact with GitHub primarily through Git commands: clone, fetch, pull, push, and manage branches. Higher-level collaboration (pull requests, issues, code review) happens in the web UI or via its API/CLI, but the underlying unit of change is a Git commit/branch. See **[Github](/tools/dev/version-control/github)** for host‑specific topics like SSH key setup and pull request flow.
 
 Mastering these fundamentals ensures you can work confidently even when graphical tools abstract them away.

@@ -9,7 +9,7 @@ image: github_website.png
 
 # GitHub (Website)
 
-**[GitHub](https://github.com/)** is the largest code hosting platform in the world, built on top of the Git version control system. It is where most open-source projects live, and it provides the collaboration layer -- pull requests, issues, code reviews, CI/CD, and more -- that turns Git repositories into team workflows. This page covers the platform and its web features. For CLI usage, see the [GitHub CLI](./github.md) documentation.
+**[GitHub](https://github.com/)** is the largest code hosting platform in the world, built on top of the Git version control system. It is where most open-source projects live, and it provides the collaboration layer -- pull requests, issues, code reviews, CI/CD, and more -- that turns Git repositories into team workflows. This page covers the platform and its web features. For CLI usage, see the [GitHub CLI](/tools/dev/version-control/github) documentation.
 
 ## Core platform features
 
@@ -67,5 +67,5 @@ GitHub has keyboard shortcuts throughout the web interface. Press `?` on any pag
 
 ## See also
 
-- [GitHub CLI](./github.md) -- command-line interface for managing PRs, issues, repos, and Actions from the terminal.
-- [Git](./git.md) -- the underlying version control system that GitHub is built on.
+- [GitHub CLI](/tools/dev/version-control/github) -- command-line interface for managing PRs, issues, repos, and Actions from the terminal.
+- [Git](/tools/dev/version-control/git) -- the underlying version control system that GitHub is built on.

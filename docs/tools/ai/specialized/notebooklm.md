@@ -61,7 +61,7 @@ NotebookLM became a Google Workspace core service in February 2025, meaning it i
 
 ## See also
 
-- [Gemini](../assistants/gemini.md) - Google's general-purpose AI assistant (powers NotebookLM)
+- [Gemini](/tools/ai/assistants/gemini) - Google's general-purpose AI assistant (powers NotebookLM)
 
 ## Summary
 

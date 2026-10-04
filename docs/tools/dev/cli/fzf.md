@@ -52,4 +52,4 @@ fzf supports several match operators: `'term` for exact match, `^prefix` for pre
 
 With the [PSFzf](https://github.com/kelleyma49/PSFzf) module, fzf plugs into PowerShell: `Ctrl+R` fuzzy-searches command history, `Ctrl+T` finds files, and `Alt+C` jumps to directories. This alone makes it worth installing — command history search becomes instant and effortless.
 
-fzf is a single binary with no dependencies. It handles millions of items with no perceptible delay and pairs well with [fd](./fd.md) and [ripgrep](./ripgrep.md) as input sources.
+fzf is a single binary with no dependencies. It handles millions of items with no perceptible delay and pairs well with [fd](/tools/dev/cli/fd) and [ripgrep](/tools/dev/cli/ripgrep) as input sources.

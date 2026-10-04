@@ -47,7 +47,7 @@ In the settings.json file, you can add new color themes for the prompt section. 
 
 For a terminal like warp, the terminal prompt colors are defined in the warp theme configuration file.
 
-I recommend that you read my [Warp Configuration Documentation](../../tools/dev/terminal/warp.md) for more information on how to setup Warp.
+I recommend that you read my [Warp Configuration Documentation](/tools/dev/terminal/warp) for more information on how to setup Warp.
 
 ## Themes
 

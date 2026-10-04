@@ -8,7 +8,7 @@ image: cpp.png
 
 # C++
 
-**[C++](https://isocpp.org/)** is a general-purpose programming language that extends [C](./c.md) with object-oriented features, templates, and a rich standard library. It provides zero-cost abstractions—high-level constructs that compile to efficient machine code. C++ powers game engines, browsers, databases, operating systems, and performance-critical applications.
+**[C++](https://isocpp.org/)** is a general-purpose programming language that extends [C](/tools/dev/languages/c) with object-oriented features, templates, and a rich standard library. It provides zero-cost abstractions—high-level constructs that compile to efficient machine code. C++ powers game engines, browsers, databases, operating systems, and performance-critical applications.
 
 ## Why C++
 
@@ -233,7 +233,7 @@ cmake --build build
 - When you need both performance and abstractions
 
 **Consider alternatives when:**
-- Memory safety is paramount (consider [Rust](./rust.md))
+- Memory safety is paramount (consider [Rust](/tools/dev/languages/rust))
 - Rapid development matters more than performance
 - You don't need low-level control
 

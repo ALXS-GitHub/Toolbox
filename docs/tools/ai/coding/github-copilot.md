@@ -110,4 +110,4 @@ Both tools now support agent mode and share skill compatibility, making them com
 
 ## Summary
 
-GitHub Copilot accelerates coding with real-time inline suggestions and now includes agent mode for complex multi-file tasks. Agent Skills let you teach repeatable patterns. Best used alongside agentic tools like [Claude Code](./claude-code.md) for comprehensive AI-assisted development.
+GitHub Copilot accelerates coding with real-time inline suggestions and now includes agent mode for complex multi-file tasks. Agent Skills let you teach repeatable patterns. Best used alongside agentic tools like [Claude Code](/tools/ai/coding/claude-code) for comprehensive AI-assisted development.

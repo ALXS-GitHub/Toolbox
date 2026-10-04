@@ -47,7 +47,7 @@ Tauri gives you the convenience of web development with the performance and secu
 
 4. **Node.js** (if using JS frameworks)
 
-   Install via [Scoop](../runtimes/node.md) or the official installer.
+   Install via [Scoop](/tools/dev/runtimes/node) or the official installer.
 
 ### Create a new project
 

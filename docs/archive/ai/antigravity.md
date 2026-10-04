@@ -49,7 +49,7 @@ Ships with a dedicated Chrome extension allowing agents to:
 
 ## Comparison with other AI coding tools
 
-| Aspect | Antigravity | [Claude Code](../../tools/ai/coding/claude-code.md) | [GitHub Copilot](../../tools/ai/coding/github-copilot.md) |
+| Aspect | Antigravity | [Claude Code](/tools/ai/coding/claude-code) | [GitHub Copilot](/tools/ai/coding/github-copilot) |
 |--------|-------------|-------------|----------------|
 | Mode | Agentic IDE | Agentic CLI | Assistive |
 | Interface | Full IDE (VS Code fork) | Terminal + VS Code ext | IDE integration |

@@ -9,7 +9,7 @@ image: gemini.png
 
 # Nanobanana
 
-**Nanobanana** (also styled as "Nano Banana") is the creative alter-ego persona within [Gemini](../assistants/gemini.md), specifically associated with image generation and editing tasks. When you ask Gemini to create or edit images, this whimsical identity emerges, bringing a distinct artistic personality to the creative process.
+**Nanobanana** (also styled as "Nano Banana") is the creative alter-ego persona within [Gemini](/tools/ai/assistants/gemini), specifically associated with image generation and editing tasks. When you ask Gemini to create or edit images, this whimsical identity emerges, bringing a distinct artistic personality to the creative process.
 
 ## What is Nanobanana
 

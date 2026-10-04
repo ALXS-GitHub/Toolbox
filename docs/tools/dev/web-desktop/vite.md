@@ -15,7 +15,7 @@ Vite is designed to make frontend development fast and pleasant. During developm
 
 ## Setting up a new project
 
-Vite requires [Node.js](../runtimes/node.md)
+Vite requires [Node.js](/tools/dev/runtimes/node)
 
 Here is an example using npm to create a new Vite project:
 
@@ -45,7 +45,7 @@ npm run build
 npm run preview
 ```
 
-You can use other tools than npm to setup your project, for example with [Deno](../runtimes/deno.md), but for this refer to https://vite.dev/guide/.
+You can use other tools than npm to setup your project, for example with [Deno](/tools/dev/runtimes/deno), but for this refer to https://vite.dev/guide/.
 
 ## Common commands and notes
 

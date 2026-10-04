@@ -9,11 +9,11 @@ image: github.png
 
 # GitHub
 
-**[GitHub](https://www.github.com/)** is a web platform built around the Git distributed version control system. It hosts repositories, enables collaboration (issues, pull requests, reviews), provides automation (Actions), and offers an ecosystem of integrations. While Git handles your local history and versioning, GitHub layers discovery, team workflows, permissions, and services on top of that. Day‑to‑day interaction still happens mostly through the [`git`](./git.md) command line; GitHub is the remote hub.
+**[GitHub](https://www.github.com/)** is a web platform built around the Git distributed version control system. It hosts repositories, enables collaboration (issues, pull requests, reviews), provides automation (Actions), and offers an ecosystem of integrations. While Git handles your local history and versioning, GitHub layers discovery, team workflows, permissions, and services on top of that. Day‑to‑day interaction still happens mostly through the [`git`](/tools/dev/version-control/git) command line; GitHub is the remote hub.
 
 ## What it is used for
 
-You use [Git](./git.md) locally to create commits and branches; you use GitHub to share those commits, collaborate with others, review code changes, discuss issues, manage project boards, publish releases, automate CI/CD, and host documentation or static sites (Pages). A typical flow: clone a repository, create a branch, commit changes, push the branch to GitHub, open a pull request, receive feedback through code review, and merge when approved. All of this relies on the underlying [Git](./git.md) operations.
+You use [Git](/tools/dev/version-control/git) locally to create commits and branches; you use GitHub to share those commits, collaborate with others, review code changes, discuss issues, manage project boards, publish releases, automate CI/CD, and host documentation or static sites (Pages). A typical flow: clone a repository, create a branch, commit changes, push the branch to GitHub, open a pull request, receive feedback through code review, and merge when approved. All of this relies on the underlying [Git](/tools/dev/version-control/git) operations.
 
 ## Relationship with Git
 
@@ -27,7 +27,7 @@ GitHub does not replace Git, it *hosts* Git repositories and augments them. Ever
 4. Open a Pull Request (PR) on GitHub to propose merging your branch.
 5. Discuss, review, address comments, and merge. Optionally delete the branch.
 
-After merge you pull the updated main branch locally. Most of these steps are executed with [Git](./git.md), with the browser providing the collaboration UI.
+After merge you pull the updated main branch locally. Most of these steps are executed with [Git](/tools/dev/version-control/git), with the browser providing the collaboration UI.
 
 ## Windows setup & SSH configuration
 
@@ -84,7 +84,7 @@ You should see a message greeting your username (the first time you may be asked
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
 ```
-These values appear in commit metadata displayed on GitHub. (Full details on configuration live in the [Git](./git.md) page.)
+These values appear in commit metadata displayed on GitHub. (Full details on configuration live in the [Git](/tools/dev/version-control/git) page.)
 
 ### 7. Clone using SSH
 
@@ -99,7 +99,7 @@ Issues track tasks, bugs, or ideas. Branches isolate changes. A Pull Request com
 
 ## Automation & CI/CD (overview)
 
-GitHub Actions runs workflows defined in `.github/workflows/*.yml`. Workflows trigger on pushes, pull requests, schedules, or manual dispatch. They enable building, testing, linting, packaging, and deploying, all using the repository’s code. While powerful, authoring workflows still depends on understanding Git states (branches, refs, commit SHAs) which is why mastery of [Git](./git.md) remains fundamental.
+GitHub Actions runs workflows defined in `.github/workflows/*.yml`. Workflows trigger on pushes, pull requests, schedules, or manual dispatch. They enable building, testing, linting, packaging, and deploying, all using the repository’s code. While powerful, authoring workflows still depends on understanding Git states (branches, refs, commit SHAs) which is why mastery of [Git](/tools/dev/version-control/git) remains fundamental.
 
 ## Security & access
 
@@ -111,4 +111,4 @@ For merging complicated conflicts, rewriting history (interactive rebase, squash
 
 ## Summary
 
-GitHub centralizes collaboration around Git repositories: host code, discuss, review, automate, release. Almost every meaningful action ultimately invokes or depends upon fundamental [Git](./git.md) operations, so learning Git deeply multiplies your leverage on the platform. SSH setup ensures secure, frictionless pushes and pulls; once configured you mostly live in your editor + terminal, using the web UI for coordination.
+GitHub centralizes collaboration around Git repositories: host code, discuss, review, automate, release. Almost every meaningful action ultimately invokes or depends upon fundamental [Git](/tools/dev/version-control/git) operations, so learning Git deeply multiplies your leverage on the platform. SSH setup ensures secure, frictionless pushes and pulls; once configured you mostly live in your editor + terminal, using the web UI for coordination.

@@ -239,7 +239,7 @@ content, err := os.ReadFile("file.txt")
 - Concurrent/networked applications
 
 **Consider alternatives when:**
-- GUI applications (use [Rust](./rust.md)/[Tauri](../web-desktop/tauri.md))
-- Data science/ML (use [Python](./python.md))
-- Frontend web (use [TypeScript](./typescript.md))
-- Systems programming requiring no GC (use [Rust](./rust.md))
+- GUI applications (use [Rust](/tools/dev/languages/rust)/[Tauri](/tools/dev/web-desktop/tauri))
+- Data science/ML (use [Python](/tools/dev/languages/python))
+- Frontend web (use [TypeScript](/tools/dev/languages/typescript))
+- Systems programming requiring no GC (use [Rust](/tools/dev/languages/rust))

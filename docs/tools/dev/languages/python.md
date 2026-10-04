@@ -269,9 +269,9 @@ args = parser.parse_args()
 - Teaching programming
 
 **Consider alternatives when:**
-- Raw performance is critical (consider [Rust](./rust.md), C++)
+- Raw performance is critical (consider [Rust](/tools/dev/languages/rust), C++)
 - Mobile app development
-- Browser frontend (use [JavaScript](./javascript.md))
+- Browser frontend (use [JavaScript](/tools/dev/languages/javascript))
 
 ## Summary
 

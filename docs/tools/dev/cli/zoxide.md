@@ -1,5 +1,5 @@
 ---
-description: Smarter cd command that tracks directory frecency
+description: A cd that learns where I go, and takes me there in two keystrokes.
 url: "https://github.com/ajeetdsouza/zoxide"
 status: active
 kind: cli
@@ -9,34 +9,48 @@ image: zoxide.png
 
 # zoxide
 
-There is a particular kind of friction in terminal work that you stop noticing after a while: typing out directory paths. You know where you want to go, your fingers know roughly what it is called, but you still end up tabbing through three levels of nesting or pulling up a recent command from history. The original [z](../../../archive/dev/z.md) PowerShell module solved this problem well enough: it watched where you `cd` and let you jump back with a fuzzy match. zoxide solves it better.
+zoxide replaces `cd` with a command that remembers the folders I visit. It records every folder I enter and ranks it
+by how often and how recently I went there; from then on, `z toolbox` takes me to the best-ranked folder whose path
+contains "toolbox", wherever I start from. It is the terminal tool I use the most without even thinking about it.
 
-## What changed
+## Why zoxide
 
-zoxide is a ground-up rewrite of the directory-jumping concept in Rust. Where the `z` PowerShell module (v1.1.13) was confined to a single shell and carried the overhead of PowerShell scripting, zoxide is a compiled binary that works identically across bash, zsh, fish, PowerShell, and nushell. The frecency algorithm (the same frequency-plus-recency ranking that made the original `z` useful) is still at the core, but the implementation is fast enough that you never notice it running. On a cold database with thousands of entries, lookups complete in single-digit milliseconds.
+For a long time I used `z`, a PowerShell module that did the same thing. It worked well, but only in PowerShell, and
+it had to be loaded every time the shell started. zoxide is a small binary written in Rust: it behaves the same in
+PowerShell, bash, zsh and fish, answers instantly even with thousands of folders in its database, and can import the
+`z` database so nothing is lost when switching. The old [z](/archive/dev/z) page is in the archive.
 
-## Installation
+## My setup
 
-```powershell
-scoop install zoxide
-```
-
-After installing, zoxide needs a single initialization line in your PowerShell profile to hook into `cd` and start tracking directories:
+zoxide is installed with [Scoop](/tools/dev/terminal/scoop) (`scoop install zoxide`) and then has to be initialised in each
+shell: that is what creates the `z` and `zi` commands and hooks the folder tracking. On my machine this line is not
+written by hand in the profile. It is one of the aliases that [CortX](/projects/cortx) generates for all my
+shells with `cortx init`, which keeps PowerShell, bash and the others in sync. On a machine without CortX, add this to
+the PowerShell profile:
 
 ```powershell
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 ```
 
-That one-liner registers the `z` and `zi` functions and begins recording every directory change in a lightweight SQLite database. There is no import step, no module to load, no configuration file to create. If you were previously using the `z` PowerShell module, you can remove its `Import-Module z` line and zoxide will start building its own database from scratch as you work.
+For bash or zsh, the equivalent is `eval "$(zoxide init bash)"` (or `zsh`) in the shell's startup file.
 
-## Daily usage
+## Day to day
 
-The command you will reach for most often is simply `z` followed by a fragment of the directory name. zoxide matches against all recorded paths and jumps to the one with the highest frecency score:
+Two commands are enough: `z` jumps straight to the best match, and `zi` opens an interactive list, with
+[fzf](/tools/dev/cli/fzf), when several folders look alike.
 
 ```powershell
-z projects       # jumps to your most-used "projects" directory
-z desk prog      # matches something like Desktop/Programmes
-z src             # wherever "src" lives that you visit most
+z toolbox        # the most visited folder whose path contains "toolbox"
+z perso tool     # several words: they must appear in this order in the path
+zi doc           # pick among the candidates, with fzf
+z -              # back to the previous folder
 ```
 
-When the top match is not what you wanted (maybe you have two directories with similar names), `zi` opens an interactive picker powered by [fzf](./fzf.md). You get a ranked list of every matching path and can arrow through them or refine the search in real time. It is the difference between "I trust the algorithm" and "let me see the options," and having both available under two-character commands means you never need to type a full path again.
+During the first days zoxide knows nothing: you have to visit a folder once for it to be remembered. After a week it
+is rarely wrong. When a folder is gone or no longer useful, `zoxide remove <path>` drops it from the database, and
+`zoxide query --list --score` prints the ranking to understand an unexpected choice.
+
+## What it replaces
+
+First of all `z`, with the same idea but without being tied to PowerShell. It also made most of the navigation aliases
+I used to write by hand for my project folders unnecessary: I only keep one or two out of habit.

@@ -51,7 +51,7 @@ Minecraft's modding scene is one of the largest in gaming. The main mod loaders 
 - **Forge / NeoForge** -- The veteran loader. Most large content mods (Create, Mekanism, Botania) target Forge. NeoForge is a community fork that continues active development.
 - **Fabric** -- Lightweight and fast-updating. Preferred for performance mods (Sodium, Lithium, Iris) and utility mods. Tends to update to new Minecraft versions faster than Forge.
 
-Mods are primarily found on [CurseForge](./mods/curseforge.md) and Modrinth. Modpack launchers like **Prism Launcher** (open-source) or the CurseForge app handle installation and dependency management.
+Mods are primarily found on [CurseForge](/games/mods/curseforge) and Modrinth. Modpack launchers like **Prism Launcher** (open-source) or the CurseForge app handle installation and dependency management.
 
 ### Essential Performance Mods (Fabric)
 

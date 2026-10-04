@@ -17,7 +17,7 @@ image: rust.png
 - **Fearless concurrency**: The type system prevents data races
 - **No garbage collector**: Predictable performance
 - **Modern tooling**: Cargo package manager, built-in testing, excellent docs
-- **Growing ecosystem**: Web ([Axum](https://github.com/tokio-rs/axum), Actix), desktop ([Tauri](../web-desktop/tauri.md)), CLI tools
+- **Growing ecosystem**: Web ([Axum](https://github.com/tokio-rs/axum), Actix), desktop ([Tauri](/tools/dev/web-desktop/tauri)), CLI tools
 
 ## Installation (Windows)
 
@@ -30,7 +30,7 @@ Download and run [rustup-init.exe](https://rustup.rs/):
 winget install Rustlang.Rustup
 ```
 
-During installation, select the default MSVC toolchain. This requires Visual Studio C++ Build Tools (see [C installation](./c.md)).
+During installation, select the default MSVC toolchain. This requires Visual Studio C++ Build Tools (see [C installation](/tools/dev/languages/c)).
 
 Verify:
 ```powershell
@@ -302,7 +302,7 @@ Or use `clap` crate for complex CLIs.
 - Concurrent/parallel programming
 
 **Consider alternatives when:**
-- Rapid prototyping (use [Python](./python.md))
+- Rapid prototyping (use [Python](/tools/dev/languages/python))
 - Simple scripts
 - Teams unfamiliar with ownership concepts
 - Compile times are a major concern

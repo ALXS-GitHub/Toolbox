@@ -54,7 +54,7 @@ Hooks let you use state and other React features in function components:
 
 ## Setting up a project
 
-React requires [Node.js](../runtimes/node.md). The recommended way to start a new project is with [Vite](./vite.md):
+React requires [Node.js](/tools/dev/runtimes/node). The recommended way to start a new project is with [Vite](/tools/dev/web-desktop/vite):
 
 ```powershell
 npm create vite@latest my-app -- --template react
@@ -129,7 +129,7 @@ React 19 (stable since December 2024) introduced significant improvements:
 | State management | Zustand, Jotai, Redux Toolkit |
 | Data fetching | TanStack Query, SWR |
 | Forms | React Hook Form, Formik |
-| UI components | [shadcn/ui](./shadcn.md), Radix, Headless UI |
+| UI components | [shadcn/ui](/tools/dev/web-desktop/shadcn), Radix, Headless UI |
 | Frameworks | Next.js, Remix |
 
 ## When to use React

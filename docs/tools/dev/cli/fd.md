@@ -46,4 +46,4 @@ Placeholders: `{}` full path, `{.}` without extension, `{/}` basename, `{//}` pa
 
 `-d N` limits search depth. `-s` forces case-sensitive matching. `--size +100m` filters by file size. `-g` switches from regex to glob patterns. `-a` shows absolute paths. `-l` gives a long listing with metadata.
 
-fd pairs naturally with [fzf](./fzf.md) for interactive selection (`fd | fzf`) and with [ripgrep](./ripgrep.md) for searching file contents.
+fd pairs naturally with [fzf](/tools/dev/cli/fzf) for interactive selection (`fd | fzf`) and with [ripgrep](/tools/dev/cli/ripgrep) for searching file contents.

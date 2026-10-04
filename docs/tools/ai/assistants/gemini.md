@@ -63,9 +63,9 @@ Create personalized AI assistants with specific instructions and personas—writ
 
 ## See also
 
-- [Nanobanana](../specialized/nano-banana.md) - Gemini's creative image persona
-- [ChatGPT](./chatgpt.md) - OpenAI's alternative
-- [Claude](./claude.md) - Anthropic's alternative
+- [Nanobanana](/tools/ai/specialized/nano-banana) - Gemini's creative image persona
+- [ChatGPT](/tools/ai/assistants/chatgpt) - OpenAI's alternative
+- [Claude](/tools/ai/assistants/claude) - Anthropic's alternative
 
 ## Summary
 

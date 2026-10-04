@@ -88,4 +88,4 @@ rg "config" -g "*.toml"
 rg "TODO" -g "!*.test.*"
 ```
 
-ripgrep pairs naturally with [fzf](./fzf.md) for interactive search (`rg --files | fzf`) and with [fd](./fd.md) for finding files by name rather than content.
+ripgrep pairs naturally with [fzf](/tools/dev/cli/fzf) for interactive search (`rg --files | fzf`) and with [fd](/tools/dev/cli/fd) for finding files by name rather than content.

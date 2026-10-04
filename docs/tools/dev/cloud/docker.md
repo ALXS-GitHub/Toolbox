@@ -35,7 +35,7 @@ Docker workflow core pieces:
 
 On Windows the simplest path is Docker Desktop, which provides the Docker Engine, an optional GUI, automatic updates, and integration with WSL 2. Official instructions can be found at https://docs.docker.com/desktop/setup/install/windows-install/.
 
-Prerequisites (Windows 10/11): Install WSL 2. You can check my [documentation on WSL](../../../archive/dev/wsl.md) for more details.
+Prerequisites (Windows 10/11): Install WSL 2. You can check my [documentation on WSL](/archive/dev/wsl) for more details.
 
 Steps (high level):
 1. Download Docker Desktop installer from https://www.docker.com/products/docker-desktop/

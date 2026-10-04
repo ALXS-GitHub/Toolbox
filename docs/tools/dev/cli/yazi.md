@@ -19,7 +19,7 @@ scoop install yazi
 
 ## How it fits into a terminal workflow
 
-yazi occupies a specific niche: it is the spatial, visual layer on top of a terminal-centric development setup. Where [lazygit](./lazygit.md) gives you a TUI for Git and Neovim gives you a TUI for editing, yazi gives you a TUI for the filesystem itself. The three tools together form a workflow where you rarely need to leave the terminal,yazi to navigate and manage files, Neovim to edit them, lazygit to commit the changes. Each tool is fast enough that switching between them feels like changing tabs, not launching applications.
+yazi occupies a specific niche: it is the spatial, visual layer on top of a terminal-centric development setup. Where [lazygit](/tools/dev/cli/lazygit) gives you a TUI for Git and Neovim gives you a TUI for editing, yazi gives you a TUI for the filesystem itself. The three tools together form a workflow where you rarely need to leave the terminal,yazi to navigate and manage files, Neovim to edit them, lazygit to commit the changes. Each tool is fast enough that switching between them feels like changing tabs, not launching applications.
 
 ## The wrapper function
 

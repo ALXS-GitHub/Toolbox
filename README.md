@@ -34,7 +34,8 @@ docs/                   English pages (the default locale)
   archive/              tools and hardware I no longer use
 i18n/fr/                French: pages (docusaurus-plugin-content-docs/current/) and UI strings
 assets/images/          tool logos (served at /images/)
-assets/diagrams/        diagrams, light and dark (<name>.png, <name>-dark.png)
+assets/diagrams/        diagrams, light and dark (<name>.png, <name>-dark.png; French in fr/)
+diagrams/               diagram sources and make.py (rendered with the `diagrams` skill)
 frontend/               the Docusaurus site (config, theme, components)
 scripts/                check-content.mjs and the list of public repositories
 ```
@@ -71,7 +72,8 @@ never archived.
   the official documentation instead of copying it.
 - Prose first: a short intro, then sections that each open with a sentence. Code blocks always have a language.
 - A diagram as soon as four or more things are connected: `<Diagram name="…" alt="…" caption="…" />`.
-- Links between pages are relative links to the `.md` file, so they survive moves.
+- Links between pages use the route (`[zoxide](/tools/dev/cli/zoxide)`): it works in both languages, even
+  when only one of the two pages is translated, and the build fails if the route does not exist.
 - Public site: no personal paths, e-mail addresses, identifiers or secrets, and no links to private
   repositories. Private projects are described by how they work, never by what they contain.
 

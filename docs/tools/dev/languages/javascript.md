@@ -8,7 +8,7 @@ image: javascript.png
 
 # JavaScript
 
-**JavaScript** is the programming language of the web. It runs in every browser, enabling interactive websites, web applications, and increasingly powers servers ([Node.js](../runtimes/node.md), [Deno](../runtimes/deno.md), [Bun](../runtimes/bun.md)), desktop apps, and mobile apps. Originally created in 10 days in 1995, it has evolved into a mature, versatile language standardized as ECMAScript.
+**JavaScript** is the programming language of the web. It runs in every browser, enabling interactive websites, web applications, and increasingly powers servers ([Node.js](/tools/dev/runtimes/node), [Deno](/tools/dev/runtimes/deno), [Bun](/tools/dev/runtimes/bun)), desktop apps, and mobile apps. Originally created in 10 days in 1995, it has evolved into a mature, versatile language standardized as ECMAScript.
 
 ## Why JavaScript
 
@@ -23,9 +23,9 @@ image: javascript.png
 JavaScript runs directly in browsers. No installation needed for client-side code.
 
 For server-side or tooling, install a runtime:
-- **[Node.js](../runtimes/node.md)**: The established runtime
-- **[Deno](../runtimes/deno.md)**: Secure by default, TypeScript native
-- **[Bun](../runtimes/bun.md)**: Fast all-in-one runtime
+- **[Node.js](/tools/dev/runtimes/node)**: The established runtime
+- **[Deno](/tools/dev/runtimes/deno)**: Secure by default, TypeScript native
+- **[Bun](/tools/dev/runtimes/bun)**: Fast all-in-one runtime
 
 ```powershell
 scoop install nodejs-lts   # Node.js
@@ -237,7 +237,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 | Tool | Purpose |
 |------|---------|
 | npm/pnpm/yarn | Package managers |
-| [Vite](../web-desktop/vite.md) | Fast dev server and bundler |
+| [Vite](/tools/dev/web-desktop/vite) | Fast dev server and bundler |
 | ESLint | Linting |
 | Prettier | Code formatting |
 | Vitest/Jest | Testing |
@@ -247,15 +247,15 @@ const user = JSON.parse(localStorage.getItem("user"));
 **Good fit:**
 - Web frontend (it's the only option)
 - Full-stack web development
-- Cross-platform desktop ([Electron](../web-desktop/tauri.md), Tauri)
+- Cross-platform desktop ([Electron](/tools/dev/web-desktop/tauri), Tauri)
 - Serverless functions
 - Quick scripts and prototypes
 
 **Consider alternatives when:**
-- You need static typing (use [TypeScript](./typescript.md))
-- CPU-intensive computation (consider [Rust](./rust.md), C++)
+- You need static typing (use [TypeScript](/tools/dev/languages/typescript))
+- CPU-intensive computation (consider [Rust](/tools/dev/languages/rust), C++)
 - Type safety is critical for a large codebase
 
 ## Summary
 
-JavaScript is the universal language of the web, running in browsers and on servers. Modern JS (ES2020+) includes `async/await`, modules, classes, and destructuring. ES2025 adds iterator helpers, set methods, and import attributes. For larger projects, consider [TypeScript](./typescript.md) for static typing. Use [Vite](../web-desktop/vite.md) for modern development workflows.
+JavaScript is the universal language of the web, running in browsers and on servers. Modern JS (ES2020+) includes `async/await`, modules, classes, and destructuring. ES2025 adds iterator helpers, set methods, and import attributes. For larger projects, consider [TypeScript](/tools/dev/languages/typescript) for static typing. Use [Vite](/tools/dev/web-desktop/vite) for modern development workflows.

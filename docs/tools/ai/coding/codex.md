@@ -9,7 +9,7 @@ image: openai.png
 
 # Codex
 
-**[Codex](https://openai.com/codex)** is OpenAI's agentic coding platform that runs tasks in isolated cloud sandboxes. Originally the model powering [GitHub Copilot](./github-copilot.md), Codex has evolved into a full development environment where AI agents write features, fix bugs, and propose pull requests autonomously.
+**[Codex](https://openai.com/codex)** is OpenAI's agentic coding platform that runs tasks in isolated cloud sandboxes. Originally the model powering [GitHub Copilot](/tools/ai/coding/github-copilot), Codex has evolved into a full development environment where AI agents write features, fix bugs, and propose pull requests autonomously.
 
 ## How Codex works
 

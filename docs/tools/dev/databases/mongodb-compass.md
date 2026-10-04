@@ -9,7 +9,7 @@ image: mongodb_compass.png
 
 # MongoDB Compass
 
-**[MongoDB Compass](https://www.mongodb.com/products/compass)** is a free GUI for MongoDB that turns your database from an opaque blob of documents into something you can actually understand at a glance. For the server and CLI shell, see the [MongoDB](./mongodb.md) page.
+**[MongoDB Compass](https://www.mongodb.com/products/compass)** is a free GUI for MongoDB that turns your database from an opaque blob of documents into something you can actually understand at a glance. For the server and CLI shell, see the [MongoDB](/tools/dev/databases/mongodb) page.
 
 The standout feature is **schema analysis**. Open any collection, switch to the Schema tab, and Compass samples documents to build a live visualization of your data shape -- field names, types, value distributions, and outliers all laid out graphically. On a schema-less database, this is enormously useful. You can spot inconsistencies (a `price` field that is sometimes a string, sometimes a number) without writing a single query.
 
