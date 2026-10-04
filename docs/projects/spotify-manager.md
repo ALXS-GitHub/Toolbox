@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 description: Ranking my favourite tracks and artists, following how the rankings change, and tidying my Spotify playlists.
-status: paused
+status: active
 kind: project
 platforms: [windows]
 stack: [React, TypeScript, Express, MongoDB]
@@ -41,4 +41,5 @@ regional versions of the same song.
 
 ## Where it stands
 
-The project moves in bursts: a rework in December 2025, a new version in spring 2026, and on hold since May.
+The project moves in bursts: a rework in December 2025, a new version in spring 2026, and ongoing work on album
+rankings, scores by criteria and automatic database backups.

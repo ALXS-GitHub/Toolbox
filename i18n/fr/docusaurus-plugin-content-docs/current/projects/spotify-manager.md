@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 description: Classer mes morceaux et artistes préférés, suivre l'évolution des classements et faire le tri dans mes playlists Spotify.
-status: paused
+status: active
 kind: project
 platforms: [windows]
 stack: [React, TypeScript, Express, MongoDB]
@@ -42,5 +42,5 @@ enregistrement — relie les versions single, album ou régionales d'un même ti
 
 ## Où il en est
 
-Le projet avance par poussées : une refonte en décembre 2025, une nouvelle version au printemps 2026, et une pause
-depuis mai.
+Le projet avance par poussées : une refonte en décembre 2025, une nouvelle version au printemps 2026, et un travail
+en cours sur le classement des albums, des notes par critères et des sauvegardes automatiques de la base.
