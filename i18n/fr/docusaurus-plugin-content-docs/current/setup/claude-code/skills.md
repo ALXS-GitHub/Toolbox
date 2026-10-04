@@ -21,7 +21,7 @@ la machine.
 | `diagrams` | je demande un schéma, ou de lui-même dès qu'au moins quatre éléments sont reliés | un schéma d'architecture ou de process, HTML autonome et PNG, clair et sombre |
 | `doc-site` | je demande une petite documentation de plusieurs pages | une doc avec barre latérale, recherche et mode sombre, en un ou plusieurs fichiers HTML |
 | `pages` | je le demande explicitement, et seulement dans ce cas | une page visuelle et interactive pour expliquer ou comparer quelque chose |
-| tickets | je nomme mon gestionnaire de tickets ou un ticket | le cycle complet du ticket : lecture, code, commit, statut, commentaire (voir [Tickets et mods](/setup/claude-code/tickets)) |
+| tickets | je nomme mon gestionnaire de tickets ([Zorg](/projects/zorg)) ou un ticket | le cycle complet du ticket : lecture, code, commit, statut, commentaire (voir [Tickets et mods](/setup/claude-code/tickets)) |
 | navigateur | il faut naviguer sur un site pour moi | des actions dans [Chrome](/tools/web/browsers/chrome), pilotées par un CLI (voir [Le navigateur](/setup/claude-code/browser)) |
 
 Les quatre premiers partagent le même design et la même chaîne de rendu, décrite dans

@@ -33,8 +33,8 @@ lignes le dossier, la branche, le contexte consommé, les quotas et le coût.
 
 Pendant la session, Claude Code s'appuie sur les **skills** : des dossiers d'instructions et de scripts qu'il charge
 quand une demande correspond à leur description. Les miens produisent des documents rédigés, des schémas, de petites
-documentations et des pages visuelles, et pilotent deux outils en ligne de commande, mon gestionnaire de tickets et
-un navigateur. Les skills de production partagent un **design commun** (couleurs, thèmes clair et sombre,
+documentations et des pages visuelles, et pilotent deux outils en ligne de commande, mon gestionnaire de tickets
+([Zorg](/projects/zorg)) et un navigateur. Les skills de production partagent un **design commun** (couleurs, thèmes clair et sombre,
 composants) et passent par [Python](/tools/dev/languages/python) et un navigateur sans interface pour produire du HTML, du PDF et des PNG. À côté, des
 **mods** ajoutent de l'interface au terminal : un bandeau qui rappelle le ticket en cours, un tableau de bord des
 tickets d'un projet.

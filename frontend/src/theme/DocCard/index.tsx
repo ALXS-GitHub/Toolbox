@@ -64,16 +64,19 @@ function Logo({image}: {image: string}): ReactNode {
 }
 
 function CardCategory({item}: {item: PropSidebarItemCategory}): ReactNode {
-  const href = findFirstSidebarItemLink(item);
+  const href = item.href ?? findFirstSidebarItemLink(item);
   const plural = useCategoryItemsPlural();
   if (!href) return null;
+  // A category linked to a page (a multi-page project) carries that page's logo, status and description.
+  const props = (item.customProps ?? {}) as {image?: string; status?: Status};
   return (
     <CardLayout
       className={item.className}
       href={href}
-      icon={<FiFolder aria-hidden />}
+      icon={props.image ? <Logo image={props.image} /> : <FiFolder aria-hidden />}
       title={item.label}
       description={item.description ?? plural(item.items.length)}
+      status={props.status}
     />
   );
 }

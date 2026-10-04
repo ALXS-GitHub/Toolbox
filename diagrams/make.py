@@ -218,8 +218,12 @@ BUILDERS = {"harness-overview": harness_overview, "cortx-architecture": cortx_ar
 sys.path.insert(0, str(HERE))
 import harness  # noqa: E402  (diagrams of the harness section)
 
+import projects  # noqa: E402  (diagrams of the projects section)
+
 T.update(harness.T)
+T.update(projects.T)
 BUILDERS.update(harness.builders(node))
+BUILDERS.update(projects.builders(node, harness.page))
 
 
 def make(name, lang):

@@ -19,7 +19,7 @@ My skills fall into two families: those that produce polished files, and those t
 | `diagrams` | I ask for a diagram, or on its own as soon as four or more things are connected | an architecture or process diagram, standalone HTML and PNG, light and dark |
 | `doc-site` | I ask for a small multi-page documentation | a doc with a sidebar, search and dark mode, in one or several HTML files |
 | `pages` | I ask for it explicitly, and only then | a visual, interactive page to explain or compare something |
-| tickets | I name my ticket manager or a ticket | the full ticket cycle: reading, coding, commit, status, comment (see [Tickets and mods](/setup/claude-code/tickets)) |
+| tickets | I name my ticket manager ([Zorg](/projects/zorg)) or a ticket | the full ticket cycle: reading, coding, commit, status, comment (see [Tickets and mods](/setup/claude-code/tickets)) |
 | browser | a website has to be used on my behalf | actions in [Chrome](/tools/web/browsers/chrome), driven by a CLI (see [The browser](/setup/claude-code/browser)) |
 
 The first four share the same design and rendering pipeline, described in

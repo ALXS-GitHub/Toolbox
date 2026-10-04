@@ -409,7 +409,7 @@
   },
   {
     "from": "/docs/projects/markdown_themes/markdown_theme_vsc_extension",
-    "to": "/archive/projects/markdown-theme-vsc-extension"
+    "to": "/archive/projects/markdown-themes"
   },
   {
     "from": "/docs/projects/markdown_themes/markdown_themes",
@@ -417,11 +417,11 @@
   },
   {
     "from": "/docs/projects/markdown_themes/markdown_to_pdf",
-    "to": "/archive/projects/markdown-to-pdf"
+    "to": "/archive/projects/markdown-themes"
   },
   {
     "from": "/docs/projects/rl_designer",
-    "to": "/projects/rl-designer"
+    "to": "/projects/alxs-rl-mod"
   },
   {
     "from": "/docs/websites/dev/devicon",

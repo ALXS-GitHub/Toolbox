@@ -117,24 +117,25 @@ T = {
 }
 
 
-def builders(node):
-    def page(t, width, cols, rows, inner, links, legend):
-        legend_js = ", ".join(f'"{k}": "{v}"' if " " in k else f'{k}: "{v}"' for k, v in legend["blocks"].items())
-        extra = "".join(f', {k}: "{v}"' for k, v in legend.items() if k != "blocks")
-        body = f'''  <h1>{t["title"]}</h1>
+def page(t, width, cols, rows, inner, links, legend):
+    legend_js = ", ".join(f'"{k}": "{v}"' if " " in k else f'{k}: "{v}"' for k, v in legend["blocks"].items())
+    extra = "".join(f', {k}: "{v}"' for k, v in legend.items() if k != "blocks")
+    body = f'''  <h1>{t["title"]}</h1>
   <div class="canvas">
   <div class="diagram" data-flow="lr" style="width:{width}px;
-       grid-template-columns: {cols};
-       grid-template-rows: {rows};">
+   grid-template-columns: {cols};
+   grid-template-rows: {rows};">
 {inner}    <svg class="wires"></svg>
   </div>
   </div>
   <div class="legend" data-auto></div>
 '''
-        js = "const LINKS = [\n" + "".join(f"  {l},\n" for l in links) + "];\n"
-        js += f"const LEGEND = {{ blocks: {{ {legend_js} }}{extra} }};"
-        return body, js
+    js = "const LINKS = [\n" + "".join(f"  {l},\n" for l in links) + "];\n"
+    js += f"const LEGEND = {{ blocks: {{ {legend_js} }}{extra} }};"
+    return body, js
 
+
+def builders(node):
     def commit(t):
         inner = f'''    <div class="group main" id="ws" style="grid-column:1/8;grid-row:1/5"></div>
     <div class="group" id="gh" style="grid-column:9;grid-row:1/3"></div>

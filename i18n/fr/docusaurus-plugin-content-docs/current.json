@@ -306,5 +306,13 @@
   "sidebar.setup.category.Claude Code harness": {
     "message": "Harness Claude Code",
     "description": "The label for category 'Claude Code harness' in sidebar 'setup'"
+  },
+  "sidebar.projects.category.Zorg": {
+    "message": "Zorg",
+    "description": "The label for category 'Zorg' in sidebar 'projects'"
+  },
+  "sidebar.projects.category.ALXS-RL-Mod": {
+    "message": "ALXS-RL-Mod",
+    "description": "The label for category 'ALXS-RL-Mod' in sidebar 'projects'"
   }
 }

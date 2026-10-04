@@ -31,7 +31,7 @@ context used, the quotas and the cost.
 
 During the session, Claude Code relies on **skills**: folders of instructions and scripts that it loads when a request
 matches their description. Mine produce written documents, diagrams, small documentation sites and visual pages, and
-drive two command-line tools, my ticket manager and a browser. The production skills share a **common design**
+drive two command-line tools, my ticket manager ([Zorg](/projects/zorg)) and a browser. The production skills share a **common design**
 (colours, light and dark themes, components) and use [Python](/tools/dev/languages/python) and a headless browser to produce HTML, PDF and PNG files.
 Next to them, **mods** add interface to the terminal: a banner with the ticket in progress, and a dashboard of a
 project's tickets.

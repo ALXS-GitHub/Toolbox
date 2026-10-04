@@ -166,5 +166,13 @@
   "setup/claude-code": {
     "label": "Harness Claude Code",
     "description": ""
+  },
+  "projects/zorg": {
+    "label": "Zorg",
+    "description": ""
+  },
+  "projects/alxs-rl-mod": {
+    "label": "ALXS-RL-Mod",
+    "description": ""
   }
 }

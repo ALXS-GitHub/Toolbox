@@ -5,7 +5,7 @@ description: Handing a ticket to the agent, and following its work from the term
 
 # Tickets and mods
 
-My development tasks live in my ticket manager, Zorg, a personal project. The integration with Claude Code allows a
+My development tasks live in my ticket manager, [Zorg](/projects/zorg), a personal project. The integration with Claude Code allows a
 request like "take ticket 42": the agent reads the whole ticket, does the work, commits, moves the ticket and leaves a
 follow-up comment. Three pieces make it work: a CLI built for agents, a skill that describes a ticket's life cycle, and
 two mods that keep the ticket in view in the terminal.

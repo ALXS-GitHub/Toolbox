@@ -5,7 +5,7 @@ description: Confier un ticket à l'agent, et suivre son travail depuis le termi
 
 # Tickets et mods
 
-Mes tâches de développement vivent dans mon gestionnaire de tickets, Zorg, un projet perso. L'intégration avec
+Mes tâches de développement vivent dans mon gestionnaire de tickets, [Zorg](/projects/zorg), un projet perso. L'intégration avec
 Claude Code permet une demande comme « prends le ticket 42 » : l'agent lit le ticket en entier, fait le travail,
 commite, déplace le ticket et laisse un commentaire de suivi. Trois pièces y concourent : un CLI fait pour les
 agents, un skill qui décrit le cycle d'un ticket, et deux mods qui gardent le ticket en vue dans le terminal.
