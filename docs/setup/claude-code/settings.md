@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 description: Claude Code's settings, the CLAUDE.md instructions, permissions and memory.
+image: icons/settings.svg
 ---
 
 # Settings and instructions

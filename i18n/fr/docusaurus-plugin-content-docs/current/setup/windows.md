@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 description: PowerShell 7, un profil presque vide, et CortX qui génère le reste — prompt, alias, intégrations.
+image: powershell.png
 ---
 
 # Le terminal sous Windows

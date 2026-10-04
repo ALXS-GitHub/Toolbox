@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 description: Laisser l'agent naviguer sur un site pour moi, avec deux façons de piloter Chrome.
+image: google_chrome.png
 ---
 
 # Le navigateur

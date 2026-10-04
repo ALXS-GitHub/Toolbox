@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 description: What to redo after a change, and the small periodic review.
+image: icons/wrench.svg
 ---
 
 # Maintenance

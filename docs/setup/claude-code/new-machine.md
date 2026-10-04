@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 description: Setting the whole harness up again on a new computer, without overwriting anything.
+image: icons/hard-drive-download.svg
 ---
 
 # Setting up a new machine

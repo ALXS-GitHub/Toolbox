@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Overview
 description: My computer and accessories.
+image: icons/cpu.svg
 ---
 
 # Hardware

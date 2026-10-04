@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Vue d'ensemble
 description: "Les jeux auxquels je joue, leurs lanceurs et leurs mods."
+image: icons/gamepad-2.svg
 ---
 
 # Jeux

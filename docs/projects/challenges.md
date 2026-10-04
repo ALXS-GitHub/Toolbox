@@ -4,6 +4,7 @@ description: Advent of Code every December, and a particle simulator to learn Op
 status: occasional
 kind: project
 stack: [Rust, C++, OpenGL]
+image: adventofcode.svg
 ---
 
 # Challenges and experiments

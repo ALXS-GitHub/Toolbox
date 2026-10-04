@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Vue d'ensemble
 description: "Les outils que je n'utilise plus, et pourquoi."
+image: icons/archive.svg
 ---
 
 # Archive

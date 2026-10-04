@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Overview
 description: Everything around Claude Code that turns it into my everyday assistant, and how the pieces fit together.
+image: claude.png
 ---
 
 # The Claude Code harness

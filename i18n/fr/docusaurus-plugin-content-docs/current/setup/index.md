@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Vue d'ensemble
 description: "Comment mon environnement s'articule."
+image: icons/sliders-horizontal.svg
 ---
 
 # Setup

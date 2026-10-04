@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 description: Les réglages de Claude Code, les consignes en CLAUDE.md, les permissions et la mémoire.
+image: icons/settings.svg
 ---
 
 # Réglages et consignes

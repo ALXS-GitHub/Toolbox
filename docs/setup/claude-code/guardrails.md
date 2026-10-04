@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 description: How nothing personal leaves the machine, even by mistake.
+image: icons/shield-check.svg
 ---
 
 # Guardrails

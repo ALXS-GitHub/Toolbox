@@ -4,6 +4,7 @@ repo: "https://github.com/ALXS-GitHub/Markdown-Themes"
 status: archived
 kind: project
 stack: [CSS, JavaScript, Node.js]
+image: markdown.svg
 ---
 
 # Markdown Themes

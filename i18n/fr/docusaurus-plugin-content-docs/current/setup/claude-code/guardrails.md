@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 description: Comment rien de personnel ne quitte la machine, même par erreur.
+image: icons/shield-check.svg
 ---
 
 # Garde-fous

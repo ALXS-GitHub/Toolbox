@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 description: Les gestes à refaire quand on change quelque chose, et la petite revue périodique.
+image: icons/wrench.svg
 ---
 
 # Entretien

@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Overview
 description: The apps, CLIs, services and AI tools I use.
+image: icons/toolbox.svg
 ---
 
 # Tools

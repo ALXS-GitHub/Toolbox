@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 description: Building a Roblox game with code as files, Rojo, tools pinned per project, and Claude Code.
+image: robloxstudio.svg
 ---
 
 # Developing on Roblox

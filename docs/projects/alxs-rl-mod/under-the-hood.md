@@ -2,6 +2,7 @@
 sidebar_position: 1
 sidebar_label: Under the hood
 description: How ALXS-RL-Mod rewrites the game's packages, and why everything goes through a single writer layer.
+image: icons/cog.svg
 ---
 
 # Under the hood

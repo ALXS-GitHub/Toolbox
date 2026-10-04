@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 description: Développer un jeu Roblox avec du code en fichiers, Rojo, des outils épinglés par projet, et Claude Code.
+image: robloxstudio.svg
 ---
 
 # Développer sur Roblox

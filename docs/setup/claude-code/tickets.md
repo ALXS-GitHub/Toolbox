@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 description: Handing a ticket to the agent, and following its work from the terminal.
+image: zorg.png
 ---
 
 # Tickets and mods

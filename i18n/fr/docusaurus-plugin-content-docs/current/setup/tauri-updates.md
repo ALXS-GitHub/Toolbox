@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 description: Publier une app Tauri et la mettre à jour toute seule — y compris quand son dépôt est privé.
+image: tauri.png
 ---
 
 # Mises à jour des apps Tauri

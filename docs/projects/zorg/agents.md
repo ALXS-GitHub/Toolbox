@@ -2,6 +2,7 @@
 sidebar_position: 2
 sidebar_label: "Agents: CLI and MCP"
 description: How an AI agent uses Zorg — the CLI by default, the MCP server when there is no shell.
+image: icons/bot.svg
 ---
 
 # Agents: CLI and MCP

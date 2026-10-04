@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 description: Letting the agent use a website for me, with two ways of driving Chrome.
+image: google_chrome.png
 ---
 
 # The browser

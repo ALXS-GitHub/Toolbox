@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 description: Les skills que j'utilise, ce qu'ils produisent, et comment ils savent quand se déclencher.
+image: icons/wand-sparkles.svg
 ---
 
 # Les skills

@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Overview
 description: The games I play, their launchers and mods.
+image: icons/gamepad-2.svg
 ---
 
 # Games

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 description: Releasing a Tauri app and having it update itself — even when its repository is private.
+image: tauri.png
 ---
 
 # Tauri app updates

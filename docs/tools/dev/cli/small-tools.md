@@ -3,6 +3,7 @@ description: "The small commands that make the terminal nicer, on one page."
 status: active
 kind: cli
 platforms: [windows, macos, linux]
+image: icons/toolbox.svg
 ---
 
 # Small tools

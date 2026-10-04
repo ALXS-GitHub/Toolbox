@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Vue d'ensemble
 description: "Ce que je construis, et comment ça marche."
+image: icons/rocket.svg
 ---
 
 # Projets

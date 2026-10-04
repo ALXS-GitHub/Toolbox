@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Vue d'ensemble
 description: "Mon ordinateur et mes accessoires."
+image: icons/cpu.svg
 ---
 
 # Matériel

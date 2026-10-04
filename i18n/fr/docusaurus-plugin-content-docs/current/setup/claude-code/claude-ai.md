@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 description: Retrouver mes skills sur claude.ai, sans que git cesse d'être la seule source.
+image: claude.png
 ---
 
 # Les skills sur claude.ai

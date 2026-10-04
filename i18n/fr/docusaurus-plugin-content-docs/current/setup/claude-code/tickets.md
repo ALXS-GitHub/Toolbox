@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 description: Confier un ticket à l'agent, et suivre son travail depuis le terminal.
+image: zorg.png
 ---
 
 # Tickets et mods

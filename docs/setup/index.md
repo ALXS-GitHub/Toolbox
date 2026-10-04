@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Overview
 description: How my environment fits together.
+image: icons/sliders-horizontal.svg
 ---
 
 # Setup

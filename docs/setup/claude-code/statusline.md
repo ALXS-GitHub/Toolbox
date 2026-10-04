@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 description: Two lines under the prompt to know where I am and what the session uses.
+image: icons/panel-bottom.svg
 ---
 
 # Status line

@@ -2,6 +2,7 @@
 sidebar_position: 1
 sidebar_label: Architecture
 description: One monorepo, four clients, a Supabase database with row-level security.
+image: icons/layers.svg
 ---
 
 # Zorg architecture

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 description: Having my skills on claude.ai too, while git stays the single source.
+image: claude.png
 ---
 
 # Skills on claude.ai

@@ -2,6 +2,7 @@
 sidebar_position: 0
 sidebar_label: Vue d'ensemble
 description: "Les applis, CLI, services et outils d'IA que j'utilise."
+image: icons/toolbox.svg
 ---
 
 # Outils

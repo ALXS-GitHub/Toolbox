@@ -2,6 +2,7 @@
 sidebar_position: 1
 sidebar_label: Sous le capot
 description: Comment ALXS-RL-Mod modifie les packages du jeu, et pourquoi tout passe par une seule couche d'écriture.
+image: icons/cog.svg
 ---
 
 # Sous le capot

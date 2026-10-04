@@ -2,6 +2,7 @@
 sidebar_position: 1
 sidebar_label: Architecture
 description: Un monorepo, quatre clients, une base Supabase avec des règles d'accès par ligne.
+image: icons/layers.svg
 ---
 
 # Architecture de Zorg

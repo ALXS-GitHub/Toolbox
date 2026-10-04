@@ -3,6 +3,7 @@ description: "Les petites commandes qui rendent le terminal plus agréable, en u
 status: active
 kind: cli
 platforms: [windows, macos, linux]
+image: icons/toolbox.svg
 ---
 
 # Les petits outils

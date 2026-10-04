@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 description: Des commits toujours signés, une clé SSH qui ne quitte jamais 1Password, et les conventions de mes dépôts.
+image: git.png
 ---
 
 # Git et GitHub

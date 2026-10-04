@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 description: Un design commun, défini une seule fois, pour tous les documents, pages, docs et schémas.
+image: icons/palette.svg
 ---
 
 # La chaîne documentaire

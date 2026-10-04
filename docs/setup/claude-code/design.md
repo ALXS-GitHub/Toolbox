@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 description: One common design, defined once, for every document, page, doc and diagram.
+image: icons/palette.svg
 ---
 
 # The document pipeline

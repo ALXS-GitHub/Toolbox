@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 description: Remonter tout le harness sur un nouvel ordinateur, sans rien écraser.
+image: icons/hard-drive-download.svg
 ---
 
 # Installer sur une nouvelle machine
