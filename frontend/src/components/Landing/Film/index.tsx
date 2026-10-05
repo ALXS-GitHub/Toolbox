@@ -76,12 +76,15 @@ export default function Film(): ReactNode {
   const {i18n} = useDocusaurusContext();
   const locale = i18n.currentLocale === 'fr' ? 'fr' : 'en';
   const base = useBaseUrl('/video/');
-  const src = useCallback((f: Framing, ext: string) => `${base}film-${locale}-${f}.${ext}`, [base, locale]);
+  const src = useCallback((f: string, ext: string) => `${base}film-${locale}-${f}.${ext}`, [base, locale]);
   const narration = useNarration();
 
   const root = useRef<HTMLElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [framing, setFraming] = useState<Framing | null>(null); // null until the client knows the screen
+  // Large screens (at least 1600 device pixels wide, not a phone) get the 2560 × 1440 render, shown 1:1
+  // on 1440p displays; the others keep the lighter 1920 × 1080 one. Decided once, on load.
+  const [hd, setHd] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [started, setStarted] = useState(false); // first frame shown: the poster can go
   const [muted, setMuted] = useState(true);
@@ -99,6 +102,7 @@ export default function Film(): ReactNode {
       setFraming(mq.matches ? 'port' : 'land');
     };
     pick();
+    setHd(window.innerWidth >= 1024 && window.innerWidth * (window.devicePixelRatio || 1) >= 1600);
     mq.addEventListener('change', pick);
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     const saveData = (navigator as Navigator & {connection?: {saveData?: boolean}}).connection?.saveData === true;
@@ -118,7 +122,7 @@ export default function Film(): ReactNode {
     };
     v.addEventListener('loadedmetadata', onMeta, {once: true});
     return () => v.removeEventListener('loadedmetadata', onMeta);
-  }, [framing, live]);
+  }, [framing, live, hd]);
 
   // Pause when the film leaves the screen, resume when it comes back.
   useEffect(() => {
@@ -211,8 +215,8 @@ export default function Film(): ReactNode {
         onPlaying={() => setStarted(true)}>
         {live && (
           <>
-            <source src={src(framing, 'webm')} type='video/webm; codecs="av01.0.08M.08, opus"' />
-            <source src={src(framing, 'mp4')} type='video/mp4; codecs="avc1.640028, mp4a.40.2"' />
+            <source src={src(framing === 'land' && hd ? 'land-1440' : framing, 'webm')} type='video/webm; codecs="av01.0.12M.10, opus"' />
+            <source src={src(framing === 'land' && hd ? 'land-1440' : framing, 'mp4')} type='video/mp4; codecs="avc1.640033, mp4a.40.2"' />
           </>
         )}
       </video>
