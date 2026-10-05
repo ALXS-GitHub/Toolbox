@@ -109,6 +109,7 @@ const en = {
   },
   hook: {
     title: 'pre-commit',
+    sub: 'checks what the commit contains',
     checks: ['No secret', 'No e-mail address', 'No sensitive file'],
     ok: 'Ready to sign',
     commitMsg: 'feat(notes): pin a note to the top of its folder',
@@ -116,8 +117,8 @@ const en = {
   },
   op: {
     app: '1Password',
-    title: 'SSH key request',
-    body: 'git wants to sign a commit with your “Git signing” key.',
+    title: 'Allow git to use the SSH key “Git signing”?',
+    body: 'git uses it to sign the commit.',
     key: 'Git signing',
     keyType: 'Ed25519 · SSH key',
     deny: 'Deny',
@@ -145,7 +146,7 @@ const en = {
     links: ['idea', 'reads', 'checks', 'signs'],
     legend: 'Legend',
   },
-  finale: ['My tools.', 'My processes.', 'My agents.'],
+  finale: 'Toolbox',
 };
 
 const fr = {
@@ -257,6 +258,7 @@ const fr = {
   },
   hook: {
     title: 'pre-commit',
+    sub: 'vérifie ce que contient le commit',
     checks: ['Aucun secret', 'Aucune adresse e-mail', 'Aucun fichier sensible'],
     ok: 'Prêt à signer',
     commitMsg: 'feat(notes): épingler une note en haut de son dossier',
@@ -264,8 +266,8 @@ const fr = {
   },
   op: {
     app: '1Password',
-    title: 'Demande de clé SSH',
-    body: 'git veut signer un commit avec votre clé « Git signing ».',
+    title: 'Autoriser git à utiliser la clé SSH « Git signing » ?',
+    body: 'git s’en sert pour signer le commit.',
     key: 'Git signing',
     keyType: 'Ed25519 · clé SSH',
     deny: 'Refuser',
@@ -293,7 +295,7 @@ const fr = {
     links: ['idée', 'lit', 'vérifie', 'signe'],
     legend: 'Légende',
   },
-  finale: ['Mes outils.', 'Mes process.', 'Mes agents.'],
+  finale: 'Toolbox',
 };
 
 export const COPY = { en, fr };

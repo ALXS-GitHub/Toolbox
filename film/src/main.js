@@ -53,3 +53,25 @@ window.seek = (t) => frameAt(t, Math.round(t * FPS));
 for (const t of [0, 10, 20, 30, 40, 50]) frameAt(t, 0);
 window.__world = world;
 window.filmReady = true;
+
+// Critique helper (not used by the render): a close-up of one screen, square on or at an angle on a corner.
+import { rectPoints, normalOf, framePose, turn } from './camera.js';
+window.closeup = (name, t, yaw, corner) => {
+  film.update(t);
+  world.update(t);
+  const s = world.screens.find((x) => x.name === name);
+  const u = s.uniforms.uRect.value;
+  const rect = corner ? [u.x + u.z * 0.74, u.y - u.w * 0.05, u.z * 0.34, u.w * 0.32] : null;
+  const pts = rectPoints(s, rect);
+  const c = framePose(pts, turn(normalOf(s), yaw, corner ? 14 : 0), world.camera.fov, W / H, [0.8, 0.7]);
+  const cam = world.camera;
+  cam.position.set(c[0], c[1], c[2]);
+  cam.lookAt(c[3], c[4], c[5]);
+  cam.clearViewOffset();
+  cam.updateProjectionMatrix();
+  post.params.aperture = 0;
+  post.sub(0, 1);
+  post.present(0);
+  world.renderer.getContext().finish();
+  return canvas.toDataURL('image/png');
+};

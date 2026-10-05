@@ -2,8 +2,8 @@
 
 **Logline.** Une idée dictée sur un téléphone traverse, sans une seule coupe, tout mon
 environnement : Zorg la range, Claude Code la prend dans CortX, la code, la fait vérifier
-et signer, puis la documente. La caméra recule et révèle que tout ce trajet est une boucle :
-mes outils, mes process, mes agents.
+et signer, puis la documente. La caméra recule et révèle que tout ce trajet est une boucle,
+qui se resserre en un seul mot : Toolbox.
 
 **Format.** 56 s en boucle (28 mesures à 120 BPM). 16:9 en 1920×1080 et 9:16 en 1080×1920,
 un rendu par langue (en, fr). Un seul monde 3D continu : chaque scène est une **station**
@@ -66,8 +66,8 @@ quatre surfaces se rangent en grille 2 × 2.
 |---|---|---|---|---|---|
 | 26,0–28,5 | **4a Le code** | Les lignes du changement. | Les trois lignes ajoutées, en grand, alignées à gauche en une colonne centrée devant le terminal assombri et flouté. | Elles redescendent dans le terminal. | Arpège ; un « pop » par ligne. |
 | 28,5–31,0 | **4b Serveur et build** | Il lance le serveur de dev et le build. | Fenêtre et carte : `cortx service start zorg web` → « Started service 'web' (PID 18432) », la session « web · zorg » apparaît dans le rail (point vert) ; `bun run build` → « built in 3.8s ». | Panoramique vers le portail. | 29,0 : tic ; 30,5 : « ding ». |
-| 31,0–33,0 | **4c Le hook** | Rien ne fuit. | Le panneau pre-commit au-dessus, la carte du commit qui entre dessous entre les deux montants du portail ; une lame balaie la carte trois fois, une coche s'allume à chaque passage (31,5, 32,0, 32,5). | Le panneau cède la place à la demande 1Password. | Balayage filtré, trois tics montants. |
-| 33,0–36,0 | **4d La signature** | Je suis seul à pouvoir signer. | Même cadre : la demande 1Password monte à la place du panneau (33,0) ; le curseur arrive (34,0) et clique sur « Autoriser » (35,0) ; la boîte se replie en sceau ambre qui frappe la carte du commit à 36,0. | Le sceau devient le badge « Signé · Vérifié ». | 35,0 : clic ; montée ; 36,0 : impact lourd. |
+| 31,0–33,0 | **4c Le hook** | Le hook vérifie le contenu du commit. | Le panneau pre-commit (« vérifie ce que contient le commit ») au-dessus, la carte du commit qui entre dessous entre les deux montants du portail ; une lame balaie la carte trois fois, une coche s'allume à chaque passage : aucun secret (31,5), aucune adresse e-mail (32,0), aucun fichier sensible (32,5). | Le panneau cède la place à la demande 1Password. | Balayage filtré, trois tics montants. |
+| 33,0–36,0 | **4d La signature** | 1Password autorise l'usage de la clé SSH qui signe le commit. | Même cadre : la demande 1Password monte à la place du panneau (33,0), sobre : « Autoriser git à utiliser la clé SSH « Git signing » ? », « git s'en sert pour signer le commit. », Refuser / Autoriser ; le curseur arrive (34,0) et clique sur « Autoriser » (35,0) ; la boîte se replie en sceau « Signé » qui frappe la carte du commit à 36,0. | Le sceau devient le badge « Signé · Vérifié ». | 35,0 : clic ; montée ; 36,0 : impact lourd. |
 | 36,0–38,0 | **4e Signé** | Commit vérifié. | `7c1e9a2 · Signé · Vérifié` ; la caméra accompagne le commit vers le détail du ticket, où la carte du ticket le rejoint. | Travelling d'accompagnement. | Souffle. |
 
 **9:16.** Même composition verticale (panneau au-dessus, commit dessous), qui convient aux deux formats.
@@ -86,8 +86,8 @@ quatre surfaces se rangent en grille 2 × 2.
 | Temps | Plan | Idée unique | Mouvement | Transition | Son |
 |---|---|---|---|---|---|
 | 46,0–50,0 | **6a La boucle** | Tout est relié. | Plan large posé sur toutes les stations ; le fil ambre trace le trajet du ticket d'une station à l'autre et referme la boucle (49,5). | — | Montée d'arpège, une note par station. |
-| 50,0–54,0 | **6b Le final** | Mes outils. Mes process. Mes agents. | Trois lignes de titrage posées dans l'espace, ferrées à gauche, révélées par masque sur les premiers temps (50,0, 51,0, 52,0) ; les stations correspondantes s'éclairent. Le cadre contient l'anneau et les trois lignes. | Les mots ressortent par leur masque, vers le haut. | 50,0 : drop ; 51,0 et 52,0 : accents. |
-| 54,0–56,0 | **6c Retour** | La boucle se referme. | Plongée vers le téléphone, jusqu'à la pose exacte de 0,0 (même position, vitesse nulle). | Raccord de boucle sans flou. | Reverse de cymbale vers le 0,0. |
+| 50,0–54,0 | **6b Toolbox** | Tout l'écosystème tient en un mot. | 50,0 : les stations et le fil ambre convergent vers le centre de l'anneau et s'effacent ; 50,5 : à ce point naît le logo Toolbox en 3D (la mallette du site, extrudée), qui pivote vers nous sur un ressort lourd ; 51,0 : le mot « Toolbox » (identique en FR et EN) monte par son masque à côté du logo (dessous en 9:16) ; la caméra pousse lentement. | Le mot ressort par son masque, le logo se replie en un point. | 50,0 : souffle ; 50,5 : impact ; 51,0 : accent. |
+| 54,0–56,0 | **6c Retour** | La boucle se referme. | Les stations se redéploient sur l'anneau pendant que la caméra plonge vers le téléphone, jusqu'à la pose exacte de 0,0 (même position, vitesse nulle). | Raccord de boucle sans flou. | Reverse de cymbale vers le 0,0. |
 
 **9:16.** L'anneau est vu de profil pour tenir en hauteur ; les trois lignes du final sont
 empilées au tiers supérieur.

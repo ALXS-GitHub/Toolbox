@@ -1,6 +1,6 @@
 // Station 1: the phone. 3D body, claude.ai screen, the dictated words as 3D quads, the waveform as 3D bars.
 import * as THREE from 'three';
-import { Screen, roundedSlab } from '../engine/world.js';
+import { Screen, roundedSlabGeometry, roundedRectShape } from '../engine/world.js';
 import { FONT } from '../engine/canvas.js';
 import { PH, phonePainter, voiceLevel } from '../ui/phone.js';
 import { clamp, sp, lerp, inv, smoother, trackV } from '../engine/motion.js';
@@ -17,28 +17,36 @@ export function makePhone(world, ctx, place) {
   world.add(group);
 
   const sw = PHONE_W, sh = PH.h * UPP;
-  const bez = 0.024, depth = 0.07;
-  const body = roundedSlab(sw + bez * 2, sh + bez * 2, 47 * UPP + bez, depth, '#26292c');
-  body.material.metalness = 0.85;
-  body.material.roughness = 0.28;
-  body.material.clearcoat = 0.4;
-  body.position.z = -body.userData.front;
+  // One silhouette, as on a real phone: body, glass and screen share concentric corners (screen radius
+  // + bezel), the body has a rounded edge and a visible thickness, the glass sits flush on its flat face.
+  const bez = 0.024, depth = 0.058, edge = 0.012;
+  const rScreen = 47 * UPP;
+  const body = new THREE.Mesh(
+    roundedSlabGeometry(sw + bez * 2, sh + bez * 2, rScreen + bez, depth, edge),
+    new THREE.MeshPhysicalMaterial({ color: '#2a2d31', metalness: 0.85, roughness: 0.3, clearcoat: 0.5, clearcoatRoughness: 0.3 }),
+  );
+  const front = body.geometry.userData.front;
+  body.position.z = -front; // front face at z = 0
   group.add(body);
-  // black glass front under the screen
-  const glass = new THREE.Mesh(new THREE.PlaneGeometry(sw + bez * 1.6, sh + bez * 1.6), new THREE.MeshPhysicalMaterial({ color: '#030405', roughness: 0.08, metalness: 0, clearcoat: 1 }));
-  glass.position.z = 0.012;
+  // black glass, flush with the flat front, inside the rounded edge
+  const gIn = bez - edge * 1.15;
+  const glass = new THREE.Mesh(
+    new THREE.ShapeGeometry(roundedRectShape(sw + gIn * 2, sh + gIn * 2, rScreen + gIn), 24),
+    new THREE.MeshPhysicalMaterial({ color: '#030405', roughness: 0.08, metalness: 0, clearcoat: 1 }),
+  );
+  glass.position.z = 0.0006;
   group.add(glass);
-  // side buttons
+  // side buttons, set into the edge
   const btnMat = new THREE.MeshPhysicalMaterial({ color: '#2b2e31', metalness: 0.9, roughness: 0.3 });
   for (const [x, y, h] of [[-1, 0.42, 0.11], [-1, 0.27, 0.11], [1, 0.33, 0.2]]) {
-    const b = new THREE.Mesh(new THREE.BoxGeometry(0.012, h, 0.03), btnMat);
-    b.position.set(x * (sw / 2 + bez + 0.004), y * sh * 0.5 + 0.15, -depth / 2 - 0.012);
+    const b = new THREE.Mesh(new THREE.CapsuleGeometry(0.006, h - 0.012, 4, 10), btnMat);
+    b.position.set(x * (sw / 2 + bez + 0.001), y * sh * 0.5 + 0.15, -front);
     group.add(b);
   }
 
   const painter = phonePainter(copy, imgs);
   const screen = new Screen(world, { w: sw, h: sh, px: PH.w, py: PH.h, dpr: 3, radius: 47, painter, name: 'phone' });
-  screen.group.position.z = 0.014;
+  screen.group.position.z = 0.0012;
   group.add(screen.group);
 
   // Phone-local position of a screen css-px point.

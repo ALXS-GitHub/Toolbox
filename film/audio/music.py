@@ -298,7 +298,7 @@ def build():
             rev.add(t, v, 0.09)
 
     # ── chord stabs on the final words ──
-    for t in (50.0, 51.0, 52.0):
+    for t in (50.5, 51.0):
         root, notes = chord(int(t // BAR))
         n = int(0.9 * SR)
         v = np.zeros(n)
@@ -330,7 +330,7 @@ def build():
         r = riser(t1 - t0)
         music.add(t0, r, g)
         rev.add(t0, r, g * 0.5)
-    for t, g in [(10.0, 0.45), (36.0, 0.6), (50.0, 0.6), (18.0, 0.25)]:
+    for t, g in [(10.0, 0.45), (36.0, 0.6), (50.5, 0.6), (18.0, 0.25)]:
         im = impact()
         music.add(t, im, g)
         rev.add(t, im, g * 0.4)

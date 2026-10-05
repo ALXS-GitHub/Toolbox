@@ -48,12 +48,7 @@ function land() {
       commit: [0, -0.45, 0.1],
     },
     skillsLay: { doc: [-1.65, 0, 0], dia: [2.4, 0, 0] },
-    words: {
-      pos: (i, tw) => [-5.6 + (tw * (1 / 80)) / 2, 1.85 - i * 2.05, 5.5],
-      scale: 1 / 80,
-      rot: [0, 0.05, 0],
-      exit: [-4, 1.0, 7],
-    },
+    final: { row: true, logo: 2.6, gap: 0.55, wordScale: 1 / 62, z: 3 },
     threadZ: -2.3,
     // per-shot direction tweaks (degrees)
     stackView: [-16, 8],
@@ -102,12 +97,7 @@ function port() {
     commit: [0, -0.45, 0.1],
   };
   L.skillsLay = { doc: [0, 1.15, 0], dia: [0, -2.9, 0] };
-  L.words = {
-    pos: (i, tw) => [-2.7 + tw / 150 / 2, 2.6 - i * 1.25, 5.5],
-    scale: 1 / 150,
-    rot: [0, 0.04, 0],
-    exit: [-2, 1.2, 6],
-  };
+  L.final = { row: false, logo: 2.2, gap: 0.5, wordScale: 1 / 95, z: 3 };
   L.stackView = [-6, 4];
   L.threadPts = [L.phone, L.zorg, L.cortx, L.gate, L.detail, L.skills].map((q) => [q.pos[0], q.pos[1], q.pos[2] + L.threadZ]);
   return L;

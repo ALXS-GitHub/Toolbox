@@ -76,7 +76,11 @@ export const T = {
   pull: 46.0,
   trace: 46.5,
   closed: 49.5,
-  finale: [50.0, 51.0, 52.0],
+  // the climax: the ring collapses, the Toolbox logo is born, the word is revealed
+  collapse: 50.0,
+  logo: 50.5,
+  word: 51.0,
+  unfold: 54.0,
   ret: 54.0,
 };
 
@@ -121,7 +125,7 @@ export function cues(lang = 'fr') {
   c.push([T.pull, 'whoosh', 0.5]);
   for (let i = 0; i < 6; i++) c.push([T.trace + i * 0.5, 'note' + i, 0.4]);
   c.push([T.closed, 'shimmer', 0.5]);
-  T.finale.forEach((t, i) => c.push([t, i === 0 ? 'impact' : 'hit', 0.8]));
+  c.push([T.collapse, 'whoosh', 0.6], [T.logo, 'impact', 0.9], [T.word, 'hit', 0.75]);
   c.push([T.ret, 'reverse', 0.5]);
   return c.sort((a, b) => a[0] - b[0]);
 }

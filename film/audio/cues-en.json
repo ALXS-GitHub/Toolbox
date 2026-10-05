@@ -541,18 +541,18 @@
  },
  {
   "t": 50,
+  "voice": "whoosh",
+  "gain": 0.6
+ },
+ {
+  "t": 50.5,
   "voice": "impact",
-  "gain": 0.8
+  "gain": 0.9
  },
  {
   "t": 51,
   "voice": "hit",
-  "gain": 0.8
- },
- {
-  "t": 52,
-  "voice": "hit",
-  "gain": 0.8
+  "gain": 0.75
  },
  {
   "t": 54,

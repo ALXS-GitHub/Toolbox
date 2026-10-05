@@ -12,6 +12,7 @@ import { BOARD, boardPainter, boardSlot, cardHeight, desktopPainter, detailPaint
 import { cortxPainter, cortxGeom, blockRect, inputRect } from './ui/cortx.js';
 import { CARD, cardLooks, cardPainter, MCPP, mcpPainter, labelPainter, HOOK, hookPainter, COMMIT, commitPainter, OP, opPainter, sealPainter, DOC, docPainter, DIA, DIA_P, diagramPainter, diagramPainterPort, wordPainter, measureWord } from './ui/misc.js';
 import { layouts, UPW } from './layout.js';
+import { makeToolboxLogo } from './stations/toolbox.js';
 import { buildCamera, rectPoints, normalOf, turn } from './camera.js';
 
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
@@ -96,7 +97,7 @@ export function buildFilm(world, post, ctx) {
   // ── the travelling ticket card ──
   const zw = portrait ? mobileSlot(board.pen, copy).w : boardSlot(board.pen, copy).w;
   const morph = (t) => (t < 50 ? smoother(clamp(inv(T.fly - 0.6, T.land - 0.5, t))) : 0);
-  const card = new Screen(world, { w: CARD.w, h: CARD.h, px: CARD.w, py: CARD.h, dpr: 4, radius: 14, painter: cardPainter(copy, zw, morph), name: 'card', order: 3 });
+  const card = new Screen(world, { w: CARD.w, h: CARD.h, px: CARD.w, py: CARD.h, dpr: 4, radius: 14, painter: cardPainter(copy, zw, morph), name: 'card', order: 3, slab: 4, slabColor: '#121a1c' });
   scene.add(card.group);
   const cardShadow = shadowQuad(1, 1, 0.12, 0.5);
   scene.add(cardShadow);
@@ -145,7 +146,6 @@ export function buildFilm(world, post, ctx) {
   op.setRect(0, 0, OP.w, OP.h, 16);
   // the canvas has room for the cursor; centre the dialog on the group origin
   op.mesh.position.set(40 * UPW, -50 * UPW, 0);
-  op.slab.scale.set(OP.w / (OP.w + 80), OP.h / (OP.h + 100), 1);
   gG.add(op.group);
   const seal = new Screen(world, { w: 200 * UPW, h: 200 * UPW, px: 200, py: 200, dpr: 3, radius: 100, painter: sealPainter(copy), name: 'seal', order: 6 });
   scene.add(seal.group);
@@ -162,14 +162,30 @@ export function buildFilm(world, post, ctx) {
   const dia = new Screen(world, { w: DG.w * UPW, h: DG.h * UPW, px: DG.w, py: DG.h, dpr: 2.4, radius: 6, painter: portrait ? diagramPainterPort(copy) : diagramPainter(copy), slab: 0.015, slabColor: '#d8d4ca', name: 'dia' });
   gK.add(dia.group);
 
-  // ── 6. final words ──
-  const words = copy.finale.map((w) => {
-    const tw = measureWord(w);
-    const s = new Screen(world, { w: tw, h: 190, px: tw, py: 190, dpr: 1, radius: 0, painter: wordPainter(w), name: 'word6', order: 8 });
-    scene.add(s.group);
-    s.tw = tw;
-    return s;
-  });
+  // ── 6. the climax: the ring collapses into the Toolbox logo, then the word ──
+  const C = (() => {
+    const c = V();
+    const st = [L.phone, L.zorg, L.cortx, L.gate, L.detail, L.skills];
+    st.forEach((s) => c.add(V(...s.pos)));
+    return c.multiplyScalar(1 / st.length);
+  })();
+  const F = L.final;
+  const logo = makeToolboxLogo(F.logo);
+  scene.add(logo.group);
+  const wordW = measureWord(copy.finale);
+  const word = new Screen(world, { w: wordW, h: 190, px: wordW, py: 190, dpr: 1, radius: 0, painter: wordPainter(copy.finale), name: 'word6', order: 8 });
+  scene.add(word.group);
+  // logo and word side by side (16:9) or stacked (9:16), centred on the ring's centre, in front of it
+  const wordWorld = wordW * F.wordScale;
+  const textMid = -16 * F.wordScale; // the word's optical centre sits a little below its canvas centre
+  const logoAt = F.row
+    ? V(C.x - (F.logo + F.gap + wordWorld) / 2 + F.logo / 2, C.y, C.z + F.z)
+    : V(C.x, C.y + (F.gap + 150 * 0.72 * F.wordScale) / 2 + F.logo * 0.38, C.z + F.z);
+  const wordAt = F.row
+    ? V(logoAt.x + F.logo / 2 + F.gap + wordWorld / 2, C.y + textMid, C.z + F.z)
+    : V(C.x, C.y - (F.gap + F.logo * 0.76) / 2 + textMid - 0.1, C.z + F.z);
+  const converging = [phone.group, gZ, gC, gG, gD, gK];
+  const baseOf = new Map(converging.map((o) => [o, o.position.clone()]));
 
   // ── the light thread through ZORG-128 on every surface (scene 2) ──
   const skewer = makeSkewer();
@@ -302,9 +318,6 @@ export function buildFilm(world, post, ctx) {
     // keep the visible rect centred on the group origin, the slab under it
     const cx = (rx + rw / 2 - G.w / 2) * UPW, cy = (G.h / 2 - (ry + rh / 2)) * UPW;
     cortx.mesh.position.set(-cx, -cy, 0);
-    cortx.slab.position.x = 0;
-    cortx.slab.position.y = 0;
-    cortx.slab.scale.set(rw / G.w, rh / G.h, 1);
     const inStack = gZ.localToWorld(V(...L.stack.layer(2, ks[1])));
     const atStation = gC.localToWorld(V(0, 0, 0));
     const pos = inStack.clone().lerp(atStation, fly);
@@ -384,7 +397,6 @@ export function buildFilm(world, post, ctx) {
     const k = t >= 46 || t < 1 ? 1 : arrive(t, T.detail - 0.1, T.detail + 0.5, 3.2);
     const w = lerp(zw, DD.w, k), h = lerp(112, DD.h, k);
     detail.setRect((DD.w - w) / 2, (DD.h - h) / 2, w, h, lerp(12, portrait ? 28 : 22, k));
-    detail.slab.scale.set(w / DD.w, h / DD.h, 1);
     detail.group.visible = t > T.detail - 0.12;
     detail.uniforms.uTint.value.set('#18272a');
     detail.uniforms.uTintK.value = t >= 46 ? 0 : 1 - clamp(inv(T.detail + 0.05, T.detail + 0.25, t));
@@ -404,34 +416,63 @@ export function buildFilm(world, post, ctx) {
     dia.group.scale.setScalar(lerp(0.3, 1, kg));
   }
 
-  function placeWords(t) {
-    const lay = L.words;
-    words.forEach((s, i) => {
-      const k = sp(t - T.finale[i], 'heavy');
-      // they leave the way they came: through their own line box, upward, one after the other
-      const out = smoother(clamp(inv(T.ret - 0.3 + i * 0.12, T.ret + 0.25 + i * 0.12, t)));
-      s.group.visible = t > T.finale[i] - 0.02 && out < 0.999;
-      s.uniforms.uShift.value.set(0, (1 - clamp(k)) * 190 - out * 200);
-      s.opacity = clamp(k * 6);
-      const p = V(...lay.pos(i, s.tw));
-      s.group.position.copy(p);
-      s.group.scale.setScalar(lay.scale);
-      s.group.quaternion.setFromEuler(new THREE.Euler(...lay.rot));
-    });
+  function placeFinale(t) {
+    // 1. the stations (and the thread) converge on the ring's centre and fade; they unfold back for the loop
+    const kc = smoother(clamp(inv(T.collapse, T.collapse + 0.6, t))) * (1 - smoother(clamp(inv(T.unfold + 0.2, T.unfold + 1.2, t))));
+    const fade = smoother(clamp(inv(T.collapse + 0.1, T.collapse + 0.55, t))) * (1 - smoother(clamp(inv(T.unfold + 0.3, T.unfold + 1.0, t))));
+    const shrink = 1 - 0.97 * kc;
+    for (const o of converging) {
+      o.position.copy(baseOf.get(o)).lerp(C, kc);
+      o.scale.setScalar(shrink);
+      o.visible = kc < 0.995;
+    }
+    for (const o of [cortx.group, commit.group, card.group, seal.group]) {
+      o.position.lerp(C, kc);
+      o.scale.multiplyScalar(shrink);
+      if (kc >= 0.995) o.visible = false;
+    }
+    for (const s of world.screens) s.uniforms.uFade.value = s === word ? 1 : 1 - fade;
+    thread.mesh.scale.setScalar(shrink);
+    thread.mesh.position.copy(C).multiplyScalar(1 - shrink);
+    if (kc > 0.97) thread.mesh.visible = false;
+    // 2. the logo is born where everything met, on a heavy spring, turning to face us
+    const kl = sp(t - T.logo, 'heavy');
+    const out = smoother(clamp(inv(T.unfold, T.unfold + 0.5, t)));
+    logo.group.visible = t > T.logo - 0.02 && out < 0.999;
+    // born at the centre, where the ring met, then it makes room for the word
+    const slide = sp(t - (T.word - 0.15), 'heavy');
+    logo.group.position.copy(V(C.x, C.y, C.z + F.z)).lerp(logoAt, clamp(slide));
+    logo.group.scale.setScalar(Math.max(0.0001, clamp(kl, 0, 1.06) * (1 - out)));
+    // it turns in from the side and settles three-quarters on, so its volume reads, with a slow sway
+    const yaw = lerp(-1.6, -0.34, clamp(kl)) + 0.07 * Math.sin((t - T.logo) * 0.8);
+    logo.group.rotation.set(lerp(0.4, 0.16, clamp(kl)), yaw, 0);
+    // 3. the word rises through its own line box on the next beat, and leaves the same way
+    const kw = sp(t - T.word, 'heavy');
+    const wout = smoother(clamp(inv(T.unfold - 0.05, T.unfold + 0.4, t)));
+    word.group.visible = t > T.word - 0.02 && wout < 0.999;
+    word.uniforms.uShift.value.set(0, (1 - clamp(kw)) * 190 - wout * 200);
+    word.opacity = clamp(kw * 6);
+    word.group.position.copy(wordAt);
+    word.group.scale.setScalar(F.wordScale);
   }
 
   function dimStations(t) {
-    // finale: every station dims, then each group lights up on its word
-    const dim = clamp(inv(T.pull + 1, T.trace + 2, t)) * (1 - clamp(inv(T.ret, T.ret + 1, t)));
-    const lit = (i) => sp(t - T.finale[i], 'base') * (1 - clamp(inv(T.ret - 0.5, T.ret + 0.5, t)));
-    const set = (s, k) => { s.uniforms.uBright.value = lerp(1, 0.4, dim * (1 - clamp(k))); };
-    set(board, lit(0)); set(phone.screen, lit(2));
-    if (t >= 40) set(cortx, Math.max(lit(0), lit(2)));
-    set(hook, lit(1)); set(commit, lit(1)); set(doc, lit(1)); set(dia, lit(1)); set(detail, lit(0));
+    // the loop shot: every station dims a little so the amber thread reads
+    const dim = clamp(inv(T.pull + 1, T.trace + 2, t)) * (1 - clamp(inv(T.unfold, T.unfold + 1, t)));
+    const set = (s) => { s.uniforms.uBright.value = lerp(1, 0.55, dim); };
+    set(board); set(phone.screen); set(hook); set(commit); set(doc); set(dia); set(detail);
+    if (t >= 40) set(cortx);
   }
 
   /** Places the whole scene at time t (pure), the camera excepted. */
   function pose(t) {
+    // stations back to their base transform first: everything below reads their world matrices
+    for (const o of converging) {
+      o.position.copy(baseOf.get(o));
+      o.scale.setScalar(1);
+      o.visible = true;
+    }
+    scene.updateMatrixWorld(true);
     phone.update(t);
     const ks = placeStack(t);
     placeCortx(t, ks);
@@ -440,9 +481,9 @@ export function buildFilm(world, post, ctx) {
     placeCode(t);
     placeGate(t);
     placeDetail(t);
-    placeWords(t);
     dimStations(t);
     thread.update(t);
+    placeFinale(t);
     scene.updateMatrixWorld(true);
   }
 
@@ -499,7 +540,7 @@ export function buildFilm(world, post, ctx) {
     { t: [43.75, 45.35], subj: () => R(dia), dir: nrm(dia), fill: 0.96 },
     // 6. the environment
     { t: [47.3, 49.6], subj: stations, dir: () => V(0, 0, 1), fill: 0.95, at: 49.5 },
-    { t: [50.3, 53.8], subj: () => pts(stations(), ...words.map((w) => R(w))), dir: () => V(0, 0, 1), fill: 0.97, at: 53.0, push: 0.03 },
+    { t: [50.4, 53.85], subj: () => pts(boxPts(logo.group), R(word)), dir: () => V(0, 0, 1), fill: 0.82, at: 53.0, push: 0.06 },
   ];
   const aspect = ctx.W / ctx.H;
   const camera = buildCamera(shots, { dur: DUR, fov: L.fov, aspect, baseFill: L.fill, pose });
@@ -511,7 +552,7 @@ export function buildFilm(world, post, ctx) {
       const cam = world.camera;
       // impact kicks as small damped shakes, deterministic
       const kick = (t0, a) => (t > t0 ? a * Math.exp(-(t - t0) * 9) * Math.sin((t - t0) * 48) : 0);
-      const shake = kick(T.stamp, 0.012) + kick(T.impact, 0.008) + kick(T.finale[0], 0.02);
+      const shake = kick(T.stamp, 0.012) + kick(T.impact, 0.008) + kick(T.logo, 0.02);
       cam.position.set(c[0], c[1] + shake, c[2]);
       cam.lookAt(c[3], c[4] + shake * 0.5, c[5]);
       cam.fov = c[6];

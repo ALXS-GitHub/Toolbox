@@ -34,7 +34,10 @@ export class World {
 
   update(t) {
     for (const fn of this.updaters) fn(t);
-    for (const s of this.screens) s.refresh(t);
+    for (const s of this.screens) {
+      s.syncSlab();
+      s.refresh(t);
+    }
   }
 }
 
@@ -52,6 +55,7 @@ const SCREEN_FS = /* glsl */ `
   uniform vec4 uRect;      // visible rect in css px: x, y, w, h
   uniform float uRadius;   // corner radius in css px
   uniform float uOpacity;
+  uniform float uFade;
   uniform float uBright;
   uniform vec3 uTint;
   uniform float uTintK;
@@ -66,7 +70,7 @@ const SCREEN_FS = /* glsl */ `
     vec2 c = uRect.xy + uRect.zw * 0.5;
     float d = sdRound(p - c, uRect.zw * 0.5, uRadius);
     float aa = fwidth(d);
-    float a = clamp(0.5 - d / max(aa, 1e-4), 0.0, 1.0) * uOpacity;
+    float a = clamp(0.5 - d / max(aa, 1e-4), 0.0, 1.0) * uOpacity * uFade;
     if (a <= 0.001) discard;
     vec2 sp = p - uShift;
     vec2 suv = vec2(sp.x / uSize.x, 1.0 - sp.y / uSize.y);
@@ -105,6 +109,7 @@ export class Screen {
       uRect: { value: new THREE.Vector4(0, 0, px, py) },
       uRadius: { value: radius },
       uOpacity: { value: 1 },
+      uFade: { value: 1 },
       uBright: { value: 1 },
       uTint: { value: new THREE.Color(0, 0, 0) },
       uTintK: { value: 0 },
@@ -123,9 +128,11 @@ export class Screen {
     this.mesh.renderOrder = order;
     this.group.add(this.mesh);
     if (slab > 0) {
+      this.slabDepth = slab;
       this.slab = roundedSlab(w, h, (radius / px) * w, slab, slabColor);
       this.slab.position.z = -this.slab.userData.front - 0.002;
       this.group.add(this.slab);
+      this.slabKey = '';
     }
     this.lastT = null;
     this.state = {};
@@ -146,6 +153,26 @@ export class Screen {
   setRect(x, y, w, h, r) {
     this.uniforms.uRect.value.set(x, y, w, h);
     if (r !== undefined) this.uniforms.uRadius.value = r;
+  }
+
+  /**
+   * The plate always matches the visible rect: same size, same corner radius, under the same centre.
+   * Rebuilt (never stretched) when the rect changes, so its corners stay round.
+   */
+  syncSlab() {
+    if (!this.slab) return;
+    const u = this.uniforms.uRect.value;
+    const sx = this.w / this.px, sy = this.h / this.py;
+    const w = u.z * sx, h = u.w * sy, r = this.uniforms.uRadius.value * sx;
+    const key = `${w.toFixed(4)},${h.toFixed(4)},${r.toFixed(4)}`;
+    if (key !== this.slabKey) {
+      this.slabKey = key;
+      this.slab.geometry.dispose();
+      this.slab.geometry = roundedSlabGeometry(w, h, r, this.slabDepth);
+    }
+    const cx = (u.x + u.z / 2 - this.px / 2) * sx, cy = (this.py / 2 - (u.y + u.w / 2)) * sy;
+    this.slab.position.set(this.mesh.position.x + cx, this.mesh.position.y + cy, -this.slab.geometry.userData.front - 0.002);
+    this.slab.material.opacity = this.uniforms.uOpacity.value * this.uniforms.uFade.value;
   }
 
   set opacity(v) {
@@ -179,25 +206,42 @@ export class Screen {
   }
 }
 
-/** A thin rounded box behind a screen, so windows have an edge when seen at an angle. */
-export function roundedSlab(w, h, r, depth, color = '#0c1417') {
+/** Rounded-rect outline centred on the origin. */
+export function roundedRectShape(w, h, r) {
   const s = new THREE.Shape();
   const x = -w / 2, y = -h / 2;
-  r = Math.min(r, w / 2, h / 2);
+  r = Math.max(0, Math.min(r, w / 2, h / 2));
   s.moveTo(x + r, y);
   s.lineTo(x + w - r, y);
-  s.quadraticCurveTo(x + w, y, x + w, y + r);
+  s.absarc(x + w - r, y + r, r, -Math.PI / 2, 0, false);
   s.lineTo(x + w, y + h - r);
-  s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  s.absarc(x + w - r, y + h - r, r, 0, Math.PI / 2, false);
   s.lineTo(x + r, y + h);
-  s.quadraticCurveTo(x, y + h, x, y + h - r);
+  s.absarc(x + r, y + h - r, r, Math.PI / 2, Math.PI, false);
   s.lineTo(x, y + r);
-  s.quadraticCurveTo(x, y, x + r, y);
-  const bevel = Math.min(depth * 0.45, r * 0.6);
-  const g = new THREE.ExtrudeGeometry(s, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel * 0.8, bevelSegments: 4, curveSegments: 14 });
+  s.absarc(x + r, y + r, r, Math.PI, (3 * Math.PI) / 2, false);
+  return s;
+}
+
+/**
+ * A rounded plate whose outline is exactly w × h with corner radius r, bevel included: the shape is inset
+ * by the bevel and the bevel grows it back, so plate and screen share one silhouette. Front face at z = front.
+ */
+export function roundedSlabGeometry(w, h, r, depth, bevel) {
+  r = Math.max(0.002, Math.min(r, w / 2, h / 2));
+  const b = Math.min(bevel ?? depth * 0.45, r * 0.6);
+  const g = new THREE.ExtrudeGeometry(roundedRectShape(w - 2 * b, h - 2 * b, r - b), {
+    depth, bevelEnabled: true, bevelThickness: b, bevelSize: b, bevelOffset: 0, bevelSegments: 6, curveSegments: 18,
+  });
+  g.userData.front = depth + b;
+  return g;
+}
+
+/** A plate behind a screen, so windows have an edge when seen at an angle. */
+export function roundedSlab(w, h, r, depth, color = '#0c1417') {
   const m = new THREE.MeshPhysicalMaterial({ color, metalness: 0.6, roughness: 0.32, clearcoat: 0.6, clearcoatRoughness: 0.25, envMapIntensity: 1.0, transparent: true });
-  const mesh = new THREE.Mesh(g, m);
-  mesh.userData.front = depth + bevel; // the front face sits this far above the shape's base
+  const mesh = new THREE.Mesh(roundedSlabGeometry(w, h, r, depth), m);
+  mesh.userData.front = mesh.geometry.userData.front;
   return mesh;
 }
 

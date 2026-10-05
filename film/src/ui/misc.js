@@ -127,12 +127,13 @@ export function hookPainter(copy) {
       const { w, h } = HOOK;
       pen.fillRR(0, 0, w, h, 20, '#0d191c');
       pen.strokeRR(0, 0, w, h, 20, Z.borderStrong, 1);
-      pen.icon('shield-check', 26, 24, 22, Z.primary, 2);
-      pen.font(18, 600, FONT.mono).text(hk.title, 60, 36, Z.text);
-      pen.font(13, 400, FONT.mono).text('.githooks/pre-commit', w - 26, 36, Z.faint, 'right');
-      pen.rect(26, 62, w - 52, 1, Z.border);
+      pen.icon('shield-check', 26, 20, 22, Z.primary, 2);
+      pen.font(18, 600, FONT.mono).text(hk.title, 60, 31, Z.text);
+      pen.font(13, 400, FONT.mono).text('.githooks/pre-commit', w - 26, 31, Z.faint, 'right');
+      pen.font(13.5, 450, FONT.ui).text(hk.sub, 60, 52, Z.muted);
+      pen.rect(26, 68, w - 52, 1, Z.border);
       hk.checks.forEach((label, i) => {
-        const y = 100 + i * 56;
+        const y = 104 + i * 54;
         const k = sp(t - T.checks[i], 'snap');
         const scan = clamp(inv(T.gate + i * 0.5, T.checks[i], t));
         if (k <= 0) {
@@ -161,7 +162,7 @@ export function hookPainter(copy) {
 
 // ── commit card ──────────────────────────────────────────────────────────
 
-export const COMMIT = { w: 640, h: 190 };
+export const COMMIT = { w: 640, h: 150 };
 
 export function commitPainter(copy) {
   const hk = copy.hook, op = copy.op;
@@ -218,17 +219,18 @@ export function opPainter(copy, cursor) {
       pen.fillRR(0, 0, w, h, 16, '#1d1f23');
       pen.strokeRR(0, 0, w, h, 16, 'rgba(255,255,255,0.10)', 1);
       // app mark (simplified: a blue disc with a key slot)
-      pen.circle(46, 48, 20, '#1a73e8');
-      pen.fillRR(43, 34, 6, 28, 3, '#ffffff');
-      pen.font(13, 600, FONT.ui).text(op.app, 78, 40, '#9aa0a6');
-      pen.font(19, 700, FONT.ui).text(op.title, 78, 63, '#f1f3f4');
-      pen.font(14.5, 450, FONT.ui);
-      pen.wrap(op.body, w - 56).forEach((l, i) => pen.text(l, 28, 112 + i * 22, '#c9cdd2'));
+      pen.circle(44, 42, 16, '#1a73e8');
+      pen.fillRR(41.5, 31, 5, 22, 2.5, '#ffffff');
+      pen.font(14, 600, FONT.ui).text(op.app, 70, 42, '#9aa0a6');
+      pen.font(19, 700, FONT.ui);
+      const tl = pen.wrap(op.title, w - 56);
+      tl.forEach((l, i) => pen.text(l, 28, 86 + i * 25, '#f1f3f4'));
+      pen.font(14.5, 450, FONT.ui).text(op.body, 28, 86 + tl.length * 25 + 8, '#c9cdd2');
       // key row
-      pen.fillRR(28, 160, w - 56, 58, 12, '#26292e');
-      pen.icon('key-round', 44, 177, 22, '#c9cdd2', 2);
-      pen.font(15, 600, FONT.ui).text(op.key, 80, 182, '#f1f3f4');
-      pen.font(12.5, 450, FONT.mono).text(op.keyType, 80, 202, '#9aa0a6');
+      pen.fillRR(28, 172, w - 56, 54, 12, '#26292e');
+      pen.icon('key-round', 44, 188, 22, '#c9cdd2', 2);
+      pen.font(15, 600, FONT.ui).text(op.key, 80, 192, '#f1f3f4');
+      pen.font(12.5, 450, FONT.mono).text(op.keyType, 80, 211, '#9aa0a6');
       // buttons
       const press = sp(t - (T.click - 0.06), 'snap') - sp(t - (T.click + 0.1), 'snap');
       const bw = (w - 56 - 12) / 2;
