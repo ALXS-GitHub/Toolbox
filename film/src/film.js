@@ -496,7 +496,7 @@ export function buildFilm(world, post, ctx) {
 
   const shots = [
     // 1. the idea
-    { t: [0, 2.2], subj: wordPts, dir: nrm(phone.screen), fill: 0.9, ap: 0.006 },
+    { t: [0, 2.2], subj: wordPts, dir: nrm(phone.screen), fill: 0.9, ap: 0.003 },
     { t: [2.95, 3.9], subj: () => R(phone.screen, phoneBody), dir: nrm(phone.screen, -6), fill: 0.96, at: 3.6 },
     // 16:9 shows the whole phone (readable as is); 9:16 zooms on the whole conversation
     { t: [4.25, 6.25], subj: () => R(phone.screen, portrait ? chat : phoneBody), dir: nrm(phone.screen, -4), fill: portrait ? 0.98 : 0.96 },

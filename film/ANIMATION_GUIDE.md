@@ -63,9 +63,16 @@ L'accent ambre est le seul ajouté par le film.
   de visée à ±16° de l'écran au plus.
 - Pendant un trajet (la carte qui vole, la fenêtre CortX qui se forme, le commit qui part), la caméra
   accompagne l'objet : elle le cadre à chaque image.
-- **Netteté.** Le sujet n'est jamais flou : profondeur de champ très légère par défaut, et seulement sur
-  l'arrière-plan. L'obturateur suit la vitesse de la caméra (calculée à l'instant t, donc déterministe) :
-  108° et 4 sous-images sur un plan posé, jusqu'à 360° et 12 sous-images sur un mouvement très rapide.
+- **Netteté.** Le sujet est aussi net qu'une capture d'écran :
+  - sortie en 2560 × 1440 (16:9, réduite en 1920 × 1080 au Lanczos pour les écrans plus petits) et
+    1080 × 1920 (9:16) ; la scène est rendue suréchantillonnée (× 1,5 en 16:9, × 2 en 9:16) puis réduite
+    par un filtre Lanczos-2 dans la dernière passe ;
+  - chaque écran est peint dans une texture d'au moins 2 × sa plus grande taille à l'image, mesurée en
+    posant toute la timeline au chargement (déterministe), avec mipmaps et filtrage anisotrope maximal ;
+  - pas de profondeur de champ sauf en appui discret (gros plan d'ouverture, lignes de code), grain
+    très léger, et l'interface est repeinte une fois par image (pas de traînée dans le texte) ;
+  - l'obturateur suit la vitesse de la caméra (calculée à l'instant t, donc déterministe) : 72° et 4
+    sous-images sur un plan posé, jusqu'à 360° et 12 sous-images sur un mouvement très rapide.
 
 ## Aucun clignotement
 

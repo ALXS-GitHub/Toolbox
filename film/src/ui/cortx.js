@@ -209,11 +209,17 @@ function titleBar(pen, G, copy, imgs, t, agents) {
       px += ws[i];
     });
     // right side
-    pen.fillRR(w - 46 * 3 - 214, 7, 120, 22, 11, 'rgba(24,39,42,0.5)');
-    pen.icon('search', w - 46 * 3 - 206, 12, 12, CX.faint, 2);
-    pen.font(10.5, 500, FONT.ui).text('Ctrl K', w - 46 * 3 - 112, 18.5, CX.faint, 'right');
-    pen.icon('sliders-horizontal', w - 46 * 3 - 80, 11, 14, CX.muted, 2);
-    pen.font(11.5, 500, FONT.ui).text('Open CortX', w - 46 * 3 - 12, 18.5, CX.muted, 'right');
+    // laid out from the window buttons leftwards, from measured widths: nothing overlaps
+    let rx = w - 46 * 3 - 12;
+    pen.font(11.5, 500, FONT.ui);
+    const ow = pen.w('Open CortX');
+    pen.text('Open CortX', rx, 18.5, CX.muted, 'right');
+    rx -= ow + 16;
+    pen.icon('sliders-horizontal', rx - 14, 11, 14, CX.muted, 2);
+    rx -= 14 + 14;
+    pen.fillRR(rx - 120, 7, 120, 22, 11, 'rgba(24,39,42,0.5)');
+    pen.icon('search', rx - 112, 12, 12, CX.faint, 2);
+    pen.font(10.5, 500, FONT.ui).text('Ctrl K', rx - 10, 18.5, CX.faint, 'right');
   }
   const bx = w - 46 * 3;
   pen.line(bx + 18, 18, bx + 28, 18, CX.muted, 1);

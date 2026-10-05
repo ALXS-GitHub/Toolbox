@@ -8,7 +8,7 @@ import { serve } from './serve.mjs';
 
 const lang = process.argv[2] || 'fr';
 const aspect = process.argv[3] || 'land';
-const [W, H] = aspect === 'land' ? [1920, 1080] : [1080, 1920];
+const [W, H] = aspect === 'land' ? [2560, 1440] : [1080, 1920];
 const frames = [0, 437, 600, 1203, 1500, 2160, 2400, 2890, 3300];
 const srv = await serve(0);
 
@@ -16,7 +16,7 @@ async function run(order) {
   const b = await chromium.launch({ headless: true, args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist', '--force-color-profile=srgb'] });
   const p = await b.newPage({ viewport: { width: W, height: H } });
   await p.goto(`http://127.0.0.1:${srv.address().port}/index.html?lang=${lang}&aspect=${aspect}`);
-  await p.waitForFunction(() => window.filmReady === true, null, { timeout: 120000 });
+  await p.waitForFunction(() => window.filmReady === true, null, { timeout: 300000 });
   const cdp = await p.context().newCDPSession(p);
   const out = {};
   for (const f of order) {

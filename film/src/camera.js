@@ -80,7 +80,7 @@ export function buildCamera(shots, { dur, fov, aspect, baseFill, pose }) {
     const dir = s.dir();
     const end = framePose(pts, dir, fov, aspect, fillOf(s));
     const start = framePose(pts, dir, fov, aspect, fillOf(s, 1 - (s.push ?? 0.05)));
-    const ap = s.ap ?? 0.004;
+    const ap = s.ap ?? 0;
     keys.push([s.t[0], [...start, fov, ap], 'hold']);
     keys.push([s.t[1], [...end, fov, ap], 'hold']);
   }
@@ -95,7 +95,7 @@ export function buildCamera(shots, { dur, fov, aspect, baseFill, pose }) {
       if (w <= 0) continue;
       const p = framePose(f.subj(t), f.dir(t), fov, aspect, fillOf(f));
       for (let i = 0; i < 6; i++) c[i] = lerp(c[i], p[i], w);
-      c[7] = lerp(c[7], f.ap ?? 0.003, w);
+      c[7] = lerp(c[7], f.ap ?? 0, w);
     }
     return c;
   };

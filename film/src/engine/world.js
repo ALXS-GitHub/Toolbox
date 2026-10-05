@@ -4,9 +4,13 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { Pen } from './canvas.js';
 
 export class World {
-  constructor(canvas, W, H) {
+  /** W × H: the output (canvas) size. ss: supersampling factor, the scene renders at W·ss × H·ss. */
+  constructor(canvas, W, H, ss = 1) {
     this.W = W;
     this.H = H;
+    this.ss = ss;
+    this.IW = Math.round(W * ss);
+    this.IH = Math.round(H * ss);
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: false, preserveDrawingBuffer: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(1);
     this.renderer.setSize(W, H, false);
@@ -188,12 +192,22 @@ export class Screen {
     return this.group.visible && this.uniforms.uOpacity.value > 0.001;
   }
 
+  /** Texture density (canvas px per css px). The canvas is resized; the next refresh repaints it. */
+  setDpr(d) {
+    this.dpr = d;
+    this.canvas.width = Math.round(this.px * d);
+    this.canvas.height = Math.round(this.py * d);
+    this.lastT = null;
+  }
+
   refresh(t) {
     if (!this.visible || !this.painter) return;
     // A painter can map a quiet interval to one canonical time: the content is drawn at that time,
-    // so a frame never depends on which frame was rendered before it.
-    const key = this.painter.key ? this.painter.key(t, this) : t;
+    // so a frame never depends on which frame was rendered before it. Times are snapped to the frame
+    // (1/60 s): the sub-frames of one frame share one paint, the interface itself never smears.
+    let key = this.painter.key ? this.painter.key(t, this) : t;
     if (typeof key !== 'number') throw new Error(`${this.name}: key must be a time`);
+    key = Math.round(key * 60) / 60;
     if (key === this.lastT) return;
     this.lastT = key;
     t = key;

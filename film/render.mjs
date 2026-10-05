@@ -23,7 +23,10 @@ const fps = +(args.fps || 60);
 const sub = +(args.sub || 4);
 const DUR = 56;
 const SEG = 4; // seconds per segment
-const [W, H] = aspect === 'land' ? [1920, 1080] : [1080, 1920];
+const res = args.res || '';
+const [W, H] = aspect === 'land' ? (res === '1080' ? [1920, 1080] : [2560, 1440]) : [1080, 1920];
+const ssArg = args.ss ? `&ss=${args.ss}` : '';
+const resArg = res ? `&res=${res}` : '';
 const workers = +(args.workers || 4);
 const variant = `${lang}-${aspect}`;
 const segDir = path.join('out', 'seg', variant);
@@ -35,8 +38,8 @@ async function openPage(browser, port) {
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') console.log('[page]', m.text()); });
   page.on('pageerror', (e) => console.log('[pageerror]', e.message));
-  await page.goto(`http://127.0.0.1:${port}/index.html?lang=${lang}&aspect=${aspect}&sub=${sub}&fps=${fps}`);
-  await page.waitForFunction(() => window.filmReady === true, null, { timeout: 120000 });
+  await page.goto(`http://127.0.0.1:${port}/index.html?lang=${lang}&aspect=${aspect}&sub=${sub}&fps=${fps}${ssArg}${resArg}`);
+  await page.waitForFunction(() => window.filmReady === true, null, { timeout: 300000 });
   const cdp = await page.context().newCDPSession(page);
   return { page, cdp };
 }

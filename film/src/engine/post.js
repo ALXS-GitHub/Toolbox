@@ -7,22 +7,22 @@ const QUAD_VS = /* glsl */ `varying vec2 vUv; void main(){ vUv = uv; gl_Position
 
 export class Post {
   constructor(world) {
-    const { W, H, renderer } = world;
+    const { W, H, IW, IH, ss } = world;
     this.world = world;
     const opts = { type: THREE.HalfFloatType, colorSpace: THREE.LinearSRGBColorSpace };
-    this.sceneRT = new THREE.WebGLRenderTarget(W, H, { ...opts, samples: 4 });
-    this.sceneRT.depthTexture = new THREE.DepthTexture(W, H);
+    this.sceneRT = new THREE.WebGLRenderTarget(IW, IH, { ...opts, samples: 4 });
+    this.sceneRT.depthTexture = new THREE.DepthTexture(IW, IH);
     this.sceneRT.depthTexture.type = THREE.FloatType;
-    this.dofRT = new THREE.WebGLRenderTarget(W, H, opts);
-    this.accRT = new THREE.WebGLRenderTarget(W, H, { type: THREE.HalfFloatType }); // float32 blending is not available
-    this.bloom = new UnrealBloomPass(new THREE.Vector2(W, H), 0.55, 0.6, 1.02);
-    this.params = { focus: 10, aperture: 0, maxCoc: 10, bloom: 0.55, grain: 0.018, vignette: 0.22, exposure: 1 };
+    this.dofRT = new THREE.WebGLRenderTarget(IW, IH, opts);
+    this.accRT = new THREE.WebGLRenderTarget(IW, IH, { type: THREE.HalfFloatType, minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter }); // float32 blending is not available
+    this.bloom = new UnrealBloomPass(new THREE.Vector2(IW, IH), 0.55, 0.6, 1.02);
+    this.params = { focus: 10, aperture: 0, maxCoc: 10 * ss, bloom: 0.55, grain: 0.006, vignette: 0.22, exposure: 1 };
 
     this.dof = new FullScreenQuad(new THREE.ShaderMaterial({
       uniforms: {
         tColor: { value: this.sceneRT.texture },
         tDepth: { value: this.sceneRT.depthTexture },
-        uRes: { value: new THREE.Vector2(W, H) },
+        uRes: { value: new THREE.Vector2(IW, IH) },
         uNear: { value: 0.05 }, uFar: { value: 900 },
         uFocus: { value: 10 }, uAperture: { value: 0 }, uMaxCoc: { value: 14 },
       },
@@ -73,6 +73,8 @@ export class Post {
       uniforms: {
         tAcc: { value: this.accRT.texture },
         uRes: { value: new THREE.Vector2(W, H) },
+        uSrc: { value: new THREE.Vector2(IW, IH) },
+        uScale: { value: ss },
         uFrame: { value: 0 },
         uGrain: { value: 0.018 },
         uVig: { value: 0.22 },
@@ -80,11 +82,27 @@ export class Post {
       },
       vertexShader: QUAD_VS,
       fragmentShader: /* glsl */ `
-        uniform sampler2D tAcc; uniform vec2 uRes; uniform float uFrame, uGrain, uVig, uExp; varying vec2 vUv;
+        uniform sampler2D tAcc; uniform vec2 uRes, uSrc; uniform float uScale, uFrame, uGrain, uVig, uExp; varying vec2 vUv;
+        // Lanczos-2, scaled to the output pixel: the supersampled image is reduced with a sharp filter
+        float lz(float x){ x = abs(x); if (x < 1e-4) return 1.0; if (x >= 2.0) return 0.0; float p = 3.14159265 * x; return 2.0 * sin(p) * sin(p * 0.5) / (p * p); }
+        vec3 downsample(){
+          vec2 c = gl_FragCoord.xy * uScale - 0.5;   // output pixel centre, in source texel coordinates
+          vec2 b = floor(c);
+          vec3 acc = vec3(0.0); float ws = 0.0;
+          for (int j = -4; j <= 5; j++) for (int i = -4; i <= 5; i++) {
+            vec2 q = b + vec2(float(i), float(j));
+            vec2 d = (q - c) / uScale;
+            float w = lz(d.x) * lz(d.y);
+            if (w == 0.0) continue;
+            ivec2 tq = ivec2(clamp(q, vec2(0.0), uSrc - 1.0));
+            acc += texelFetch(tAcc, tq, 0).rgb * w; ws += w;
+          }
+          return max(acc / ws, 0.0);
+        }
         float h(vec2 p){ vec3 q = fract(vec3(p.xyx) * 0.1031); q += dot(q, q.yzx + 33.33); return fract((q.x + q.y) * q.z); }
         vec3 toSRGB(vec3 c){ c = max(c, 0.0); return mix(c*12.92, 1.055*pow(c, vec3(1.0/2.4)) - 0.055, step(0.0031308, c)); }
         void main(){
-          vec3 c = texture2D(tAcc, vUv).rgb * uExp;
+          vec3 c = (uScale > 1.0 ? downsample() : texture2D(tAcc, vUv).rgb) * uExp;
           // UI colours stay exact: values above white (bloom cores) are simply clipped
           c = min(c, vec3(1.0));
           vec2 q = vUv - 0.5; q.x *= uRes.x/uRes.y;
