@@ -80,6 +80,7 @@ export const T = {
   collapse: 50.0,
   logo: 50.5,
   word: 51.0,
+  subtitle: 51.5,
   unfold: 54.0,
   ret: 54.0,
 };
@@ -125,7 +126,7 @@ export function cues(lang = 'fr') {
   c.push([T.pull, 'whoosh', 0.5]);
   for (let i = 0; i < 6; i++) c.push([T.trace + i * 0.5, 'note' + i, 0.4]);
   c.push([T.closed, 'shimmer', 0.5]);
-  c.push([T.collapse, 'whoosh', 0.6], [T.logo, 'impact', 0.9], [T.word, 'hit', 0.75]);
+  c.push([T.collapse, 'whoosh', 0.6], [T.logo, 'impact', 0.9], [T.word, 'hit', 0.75], [T.subtitle, 'pophi', 0.35]);
   c.push([T.ret, 'reverse', 0.5]);
   return c.sort((a, b) => a[0] - b[0]);
 }

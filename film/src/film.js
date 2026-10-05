@@ -172,29 +172,38 @@ export function buildFilm(world, post, ctx) {
   const F = L.final;
   const logo = makeToolboxLogo(F.logo);
   scene.add(logo.group);
-  // one line in 16:9, two in 9:16 ("Mon" / "écosystème"): the words are never split
-  const title = portrait ? copy.finale.replace(' ', '\n') : copy.finale;
-  const TB = titleBox(title);
-  const wordW = TB.w;
-  const word = new Screen(world, { w: TB.w, h: TB.h, px: TB.w, py: TB.h, dpr: 1, radius: 0, painter: wordPainter(title), name: 'word6', order: 8 });
+  // The title: the case, then "Toolbox" in large type; under it, smaller, the subtitle ("My ecosystem").
+  // 16:9: case and word side by side, the subtitle centred under both. 9:16: case, word, subtitle stacked.
+  const TB = titleBox(copy.finale);
+  const SB = titleBox(copy.finaleSub);
+  const word = new Screen(world, { w: TB.w, h: TB.h, px: TB.w, py: TB.h, dpr: 1, radius: 0, painter: wordPainter(copy.finale), name: 'word6', order: 8 });
+  const subw = new Screen(world, { w: SB.w, h: SB.h, px: SB.w, py: SB.h, dpr: 1, radius: 0, painter: wordPainter(copy.finaleSub, 150, '#a9c3c5', 600), name: 'word6', order: 8 });
   scene.add(word.group);
-  // logo and word side by side (16:9) or stacked (9:16), centred on the ring's centre, in front of it
-  const ws = F.wordScale;
-  const wordWorld = (wordW - 32) * ws; // the ink, without the canvas margins
-  // offset from the canvas centre to the text's optical centre (world units, y up)
-  const opt = (TB.h / 2 - TB.optical) * ws;
-  // the logo's visible height is about 0.75 of its size; the text block from first cap top to last baseline
-  const blockH = (TB.base[TB.base.length - 1] - (TB.base[0] - TB.size * 0.72)) * ws;
-  // 9:16: logo over the text, the stack centred on the ring's centre
+  scene.add(subw.group);
+  const ws = F.wordScale, ss2 = F.wordScale * F.subScale;
+  const capTopOf = (B) => B.base[0] - B.size * 0.72;  // canvas y of the cap top
+  const groupY = (B, scale, capTopY) => capTopY - (B.h / 2 - capTopOf(B)) * scale; // group y that puts the cap top at capTopY
+  const capH = (B, scale) => B.size * 0.72 * scale;
+  const wordWorld = (TB.w - 32) * ws;
   const logoH = F.logo * 0.75;
-  const stackTop = C.y + (F.dy || 0) + (logoH + F.gap + blockH) / 2;
-  const capTop = TB.base[0] - TB.size * 0.72; // canvas y of the first line's cap top
-  const logoAt = F.row
-    ? V(C.x - (F.logo + F.gap + wordWorld) / 2 + F.logo / 2, C.y, C.z + F.z)
-    : V(C.x, stackTop - logoH / 2, C.z + F.z);
-  const wordAt = F.row
-    ? V(logoAt.x + F.logo / 2 + F.gap + wordWorld / 2, C.y - opt, C.z + F.z)
-    : V(C.x, stackTop - logoH - F.gap - (TB.h / 2 - capTop) * ws, C.z + F.z);
+  const cy = C.y + (F.dy || 0);
+  let logoAt, wordAt, subAt;
+  if (F.row) {
+    // row = case + word, sharing a centre line; the subtitle below; the whole block centred on cy
+    const rowH = Math.max(logoH, capH(TB, ws));
+    const total = rowH + F.subGap + capH(SB, ss2);
+    const rowMid = cy + total / 2 - rowH / 2;
+    logoAt = V(C.x - (F.logo + F.gap + wordWorld) / 2 + F.logo / 2, rowMid, C.z + F.z);
+    wordAt = V(logoAt.x + F.logo / 2 + F.gap + wordWorld / 2, groupY(TB, ws, rowMid + capH(TB, ws) / 2), C.z + F.z);
+    subAt = V(C.x, groupY(SB, ss2, rowMid - rowH / 2 - F.subGap), C.z + F.z);
+  } else {
+    const total = logoH + F.gap + capH(TB, ws) + F.subGap + capH(SB, ss2);
+    const top = cy + total / 2;
+    logoAt = V(C.x, top - logoH / 2, C.z + F.z);
+    const wordTop = top - logoH - F.gap;
+    wordAt = V(C.x, groupY(TB, ws, wordTop), C.z + F.z);
+    subAt = V(C.x, groupY(SB, ss2, wordTop - capH(TB, ws) - F.subGap), C.z + F.z);
+  }
   const converging = [phone.group, gZ, gC, gG, gD, gK];
   const baseOf = new Map(converging.map((o) => [o, o.position.clone()]));
 
@@ -437,7 +446,7 @@ export function buildFilm(world, post, ctx) {
     logo.group.visible = t > T.logo - 0.02 && out < 0.999;
     // then it makes room for the word
     const slide = sp(t - (T.word - 0.42), 'heavy'); // clear of the text before the text rises
-    logo.group.position.copy(V(C.x, C.y + (F.dy || 0), C.z + F.z)).lerp(logoAt, clamp(slide));
+    logo.group.position.copy(V(C.x, logoAt.y, C.z + F.z)).lerp(logoAt, clamp(slide));
     logo.group.scale.setScalar(Math.max(0.0001, clamp(kl, 0, 1.06) * (1 - out)));
     // it turns in from the side and settles three-quarters on, so its volume reads, with a slow sway
     const yaw = lerp(-1.6, -0.34, clamp(kl)) + 0.05 * Math.sin((t - T.logo) * 0.8);
@@ -449,7 +458,15 @@ export function buildFilm(world, post, ctx) {
     word.uniforms.uShift.value.set(0, (1 - clamp(kw)) * TB.h - wout * (TB.h + 10));
     word.opacity = clamp(kw * 6);
     word.group.position.copy(wordAt);
-    word.group.scale.setScalar(F.wordScale);
+    word.group.scale.setScalar(ws);
+    // the subtitle follows half a beat later, the same way, and leaves just before the word
+    const ksub = sp(t - T.subtitle, 'heavy');
+    const sout = smoother(clamp(inv(T.unfold - 0.15, T.unfold + 0.3, t)));
+    subw.group.visible = t > T.subtitle - 0.02 && sout < 0.999;
+    subw.uniforms.uShift.value.set(0, (1 - clamp(ksub)) * SB.h - sout * (SB.h + 10));
+    subw.opacity = clamp(ksub * 6);
+    subw.group.position.copy(subAt);
+    subw.group.scale.setScalar(ss2);
   }
 
   function dimStations(t) {
@@ -548,7 +565,7 @@ export function buildFilm(world, post, ctx) {
         ]),
     // 6. the environment
     { t: [47.3, 49.6], subj: stations, dir: () => V(0, 0, 1), fill: 0.95, at: 49.5 },
-    { t: [50.3, 53.85], subj: () => pts(stations(), boxPts(logo.group), R(word)), dir: () => V(0, 0, 1), fill: 0.97, at: 53.0, push: 0.04, ap: 0 },
+    { t: [50.3, 53.85], subj: () => pts(portrait ? pts(R(board), R(phone.screen), R(hook), R(commit), R(detail)) : stations(), boxPts(logo.group), R(word), R(subw)), dir: () => V(0, 0, 1), fill: 0.97, at: 53.0, push: 0.04, ap: 0 },
   ];
   const aspect = ctx.W / ctx.H;
   const camera = buildCamera(shots, { dur: DUR, fov: L.fov, aspect, baseFill: L.fill, pose });

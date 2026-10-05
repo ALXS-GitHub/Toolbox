@@ -545,6 +545,11 @@
   "gain": 0.75
  },
  {
+  "t": 51.5,
+  "voice": "pophi",
+  "gain": 0.35
+ },
+ {
   "t": 54,
   "voice": "reverse",
   "gain": 0.5

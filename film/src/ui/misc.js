@@ -451,13 +451,13 @@ export function titleBox(text, size = 150) {
   return { lines, w, h, base, optical, size };
 }
 
-export function wordPainter(text, size = 150) {
+export function wordPainter(text, size = 150, color = '#eef6f6', weight = 700) {
   const b = titleBox(text, size);
   return {
     key: () => 0,
     draw(pen) {
-      pen.font(size, 700, FONT.display, -0.03);
-      b.lines.forEach((l, i) => pen.text(l, b.w / 2, b.base[i], '#eef6f6', 'center', 'alphabetic'));
+      pen.font(size, weight, FONT.display, -0.03);
+      b.lines.forEach((l, i) => pen.text(l, b.w / 2, b.base[i], color, 'center', 'alphabetic'));
     },
   };
 }
