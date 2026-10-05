@@ -7,7 +7,10 @@ image: akko_mod007.png
 sidebar_position: 1
 ---
 
-# Akko MOD007 V3 HE
+# Akko MOD 007 V3 HE Year of the Dragon
+
+![The Akko MOD 007 V3 HE Year of the Dragon: dark frame engraved with dragon patterns, teal and turquoise keycaps, a space bar illustrated with a golden dragon, and a knob in the top-right corner.](/images/hardware/akko-mod007-v3-he-dragon.webp)
+
 
 My everyday keyboard, for coding and gaming alike. Its switches are **magnetic** (Hall effect): instead of a metal
 contact, a sensor reads each key's exact position. You therefore set, key by key, how deep it actuates — very early in
