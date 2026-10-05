@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 description: A family app to share photos, videos and memories, built to last a hundred years.
-status: paused
+status: active
 kind: project
 platforms: [web, windows, macos, linux]
 stack: [Cloudflare Workers, D1, R2, React, Tauri 2]
@@ -79,5 +79,5 @@ code.
 
 ## Where it stands
 
-Souvenirs has been in service since April 2026, at version 0.0.7. It was built in a few weeks and has not changed since
-May: it does what it is asked to do.
+Souvenirs has been in service since April 2026 and is in active use. It was built in a few weeks; version 0.0.7, released in
+May, covers everything it needs to do, and it keeps evolving as needs come up.

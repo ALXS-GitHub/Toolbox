@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 description: Une appli familiale pour partager photos, vidéos et souvenirs, pensée pour durer cent ans.
-status: paused
+status: active
 kind: project
 platforms: [web, windows, macos, linux]
 stack: [Cloudflare Workers, D1, R2, React, Tauri 2]
@@ -85,5 +85,5 @@ liste des membres gérée hors du code.
 
 ## Où il en est
 
-Souvenirs est en service depuis avril 2026, en version 0.0.7. Il a été construit en quelques semaines, et n'évolue plus
-depuis mai : il fait ce qu'on lui demande.
+Souvenirs est en service depuis avril 2026 et utilisé activement. Il a été construit en quelques semaines ; la version 0.0.7,
+sortie en mai, couvre tout ce qu'on lui demande, et il continue d'évoluer selon les besoins.
