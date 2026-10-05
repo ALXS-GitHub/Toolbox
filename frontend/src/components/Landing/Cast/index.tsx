@@ -30,7 +30,7 @@ import {
   FiX,
   FiZap,
 } from 'react-icons/fi';
-import {Avatar, ClaudeMark, Chip, Priority, StatusDot} from '../Film/parts';
+import {Avatar, ClaudeMark, Chip, Priority, StatusDot} from '../parts';
 import {useReveal} from '../useReveal';
 import s from './Cast.module.scss';
 

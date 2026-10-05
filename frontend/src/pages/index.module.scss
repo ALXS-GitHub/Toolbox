@@ -138,16 +138,6 @@
   overflow-x: clip;
 }
 
-.filmWrap {
-  max-width: 1240px;
-  padding-bottom: 3rem;
-  animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-}
-
 .block {
   max-width: 1240px;
   padding-top: 4.5rem;

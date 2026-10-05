@@ -212,12 +212,9 @@ export default function Home(): ReactNode {
         id: 'home.meta.description',
         message: 'A personal, opinionated documentation of my setup, the tools I use and the projects I build.',
       })}>
+      <Film />
       <Hero />
       <main className={styles.main}>
-        <section className={clsx('container', styles.filmWrap)} aria-label={translate({id: 'home.film.label', message: 'From an idea to a commit, in six scenes'})}>
-          <Film />
-        </section>
-
         <section className={clsx('container', styles.block)}>
           <SectionHead
             id="pieces"

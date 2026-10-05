@@ -1,6 +1,6 @@
 /**
- * Small visual atoms shared by the film and the other mockups of the home page: the Claude mark, Zorg's status
- * dots and priority glyph, ticket cards. They copy the real apps' shapes and colours; the data is always made up.
+ * Small visual atoms shared by the mockups of the home page: the Claude mark, Zorg's status
+ * dots and priority glyph, chips and avatars. They copy the real apps' shapes and colours; the data is always made up.
  */
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
@@ -66,53 +66,5 @@ export function Avatar({letter, tone = 0, claude}: {letter?: string; tone?: numb
     <span className={clsx(s.avatar, s[`avatar-${tone % 4}`])} aria-hidden>
       {letter}
     </span>
-  );
-}
-
-export function TicketCard({
-  k,
-  title,
-  prio,
-  label,
-  tone,
-  avatar,
-  comments,
-  className,
-  children,
-}: {
-  k: string;
-  title: string;
-  prio: 1 | 2 | 3;
-  label?: string;
-  tone?: 'violet' | 'sky' | 'pink' | 'teal' | 'amber';
-  avatar?: ReactNode;
-  comments?: number;
-  className?: string;
-  children?: ReactNode;
-}): ReactNode {
-  return (
-    <div className={clsx(s.card, className)}>
-      <div className={s.cardRow}>
-        <Priority level={prio} />
-        <span className={s.cardKey}>#{k}</span>
-        {comments ? (
-          <span className={s.cardMeta}>
-            <svg viewBox="0 0 24 24" aria-hidden>
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-            {comments}
-          </span>
-        ) : null}
-        <span className={s.grow} />
-        {avatar}
-      </div>
-      <div className={s.cardTitle}>{title}</div>
-      {label ? (
-        <div className={s.cardFoot}>
-          <Chip tone={tone}>{label}</Chip>
-          {children}
-        </div>
-      ) : null}
-    </div>
   );
 }

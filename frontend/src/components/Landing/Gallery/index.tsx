@@ -9,7 +9,7 @@ import {translate} from '@docusaurus/Translate';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 import {FiArrowRight, FiArrowUpRight, FiCheck, FiSearch} from 'react-icons/fi';
 import {statusLabel, type Status} from '@site/src/lib/meta';
-import {ClaudeMark} from '../Film/parts';
+import {ClaudeMark} from '../parts';
 import {useReveal} from '../useReveal';
 import s from './Gallery.module.scss';
 
