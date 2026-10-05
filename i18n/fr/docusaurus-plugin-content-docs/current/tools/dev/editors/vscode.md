@@ -37,7 +37,7 @@ Je l'ouvre depuis le terminal avec l'alias `c` (le dossier courant). Les réglag
 | Rust | rust-analyzer, Dependi (versions des crates), CodeLLDB pour déboguer |
 | Python | Python, Pylance, Black, Jupyter |
 | Roblox | Rojo, Luau LSP, Selene, StyLua (voir [Développer sur Roblox](/setup/roblox)) |
-| Divers | Excalidraw et Draw.io (schémas dans l'éditeur), Rainbow CSV, Hex Editor, Live Server, WakaTime |
+| Divers | Excalidraw et Draw.io (schémas dans l'éditeur), Rainbow CSV, Hex Editor, Live Server |
 
 Les extensions s'installent à la volée selon les projets ; la liste complète se récupère avec
 `code --list-extensions`.

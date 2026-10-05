@@ -5,7 +5,7 @@ status: occasional
 kind: app
 platforms: [windows]
 image: windirstat.png
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # WinDirStat

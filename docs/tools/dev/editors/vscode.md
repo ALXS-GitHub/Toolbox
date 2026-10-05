@@ -35,6 +35,6 @@ I open it from the terminal with the `c` alias (current folder). The settings th
 | Rust | rust-analyzer, Dependi (crate versions), CodeLLDB for debugging |
 | Python | Python, Pylance, Black, Jupyter |
 | Roblox | Rojo, Luau LSP, Selene, StyLua (see [Developing on Roblox](/setup/roblox)) |
-| Misc | Excalidraw and Draw.io (diagrams in the editor), Rainbow CSV, Hex Editor, Live Server, WakaTime |
+| Misc | Excalidraw and Draw.io (diagrams in the editor), Rainbow CSV, Hex Editor, Live Server |
 
 Extensions get installed as projects need them; the full list comes out of `code --list-extensions`.
