@@ -82,7 +82,6 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--film-accent);
-  overflow: hidden;
   animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 
   span {
@@ -105,13 +104,14 @@
 }
 
 @keyframes rise {
+  // the mask opens wider than the line box, so accents (É, À) and descenders are never cut
   from {
     transform: translateY(0.9em);
-    clip-path: inset(0 0 100% 0);
+    clip-path: inset(-0.4em -0.2em 100% -0.2em);
   }
   to {
     transform: none;
-    clip-path: inset(0 0 -20% 0);
+    clip-path: inset(-0.4em -0.2em -0.4em -0.2em);
   }
 }
 
