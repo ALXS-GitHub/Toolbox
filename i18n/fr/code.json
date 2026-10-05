@@ -86,15 +86,6 @@
   "home.archive.description": {
     "message": "Les outils que je n'utilise plus : pourquoi j'ai arrêté, et ce qui les a remplacés."
   },
-  "home.tagline": {
-    "message": "Mon setup, mes outils et mes projets : comment je m'en sers, et pourquoi."
-  },
-  "home.cta.tools": {
-    "message": "Parcourir les outils"
-  },
-  "home.cta.setup": {
-    "message": "Voir mon setup"
-  },
   "home.legend": {
     "message": "Chaque fiche dit si j'utilise encore l'outil. Les pages partent de mon usage : à quoi l'outil sert dans mon setup, comment je l'ai configuré, et ce qui l'a remplacé quand j'ai arrêté."
   },
@@ -477,5 +468,353 @@
   },
   "toolbox.diagram.close": {
     "message": "Fermer"
+  },
+  "home.hero.line1": {
+    "message": "Mes propres outils, mes propres process,"
+  },
+  "home.hero.line2": {
+    "message": "et des agents qui font le gros du travail."
+  },
+  "home.hero.eyebrow": {
+    "message": "ma façon de travailler"
+  },
+  "home.hero.lede": {
+    "message": "Je construis les applications avec lesquelles je travaille, et je laisse des agents IA, surtout Claude, y faire l'essentiel du travail. Ce site documente tout ça. En voici la version courte : comment une idée devient un commit."
+  },
+  "home.pieces.kicker": {
+    "message": "Les pièces"
+  },
+  "home.pieces.title": {
+    "message": "Trois pièces tiennent l'ensemble"
+  },
+  "home.pieces.lead": {
+    "message": "Deux applications que j'ai écrites pour moi, et le harness qui fait de Claude Code mon assistant de tous les jours."
+  },
+  "home.gallery.kicker": {
+    "message": "Les projets"
+  },
+  "home.gallery.title": {
+    "message": "Et le reste de ce que je construis"
+  },
+  "home.gallery.lead": {
+    "message": "Des applis de bureau, des applis web et des jeux, construits pour la plupart avec un agent. Plusieurs sont privés : leurs pages expliquent comment ils fonctionnent, jamais ce qu'ils contiennent."
+  },
+  "home.gallery.all": {
+    "message": "Tous les projets"
+  },
+  "home.tools.kicker": {
+    "message": "La boîte à outils"
+  },
+  "home.tools.heading": {
+    "message": "Les outils que j'ouvre tous les jours"
+  },
+  "home.tools.lead": {
+    "message": "Un terminal PowerShell 7 que CortX configure, et les outils en ligne de commande que j'utilise sans y penser."
+  },
+  "home.explore.kicker": {
+    "message": "Explorer"
+  },
+  "home.explore.title": {
+    "message": "Et maintenant ?"
+  },
+  "home.explore.lead": {
+    "message": "Toutes les rubriques du site, avec leur nombre de pages."
+  },
+  "home.cast.cortx.nav.projects": {
+    "message": "Projets"
+  },
+  "home.cast.cortx.nav.tools": {
+    "message": "Outils"
+  },
+  "home.cast.cortx.agent.running": {
+    "message": "Lance Bash"
+  },
+  "home.cast.cortx.agent.waiting": {
+    "message": "Vous attend"
+  },
+  "home.cast.zorg.body": {
+    "message": "Une note épinglée reste en tête de son dossier, quel que soit le tri."
+  },
+  "home.cast.zorg.task1": {
+    "message": "Action Épingler dans le menu de la note"
+  },
+  "home.cast.zorg.task2": {
+    "message": "Notes épinglées listées en premier"
+  },
+  "home.cast.zorg.activity": {
+    "message": "Commentaires et activité"
+  },
+  "home.cast.zorg.prop.status": {
+    "message": "Statut"
+  },
+  "home.cast.zorg.prop.priority": {
+    "message": "Priorité"
+  },
+  "home.cast.zorg.prop.medium": {
+    "message": "Moyenne"
+  },
+  "home.cast.zorg.prop.project": {
+    "message": "Projet"
+  },
+  "home.cast.zorg.prop.version": {
+    "message": "Version"
+  },
+  "home.cast.zorg.mcp": {
+    "message": "connecteur Zorg, 8 outils"
+  },
+  "home.cast.harness.kicker": {
+    "message": "La main-d'œuvre"
+  },
+  "home.cast.harness.name": {
+    "message": "Le harness Claude Code"
+  },
+  "home.cast.harness.lead": {
+    "message": "Tout ce que j'ai construit autour de Claude Code : réglages, skills, mods, garde-fous et barre d'état, versionnés dans un seul dépôt git et réinstallés en quelques minutes sur une nouvelle machine."
+  },
+  "home.cast.harness.skills.title": {
+    "message": "Des skills qui livrent"
+  },
+  "home.cast.harness.skills.text": {
+    "message": "Des dossiers d'instructions et de scripts, chargés quand une demande correspond. Documents, schémas et pages partagent un même design et sont vérifiés avant d'être rendus."
+  },
+  "home.cast.harness.guard.title": {
+    "message": "Des garde-fous plutôt que de la vigilance"
+  },
+  "home.cast.harness.guard.text": {
+    "message": "Une liste blanche, un hook avant chaque commit et des commits signés avec une clé que j'approuve : rien de personnel ne quitte la machine, même par erreur."
+  },
+  "home.cast.harness.guard.allow": {
+    "message": "liste blanche"
+  },
+  "home.cast.harness.guard.ssh": {
+    "message": "signé, par SSH"
+  },
+  "home.cast.harness.status.title": {
+    "message": "Une barre d'état qui dit tout"
+  },
+  "home.cast.harness.status.text": {
+    "message": "Deux lignes sous le prompt : dossier, branche, modèle, effort, contexte utilisé, quotas et coût. Vert sous la moitié du contexte, rouge quand il est temps de repartir d'une session propre."
+  },
+  "home.cast.harness.codex.title": {
+    "message": "Les images, avec Codex"
+  },
+  "home.cast.harness.codex.text": {
+    "message": "Codex, l'agent d'OpenAI, me sert surtout à créer des images : illustrations, icônes et visuels générés directement dans le projet. Ses sessions apparaissent dans CortX à côté de celles de Claude."
+  },
+  "home.cast.harness.browser.me": {
+    "message": "Je clique"
+  },
+  "home.cast.harness.browser.title": {
+    "message": "L'agent prépare, je valide"
+  },
+  "home.cast.harness.browser.text": {
+    "message": "Claude pilote Chrome pour remplir un formulaire ou vérifier une page que je construis. Il ne tape jamais de mot de passe et ne clique jamais sur le bouton irréversible."
+  },
+  "home.cast.harness.link": {
+    "message": "Explorer le harness"
+  },
+  "home.cast.harness.link.skills": {
+    "message": "Les skills"
+  },
+  "home.cast.harness.link.guard": {
+    "message": "Les garde-fous"
+  },
+  "home.cast.cortx.kicker": {
+    "message": "Le centre"
+  },
+  "home.cast.cortx.lead": {
+    "message": "L'application de bureau que j'ai écrite pour tout faire tourner : mon terminal, mes projets et leurs services, mes scripts et l'inventaire de mes outils. Open source, pour Windows, macOS et Linux."
+  },
+  "home.cast.cortx.f1": {
+    "message": "Mon terminal de tous les jours : onglets, commandes en blocs, sessions qui reviennent comme je les ai laissées."
+  },
+  "home.cast.cortx.f2": {
+    "message": "Un bouton lance le front, l'API et les workers d'un projet, avec leurs ports et leurs logs."
+  },
+  "home.cast.cortx.f3": {
+    "message": "Un CLI fait pour les agents : ils lancent des services, lisent les logs et retrouvent les autres sessions Claude Code et Codex."
+  },
+  "home.cast.cortx.f4": {
+    "message": "Il génère mon shell : prompt, alias et intégrations, pour PowerShell, bash, zsh et fish."
+  },
+  "home.cast.cortx.link": {
+    "message": "Comment marche CortX"
+  },
+  "home.cast.cortx.repo": {
+    "message": "Le code sur GitHub"
+  },
+  "home.cast.zorg.kicker": {
+    "message": "La mémoire"
+  },
+  "home.cast.zorg.lead": {
+    "message": "Mon gestionnaire de tickets, et le point de rencontre avec mes agents. Chaque tâche y vit avec son contexte, et chaque passage laisse une trace."
+  },
+  "home.cast.zorg.f1": {
+    "message": "Projets, tickets, notes, rappels et agenda : un seul endroit pour tout ce que j'ai à faire."
+  },
+  "home.cast.zorg.f2": {
+    "message": "Un CLI qui s'explique lui-même aux agents : du JSON partout, et un guide affiché par zorg ai."
+  },
+  "home.cast.zorg.f3": {
+    "message": "Un serveur MCP avec connexion OAuth pour claude.ai, dans le navigateur comme sur le téléphone."
+  },
+  "home.cast.zorg.f4": {
+    "message": "Chaque passage laisse un commentaire et un commit : plus besoin de réexpliquer le contexte."
+  },
+  "home.cast.zorg.link": {
+    "message": "Ce que fait Zorg"
+  },
+  "home.cast.zorg.link.agents": {
+    "message": "Comment les agents s'en servent"
+  },
+  "home.gallery.payledger.line": {
+    "message": "Revenus, fiches de paie, impôts et paperasse dans une appli 100 % locale. Un agent lit les documents et la remplit ; je vérifie."
+  },
+  "home.gallery.souvenirs.line": {
+    "message": "Une appli familiale privée pour les photos et les souvenirs, pensée pour rester lisible dans cent ans."
+  },
+  "home.gallery.spotify.line": {
+    "message": "Le classement de mes morceaux et artistes préférés dans le temps, des sous-playlists sans risque et des paroles synchronisées façon karaoké."
+  },
+  "home.gallery.rlmod.line": {
+    "message": "Une appli gratuite pour personnaliser Rocket League sur PC en modifiant uniquement les fichiers du jeu, sans injection."
+  },
+  "home.gallery.rlmod.site": {
+    "message": "Site"
+  },
+  "home.gallery.kpop.line": {
+    "message": "Un jeu Roblox où l'on collectionne des photocards, écrit presque entièrement en discutant avec Claude Code."
+  },
+  "home.gallery.kpop.play": {
+    "message": "Jouer sur Roblox"
+  },
+  "home.gallery.chrome.line": {
+    "message": "Une page de nouvel onglet avec mes liens, une recherche et mes dernières recherches, écrite pour apprendre les extensions de navigateur."
+  },
+  "home.tools.link.terminal": {
+    "message": "Le terminal en détail"
+  },
+  "home.tools.link.all": {
+    "message": "Tous les outils"
+  },
+  "home.gallery.payledger.agent": {
+    "message": "Fiche de paie saisie, document joint"
+  },
+  "home.tools.role.powershell": {
+    "message": "le shell"
+  },
+  "home.tools.role.omp": {
+    "message": "le prompt"
+  },
+  "home.tools.role.eza": {
+    "message": "ls, avec des icônes"
+  },
+  "home.tools.role.fzf": {
+    "message": "recherche floue"
+  },
+  "home.tools.role.rg": {
+    "message": "chercher dans le code"
+  },
+  "home.tools.role.zoxide": {
+    "message": "sauter vers un dossier"
+  },
+  "home.tools.role.lazygit": {
+    "message": "git, en visuel"
+  },
+  "home.tools.role.yazi": {
+    "message": "gestionnaire de fichiers"
+  },
+  "home.tools.role.neovim": {
+    "message": "éditeur dans le terminal"
+  },
+  "home.tools.role.vscode": {
+    "message": "l'éditeur"
+  },
+  "home.tools.role.zen": {
+    "message": "navigateur du quotidien"
+  },
+  "home.tools.role.scoop": {
+    "message": "installe tout le reste"
+  },
+  "home.film.label": {
+    "message": "D'une idée à un commit, en six scènes"
+  },
+  "home.film.s1.title": {
+    "message": "L'idée"
+  },
+  "home.film.s1.text": {
+    "message": "Tout commence sur mon téléphone. Je dicte une idée à Claude, qui la range dans Zorg, mon gestionnaire de tickets, grâce à son connecteur."
+  },
+  "home.film.s2.title": {
+    "message": "Le ticket"
+  },
+  "home.film.s2.text": {
+    "message": "Zorg tient toutes les tâches, pour moi et pour mes agents : une app web, une app de bureau, un CLI et un serveur MCP, sur les mêmes données."
+  },
+  "home.film.s3.title": {
+    "message": "L'agent"
+  },
+  "home.film.s3.text": {
+    "message": "De retour sur l'ordinateur, dans CortX, le terminal que j'ai écrit, je confie le ticket à Claude Code. Il le lit en entier via le CLI Zorg et le passe en cours."
+  },
+  "home.film.s4.title": {
+    "message": "Le travail"
+  },
+  "home.film.s4.text": {
+    "message": "Il modifie le code, démarre le serveur de dev via le CLI CortX et lance le build. Un hook vérifie que le commit ne contient rien de sensible, puis git le signe avec ma clé SSH, une fois que 1Password m'a demandé d'en autoriser l'usage."
+  },
+  "home.film.s5.title": {
+    "message": "La trace"
+  },
+  "home.film.s5.text": {
+    "message": "Le ticket passe en terminé, avec un commentaire qui explique comment vérifier, et mes skills transforment le travail en document et en schéma."
+  },
+  "home.film.s6.title": {
+    "message": "L'environnement"
+  },
+  "home.film.s6.text": {
+    "message": "Toute la boucle tient là : des outils que j'ai écrits, des process qui fiabilisent les agents, et Claude qui fait l'essentiel du travail. C'est mon écosystème : Toolbox."
+  },
+  "home.film.play": {
+    "message": "Lecture"
+  },
+  "home.film.pause": {
+    "message": "Pause"
+  },
+  "home.film.soundOn": {
+    "message": "Activer le son"
+  },
+  "home.film.soundOff": {
+    "message": "Couper le son"
+  },
+  "home.film.scroll": {
+    "message": "La suite du site"
+  },
+  "home.cast.zorg.mock.title": {
+    "message": "Épingler une note en haut de son dossier"
+  },
+  "home.cast.zorg.mock.done": {
+    "message": "Done"
+  },
+  "home.cast.zorg.mock.today": {
+    "message": "Auj."
+  },
+  "home.cast.zorg.mock.description": {
+    "message": "Description"
+  },
+  "home.cast.zorg.mock.subtickets": {
+    "message": "Sous-tickets"
+  },
+  "home.cast.zorg.mock.comment": {
+    "message": "Fait : les notes ont une action Épingler et les notes épinglées restent en tête. Pour vérifier : en épingler une, recharger, elle reste en haut."
+  },
+  "home.cast.zorg.mock.assignee": {
+    "message": "Assigné"
+  },
+  "home.cast.zorg.mock.cliComments": {
+    "message": "Commentaires (1)"
+  },
+  "home.cast.zorg.mock.cliMeta": {
+    "message": "statut: Done  ·  priorité: 2  ·  labels: notes"
   }
 }

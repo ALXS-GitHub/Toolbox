@@ -1,0 +1,14 @@
+{
+  "name": "toolbox-film",
+  "private": true,
+  "type": "module",
+  "description": "The home-page film of the Toolbox site, rendered frame by frame from code.",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "render": "node render.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0",
+    "three": "^0.170.0"
+  }
+}

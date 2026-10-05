@@ -1,0 +1,106 @@
+// Shared foundations of the home-page mockups. The values are the apps' own (read from their source), so a
+// mockup looks like the real screen; it follows the site's theme: the app's light theme on the light site,
+// its dark theme on the dark site. All data shown in mockups is made up.
+
+$f-display: 'Outfit', 'Inter', system-ui, sans-serif;
+$f-ui: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+$f-mono: 'JetBrains Mono', 'Cascadia Mono', ui-monospace, monospace;
+
+// Zorg and CortX share one design system, "Halcyon" (apps/web/src/globals.css, theme-halcyon.css).
+@mixin halcyon {
+  --h-bg: hsl(186 38% 94%);
+  --h-fg: hsl(184 34% 14%);
+  --h-card: #ffffff;
+  --h-muted: hsl(190 14% 40%);
+  --h-faint: hsl(190 11% 56%);
+  --h-primary: #0d9488;
+  --h-on-primary: #ffffff;
+  --h-accent: color-mix(in srgb, var(--h-primary) 12%, transparent);
+  --h-accent-border: color-mix(in srgb, var(--h-primary) 40%, transparent);
+  --h-border: hsl(176 67% 18% / 0.12);
+  --h-border-strong: hsl(176 67% 18% / 0.2);
+  --h-sidebar: hsl(0 0% 100% / 0.55);
+  --h-glass: hsl(0 0% 100% / 0.82);
+  --h-input: hsl(0 0% 100% / 0.9);
+  --h-terminal: #ffffff;
+  --h-open: #2aa6f0;
+  --h-progress: #f0a517;
+  --h-blocked: #fb6f8e;
+  --h-done: #1bb89a;
+  --h-agent: #7c5cf0;
+  --h-pr-low: #6ba0c0;
+  --h-pr-med: #f0a517;
+  --h-pr-high: #ff8a4c;
+  --h-shadow-c: 176 67% 18%;
+  --h-shadow-soft: 0 1px 2px hsl(var(--h-shadow-c) / 0.06), 0 6px 16px -10px hsl(var(--h-shadow-c) / 0.22);
+  --h-shadow-pop: 0 12px 28px -12px hsl(var(--h-shadow-c) / 0.2), 0 28px 60px -20px hsl(var(--h-shadow-c) / 0.3);
+
+  :global([data-theme='dark']) & {
+    --h-bg: hsl(196 36% 9%);
+    --h-fg: hsl(180 30% 92%);
+    --h-card: hsl(192 27% 13%);
+    --h-muted: hsl(186 16% 64%);
+    --h-faint: hsl(186 12% 46%);
+    --h-primary: #2dd4bf;
+    --h-on-primary: #06231f;
+    --h-accent: color-mix(in srgb, var(--h-primary) 16%, transparent);
+    --h-accent-border: color-mix(in srgb, var(--h-primary) 45%, transparent);
+    --h-border: hsl(173 79% 68% / 0.12);
+    --h-border-strong: hsl(173 79% 68% / 0.22);
+    --h-sidebar: hsl(192 46% 10% / 0.6);
+    --h-glass: hsl(192 40% 12% / 0.8);
+    --h-input: hsl(192 47% 9% / 0.7);
+    --h-terminal: hsl(196 40% 7%);
+    --h-open: #48b9f5;
+    --h-progress: #f5b73a;
+    --h-blocked: #ff8aa0;
+    --h-done: #2dd4bf;
+    --h-agent: #a78bfa;
+    --h-pr-low: #74b3cf;
+    --h-pr-med: #f5b73a;
+    --h-pr-high: #ff9a5c;
+    --h-shadow-c: 196 60% 2%;
+  }
+}
+
+// The three soft washes Halcyon paints on its canvas.
+@mixin halcyon-wash {
+  background:
+    radial-gradient(60% 50% at 12% 0%, color-mix(in srgb, var(--h-primary) 16%, transparent), transparent 70%),
+    radial-gradient(55% 50% at 100% 28%, color-mix(in srgb, var(--h-blocked) 13%, transparent), transparent 70%),
+    radial-gradient(50% 60% at 72% 100%, color-mix(in srgb, var(--h-open) 11%, transparent), transparent 70%),
+    var(--h-bg);
+}
+
+// A desktop window: one rounded silhouette, hairline border, the app's elevation.
+@mixin window($radius: 12px) {
+  border-radius: $radius;
+  overflow: hidden;
+  border: 1px solid var(--h-border-strong);
+  box-shadow: var(--h-shadow-pop);
+}
+
+// Window buttons as drawn by Zorg and CortX on Windows: 10px line icons in 46px cells.
+@mixin win-buttons {
+  display: flex;
+  align-self: stretch;
+  margin-left: auto;
+  > i {
+    position: relative;
+    width: 34px;
+    display: grid;
+    place-items: center;
+    &::before {
+      content: '';
+      width: 9px;
+      height: 9px;
+    }
+  }
+  > i:nth-child(1)::before { height: 0; border-top: 1px solid var(--h-muted); }
+  > i:nth-child(2)::before { border: 1px solid var(--h-muted); border-radius: 1.5px; }
+  > i:nth-child(3)::before {
+    background:
+      linear-gradient(45deg, transparent 46%, var(--h-muted) 46% 54%, transparent 54%),
+      linear-gradient(-45deg, transparent 46%, var(--h-muted) 46% 54%, transparent 54%);
+  }
+}

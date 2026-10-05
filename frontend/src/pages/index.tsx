@@ -8,6 +8,11 @@ import Translate, {translate} from '@docusaurus/Translate';
 import {useAllDocsData} from '@docusaurus/plugin-content-docs/client';
 import {FiArchive, FiArrowRight, FiCpu, FiFolder, FiPlay, FiSettings, FiTool} from 'react-icons/fi';
 import {statusLabel, type Status} from '@site/src/lib/meta';
+import Film from '@site/src/components/Landing/Film';
+import Cast from '@site/src/components/Landing/Cast';
+import Gallery from '@site/src/components/Landing/Gallery';
+import ToolBelt from '@site/src/components/Landing/ToolBelt';
+import {useReveal} from '@site/src/components/Landing/useReveal';
 import styles from './index.module.scss';
 
 type Section = {
@@ -95,57 +100,92 @@ function useCounts(): Record<string, number> {
 }
 
 function Hero(): ReactNode {
+  const lines = [
+    translate({id: 'home.hero.line1', message: 'My own tools, my own processes,'}),
+    translate({id: 'home.hero.line2', message: 'and agents doing the heavy lifting.'}),
+  ];
   return (
     <header className={styles.hero}>
       <div className={clsx('container', styles.heroInner)}>
-        <img className={styles.heroLogo} src={useBaseUrl('/img/logo.svg')} alt="" aria-hidden />
-        <Heading as="h1" className={styles.heroTitle}>
-          Toolbox
+        <p className={styles.eyebrow}>
+          <img src={useBaseUrl('/img/logo.svg')} alt="" width={22} height={22} />
+          <span>Toolbox</span>
+          <i />
+          <Translate id="home.hero.eyebrow">how I work</Translate>
+        </p>
+        <Heading as="h1" className={styles.title}>
+          {lines.map((line, i) => (
+            <span key={line} className={styles.titleLine}>
+              <span style={{animationDelay: `${120 + i * 140}ms`}} className={i === 1 ? styles.titleAccent : undefined}>
+                {line}
+              </span>
+            </span>
+          ))}
         </Heading>
-        <p className={styles.heroTagline}>
-          <Translate id="home.tagline">
-            My setup, my tools and my projects — how I use them, and why.
+        <p className={styles.lede}>
+          <Translate id="home.hero.lede">
+            I build the apps I work with, and I let AI agents, mostly Claude, do most of the work in them. This site
+            documents all of it. Here is the short version: how an idea becomes a commit.
           </Translate>
         </p>
-        <div className={styles.heroButtons}>
-          <Link className={clsx('button button--primary button--lg', styles.button)} to="/tools">
-            <Translate id="home.cta.tools">Browse the tools</Translate>
-          </Link>
-          <Link className={clsx('button button--secondary button--lg', styles.button)} to="/setup">
-            <Translate id="home.cta.setup">See my setup</Translate>
-          </Link>
-        </div>
       </div>
     </header>
   );
 }
 
-function Sections(): ReactNode {
+function SectionHead({num, kicker, title, lead, id}: {num: string; kicker: string; title: string; lead: string; id: string}): ReactNode {
+  const ref = useReveal<HTMLDivElement>(0.4);
+  return (
+    <div ref={ref} className={styles.sectionHead}>
+      <p className={styles.kicker}>
+        <span>{num}</span>
+        {kicker}
+      </p>
+      <Heading as="h2" id={id} className={styles.sectionTitle}>
+        {title}
+      </Heading>
+      <p className={styles.sectionLead}>{lead}</p>
+    </div>
+  );
+}
+
+function Explore(): ReactNode {
   const sections = useSections();
   const counts = useCounts();
+  const ref = useReveal<HTMLDivElement>(0.15);
+  const spot = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    e.currentTarget.style.setProperty('--my', `${e.clientY - r.top}px`);
+  };
   return (
-    <section className={clsx('container', styles.sections)}>
-      {sections.map((s) => (
-        <Link key={s.id} to={s.to} className={styles.section}>
-          <span className={styles.sectionIcon}>{s.icon}</span>
+    <div ref={ref} className={styles.sections}>
+      {sections.map((sec, i) => (
+        <Link
+          key={sec.id}
+          to={sec.to}
+          className={styles.section}
+          onMouseMove={spot}
+          style={{'--d': `${i * 70}ms`} as React.CSSProperties}>
+          <span className={styles.sectionIcon}>{sec.icon}</span>
           <span className={styles.sectionBody}>
-            <span className={styles.sectionTitle}>
-              {s.title}
-              {counts[s.id] ? <span className={styles.count}>{counts[s.id]}</span> : null}
+            <span className={styles.sectionName}>
+              {sec.title}
+              {counts[sec.id] ? <span className={styles.count}>{counts[sec.id]}</span> : null}
             </span>
-            <span className={styles.sectionText}>{s.description}</span>
+            <span className={styles.sectionText}>{sec.description}</span>
           </span>
           <FiArrowRight className={styles.sectionArrow} aria-hidden />
         </Link>
       ))}
-    </section>
+    </div>
   );
 }
 
 function Legend(): ReactNode {
   const statuses: Status[] = ['active', 'occasional', 'testing', 'archived'];
   return (
-    <section className={clsx('container', styles.legend)}>
+    <section className={styles.legend}>
       <p>
         <Translate id="home.legend">
           Every tool page says whether I still use it. Pages are written from my own use: what the tool is for in
@@ -153,10 +193,10 @@ function Legend(): ReactNode {
         </Translate>
       </p>
       <div className={styles.legendBadges}>
-        {statuses.map((s) => (
-          <span key={s} className={clsx(styles.legendBadge, styles[`status-${s}`])}>
+        {statuses.map((st) => (
+          <span key={st} className={clsx(styles.legendBadge, styles[`status-${st}`])}>
             <span className={styles.dot} aria-hidden />
-            {statusLabel(s)}
+            {statusLabel(st)}
           </span>
         ))}
       </div>
@@ -172,10 +212,71 @@ export default function Home(): ReactNode {
         id: 'home.meta.description',
         message: 'A personal, opinionated documentation of my setup, the tools I use and the projects I build.',
       })}>
+      <Film />
       <Hero />
-      <main>
-        <Sections />
-        <Legend />
+      <main className={styles.main}>
+        <section className={clsx('container', styles.block)}>
+          <SectionHead
+            id="pieces"
+            num="01"
+            kicker={translate({id: 'home.pieces.kicker', message: 'The pieces'})}
+            title={translate({id: 'home.pieces.title', message: 'Three pieces hold it together'})}
+            lead={translate({
+              id: 'home.pieces.lead',
+              message: 'Two apps I wrote for myself, and the harness that turns Claude Code into my everyday assistant.',
+            })}
+          />
+          <Cast />
+        </section>
+
+        <section className={clsx('container', styles.block)}>
+          <SectionHead
+            id="projects"
+            num="02"
+            kicker={translate({id: 'home.gallery.kicker', message: 'The projects'})}
+            title={translate({id: 'home.gallery.title', message: 'And the rest of what I build'})}
+            lead={translate({
+              id: 'home.gallery.lead',
+              message:
+                'Desktop apps, web apps and games, most of them built with an agent. Several are private: their pages explain how they work, never what they contain.',
+            })}
+          />
+          <Gallery />
+          <div className={styles.more}>
+            <Link className={styles.moreLink} to="/projects">
+              <Translate id="home.gallery.all">All the projects</Translate> <FiArrowRight />
+            </Link>
+          </div>
+        </section>
+
+        <section className={clsx('container', styles.block)}>
+          <SectionHead
+            id="toolkit"
+            num="03"
+            kicker={translate({id: 'home.tools.kicker', message: 'The toolkit'})}
+            title={translate({id: 'home.tools.heading', message: 'The tools I open every day'})}
+            lead={translate({
+              id: 'home.tools.lead',
+              message: 'A PowerShell 7 terminal that CortX sets up, and the command-line tools I reach for without thinking.',
+            })}
+          />
+          <ToolBelt />
+        </section>
+
+        <section className={clsx('container', styles.block, styles.blockLast)}>
+          <SectionHead
+            id="explore"
+            num="04"
+            kicker={translate({id: 'home.explore.kicker', message: 'Explore'})}
+            title={translate({id: 'home.explore.title', message: 'Where to next?'})}
+            lead={translate({
+              id: 'home.explore.lead',
+              message: 'Every section of the site, with the number of pages in it.',
+            })}
+          />
+          <Explore />
+          <Legend />
+        </section>
       </main>
     </Layout>
   );
