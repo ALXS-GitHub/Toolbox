@@ -791,7 +791,7 @@
     "message": "Le travail"
   },
   "home.film.s4.text": {
-    "message": "Il modifie le code, démarre le serveur de dev via le CLI CortX et lance le build. Un hook vérifie que le commit ne contient pas de fuite, et le commit est signé avec une clé que je suis seul à pouvoir approuver."
+    "message": "Il modifie le code, démarre le serveur de dev via le CLI CortX et lance le build. Un hook vérifie que le commit ne contient rien de sensible, puis git le signe avec ma clé SSH, une fois que 1Password m'a demandé d'en autoriser l'usage."
   },
   "home.film.s5.title": {
     "message": "La trace"
@@ -803,7 +803,7 @@
     "message": "L'environnement"
   },
   "home.film.s6.text": {
-    "message": "Toute la boucle tient là : des outils que j'ai écrits, des process qui fiabilisent les agents, et Claude qui fait l'essentiel du travail."
+    "message": "Toute la boucle tient là : des outils que j'ai écrits, des process qui fiabilisent les agents, et Claude qui fait l'essentiel du travail. Le tout dans une seule boîte."
   },
   "home.film.play": {
     "message": "Lecture"

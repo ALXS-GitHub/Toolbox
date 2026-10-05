@@ -47,7 +47,7 @@ function useNarration() {
       text: translate({
         id: 'home.film.s4.text',
         message:
-          'It edits the code, starts the dev server through the CortX CLI and builds. A hook checks the commit for leaks, and the commit is signed with a key only I can approve.',
+          'It edits the code, starts the dev server through the CortX CLI and builds. A hook checks that the commit holds nothing sensitive, then git signs it with my SSH key, once 1Password has asked me to allow its use.',
       }),
     },
     {
@@ -61,7 +61,8 @@ function useNarration() {
       title: translate({id: 'home.film.s6.title', message: 'The environment'}),
       text: translate({
         id: 'home.film.s6.text',
-        message: 'That is the whole loop: tools I built, processes that keep agents reliable, and Claude doing most of the work.',
+        message:
+          'That is the whole loop: tools I built, processes that keep agents reliable, and Claude doing most of the work. All of it in one box.',
       }),
     },
   ];
