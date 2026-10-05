@@ -1,177 +1,339 @@
 /**
- * The other projects, each with a small mockup of its main screen. Layouts and colours come from the apps'
- * code; every value shown is invented (placeholder amounts, fictional names, abstract "photos").
+ * The other projects, each with a mockup of its main screen. Layouts, colours, type and components come from
+ * the apps' own code; every value shown is invented (sample amounts, fictional names, abstract "photos").
  */
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
-import {FiArrowRight, FiArrowUpRight, FiCheck, FiSearch} from 'react-icons/fi';
+import {FiArrowUpRight} from 'react-icons/fi';
+import {
+  LuBookmark,
+  LuBriefcase,
+  LuCheck,
+  LuCoins,
+  LuFileText,
+  LuGamepad2,
+  LuHouse,
+  LuImage,
+  LuLayoutDashboard,
+  LuMap,
+  LuMinus,
+  LuPackage,
+  LuPalette,
+  LuPanelLeftClose,
+  LuPlay,
+  LuReceipt,
+  LuRocket,
+  LuSearch,
+  LuSquare,
+  LuStore,
+  LuTrendingUp,
+  LuWallet,
+  LuX,
+} from 'react-icons/lu';
+import {
+  FaArrowRight,
+  FaCog,
+  FaCompass,
+  FaEnvelope,
+  FaGithub,
+  FaGoogleDrive,
+  FaHome,
+  FaKeyboard,
+  FaListUl,
+  FaPlay,
+  FaRobot,
+  FaSearch,
+  FaSpotify,
+  FaTools,
+  FaTrophy,
+  FaTwitch,
+  FaYoutube,
+} from 'react-icons/fa';
 import {statusLabel, type Status} from '@site/src/lib/meta';
 import {ClaudeMark} from '../parts';
 import {useReveal} from '../useReveal';
 import s from './Gallery.module.scss';
 
-function PayLedger(): ReactNode {
-  const t = (id: string, message: string) => translate({id: `home.gallery.payledger.${id}`, message});
-  const stats = [
-    {label: t('received', 'Received'), value: '1 234,56', tone: s.blue},
-    {label: t('taxable', 'Taxable'), value: '987,65', tone: s.teal},
-    {label: t('withheld', 'Withheld'), value: '123,45', tone: s.orange},
-    {label: t('documents', 'Documents'), value: '12', tone: s.green},
+// Each mock is a crop of the app's main screen at near-real size: a 37.7 × 23.6 em canvas whose em follows
+// the card width. Colours, type, radii and components come from each app's own source.
+
+// ── PayLedger: shadcn on Tailwind, blue primary, light and dark (follows the site) ──────────────
+function PayLedger({logo}: {logo: string}): ReactNode {
+  const bars = [
+    [46, 18],
+    [52, 22],
+    [48, 30],
+    [58, 16],
+    [55, 26],
+    [61, 24],
   ];
+  const months = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin'];
   return (
     <div className={clsx(s.mock, s.pl)}>
-      <div className={s.plSide}>
-        <span className={s.plLogo}>
-          <i /> PayLedger
+      <aside className={s.plSide}>
+        <div className={s.plBrand}>
+          <img src={logo} alt="" />
+          <span>
+            <b>PayLedger</b>
+            <em>v1.4.0</em>
+          </span>
+          <LuPanelLeftClose />
+        </div>
+        <span className={s.plSearch}>
+          <LuSearch /> Rechercher… <kbd>Ctrl K</kbd>
         </span>
-        {[70, 55, 62, 48, 58].map((w, i) => (
-          <span key={i} className={clsx(s.plNav, i === 0 && s.plNavOn)} style={{width: `${w}%`}} />
-        ))}
-      </div>
+        <span className={clsx(s.plNav, s.plNavOn)}>
+          <LuLayoutDashboard /> Tableau de bord
+        </span>
+        <span className={s.plGroup}>Mes revenus</span>
+        <span className={s.plNav}>
+          <LuBriefcase /> Activités
+        </span>
+        <span className={s.plNav}>
+          <LuFileText /> Fiches de paie
+        </span>
+        <span className={s.plNav}>
+          <LuCoins /> Autres revenus
+        </span>
+        <span className={s.plGroup}>Déclaration</span>
+        <span className={s.plNav}>
+          <LuReceipt /> Déclarations
+        </span>
+      </aside>
       <div className={s.plMain}>
         <div className={s.plHead}>
-          <b>{t('dashboard', 'Dashboard')}</b>
+          <span>
+            <b>Tableau de bord</b>
+            <em>Ce qui demande ton attention, puis où tu en es.</em>
+          </span>
           <span className={s.plSeg}>
-            <i className={s.plSegOn} />
-            <i />
+            <i className={s.plSegOn}>Encaissé</i>
+            <i>Imposable</i>
           </span>
         </div>
         <div className={s.plStats}>
-          {stats.map((st) => (
-            <span key={st.label} className={s.plStat}>
-              <em>{st.label}</em>
-              <b>{st.value}</b>
-              <i className={st.tone} />
-            </span>
-          ))}
+          <span className={s.plStat}>
+            <em>Total encaissé</em>
+            <i className={s.plTone} data-tone="success">
+              <LuWallet />
+            </i>
+            <b>12 345 €</b>
+            <u>+6 % sur un an</u>
+          </span>
+          <span className={s.plStat}>
+            <em>Salaire net</em>
+            <i className={s.plTone} data-tone="info">
+              <LuTrendingUp />
+            </i>
+            <b>6 789 €</b>
+            <u>6 fiches de paie</u>
+          </span>
         </div>
-        <div className={s.plBottom}>
+        <div className={s.plCard}>
+          <span className={s.plCardTitle}>Rentrées mensuelles</span>
           <div className={s.plChart}>
-            {[38, 52, 46, 60, 55, 72, 64, 58, 80, 70, 66, 74].map((h, i) => (
-              <i key={i} style={{'--h': `${h}%`, '--i': i} as React.CSSProperties} />
+            {bars.map(([a, b], i) => (
+              <span key={i} className={s.plCol} style={{'--a': `${a}%`, '--b': `${b}%`, '--i': i} as React.CSSProperties}>
+                <i />
+                <i />
+                <em>{months[i]}</em>
+              </span>
             ))}
-          </div>
-          <div className={s.plTodo}>
-            <em>{t('todo', 'To do')}</em>
-            <span>
-              <i className={s.orange} /> <u />
-            </span>
-            <span>
-              <i className={s.blue} /> <u />
-            </span>
           </div>
         </div>
       </div>
       <div className={s.agentChip}>
-        <ClaudeMark size={11} /> {t('agent', 'Payslip entered, document attached')} <FiCheck />
+        <ClaudeMark size={11} /> {translate({id: 'home.gallery.payledger.agent', message: 'Payslip entered, document attached'})}{' '}
+        <LuCheck />
       </div>
     </div>
   );
 }
 
-function Souvenirs(): ReactNode {
+// ── Souvenirs: dark cinema, editorial (sharp corners), serif italic, mono timecodes, grain ───────
+function Souvenirs({logo}: {logo: string}): ReactNode {
+  const stacks = [
+    {year: '2019', n: '214', hues: [200, 36, 22]},
+    {year: '2022', n: '389', hues: [28, 340, 205]},
+    {year: '2025', n: '157', hues: [18, 40, 130]},
+  ];
   return (
     <div className={clsx(s.mock, s.sv)}>
-      <span className={s.svPhoto} />
-      <span className={s.svPhoto} />
-      <span className={s.svPhoto} />
-      <span className={s.svShade} />
       <span className={s.svGrain} />
-      {[0, 1, 2, 3, 4, 5].map((i) => (
-        <span key={i} className={s.svDust} style={{'--i': i} as React.CSSProperties} />
-      ))}
-      <div className={s.svNav}>
+      <header className={s.svNav}>
+        <img src={logo} alt="" />
         <b>SOUVENIRS</b>
-        <span>{translate({id: 'home.gallery.souvenirs.nav', message: 'Timeline · Albums · Map'})}</span>
+        <span className={s.svNavOn}>Chronologie</span>
+        <span>Albums</span>
+        <i>+ Ajouter</i>
+      </header>
+      <div className={s.svHead}>
+        <span className={s.svCode}>— Chronologie · 760 souvenirs</span>
+        <span className={s.svTitle}>Une pile par année</span>
       </div>
-      <div className={s.svCenter}>
-        <span className={s.svCode}>— 1998 · 2026</span>
-        <span className={s.svTitle}>Souvenirs</span>
-        <span className={s.svCta}>{translate({id: 'home.gallery.souvenirs.cta', message: 'See the timeline →'})}</span>
+      <div className={s.svStacks}>
+        {stacks.map((st, k) => (
+          <div key={st.year} className={s.svStack} style={{'--k': k} as React.CSSProperties}>
+            <span className={s.svPile}>
+              {st.hues.map((h, i) => (
+                <span key={i} className={s.svPrint} style={{'--h': h, '--r': `${(i - 1) * 3.2 + (k - 1) * 0.8}deg`, '--j': i} as React.CSSProperties}>
+                  <i />
+                </span>
+              ))}
+            </span>
+            <span className={s.svYear}>{st.year}</span>
+            <span className={s.svMeta}>
+              <em>{st.n} souvenirs</em>
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-function SpotifyManager(): ReactNode {
+// ── Spotify Manager: Spotify-like dark/light, green + pink, glass "now playing" dock ────────────
+function SpotifyManager({logo}: {logo: string}): ReactNode {
   const rows = [
     {name: 'Paper Moons', artist: 'Kite Theory', hue: 150},
     {name: 'Midnight Static', artist: 'Nova Lane', hue: 280},
     {name: 'Golden Hour Drive', artist: 'Mira & the Tides', hue: 30},
     {name: 'Low Tide Letters', artist: 'Harbor Club', hue: 200},
   ];
+  const nav: [string, ReactNode][] = [
+    ['Home', <FaHome key="h" />],
+    ['Library', <FaListUl key="l" />],
+    ['Rankings', <FaTrophy key="r" />],
+    ['Discover', <FaCompass key="d" />],
+    ['Tools', <FaTools key="t" />],
+  ];
   return (
     <div className={clsx(s.mock, s.sp)}>
-      <div className={s.spSide}>
-        <b>Spotify Manager</b>
-        {['Home', 'Library', 'Rankings', 'Discover', 'Tools'].map((n) => (
-          <span key={n} className={n === 'Rankings' ? s.spNavOn : undefined}>
-            {n}
+      <aside className={s.spSide}>
+        <span className={s.spBrand}>
+          <img src={logo} alt="" /> Spotify Manager
+        </span>
+        {nav.map(([n, icon]) => (
+          <span key={n} className={clsx(s.spLink, n === 'Home' && s.spLinkOn)}>
+            {icon} {n}
           </span>
         ))}
-      </div>
+      </aside>
       <div className={s.spMain}>
-        <b className={s.spTitle}>Track Ranker</b>
-        <span className={s.spSub}>{translate({id: 'home.gallery.spotify.sub', message: 'Drag to rank, then sync'})}</span>
+        <div className={s.spSection}>
+          <b>Top tracks · this month</b>
+          <em>
+            View all <FaArrowRight />
+          </em>
+        </div>
         <div className={s.spList}>
           {rows.map((r, i) => (
-            <div key={r.name} className={s.spRow} style={{'--i': i} as React.CSSProperties}>
+            <div key={r.name} className={clsx(s.spRow, i === 1 && s.spRowHover)}>
+              <span className={s.spRank}>{i + 1}</span>
               <span className={s.spCover} style={{'--hue': r.hue} as React.CSSProperties} />
               <span className={s.spText}>
                 <b>{r.name}</b>
                 <em>{r.artist}</em>
               </span>
+              {i === 1 ? <FaPlay className={s.spPlay} /> : null}
             </div>
           ))}
         </div>
       </div>
       <div className={s.spDock}>
-        <span className={s.spCover} style={{'--hue': 280} as React.CSSProperties} />
-        <span className={s.spLyric}>♪ {translate({id: 'home.gallery.spotify.lyric', message: 'we kept the lights on for the night'})}</span>
         <i className={s.spProgress} />
+        <span className={s.spCover} style={{'--hue': 280} as React.CSSProperties} />
+        <span className={s.spText}>
+          <b>Midnight Static</b>
+          <em>Nova Lane</em>
+        </span>
+        <span className={s.spState}>
+          <FaPlay />
+        </span>
+        <span className={s.spTime}>1:23 · 3:45</span>
+        <span className={s.spDevice}>
+          <FaSpotify /> Desktop
+        </span>
       </div>
     </div>
   );
 }
 
-function RlMod(): ReactNode {
-  const slots = ['Car bodies', 'Decals', 'Wheels', 'Boosts', 'Toppers', 'Goal explosions'];
-  const items = ['Spinner', 'Halo', 'Drift', 'Zigzag', 'Comet', 'Orbit'];
+// ── ALXS-RL-Mod: dense dark desktop UI, glass over a violet/blue/orange aurora, hairlines ─────────
+function RlMod({logo}: {logo: string}): ReactNode {
+  const tiles = [
+    {icon: <LuPackage />, k: 'Items', v: '3 swaps', on: true},
+    {icon: <LuPalette />, k: 'Palette', v: 'Twilight', on: true},
+    {icon: <LuImage />, k: 'Decal', v: 'None', on: false},
+    {icon: <LuMap />, k: 'Map', v: 'Arcadia', on: true},
+  ];
   return (
     <div className={clsx(s.mock, s.rl)}>
       <span className={s.rlAurora} />
+      <span className={s.rlGrainLayer} />
       <div className={s.rlBar}>
+        <img src={logo} alt="" />
         <b>ALXS-RL-Mod</b>
-        <span className={s.rlSearch}>Search or jump to… <kbd>Ctrl K</kbd></span>
+        <span className={s.rlSearch}>
+          <LuSearch /> Search or jump to… <kbd>Ctrl</kbd>
+          <kbd>K</kbd>
+        </span>
+        <span className={s.rlBadge}>
+          <i /> Game closed
+        </span>
+        <span className={s.rlWin}>
+          <LuMinus />
+          <LuSquare />
+          <LuX />
+        </span>
       </div>
       <div className={s.rlBody}>
-        <div className={s.rlRail}>
-          <em>Slots</em>
-          {slots.map((sl) => (
-            <span key={sl} className={sl === 'Wheels' ? s.rlSlotOn : undefined}>
-              {sl}
-            </span>
-          ))}
-        </div>
+        <aside className={s.rlRail}>
+          <em>Overview</em>
+          <span className={s.rlNavOn}>
+            <LuHouse /> Home
+          </span>
+          <span>
+            <LuStore /> Marketplace
+          </span>
+          <em>Game</em>
+          <span>
+            <LuPlay /> Play
+          </span>
+          <span>
+            <LuBookmark /> Presets
+          </span>
+          <em>Garage</em>
+          <span>
+            <LuPackage /> Items
+          </span>
+          <span>
+            <LuPalette /> Palette
+          </span>
+        </aside>
         <div className={s.rlMain}>
-          <div className={s.rlComposer}>
-            <span>
-              <em>You equip</em> Spinner
-            </span>
-            <FiArrowRight />
-            <span>
-              <em>You see</em> Comet
-            </span>
-            <b>Apply swap</b>
-          </div>
-          <div className={s.rlGrid}>
-            {items.map((it, i) => (
-              <span key={it} className={clsx(s.rlItem, i === 4 && s.rlItemOn)}>
-                <i className={s.wheel} style={{'--r': `${i * 47}deg`} as React.CSSProperties} />
-                {it}
+          <span className={s.rlEyebrow}>No injection · no interception · reversible</span>
+          <b className={s.rlH1}>Your car. Your colours. Your arena.</b>
+          <span className={s.rlBtns}>
+            <i className={s.rlPrimary}>
+              <LuRocket /> Play online
+            </i>
+            <i className={s.rlSecondary}>
+              <LuGamepad2 /> Play offline (mods)
+            </i>
+          </span>
+          <span className={s.rlLabel}>Current loadout</span>
+          <div className={s.rlTiles}>
+            {tiles.map((tl) => (
+              <span key={tl.k} className={s.rlTile}>
+                <em>
+                  {tl.icon} {tl.k}
+                  {tl.on ? <i className={s.rlDot} /> : null}
+                </em>
+                <b>{tl.v}</b>
               </span>
             ))}
           </div>
@@ -181,60 +343,109 @@ function RlMod(): ReactNode {
   );
 }
 
+// ── Pack a K-Pop Idol: the game's "Candy" kit (Fredoka, cream outlines, chunky shadows, gloss) ───
 function KpopIdol(): ReactNode {
+  const chips = [
+    {n: 'Normal', c: '#bbbbbb', on: true},
+    {n: 'Shiny', c: '#ADFF2F'},
+    {n: 'Gold', c: '#FFD700'},
+  ];
   const cards = [
-    {name: 'Haneul', rarity: 'Epic', color: '#B464FF'},
-    {name: 'Jiwoo', rarity: 'Legendary', color: '#FFB432'},
-    {name: 'Minseo', rarity: 'Mythic', color: '#FF6496'},
+    {name: 'Haneul', group: 'NOVA9', rarity: 'Epic', c: '180,100,255', hue: 275, rate: '$240/s'},
+    {name: 'Jiwoo', group: 'NOVA9', rarity: 'Legendary', c: '255,180,50', hue: 35, rate: '$1.2K/s', count: 'x3'},
+    {name: 'Minseo', group: 'LUMEN', rarity: 'Mythic', c: '255,100,150', hue: 335, rate: '$3.4K/s'},
   ];
   return (
     <div className={clsx(s.mock, s.kp)}>
-      <span className={s.kpDots} />
-      <div className={s.kpCards}>
-        {cards.map((c, i) => (
-          <span key={c.name} className={s.kpCard} style={{'--c': c.color, '--i': i - 1} as React.CSSProperties}>
-            <span className={s.kpGroup}>NOVA9</span>
-            <span className={s.kpInit}>{c.name.slice(0, 2).toUpperCase()}</span>
-            <span className={s.kpShine} />
-            <span className={s.kpFoot}>
-              <b>★★ {c.name}</b>
-              <em>{c.rarity}</em>
-            </span>
-            {i === 1 ? <span className={s.kpCount}>x3</span> : null}
-          </span>
-        ))}
+      <span className={s.kpStage} />
+      <div className={s.kpPanel}>
+        <aside className={s.kpSide}>
+          <b>📖 Idol Index</b>
+          <span className={clsx(s.kpTab, s.kpTabOn)}>Idols</span>
+          <span className={s.kpTab}>Groups</span>
+        </aside>
+        <div className={s.kpContent}>
+          <div className={s.kpTop}>
+            {chips.map((ch) => (
+              <span key={ch.n} className={clsx(s.kpChip, ch.on && s.kpChipOn)} style={{'--c': ch.c} as React.CSSProperties}>
+                {ch.n}
+              </span>
+            ))}
+            <b className={s.kpCount}>123/477</b>
+          </div>
+          <div className={s.kpFilters}>
+            <span className={s.kpSearch}>🔍 Search idols…</span>
+            <span className={s.kpSelect}>Rarity ▾</span>
+            <span className={s.kpSelect}>Group ▾</span>
+          </div>
+          <div className={s.kpCards}>
+            {cards.map((cd) => (
+              <span key={cd.name} className={s.kpCard} style={{'--c': cd.c, '--hue': cd.hue} as React.CSSProperties}>
+                <span className={s.kpPhoto}>
+                  <i />
+                </span>
+                <span className={s.kpGroup}>{cd.group}</span>
+                <span className={s.kpFoot}>
+                  <b className={s.kpName}>{cd.name}</b>
+                  <em>{cd.rarity}</em>
+                  <u>{cd.rate}</u>
+                </span>
+                {cd.count ? <span className={s.kpBadge}>{cd.count}</span> : null}
+              </span>
+            ))}
+          </div>
+        </div>
+        <span className={s.kpClose}>✕</span>
       </div>
-      <span className={s.kpBtn}>⚡ Equip Best</span>
     </div>
   );
 }
 
+// ── Chrome Homepage: wallpaper, grey links panel, dark search panel, custom cursor ───────────────
 function ChromeHomepage(): ReactNode {
+  const links: [string, ReactNode, string][] = [
+    ['GitHub', <FaGithub key="g" />, '#181717'],
+    ['YouTube', <FaYoutube key="y" />, '#ff0000'],
+    ['Twitch', <FaTwitch key="t" />, '#9146ff'],
+    ['Mail', <FaEnvelope key="m" />, '#ea4335'],
+    ['Drive', <FaGoogleDrive key="d" />, '#1fa463'],
+    ['Typing', <FaKeyboard key="k" />, '#e2b714'],
+    ['Chat', <FaRobot key="c" />, '#10a37f'],
+    ['Search', <FaSearch key="s" />, '#4285f4'],
+  ];
+  const history = ['css container queries', 'météo demain', 'recette pâte à crêpes', 'raccourcis vim'];
   return (
     <div className={clsx(s.mock, s.ch)}>
-      <span className={s.chSky} />
-      <span className={s.chMount} />
+      <span className={s.chWall} />
       <div className={s.chLeft}>
-        {['#ea4335', '#1db954', '#0a66c2', '#ff0000', '#6e40c9', '#f59e0b', '#14b8a6', '#111827'].map((c, i) => (
-          <span key={i} className={s.chTile} style={{'--c': c, '--i': i} as React.CSSProperties}>
-            <i />
-          </span>
-        ))}
+        <div className={s.chTiles}>
+          {links.map(([n, icon, c], i) => (
+            <span key={n} className={s.chTile} style={{'--c': c, '--i': i} as React.CSSProperties}>
+              <i>{icon}</i>
+              {n}
+            </span>
+          ))}
+        </div>
       </div>
       <div className={s.chRight}>
         <span className={s.chMenu}>
-          <i />
-          <i />
-          <i />
+          <i>
+            <FaHome />
+          </i>
+          <i>
+            <FaYoutube style={{color: '#ff0000'}} /> YouTube
+          </i>
         </span>
-        <span className={s.chSearch}>
-          <FiSearch /> Google
-        </span>
-        {[70, 55, 62].map((w, i) => (
-          <span key={i} className={s.chHist} style={{width: `${w}%`}}>
-            <FiSearch />
+        <span className={s.chSearch} />
+        {history.map((h) => (
+          <span key={h} className={s.chHist}>
+            {h} <FaSearch />
           </span>
         ))}
+        <span className={s.chGear}>
+          <FaCog />
+        </span>
+        <span className={s.chCursor} />
       </div>
     </div>
   );
@@ -267,7 +478,7 @@ export default function Gallery(): ReactNode {
       }),
       stack: ['Tauri 2', 'Rust', 'SQLite'],
       to: '/projects/payledger',
-      mock: <PayLedger />,
+      mock: <PayLedger logo={withBaseUrl('/img/landing/payledger.webp')} />,
     },
     {
       id: 'souvenirs',
@@ -280,7 +491,7 @@ export default function Gallery(): ReactNode {
       }),
       stack: ['Cloudflare', 'D1 · R2', 'React'],
       to: '/projects/souvenirs',
-      mock: <Souvenirs />,
+      mock: <Souvenirs logo={withBaseUrl('/img/landing/souvenirs.webp')} />,
     },
     {
       id: 'spotify',
@@ -293,7 +504,7 @@ export default function Gallery(): ReactNode {
       }),
       stack: ['React', 'Express', 'MongoDB'],
       to: '/projects/spotify-manager',
-      mock: <SpotifyManager />,
+      mock: <SpotifyManager logo={withBaseUrl('/img/landing/spotify-manager.webp')} />,
     },
     {
       id: 'rlmod',
@@ -307,7 +518,7 @@ export default function Gallery(): ReactNode {
       stack: ['Tauri 2', 'Rust', 'React'],
       to: '/projects/alxs-rl-mod',
       external: {href: 'https://alxs-github.github.io/ALXS-RL-Mod/', label: translate({id: 'home.gallery.rlmod.site', message: 'Website'})},
-      mock: <RlMod />,
+      mock: <RlMod logo={withBaseUrl('/img/landing/alxs-rl-mod.webp')} />,
     },
     {
       id: 'kpop',

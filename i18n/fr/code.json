@@ -667,18 +667,6 @@
   "home.cast.zorg.link.agents": {
     "message": "Comment les agents s'en servent"
   },
-  "home.gallery.souvenirs.nav": {
-    "message": "Chronologie · Albums · Carte"
-  },
-  "home.gallery.souvenirs.cta": {
-    "message": "Voir la chronologie →"
-  },
-  "home.gallery.spotify.sub": {
-    "message": "Glisser pour classer, puis synchroniser"
-  },
-  "home.gallery.spotify.lyric": {
-    "message": "on a laissé les lumières allumées toute la nuit"
-  },
   "home.gallery.payledger.line": {
     "message": "Revenus, fiches de paie, impôts et paperasse dans une appli 100 % locale. Un agent lit les documents et la remplit ; je vérifie."
   },
@@ -708,24 +696,6 @@
   },
   "home.tools.link.all": {
     "message": "Tous les outils"
-  },
-  "home.gallery.payledger.received": {
-    "message": "Encaissé"
-  },
-  "home.gallery.payledger.taxable": {
-    "message": "Imposable"
-  },
-  "home.gallery.payledger.withheld": {
-    "message": "Prélevé"
-  },
-  "home.gallery.payledger.documents": {
-    "message": "Documents"
-  },
-  "home.gallery.payledger.dashboard": {
-    "message": "Tableau de bord"
-  },
-  "home.gallery.payledger.todo": {
-    "message": "À traiter"
   },
   "home.gallery.payledger.agent": {
     "message": "Fiche de paie saisie, document joint"
@@ -819,5 +789,32 @@
   },
   "home.film.scroll": {
     "message": "La suite du site"
+  },
+  "home.cast.zorg.mock.title": {
+    "message": "Épingler une note en haut de son dossier"
+  },
+  "home.cast.zorg.mock.done": {
+    "message": "Done"
+  },
+  "home.cast.zorg.mock.today": {
+    "message": "Auj."
+  },
+  "home.cast.zorg.mock.description": {
+    "message": "Description"
+  },
+  "home.cast.zorg.mock.subtickets": {
+    "message": "Sous-tickets"
+  },
+  "home.cast.zorg.mock.comment": {
+    "message": "Fait : les notes ont une action Épingler et les notes épinglées restent en tête. Pour vérifier : en épingler une, recharger, elle reste en haut."
+  },
+  "home.cast.zorg.mock.assignee": {
+    "message": "Assigné"
+  },
+  "home.cast.zorg.mock.cliComments": {
+    "message": "Commentaires (1)"
+  },
+  "home.cast.zorg.mock.cliMeta": {
+    "message": "statut: Done  ·  priorité: 2  ·  labels: notes"
   }
 }

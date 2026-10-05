@@ -11,6 +11,9 @@ import {
   FiArrowRight,
   FiBox,
   FiCheck,
+  FiClock,
+  FiFlag,
+  FiSearch,
   FiCode,
   FiCpu,
   FiExternalLink,
@@ -96,23 +99,30 @@ function Row({
   );
 }
 
-// ── CortX: the main window, a project and its services ───────────────────────────────────────────
+// ── CortX: the main window — a project, its services, and what the agents are doing ───────────────
 function CortxWindow({img}: {img: (p: string) => string}): ReactNode {
   const services = [
-    {name: 'web', cmd: 'bun dev', port: ':5173', color: '#2aa6f0'},
-    {name: 'api', cmd: 'bun run api', port: ':3000', color: '#8b5cf6'},
-    {name: 'worker', cmd: 'bun run worker', port: null, color: '#f59e0b'},
+    {name: 'web', cmd: 'bun run dev', port: '5173', color: '#2aa6f0', starts: true},
+    {name: 'api', cmd: 'bun run api', port: '3000', color: '#8b5cf6', starts: true},
+    {name: 'worker', cmd: 'bun run worker', port: null, color: '#f59e0b', starts: false},
   ];
   return (
     <div className={s.cxStack}>
       <div className={s.cxWin}>
         <div className={s.cxTitle}>
           <img src={img('/img/landing/cortx.webp')} alt="" width={18} height={18} />
-          <b>CortX</b>
-          <span className={s.grow} />
-          <i />
-          <i />
-          <i />
+          <span className={s.cxAppName}>CortX</span>
+          <span className={s.cxVersion}>v0.15.10</span>
+          <span className={s.cxSearch}>
+            <FiSearch />
+            <span>Search projects, scripts, tools…</span>
+            <kbd>Ctrl K</kbd>
+          </span>
+          <span className={s.winBtns}>
+            <i />
+            <i />
+            <i />
+          </span>
         </div>
         <div className={s.cxMain}>
           <aside className={s.cxSide}>
@@ -144,8 +154,9 @@ function CortxWindow({img}: {img: (p: string) => string}): ReactNode {
           <div className={s.cxContent}>
             <div className={s.cxHead}>
               <span className={s.cxProj}>
-                <i style={{background: '#0d9488'}} />
-                zorg
+                <i />
+                <b>zorg</b>
+                <span className={s.cxPath}>~/Projects/zorg</span>
               </span>
               <span className={s.grow} />
               <span className={s.btnOutline}>
@@ -162,22 +173,22 @@ function CortxWindow({img}: {img: (p: string) => string}): ReactNode {
               <span>Agents</span>
             </div>
             {services.map((sv, i) => (
-              <div key={sv.name} className={clsx(s.svc, i < 2 && s.svcStarts)} style={{'--d': `${700 + i * 650}ms`} as React.CSSProperties}>
+              <div key={sv.name} className={clsx(s.svc, sv.starts && s.svcStarts)} style={{'--d': `${700 + i * 650}ms`} as React.CSSProperties}>
                 <span className={s.swatch} style={{background: sv.color}}>
-                  <span className={s.swatchDot} />
+                  <FiTerminal />
                 </span>
                 <span className={s.svcBody}>
                   <span className={s.svcName}>
                     <b>{sv.name}</b>
                     <span className={s.badges}>
                       <span className={s.badgeStopped}>Stopped</span>
-                      <span className={s.badgeRunning}>Running</span>
+                      <span className={s.badgeRunning}>
+                        <i /> Running
+                      </span>
                     </span>
-                    {sv.port ? <span className={s.port}>{sv.port}</span> : null}
+                    {sv.port ? <span className={s.port}>:{sv.port}</span> : null}
                   </span>
-                  <span className={s.svcCmd}>
-                    <em>cmd</em> {sv.cmd}
-                  </span>
+                  <span className={s.svcCmd}>{sv.cmd}</span>
                 </span>
                 <span className={s.svcBtns}>
                   <span className={s.btnStart}>
@@ -193,122 +204,138 @@ function CortxWindow({img}: {img: (p: string) => string}): ReactNode {
         </div>
       </div>
       <div className={s.agentsCard}>
-        <div className={s.agentsHead}>
-          <FiCpu /> cortx agents
+        <div className={s.termHead}>
+          <span className={s.termDots}>
+            <i />
+            <i />
+            <i />
+          </span>
+          pwsh · zorg
         </div>
-        <div className={s.agentRow}>
-          <span className={clsx(s.state, s.stateWork)} />
-          <ClaudeMark size={13} />
-          <b>zorg</b>
-          <span className={s.mono}>main</span>
-          <span className={s.grow} />
-          <em>{translate({id: 'home.cast.cortx.agent.running', message: 'Running Bash'})}</em>
-        </div>
-        <div className={s.agentRow}>
-          <span className={clsx(s.state, s.stateWait)} />
-          <span className={s.codexMark}>{'{}'}</span>
-          <b>toolbox</b>
-          <span className={s.mono}>main</span>
-          <span className={s.grow} />
-          <em>{translate({id: 'home.cast.cortx.agent.waiting', message: 'Waiting for you'})}</em>
-        </div>
+        <pre className={s.term}>
+          <span className={s.tPrompt}>~/zorg</span> <span className={s.tBranch}>main</span> <span className={s.tArrow}>❯</span> cortx agents list
+          {'\n'}
+          <b>{'STATE     PROVIDER     PROJECT   LAST'}</b>
+          {'\n'}
+          <span className={s.tWork}>working</span>
+          {'   claude-code  zorg      now\n'}
+          <span className={s.tWait}>waiting</span>
+          {'   codex        toolbox   2m ago\n'}
+          <span className={s.tDim}>(scanned in 42 ms)</span>
+        </pre>
       </div>
     </div>
   );
 }
 
-// ── Zorg: a ticket in detail, the CLI and the connector ──────────────────────────────────────────
+// ── Zorg: a ticket in detail, as the web app shows it, and the CLI that agents read ──────────────────
 function ZorgTicket(): ReactNode {
-  const title = translate({id: 'home.film.ticket.title', message: 'Pin a note to the top of its folder'});
-  const comment = translate({
-    id: 'home.film.comment',
-    message: 'Done: notes have a Pin action and pinned notes stay first. To check: pin one, reload, it stays on top.',
-  });
+  const title = translate({id: 'home.cast.zorg.mock.title', message: 'Pin a note to the top of its folder'});
+  const done = translate({id: 'home.cast.zorg.mock.done', message: 'Done'});
+  const today = translate({id: 'home.cast.zorg.mock.today', message: 'Today'});
+  const statusLabel = translate({id: 'home.cast.zorg.prop.status', message: 'Status'});
   return (
     <div className={s.zStack}>
       <div className={s.zModal}>
+        <span className={s.zClose}>
+          <FiX />
+        </span>
         <div className={s.zCrumb}>
-          Zorg <span>›</span> <code>#ZORG-128</code>
+          <code>#ZORG-128</code>
         </div>
         <div className={s.zTitle}>{title}</div>
         <div className={s.zGrid}>
           <div className={s.zLeft}>
             <Chip tone="violet">notes</Chip>
+            <div className={s.zSection}>{translate({id: 'home.cast.zorg.mock.description', message: 'Description'})}</div>
             <p className={s.zBody}>
               {translate({
                 id: 'home.cast.zorg.body',
                 message: 'A pinned note stays first in its folder, whatever the sort order.',
               })}
             </p>
-            <ul className={s.zTasks}>
-              <li className={s.done}>
-                <i>
-                  <FiCheck />
-                </i>
-                {translate({id: 'home.cast.zorg.task1', message: 'Pin action in the note menu'})}
+            <div className={s.zSection}>
+              {translate({id: 'home.cast.zorg.mock.subtickets', message: 'Sub-tickets'})} · 2/2
+              <span className={s.zMeter}>
+                <i />
+              </span>
+            </div>
+            <ul className={s.zSubs}>
+              <li>
+                <StatusDot status="done" />
+                <code>#ZORG-129</code>
+                <s>{translate({id: 'home.cast.zorg.task1', message: 'Pin action in the note menu'})}</s>
               </li>
-              <li className={s.done}>
-                <i>
-                  <FiCheck />
-                </i>
-                {translate({id: 'home.cast.zorg.task2', message: 'Pinned notes listed first'})}
+              <li>
+                <StatusDot status="done" />
+                <code>#ZORG-130</code>
+                <s>{translate({id: 'home.cast.zorg.task2', message: 'Pinned notes listed first'})}</s>
               </li>
             </ul>
             <div className={s.zSection}>
-              <FiMessageSquare /> {translate({id: 'home.cast.zorg.activity', message: 'Comments & activity'})} · 3
+              <FiMessageSquare /> {translate({id: 'home.cast.zorg.activity', message: 'Comments & activity'})}
             </div>
             <div className={s.zActivity} style={{'--d': '300ms'} as React.CSSProperties}>
-              <Avatar claude /> Claude Code · {translate({id: 'home.film.status.open', message: 'Open'})} →{' '}
-              <b className={s.prog}>{translate({id: 'home.film.status.progress', message: 'In progress'})}</b>
+              <FiClock /> <b>Claude</b> · {statusLabel} → In progress · {today}
             </div>
             <div className={s.zComment} style={{'--d': '650ms'} as React.CSSProperties}>
               <div className={s.zCommentHead}>
                 <Avatar claude />
-                <b>Claude Code</b>
-                <span>· 20:05</span>
+                <b>Claude</b>
+                <span>· {today}</span>
               </div>
-              {comment}
+              {translate({
+                id: 'home.cast.zorg.mock.comment',
+                message: 'Done: notes have a Pin action and pinned notes stay first. To check: pin one, reload, it stays on top.',
+              })}
             </div>
             <div className={s.zActivity} style={{'--d': '1000ms'} as React.CSSProperties}>
-              <Avatar claude /> Claude Code · {translate({id: 'home.film.status.progress', message: 'In progress'})} →{' '}
-              <b className={s.doneText}>{translate({id: 'home.film.status.done', message: 'Done'})}</b>
+              <FiClock /> <b>Claude</b> · {statusLabel} → {done} · {today}
             </div>
           </div>
           <div className={s.zProps}>
-            <span className={s.zLabel}>{translate({id: 'home.cast.zorg.prop.status', message: 'Status'})}</span>
+            <span className={s.zLabel}>{statusLabel}</span>
             <span className={s.zValue}>
-              <StatusDot status="done" /> {translate({id: 'home.film.status.done', message: 'Done'})}
+              <StatusDot status="done" /> {done}
             </span>
             <span className={s.zLabel}>{translate({id: 'home.cast.zorg.prop.priority', message: 'Priority'})}</span>
             <span className={s.zValue}>
               <Priority level={2} /> {translate({id: 'home.cast.zorg.prop.medium', message: 'Medium'})}
+            </span>
+            <span className={s.zLabel}>{translate({id: 'home.cast.zorg.mock.assignee', message: 'Assignee'})}</span>
+            <span className={s.zValue}>
+              <Avatar claude /> Claude
             </span>
             <span className={s.zLabel}>{translate({id: 'home.cast.zorg.prop.project', message: 'Project'})}</span>
             <span className={s.zValue}>
               <i className={s.projDot} /> Zorg
             </span>
             <span className={s.zLabel}>{translate({id: 'home.cast.zorg.prop.version', message: 'Version'})}</span>
-            <span className={s.zValue}>0.9</span>
+            <span className={s.zValue}>
+              <FiFlag className={s.zIcon} /> v0.9
+            </span>
           </div>
         </div>
       </div>
       <div className={s.cliCard}>
-        <div className={s.cliHead}>
-          <FiTerminal /> zorg ticket show 128 --json
+        <div className={s.termHead}>
+          <span className={s.termDots}>
+            <i />
+            <i />
+            <i />
+          </span>
+          pwsh · zorg
         </div>
-        <pre>
-          {'{\n'}
-          {'  '}
-          <b>"key"</b>: <em>"ZORG-128"</em>,{'\n'}
-          {'  '}
-          <b>"status"</b>: <em>"Done"</em>,{'\n'}
-          {'  '}
-          <b>"priority"</b>: <u>2</u>,{'\n'}
-          {'  '}
-          <b>"labels"</b>: [<em>"notes"</em>],{'\n'}
-          {'  '}
-          <b>"comments"</b>: <u>1</u>
-          {'\n}'}
+        <pre className={s.term}>
+          <span className={s.tPrompt}>~/zorg</span> <span className={s.tBranch}>main</span> <span className={s.tArrow}>❯</span> zorg ticket show ZORG-128
+          {'\n'}
+          <b>#128 {title}</b>
+          {'\n'}
+          <span className={s.tDim}>{translate({id: 'home.cast.zorg.mock.cliMeta', message: 'status: Done  ·  priority: 2  ·  labels: notes'})}</span>
+          {'\n\n'}
+          <b>{translate({id: 'home.cast.zorg.mock.cliComments', message: 'Comments (1)'})}</b>
+          {'\n'}
+          <span className={s.tDim}>{'  — Claude · 2026-10-04 20:05'}</span>
         </pre>
       </div>
       <div className={s.mcpChip}>

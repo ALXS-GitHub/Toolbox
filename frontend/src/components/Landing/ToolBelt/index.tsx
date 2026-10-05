@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import {translate} from '@docusaurus/Translate';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
-import {FiArrowRight} from 'react-icons/fi';
+import {FiArrowRight, FiTerminal} from 'react-icons/fi';
 import {useReveal} from '../useReveal';
 import s from './ToolBelt.module.scss';
 
@@ -82,6 +82,7 @@ function useSteps(): Step[] {
 
 function TermDemo(): ReactNode {
   const steps = useSteps();
+  const {withBaseUrl} = useBaseUrlUtils();
   const box = useRef<HTMLDivElement>(null);
   const [i, setI] = useState(0);
   const [typed, setTyped] = useState(steps[0].cmd.length);
@@ -119,22 +120,37 @@ function TermDemo(): ReactNode {
   return (
     <div className={s.term} ref={box} aria-hidden>
       <div className={s.termBar}>
-        <i />
-        <i />
-        <i />
-        <span>pwsh · CortX</span>
+        <img src={withBaseUrl('/img/landing/cortx.webp')} alt="" width={16} height={16} />
+        <b>Terminal</b>
+        <em>beta</em>
+        <span className={s.ver}>v0.15.10</span>
+        <span className={s.winBtns}>
+          <i />
+          <i />
+          <i />
+        </span>
+      </div>
+      <div className={s.tabs}>
+        <span className={s.tabOn}>
+          <FiTerminal /> pwsh · {step.dir}
+        </span>
+        <span>
+          <FiTerminal /> pwsh · ~
+        </span>
       </div>
       <div className={s.termBody}>
-        <div className={s.prompt}>
-          <span className={s.omp}>
-            <i className={s.ompA}> {step.dir}</i>
-            <i className={s.ompB}> main</i>
-          </span>
-          <span className={s.cmd}>{step.cmd.slice(0, typed)}</span>
-          <span className={s.caret} />
-        </div>
-        <div className={clsx(s.out, showOut && s.outOn)} key={i}>
-          {step.out}
+        <div className={s.block}>
+          <div className={s.prompt}>
+            <span className={s.omp}>
+              <i className={s.ompA}> {step.dir}</i>
+              <i className={s.ompB}> main</i>
+            </span>
+            <span className={s.cmd}>{step.cmd.slice(0, typed)}</span>
+            <span className={s.caret} />
+          </div>
+          <div className={clsx(s.out, showOut && s.outOn)} key={i}>
+            {step.out}
+          </div>
         </div>
       </div>
     </div>
