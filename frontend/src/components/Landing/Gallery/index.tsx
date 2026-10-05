@@ -198,10 +198,11 @@ function Souvenirs({logo}: {logo: string}): ReactNode {
 // ── Spotify Manager: Spotify-like dark/light, green + pink, glass "now playing" dock ────────────
 function SpotifyManager({logo}: {logo: string}): ReactNode {
   const rows = [
-    {name: 'Paper Moons', artist: 'Kite Theory', hue: 150},
-    {name: 'Midnight Static', artist: 'Nova Lane', hue: 280},
-    {name: 'Golden Hour Drive', artist: 'Mira & the Tides', hue: 30},
-    {name: 'Low Tide Letters', artist: 'Harbor Club', hue: 200},
+    // the user's own favourites (titles, artists, albums only); covers are abstract gradients in each album's tones
+    {name: 'LEMONADE', artist: 'aespa · LEMONADE - The 2nd Album', hue: 72},
+    {name: 'Whiplash', artist: 'aespa · Whiplash - The 5th Mini Album', hue: 205},
+    {name: 'Drama', artist: 'aespa · Drama - The 4th Mini Album', hue: 352},
+    {name: "I CAN'T STOP ME", artist: 'TWICE · Eyes Wide Open', hue: 330},
   ];
   const nav: [string, ReactNode][] = [
     ['Home', <FaHome key="h" />],
@@ -245,15 +246,15 @@ function SpotifyManager({logo}: {logo: string}): ReactNode {
       </div>
       <div className={s.spDock}>
         <i className={s.spProgress} />
-        <span className={s.spCover} style={{'--hue': 280} as React.CSSProperties} />
+        <span className={s.spCover} style={{'--hue': 205} as React.CSSProperties} />
         <span className={s.spText}>
-          <b>Midnight Static</b>
-          <em>Nova Lane</em>
+          <b>Whiplash</b>
+          <em>aespa</em>
         </span>
         <span className={s.spState}>
           <FaPlay />
         </span>
-        <span className={s.spTime}>1:23 · 3:45</span>
+        <span className={s.spTime}>1:23 · 3:03</span>
         <span className={s.spDevice}>
           <FaSpotify /> Desktop
         </span>
@@ -265,10 +266,11 @@ function SpotifyManager({logo}: {logo: string}): ReactNode {
 // ── ALXS-RL-Mod: dense dark desktop UI, glass over a violet/blue/orange aurora, hairlines ─────────
 function RlMod({logo}: {logo: string}): ReactNode {
   const tiles = [
-    {icon: <LuPackage />, k: 'Items', v: '3 swaps', on: true},
-    {icon: <LuPalette />, k: 'Palette', v: 'Twilight', on: true},
-    {icon: <LuImage />, k: 'Decal', v: 'None', on: false},
-    {icon: <LuMap />, k: 'Map', v: 'Arcadia', on: true},
+    // real Rocket League names, as the app shows them
+    {icon: <LuPackage />, k: 'Body', v: 'Fennec', on: true},
+    {icon: <LuPalette />, k: 'Paint', v: 'Cobalt', on: true},
+    {icon: <LuImage />, k: 'Decal', v: 'Flames', on: true},
+    {icon: <LuMap />, k: 'Map', v: 'Utopia', on: true},
   ];
   return (
     <div className={clsx(s.mock, s.rl)}>
@@ -351,9 +353,10 @@ function KpopIdol(): ReactNode {
     {n: 'Gold', c: '#FFD700'},
   ];
   const cards = [
-    {name: 'Haneul', group: 'NOVA9', rarity: 'Epic', c: '180,100,255', hue: 275, rate: '$240/s'},
-    {name: 'Jiwoo', group: 'NOVA9', rarity: 'Legendary', c: '255,180,50', hue: 35, rate: '$1.2K/s', count: 'x3'},
-    {name: 'Minseo', group: 'LUMEN', rarity: 'Mythic', c: '255,100,150', hue: 335, rate: '$3.4K/s'},
+    // the game's real idols, rarities and in-game income per second (game/src/shared/Shared/IdolData.luau)
+    {name: 'Wonyoung', group: 'IVE', rarity: 'Cosmic', c: '155,142,208', hue: 250, rate: '$150K/s'},
+    {name: 'Karina', group: 'AESPA', rarity: 'Primordial', c: '107,26,18', hue: 8, rate: '$270K/s', count: 'x3'},
+    {name: 'Winter', group: 'AESPA', rarity: 'Origin', c: '64,64,64', hue: 210, rate: '$750K/s'},
   ];
   return (
     <div className={clsx(s.mock, s.kp)}>
@@ -371,7 +374,7 @@ function KpopIdol(): ReactNode {
                 {ch.n}
               </span>
             ))}
-            <b className={s.kpCount}>123/477</b>
+            <b className={s.kpCount}>123/502</b>
           </div>
           <div className={s.kpFilters}>
             <span className={s.kpSearch}>🔍 Search idols…</span>
@@ -484,7 +487,7 @@ export default function Gallery(): ReactNode {
       id: 'souvenirs',
       name: 'Souvenirs',
       logo: 'souvenirs',
-      status: 'paused',
+      status: 'active',
       line: translate({
         id: 'home.gallery.souvenirs.line',
         message: 'A private family app for photos and memories, designed to still be readable in a hundred years.',
