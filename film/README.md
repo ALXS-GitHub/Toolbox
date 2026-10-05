@@ -33,6 +33,7 @@ node render.mjs --lang fr --aspect land --only 12,13   # re-render only these se
 node tools/critique.mjs fr-land 36         # contact sheet, 360 px phone test, loop seam, strips
 node tools/encode.mjs fr-land              # AV1 WebM, H.264 MP4 and poster into frontend/static/video
 node tools/determinism.mjs                 # the same frame rendered twice has the same hash
+uv run tools/flicker.py out/master-fr-land.mp4   # no flash, no shimmer (WCAG 2.3.1, per 8 × 8 zone)
 ```
 
 To use a track made elsewhere instead of the synthesized score: `uv run audio/beats.py song.wav --check audio/beats.json`

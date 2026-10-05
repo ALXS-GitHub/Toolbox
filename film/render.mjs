@@ -71,7 +71,7 @@ if (args.stills) {
     const t = +s;
     await p.page.evaluate((f) => window.seekFrame(f), Math.round(t * fps));
     const png = await grab(p.cdp);
-    const name = path.join(dir, `${args.prefix || ''}t${t.toFixed(2).padStart(5, '0')}.png`);
+    const name = path.join(dir, `${args.prefix || ''}t${t.toFixed(3).padStart(6, '0')}.png`);
     fs.writeFileSync(name, png);
     console.log(name);
   }

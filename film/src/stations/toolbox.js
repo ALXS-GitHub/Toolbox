@@ -17,7 +17,7 @@ export function makeToolboxLogo(size = 2.4) {
   inner.scale.setScalar(k);
   group.add(inner);
   const mat = (color, emissive = 0.04) =>
-    new THREE.MeshPhysicalMaterial({ color, metalness: 0.15, roughness: 0.38, clearcoat: 0.7, clearcoatRoughness: 0.2, emissive: new THREE.Color(color).multiplyScalar(emissive) });
+    new THREE.MeshPhysicalMaterial({ color, metalness: 0.05, roughness: 0.55, clearcoat: 0.15, clearcoatRoughness: 0.5, envMapIntensity: 0.7, emissive: new THREE.Color(color).multiplyScalar(emissive) });
   const extrude = ({ shape, cx, cy }, depth, bevel, material, z = 0) => {
     const g = new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 5, curveSegments: 16 });
     g.translate(cx, cy, z - depth / 2);

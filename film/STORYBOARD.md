@@ -3,7 +3,7 @@
 **Logline.** Une idée dictée sur un téléphone traverse, sans une seule coupe, tout mon
 environnement : Zorg la range, Claude Code la prend dans CortX, la code, la fait vérifier
 et signer, puis la documente. La caméra recule et révèle que tout ce trajet est une boucle,
-qui se resserre en un seul mot : Toolbox.
+au centre de laquelle s'écrit un seul mot : Toolbox.
 
 **Format.** 56 s en boucle (28 mesures à 120 BPM). 16:9 en 1920×1080 et 9:16 en 1080×1920,
 un rendu par langue (en, fr). Un seul monde 3D continu : chaque scène est une **station**
@@ -86,8 +86,8 @@ quatre surfaces se rangent en grille 2 × 2.
 | Temps | Plan | Idée unique | Mouvement | Transition | Son |
 |---|---|---|---|---|---|
 | 46,0–50,0 | **6a La boucle** | Tout est relié. | Plan large posé sur toutes les stations ; le fil ambre trace le trajet du ticket d'une station à l'autre et referme la boucle (49,5). | — | Montée d'arpège, une note par station. |
-| 50,0–54,0 | **6b Toolbox** | Tout l'écosystème tient en un mot. | 50,0 : les stations et le fil ambre convergent vers le centre de l'anneau et s'effacent ; 50,5 : à ce point naît le logo Toolbox en 3D (la mallette du site, extrudée), qui pivote vers nous sur un ressort lourd ; 51,0 : le mot « Toolbox » (identique en FR et EN) monte par son masque à côté du logo (dessous en 9:16) ; la caméra pousse lentement. | Le mot ressort par son masque, le logo se replie en un point. | 50,0 : souffle ; 50,5 : impact ; 51,0 : accent. |
-| 54,0–56,0 | **6c Retour** | La boucle se referme. | Les stations se redéploient sur l'anneau pendant que la caméra plonge vers le téléphone, jusqu'à la pose exacte de 0,0 (même position, vitesse nulle). | Raccord de boucle sans flou. | Reverse de cymbale vers le 0,0. |
+| 50,0–54,0 | **6b Toolbox** | Tout l'écosystème tient en un mot, et il boucle. | L'anneau des stations reste en fond, assombri ; une impulsion ambre fait le tour de la boucle toutes les 2 s (idée → ticket → agent → commit → trace → idée). 50,5 : au centre de l'anneau naît le logo Toolbox en 3D (la mallette du site, extrudée), qui pivote vers nous sur un ressort lourd ; 51,0 : le mot « Toolbox » (identique en FR et EN) monte par son masque à côté du logo (dessous en 9:16). | Le mot ressort par son masque, le logo se replie. | 50,5 : impact ; 51,0 : accent. |
+| 54,0–56,0 | **6c Retour** | La boucle se referme. | La caméra plonge de l'anneau vers le téléphone, jusqu'à la pose exacte de 0,0 (même position, vitesse nulle) ; les écrans restent atténués pendant ce passage rapide et retrouvent leur pleine luminosité juste avant la jonction. | Raccord de boucle sans flou. | Reverse de cymbale vers le 0,0. |
 
 **9:16.** L'anneau est vu de profil pour tenir en hauteur ; les trois lignes du final sont
 empilées au tiers supérieur.

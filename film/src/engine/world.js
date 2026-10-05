@@ -14,7 +14,7 @@ export class World {
     this.renderer.autoClear = false; // the post chain clears explicitly (sub-frame accumulation)
     this.renderer.outputColorSpace = THREE.LinearSRGBColorSpace; // we encode in the final pass
     this.scene = new THREE.Scene();
-    this.camera = new THREE.PerspectiveCamera(32, W / H, 0.05, 900);
+    this.camera = new THREE.PerspectiveCamera(32, W / H, 0.25, 600); // near/far kept tight: no z-fighting in wide shots
     const pmrem = new THREE.PMREMGenerator(this.renderer);
     this.env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
     this.scene.environment = this.env;
@@ -121,6 +121,10 @@ export class Screen {
       fragmentShader: SCREEN_FS,
       transparent: true,
       premultipliedAlpha: true,
+      // the interface always wins the depth test against its own plate, even far from the camera
+      polygonOffset: true,
+      polygonOffsetFactor: -2,
+      polygonOffsetUnits: -8,
       depthWrite: true,
     });
     this.group = new THREE.Group();
@@ -239,7 +243,7 @@ export function roundedSlabGeometry(w, h, r, depth, bevel) {
 
 /** A plate behind a screen, so windows have an edge when seen at an angle. */
 export function roundedSlab(w, h, r, depth, color = '#0c1417') {
-  const m = new THREE.MeshPhysicalMaterial({ color, metalness: 0.6, roughness: 0.32, clearcoat: 0.6, clearcoatRoughness: 0.25, envMapIntensity: 1.0, transparent: true });
+  const m = new THREE.MeshPhysicalMaterial({ color, metalness: 0.35, roughness: 0.62, clearcoat: 0.1, clearcoatRoughness: 0.6, envMapIntensity: 0.55, transparent: true });
   const mesh = new THREE.Mesh(roundedSlabGeometry(w, h, r, depth), m);
   mesh.userData.front = mesh.geometry.userData.front;
   return mesh;
@@ -293,7 +297,7 @@ export function makeDome() {
         gl_FragColor = vec4(col,1.0);
       }`,
   });
-  const m = new THREE.Mesh(new THREE.SphereGeometry(600, 48, 32), mat);
+  const m = new THREE.Mesh(new THREE.SphereGeometry(300, 48, 32), mat);
   m.renderOrder = -10;
   return m;
 }

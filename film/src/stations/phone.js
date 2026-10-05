@@ -23,7 +23,7 @@ export function makePhone(world, ctx, place) {
   const rScreen = 47 * UPP;
   const body = new THREE.Mesh(
     roundedSlabGeometry(sw + bez * 2, sh + bez * 2, rScreen + bez, depth, edge),
-    new THREE.MeshPhysicalMaterial({ color: '#2a2d31', metalness: 0.85, roughness: 0.3, clearcoat: 0.5, clearcoatRoughness: 0.3 }),
+    new THREE.MeshPhysicalMaterial({ color: '#2a2d31', metalness: 0.6, roughness: 0.48, clearcoat: 0.15, clearcoatRoughness: 0.5, envMapIntensity: 0.6 }),
   );
   const front = body.geometry.userData.front;
   body.position.z = -front; // front face at z = 0
@@ -32,12 +32,12 @@ export function makePhone(world, ctx, place) {
   const gIn = bez - edge * 1.15;
   const glass = new THREE.Mesh(
     new THREE.ShapeGeometry(roundedRectShape(sw + gIn * 2, sh + gIn * 2, rScreen + gIn), 24),
-    new THREE.MeshPhysicalMaterial({ color: '#030405', roughness: 0.08, metalness: 0, clearcoat: 1 }),
+    new THREE.MeshPhysicalMaterial({ color: '#030405', roughness: 0.35, metalness: 0, clearcoat: 0.2, envMapIntensity: 0.4 }),
   );
   glass.position.z = 0.0006;
   group.add(glass);
   // side buttons, set into the edge
-  const btnMat = new THREE.MeshPhysicalMaterial({ color: '#2b2e31', metalness: 0.9, roughness: 0.3 });
+  const btnMat = new THREE.MeshPhysicalMaterial({ color: '#2b2e31', metalness: 0.6, roughness: 0.5, envMapIntensity: 0.6 });
   for (const [x, y, h] of [[-1, 0.42, 0.11], [-1, 0.27, 0.11], [1, 0.33, 0.2]]) {
     const b = new THREE.Mesh(new THREE.CapsuleGeometry(0.006, h - 0.012, 4, 10), btnMat);
     b.position.set(x * (sw / 2 + bez + 0.001), y * sh * 0.5 + 0.15, -front);

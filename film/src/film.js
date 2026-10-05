@@ -417,36 +417,21 @@ export function buildFilm(world, post, ctx) {
   }
 
   function placeFinale(t) {
-    // 1. the stations (and the thread) converge on the ring's centre and fade; they unfold back for the loop
-    const kc = smoother(clamp(inv(T.collapse, T.collapse + 0.6, t))) * (1 - smoother(clamp(inv(T.unfold + 0.2, T.unfold + 1.2, t))));
-    const fade = smoother(clamp(inv(T.collapse + 0.1, T.collapse + 0.55, t))) * (1 - smoother(clamp(inv(T.unfold + 0.3, T.unfold + 1.0, t))));
-    const shrink = 1 - 0.97 * kc;
-    for (const o of converging) {
-      o.position.copy(baseOf.get(o)).lerp(C, kc);
-      o.scale.setScalar(shrink);
-      o.visible = kc < 0.995;
-    }
-    for (const o of [cortx.group, commit.group, card.group, seal.group]) {
-      o.position.lerp(C, kc);
-      o.scale.multiplyScalar(shrink);
-      if (kc >= 0.995) o.visible = false;
-    }
-    for (const s of world.screens) s.uniforms.uFade.value = s === word ? 1 : 1 - fade;
-    thread.mesh.scale.setScalar(shrink);
-    thread.mesh.position.copy(C).multiplyScalar(1 - shrink);
-    if (kc > 0.97) thread.mesh.visible = false;
-    // 2. the logo is born where everything met, on a heavy spring, turning to face us
+    // The ring stays: the whole loop remains on screen, dimmed, while the amber pulse keeps running
+    // round it (see dimStations and the thread). The title sits in the empty centre of the ring.
+    for (const s of world.screens) s.uniforms.uFade.value = 1;
+    // the logo is born in the centre of the ring on a heavy spring, turning to face us
     const kl = sp(t - T.logo, 'heavy');
     const out = smoother(clamp(inv(T.unfold, T.unfold + 0.5, t)));
     logo.group.visible = t > T.logo - 0.02 && out < 0.999;
-    // born at the centre, where the ring met, then it makes room for the word
+    // then it makes room for the word
     const slide = sp(t - (T.word - 0.15), 'heavy');
     logo.group.position.copy(V(C.x, C.y, C.z + F.z)).lerp(logoAt, clamp(slide));
     logo.group.scale.setScalar(Math.max(0.0001, clamp(kl, 0, 1.06) * (1 - out)));
     // it turns in from the side and settles three-quarters on, so its volume reads, with a slow sway
-    const yaw = lerp(-1.6, -0.34, clamp(kl)) + 0.07 * Math.sin((t - T.logo) * 0.8);
+    const yaw = lerp(-1.6, -0.34, clamp(kl)) + 0.05 * Math.sin((t - T.logo) * 0.8);
     logo.group.rotation.set(lerp(0.4, 0.16, clamp(kl)), yaw, 0);
-    // 3. the word rises through its own line box on the next beat, and leaves the same way
+    // the word rises through its own line box on the next beat, and leaves the same way
     const kw = sp(t - T.word, 'heavy');
     const wout = smoother(clamp(inv(T.unfold - 0.05, T.unfold + 0.4, t)));
     word.group.visible = t > T.word - 0.02 && wout < 0.999;
@@ -457,9 +442,14 @@ export function buildFilm(world, post, ctx) {
   }
 
   function dimStations(t) {
-    // the loop shot: every station dims a little so the amber thread reads
-    const dim = clamp(inv(T.pull + 1, T.trace + 2, t)) * (1 - clamp(inv(T.unfold, T.unfold + 1, t)));
-    const set = (s) => { s.uniforms.uBright.value = lerp(1, 0.55, dim); };
+    // the loop shot dims the stations a little so the amber thread reads; under the title they step
+    // further back (darker), so the word and the logo stay perfectly legible, then come back for the loop
+    const loop = clamp(inv(T.pull + 1, T.trace + 2, t));
+    const title = smoother(clamp(inv(T.collapse - 0.3, T.logo + 0.2, t)));
+    // stay dim through the fast return (white pages sweep past the lens), back to full just before the seam
+    const back = 1 - smoother(clamp(inv(55.45, 56, t)));
+    const k = lerp(1, lerp(0.55, 0.3, title), loop * back);
+    const set = (s) => { s.uniforms.uBright.value = k; };
     set(board); set(phone.screen); set(hook); set(commit); set(doc); set(dia); set(detail);
     if (t >= 40) set(cortx);
   }
@@ -536,16 +526,41 @@ export function buildFilm(world, post, ctx) {
         ]
       : [{ t: [37.55, 41.1], subj: () => R(detail), dir: nrm(detail), fill: 0.97, push: 0.1, at: 41.1 }]),
     { t: [41.2, 42.55], follow: true, subj: () => R(doc), dir: fixed(doc), fill: 0.95, ease: 0.6 },
-    { t: [42.55, 43.05], subj: () => R(doc), dir: nrm(doc), fill: 0.95, at: 42.9 },
-    { t: [43.75, 45.35], subj: () => R(dia), dir: nrm(dia), fill: 0.96 },
+    ...(portrait
+      ? [
+          // 9:16: no tilt between two white pages (it reads as a flash): one settled shot holds both
+          { t: [42.55, 45.35], subj: () => pts(R(doc), R(dia)), dir: nrm(doc), fill: 0.98, at: 45.35, push: 0.06 },
+        ]
+      : [
+          { t: [42.55, 42.85], subj: () => R(doc), dir: nrm(doc), fill: 0.95, at: 42.85 },
+          { t: [43.85, 45.35], subj: () => R(dia), dir: nrm(dia), fill: 0.96 },
+        ]),
     // 6. the environment
     { t: [47.3, 49.6], subj: stations, dir: () => V(0, 0, 1), fill: 0.95, at: 49.5 },
-    { t: [50.4, 53.85], subj: () => pts(boxPts(logo.group), R(word)), dir: () => V(0, 0, 1), fill: 0.82, at: 53.0, push: 0.06 },
+    { t: [50.3, 53.85], subj: () => pts(stations(), boxPts(logo.group), R(word)), dir: () => V(0, 0, 1), fill: 0.97, at: 53.0, push: 0.04, ap: 0 },
   ];
   const aspect = ctx.W / ctx.H;
   const camera = buildCamera(shots, { dur: DUR, fov: L.fov, aspect, baseFill: L.fill, pose });
 
+  /**
+   * How fast the picture slides at time t, as a fraction of the frame per frame (pure: poses the scene at
+   * t ± half a frame). Used to open the shutter on fast moves only.
+   */
+  function motion(t, fps) {
+    const at = (u) => {
+      pose(u);
+      const c = camera(u);
+      return { p: V(c[0], c[1], c[2]), d: V(c[3] - c[0], c[4] - c[1], c[5] - c[2]) };
+    };
+    const a = at(t - 0.5 / fps), b = at(t + 0.5 / fps);
+    const dist = Math.max(0.5, a.d.length());
+    const turn = a.d.clone().normalize().angleTo(b.d.clone().normalize());
+    const slide = a.p.distanceTo(b.p) / dist;
+    return (turn + slide) / ((L.fov * Math.PI) / 180);
+  }
+
   return {
+    motion,
     update(t) {
       pose(t);
       const c = camera(t);
@@ -571,7 +586,7 @@ export function buildFilm(world, post, ctx) {
 /** The pre-commit gate: two posts on both sides of the commit card, and a blade that sweeps across it. */
 function makeGate(halfW, H) {
   const group = new THREE.Group();
-  const mat = new THREE.MeshPhysicalMaterial({ color: '#1b2c30', metalness: 0.8, roughness: 0.3 });
+  const mat = new THREE.MeshPhysicalMaterial({ color: '#1b2c30', metalness: 0.5, roughness: 0.55, envMapIntensity: 0.6 });
   for (const x of [-1, 1]) {
     const m = new THREE.Mesh(new THREE.BoxGeometry(0.06, H, 0.12), mat);
     m.position.set(x * halfW, 0, 0);
@@ -668,7 +683,7 @@ function makeThread(points) {
       // the tail chases the head at the loop end, so t = 0 starts with no thread
       u.uTail.value = smoother(clamp(inv(T.ret, 55.6, t))) * 1.002;
       u.uGlow.value = lerp(0.5, 1.5, clamp(inv(T.pull, T.trace + 1, t)));
-      u.uPing.value = t > T.closed && t < T.ret ? ((t - T.closed) / 2.2) % 1 : -1;
+      u.uPing.value = t > T.closed && t < T.ret + 0.6 ? ((t - T.closed) / 2.0) % 1 : -1;
       mesh.visible = t > T.lift - 0.1 && t < 55.7;
     },
   };

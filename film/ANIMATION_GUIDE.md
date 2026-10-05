@@ -64,8 +64,18 @@ L'accent ambre est le seul ajouté par le film.
 - Pendant un trajet (la carte qui vole, la fenêtre CortX qui se forme, le commit qui part), la caméra
   accompagne l'objet : elle le cadre à chaque image.
 - **Netteté.** Le sujet n'est jamais flou : profondeur de champ très légère par défaut, et seulement sur
-  l'arrière-plan ; obturateur à 108° (4 sous-images sur 30 % de l'intervalle), donc du flou de mouvement
-  sur les déplacements rapides seulement.
+  l'arrière-plan. L'obturateur suit la vitesse de la caméra (calculée à l'instant t, donc déterministe) :
+  108° et 4 sous-images sur un plan posé, jusqu'à 360° et 12 sous-images sur un mouvement très rapide.
+
+## Aucun clignotement
+
+- Rien ne doit flasher ni scintiller (accessibilité). Plaques mates (rugosité ≥ 0,5, reflets
+  d'environnement atténués), interface toujours devant sa plaque en profondeur (polygonOffset), plan
+  proche de la caméra à 0,25 pour garder la précision de profondeur dans les plans larges.
+- Contrôle automatique `tools/flicker.py`, d'après la définition du « flash général » de WCAG 2.3.1,
+  par zone d'une grille 8 × 8 : aucune variation de luminance relative ≥ 10 % qui s'inverse dans les
+  3 images suivantes, et aucune oscillation entretenue (4 alternances de suite ≥ 1 %). Zéro alerte
+  exigée sur les 4 variantes.
 - En 9:16, tout texte à lire mesure au moins ~27 px dans la vidéo (9 px sur un téléphone de 360 px).
 
 ## Profondeur et lumière

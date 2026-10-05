@@ -33,13 +33,27 @@ const world = new World(canvas, W, H);
 const post = new Post(world);
 const film = buildFilm(world, post, { copy: COPY[lang], lang, aspect, portrait: aspect === 'port', imgs, W, H });
 
+/**
+ * Shutter per frame, from the camera's speed at t (deterministic): 108° and SUB sub-frames on settled
+ * shots, so text stays crisp; up to 360° and 3 × SUB sub-frames on fast moves, so fine detail sliding
+ * across the frame is smoothed instead of strobing.
+ */
+function shutterAt(t) {
+  if (SUB <= 1) return [0, 1];
+  const m = film.motion(loopT(t, DUR), FPS);
+  const k = Math.min(1, Math.max(0, (m - 0.008) / (0.03 - 0.008)));
+  const e = k * k * (3 - 2 * k);
+  return [SHUTTER + (1 - SHUTTER) * e, Math.round(SUB * (1 + 2 * e))];
+}
+
 function frameAt(t, frame) {
-  for (let i = 0; i < SUB; i++) {
-    const off = SUB > 1 ? ((i + 0.5) / SUB - 0.5) * (SHUTTER / FPS) : 0;
+  const [shutter, n] = shutterAt(t);
+  for (let i = 0; i < n; i++) {
+    const off = n > 1 ? ((i + 0.5) / n - 0.5) * (shutter / FPS) : 0;
     const ts = loopT(t + off, DUR);
     film.update(ts);
     world.update(ts);
-    post.sub(i, SUB);
+    post.sub(i, n);
   }
   post.present(frame);
   const gl = world.renderer.getContext();
@@ -52,6 +66,7 @@ window.seek = (t) => frameAt(t, Math.round(t * FPS));
 // Warm-up: paint a few frames so shaders compile and textures upload before the first capture.
 for (const t of [0, 10, 20, 30, 40, 50]) frameAt(t, 0);
 window.__world = world;
+window.__motion = (t) => film.motion(t, FPS);
 window.filmReady = true;
 
 // Critique helper (not used by the render): a close-up of one screen, square on or at an angle on a corner.
