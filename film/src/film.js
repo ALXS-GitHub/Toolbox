@@ -10,7 +10,7 @@ import { makePhone, UPP as PUPP } from './stations/phone.js';
 import { cardRect, PH } from './ui/phone.js';
 import { BOARD, boardPainter, boardSlot, cardHeight, desktopPainter, detailPainter, detailPainterPort, DETAIL, DETAIL_P, MOBILE, mobilePainter, mobileSlot } from './ui/zorg.js';
 import { cortxPainter, cortxGeom, blockRect, inputRect } from './ui/cortx.js';
-import { CARD, cardLooks, cardPainter, MCPP, mcpPainter, labelPainter, HOOK, hookPainter, COMMIT, commitPainter, OP, opPainter, sealPainter, DOC, docPainter, DIA, DIA_P, diagramPainter, diagramPainterPort, wordPainter, measureWord } from './ui/misc.js';
+import { CARD, cardLooks, cardPainter, MCPP, mcpPainter, labelPainter, HOOK, hookPainter, COMMIT, commitPainter, OP, opPainter, sealPainter, DOC, docPainter, DIA, DIA_P, diagramPainter, diagramPainterPort, wordPainter, titleBox } from './ui/misc.js';
 import { layouts, UPW } from './layout.js';
 import { makeToolboxLogo } from './stations/toolbox.js';
 import { buildCamera, rectPoints, normalOf, turn } from './camera.js';
@@ -172,18 +172,29 @@ export function buildFilm(world, post, ctx) {
   const F = L.final;
   const logo = makeToolboxLogo(F.logo);
   scene.add(logo.group);
-  const wordW = measureWord(copy.finale);
-  const word = new Screen(world, { w: wordW, h: 190, px: wordW, py: 190, dpr: 1, radius: 0, painter: wordPainter(copy.finale), name: 'word6', order: 8 });
+  // one line in 16:9, two in 9:16 ("Mon" / "écosystème"): the words are never split
+  const title = portrait ? copy.finale.replace(' ', '\n') : copy.finale;
+  const TB = titleBox(title);
+  const wordW = TB.w;
+  const word = new Screen(world, { w: TB.w, h: TB.h, px: TB.w, py: TB.h, dpr: 1, radius: 0, painter: wordPainter(title), name: 'word6', order: 8 });
   scene.add(word.group);
   // logo and word side by side (16:9) or stacked (9:16), centred on the ring's centre, in front of it
-  const wordWorld = wordW * F.wordScale;
-  const textMid = -16 * F.wordScale; // the word's optical centre sits a little below its canvas centre
+  const ws = F.wordScale;
+  const wordWorld = (wordW - 32) * ws; // the ink, without the canvas margins
+  // offset from the canvas centre to the text's optical centre (world units, y up)
+  const opt = (TB.h / 2 - TB.optical) * ws;
+  // the logo's visible height is about 0.75 of its size; the text block from first cap top to last baseline
+  const blockH = (TB.base[TB.base.length - 1] - (TB.base[0] - TB.size * 0.72)) * ws;
+  // 9:16: logo over the text, the stack centred on the ring's centre
+  const logoH = F.logo * 0.75;
+  const stackTop = C.y + (F.dy || 0) + (logoH + F.gap + blockH) / 2;
+  const capTop = TB.base[0] - TB.size * 0.72; // canvas y of the first line's cap top
   const logoAt = F.row
     ? V(C.x - (F.logo + F.gap + wordWorld) / 2 + F.logo / 2, C.y, C.z + F.z)
-    : V(C.x, C.y + (F.gap + 150 * 0.72 * F.wordScale) / 2 + F.logo * 0.38, C.z + F.z);
+    : V(C.x, stackTop - logoH / 2, C.z + F.z);
   const wordAt = F.row
-    ? V(logoAt.x + F.logo / 2 + F.gap + wordWorld / 2, C.y + textMid, C.z + F.z)
-    : V(C.x, C.y - (F.gap + F.logo * 0.76) / 2 + textMid - 0.1, C.z + F.z);
+    ? V(logoAt.x + F.logo / 2 + F.gap + wordWorld / 2, C.y - opt, C.z + F.z)
+    : V(C.x, stackTop - logoH - F.gap - (TB.h / 2 - capTop) * ws, C.z + F.z);
   const converging = [phone.group, gZ, gC, gG, gD, gK];
   const baseOf = new Map(converging.map((o) => [o, o.position.clone()]));
 
@@ -425,8 +436,8 @@ export function buildFilm(world, post, ctx) {
     const out = smoother(clamp(inv(T.unfold, T.unfold + 0.5, t)));
     logo.group.visible = t > T.logo - 0.02 && out < 0.999;
     // then it makes room for the word
-    const slide = sp(t - (T.word - 0.15), 'heavy');
-    logo.group.position.copy(V(C.x, C.y, C.z + F.z)).lerp(logoAt, clamp(slide));
+    const slide = sp(t - (T.word - 0.42), 'heavy'); // clear of the text before the text rises
+    logo.group.position.copy(V(C.x, C.y + (F.dy || 0), C.z + F.z)).lerp(logoAt, clamp(slide));
     logo.group.scale.setScalar(Math.max(0.0001, clamp(kl, 0, 1.06) * (1 - out)));
     // it turns in from the side and settles three-quarters on, so its volume reads, with a slow sway
     const yaw = lerp(-1.6, -0.34, clamp(kl)) + 0.05 * Math.sin((t - T.logo) * 0.8);
@@ -435,7 +446,7 @@ export function buildFilm(world, post, ctx) {
     const kw = sp(t - T.word, 'heavy');
     const wout = smoother(clamp(inv(T.unfold - 0.05, T.unfold + 0.4, t)));
     word.group.visible = t > T.word - 0.02 && wout < 0.999;
-    word.uniforms.uShift.value.set(0, (1 - clamp(kw)) * 190 - wout * 200);
+    word.uniforms.uShift.value.set(0, (1 - clamp(kw)) * TB.h - wout * (TB.h + 10));
     word.opacity = clamp(kw * 6);
     word.group.position.copy(wordAt);
     word.group.scale.setScalar(F.wordScale);

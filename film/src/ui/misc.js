@@ -435,26 +435,33 @@ export function diagramPainter(copy) {
 
 // ── final title words ────────────────────────────────────────────────────
 
+/** Geometry of a title made of lines (\n-separated), at font size `size` (css px). */
+export function titleBox(text, size = 150) {
+  const c = document.createElement('canvas').getContext('2d');
+  c.font = `700 ${size}px ${FONT.display}`;
+  c.letterSpacing = '-0.03em';
+  const lines = text.split('\n');
+  const w = Math.ceil(Math.max(...lines.map((l) => c.measureText(l).width))) + 32;
+  const lineH = size * 1.12;
+  const top = size * 0.34; // accents rise ~0.95 em above the baseline
+  const base = lines.map((_, i) => top + size * 0.74 + i * lineH);
+  const h = Math.ceil(base[base.length - 1] + size * 0.34); // descenders
+  // optical centre: halfway through the x-height band of the lines
+  const optical = (base[0] - size * 0.36 + base[base.length - 1] - size * 0.36) / 2 + (lines.length > 1 ? 0 : 0);
+  return { lines, w, h, base, optical, size };
+}
+
 export function wordPainter(text, size = 150) {
+  const b = titleBox(text, size);
   return {
     key: () => 0,
     draw(pen) {
-      const dot = text.endsWith('.');
-      const body = dot ? text.slice(0, -1) : text;
-      pen.font(size, 700, FONT.display, -0.035);
-      const w = pen.text(body, 6, size * 0.62, '#eef6f6');
-      pen.font(size, 700, FONT.display, -0.035);
-      if (dot) pen.text('.', 6 + w, size * 0.62, AMBER);
+      pen.font(size, 700, FONT.display, -0.03);
+      b.lines.forEach((l, i) => pen.text(l, b.w / 2, b.base[i], '#eef6f6', 'center', 'alphabetic'));
     },
   };
 }
 
-export function measureWord(text, size = 150) {
-  const c = document.createElement('canvas').getContext('2d');
-  c.font = `700 ${size}px ${FONT.display}`;
-  c.letterSpacing = '-0.035em';
-  return c.measureText(text).width + 24;
-}
 
 // ── the diagram, composed for 9:16 (vertical flow, larger type) ──────────
 

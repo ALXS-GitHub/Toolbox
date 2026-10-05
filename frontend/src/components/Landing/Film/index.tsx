@@ -62,7 +62,7 @@ function useNarration() {
       text: translate({
         id: 'home.film.s6.text',
         message:
-          'That is the whole loop: tools I built, processes that keep agents reliable, and Claude doing most of the work. All of it in one box.',
+          'That is the whole loop: tools I built, processes that keep agents reliable, and Claude doing most of the work. My ecosystem.',
       }),
     },
   ];

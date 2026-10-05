@@ -146,7 +146,7 @@ const en = {
     links: ['idea', 'reads', 'checks', 'signs'],
     legend: 'Legend',
   },
-  finale: 'Toolbox',
+  finale: 'My ecosystem',
 };
 
 const fr = {
@@ -295,7 +295,7 @@ const fr = {
     links: ['idée', 'lit', 'vérifie', 'signe'],
     legend: 'Légende',
   },
-  finale: 'Toolbox',
+  finale: 'Mon écosystème',
 };
 
 export const COPY = { en, fr };
